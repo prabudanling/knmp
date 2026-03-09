@@ -121,7 +121,7 @@ const founders = [
     photo: '',
     bio: 'Visioner di balik transformasi digital koperasi Indonesia. Pelopor ekosistem desa digital terintegrasi.',
     initials: 'GG',
-    badge: 'Pendiri Utama',
+    badge: 'COO',
     badgeColor: 'gold',
     icon: Crown,
     active: true,
@@ -289,39 +289,6 @@ function OriginStorySection() {
           </motion.div>
         </div>
 
-        {/* Founder Card (original single card) */}
-        <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}
-          className="mt-16"
-        >
-          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
-            <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B0000] flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
-                </div>
-                <div className="text-center md:text-left">
-                  <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-2">Founder</Badge>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Tn. H. Gugun Gunara, S.E., M.M.
-                  </h3>
-                  <p className="text-gray-300 mb-4">
-                    Visioner di balik transformasi digital koperasi Indonesia. Berawal dari bisnis PPP pada 2016,
-                    beliau memimpin evolusi menjadi platform koperasi digital terintegrasi yang melayani seluruh desa Indonesia.
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37]">Chief Visionary</Badge>
-                    <Badge variant="outline" className="border-white/30 text-white">Sejak 2016</Badge>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 // ─── SECTION: Founders (NEW — 5 Columns) ─────────────────────────────────────
 function FoundersSection() {
