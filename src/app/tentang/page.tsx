@@ -26,7 +26,10 @@ import {
   Star,
   ChevronRight,
   Landmark,
-  Plus, // Added for empty slots
+  Crown,
+  BadgeCheck,
+  Plus,
+  Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -46,7 +49,7 @@ import {
 } from '@/data/mocks';
 import { SITE_CONFIG, COLORS } from '@/constants';
 
-// Animation variants
+// ─── Animation Variants ───────────────────────────────────────────────────────
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
@@ -56,9 +59,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -67,7 +68,28 @@ const scaleIn = {
   visible: { opacity: 1, scale: 1 },
 };
 
-// Helper function to get icon component
+const founderFadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+const glowPulse = {
+  initial: { boxShadow: '0 0 0px 0px rgba(212,175,55,0)' },
+  animate: {
+    boxShadow: [
+      '0 0 0px 0px rgba(212,175,55,0)',
+      '0 0 24px 6px rgba(212,175,55,0.35)',
+      '0 0 0px 0px rgba(212,175,55,0)',
+    ],
+    transition: { repeat: Infinity, duration: 3, ease: 'easeInOut' },
+  },
+};
+
+// ─── Helper ───────────────────────────────────────────────────────────────────
 const getIcon = (iconName: string, className?: string) => {
   const icons: Record<string, React.ReactNode> = {
     Users: <Users className={className} />,
@@ -87,61 +109,125 @@ const getIcon = (iconName: string, className?: string) => {
   return icons[iconName] || <Users className={className} />;
 };
 
-// Hero Section Component
+// ─── Founders Data ────────────────────────────────────────────────────────────
+const founders = [
+  {
+    id: 1,
+    name: 'Tn. H. Gugun Gunara, S.E., M.M.',
+    shortName: 'Gugun Gunara',
+    position: 'Founder & Chief Visionary',
+    role: 'founder',
+    since: 'Sejak 2016',
+    photo: '',
+    bio: 'Visioner di balik transformasi digital koperasi Indonesia. Pelopor ekosistem desa digital terintegrasi.',
+    initials: 'GG',
+    badge: 'Pendiri Utama',
+    badgeColor: 'gold',
+    icon: Crown,
+    active: true,
+  },
+  {
+    id: 2,
+    name: 'Drs. H. Arif Rachman Hakim',
+    shortName: 'Arif Rachman Hakim',
+    position: 'Chief Executive Officer',
+    role: 'ceo',
+    since: 'CEO',
+    photo: '',
+    bio: 'Memimpin strategi eksekusi dan tata kelola operasional Koperasi Nusantara Merah Putih secara menyeluruh.',
+    initials: 'AR',
+    badge: 'CEO',
+    badgeColor: 'red',
+    icon: BadgeCheck,
+    active: true,
+  },
+  {
+    id: 3,
+    name: '',
+    shortName: 'Segera Hadir',
+    position: 'Co-Founder',
+    role: 'empty',
+    since: '',
+    photo: '',
+    bio: 'Posisi ini akan segera diisi oleh tokoh terpilih yang berkontribusi dalam pendirian koperasi.',
+    initials: '?',
+    badge: 'TBA',
+    badgeColor: 'muted',
+    icon: Plus,
+    active: false,
+  },
+  {
+    id: 4,
+    name: '',
+    shortName: 'Segera Hadir',
+    position: 'Co-Founder',
+    role: 'empty',
+    since: '',
+    photo: '',
+    bio: 'Posisi ini akan segera diisi oleh tokoh terpilih yang berkontribusi dalam pendirian koperasi.',
+    initials: '?',
+    badge: 'TBA',
+    badgeColor: 'muted',
+    icon: Plus,
+    active: false,
+  },
+  {
+    id: 5,
+    name: '',
+    shortName: 'Segera Hadir',
+    position: 'Co-Founder',
+    role: 'empty',
+    since: '',
+    photo: '',
+    bio: 'Posisi ini akan segera diisi oleh tokoh terpilih yang berkontribusi dalam pendirian koperasi.',
+    initials: '?',
+    badge: 'TBA',
+    badgeColor: 'muted',
+    icon: Plus,
+    active: false,
+  },
+];
+
+const badgeStyles: Record<string, string> = {
+  gold: 'bg-[#D4AF37] text-[#1a1a2e] font-bold',
+  red: 'bg-[#8B0000] text-white font-bold',
+  muted: 'bg-white/10 text-white/50 border border-white/20',
+};
+
+// ─── SECTION: Hero ────────────────────────────────────────────────────────────
 function HeroSection() {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Background Pattern */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-      
-      {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#8B0000]/10 rounded-full blur-3xl" />
-      
+
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="space-y-6"
-        >
+        <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-6">
           <motion.div variants={fadeInUp}>
             <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37] px-4 py-1 text-sm">
               Tentang Kami
             </Badge>
           </motion.div>
-          
-          <motion.h1
-            variants={fadeInUp}
-            className="text-responsive-hero font-bold text-white leading-tight"
-          >
+
+          <motion.h1 variants={fadeInUp} className="text-responsive-hero font-bold text-white leading-tight">
             Tentang{' '}
             <span className="text-gradient-gold">Koperasi Nusantara</span>
             <br />
             <span className="text-gradient-gold">Merah Putih</span>
           </motion.h1>
-          
-          <motion.p
-            variants={fadeInUp}
-            className="text-responsive-subtitle text-gray-300 max-w-3xl mx-auto"
-          >
+
+          <motion.p variants={fadeInUp} className="text-responsive-subtitle text-gray-300 max-w-3xl mx-auto">
             Platform koperasi digital pertama di Indonesia yang mengintegrasikan seluruh ekosistem desa
           </motion.p>
-          
+
           <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button
-              size="lg"
-              className="bg-[#8B0000] hover:bg-[#6B0000] text-white px-8"
-            >
+            <Button size="lg" className="bg-[#8B0000] hover:bg-[#6B0000] text-white px-8">
               Gabung Sekarang
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
-            >
+            <Button size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10">
               Lihat Visi 2045
             </Button>
           </motion.div>
@@ -151,17 +237,14 @@ function HeroSection() {
   );
 }
 
-// Origin Story Section
+// ─── SECTION: Origin Story ────────────────────────────────────────────────────
 function OriginStorySection() {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center mb-16"
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
         >
           <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
             <span className="text-gradient-primary">Perjalanan</span> Kami
@@ -172,26 +255,17 @@ function OriginStorySection() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative mb-24">
-          {/* Timeline line */}
+        <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#D4AF37] via-[#8B0000] to-[#1a1a2e] hidden md:block" />
-          
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="space-y-12"
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={staggerContainer} className="space-y-12"
           >
             {ORIGIN_TIMELINE.map((item, index) => (
               <motion.div
-                key={item.year}
-                variants={fadeInUp}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                key={item.year} variants={fadeInUp}
+                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
-                {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <Card className="card-hover-lift border-l-4 border-l-[#D4AF37]">
                     <CardHeader>
@@ -206,140 +280,236 @@ function OriginStorySection() {
                     </CardContent>
                   </Card>
                 </div>
-                
-                {/* Timeline dot */}
                 <div className="relative z-10 w-12 h-12 rounded-full bg-[#8B0000] border-4 border-[#D4AF37] flex items-center justify-center glow-gold">
                   <span className="text-white font-bold text-sm">{item.year.slice(-2)}</span>
                 </div>
-                
-                {/* Spacer */}
                 <div className="flex-1 hidden md:block" />
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        {/* --- REVISED FOUNDERS SECTION (5 SLOTS) --- */}
+        {/* Founder Card (original single card) */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}
+          className="mt-16"
         >
-          <div className="flex items-center justify-center mb-8 gap-2">
-            <div className="h-px bg-gold/30 flex-1 max-w-[100px]"></div>
-            <h3 className="text-2xl font-bold text-white text-center">Dewan Founder</h3>
-            <div className="h-px bg-gold/30 flex-1 max-w-[100px]"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            
-            {/* SLOT 1: CEO (Filled) */}
-            <motion.div variants={scaleIn} className="md:col-span-1">
-              <Card className="h-full border-2 border-[#D4AF37] bg-gradient-to-b from-[#D4AF37]/10 to-transparent shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="relative mb-4 group">
-                    <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-lg group-hover:bg-[#D4AF37]/30 transition-all"></div>
-                    <Avatar className="w-24 h-24 border-2 border-[#D4AF37] relative z-10 bg-navy">
-                      <AvatarImage src="/images/ceo-arif.jpg" alt="CEO" />
-                      <AvatarFallback className="bg-[#D4AF37] text-navy font-bold text-xl">
-                        AH
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="absolute -bottom-1 -right-1 bg-maroon rounded-full p-1.5 border-2 border-navy z-20">
-                      <Star className="w-3 h-3 text-[#D4AF37] fill-[#D4AF37]" />
-                    </div>
+          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B0000] flex items-center justify-center">
+                  <Users className="w-16 h-16 text-white" />
+                </div>
+                <div className="text-center md:text-left">
+                  <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-2">Founder</Badge>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Tn. H. Gugun Gunara, S.E., M.M.
+                  </h3>
+                  <p className="text-gray-300 mb-4">
+                    Visioner di balik transformasi digital koperasi Indonesia. Berawal dari bisnis PPP pada 2016,
+                    beliau memimpin evolusi menjadi platform koperasi digital terintegrasi yang melayani seluruh desa Indonesia.
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37]">Chief Visionary</Badge>
+                    <Badge variant="outline" className="border-white/30 text-white">Sejak 2016</Badge>
                   </div>
-                  
-                  <Badge className="bg-[#D4AF37] text-[#1a1a2e] hover:bg-[#D4AF37]/90 mb-3 font-bold">
-                    CEO
-                  </Badge>
-                  
-                  <h4 className="text-lg font-bold text-white leading-tight mb-1">
-                    Drs. H. Arif Rachman Hakim
-                  </h4>
-                  <p className="text-xs text-gray-400 mb-4">Chief Executive Officer</p>
-                  
-                  <div className="mt-auto w-full space-y-2">
-                    <div className="h-px w-full bg-white/10"></div>
-                    <p className="text-xs text-gray-300 italic">
-                      "Memimpin transformasi digital dengan integritas dan visi kebangsaan."
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* SLOT 2: Empty */}
-            <motion.div variants={scaleIn} className="md:col-span-1">
-              <Card className="h-full border-2 border-dashed border-white/20 hover:border-[#D4AF37]/50 hover:bg-white/5 transition-all cursor-default group">
-                <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full min-h-[280px]">
-                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Plus className="w-8 h-8 text-gray-600 group-hover:text-[#D4AF37]" />
-                  </div>
-                  <h4 className="font-bold text-gray-400 group-hover:text-white transition-colors">Founder Seat</h4>
-                  <p className="text-xs text-gray-600 mt-1">Open Position</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* SLOT 3: Empty */}
-            <motion.div variants={scaleIn} className="md:col-span-1">
-              <Card className="h-full border-2 border-dashed border-white/20 hover:border-[#D4AF37]/50 hover:bg-white/5 transition-all cursor-default group">
-                <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full min-h-[280px]">
-                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Plus className="w-8 h-8 text-gray-600 group-hover:text-[#D4AF37]" />
-                  </div>
-                  <h4 className="font-bold text-gray-400 group-hover:text-white transition-colors">Founder Seat</h4>
-                  <p className="text-xs text-gray-600 mt-1">Open Position</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* SLOT 4: Empty */}
-            <motion.div variants={scaleIn} className="md:col-span-1">
-              <Card className="h-full border-2 border-dashed border-white/20 hover:border-[#D4AF37]/50 hover:bg-white/5 transition-all cursor-default group">
-                <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full min-h-[280px]">
-                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Plus className="w-8 h-8 text-gray-600 group-hover:text-[#D4AF37]" />
-                  </div>
-                  <h4 className="font-bold text-gray-400 group-hover:text-white transition-colors">Founder Seat</h4>
-                  <p className="text-xs text-gray-600 mt-1">Open Position</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-             {/* SLOT 5: Empty (Completing the 5 slots) */}
-             <motion.div variants={scaleIn} className="md:col-span-1">
-              <Card className="h-full border-2 border-dashed border-white/20 hover:border-[#D4AF37]/50 hover:bg-white/5 transition-all cursor-default group">
-                <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full min-h-[280px]">
-                  <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Plus className="w-8 h-8 text-gray-600 group-hover:text-[#D4AF37]" />
-                  </div>
-                  <h4 className="font-bold text-gray-400 group-hover:text-white transition-colors">Founder Seat</h4>
-                  <p className="text-xs text-gray-600 mt-1">Open Position</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-          </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </section>
   );
 }
 
-// Legal & Compliance Section
+// ─── SECTION: Founders (NEW — 5 Columns) ─────────────────────────────────────
+function FoundersSection() {
+  return (
+    <section className="py-24 relative overflow-hidden">
+      {/* Deep background */}
+      <div className="absolute inset-0 bg-[#0a0a12]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(212,175,55,0.08),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_30%_100%,rgba(139,0,0,0.08),transparent)]" />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(212,175,55,0.5) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(212,175,55,0.5) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px',
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/5 text-[#D4AF37] text-sm mb-6">
+            <Sparkles className="w-3.5 h-3.5" />
+            Para Pendiri
+            <Sparkles className="w-3.5 h-3.5" />
+          </div>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
+            Mereka yang{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #D4AF37 0%, #f0d060 50%, #D4AF37 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Memulai Segalanya
+            </span>
+          </h2>
+
+          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            Visi besar lahir dari keberanian para pendiri yang percaya pada kekuatan koperasi digital Indonesia
+          </p>
+        </motion.div>
+
+        {/* 5 Column Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+          {founders.map((founder, index) => {
+            const IconComp = founder.icon;
+            const isActive = founder.active;
+
+            return (
+              <motion.div
+                key={founder.id}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                variants={founderFadeUp}
+              >
+                <div
+                  className={`relative w-full rounded-2xl border transition-all duration-500 group
+                    ${isActive
+                      ? 'bg-gradient-to-b from-[#1a1a2e] to-[#0d0d1a] border-[#D4AF37]/40 hover:border-[#D4AF37] hover:shadow-[0_0_32px_rgba(212,175,55,0.2)]'
+                      : 'bg-white/[0.02] border-white/10 hover:border-white/20'
+                    }
+                    p-6 text-center`}
+                >
+                  {/* Corner accent */}
+                  {isActive && (
+                    <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl pointer-events-none">
+                      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-[#D4AF37]/20 to-transparent" />
+                    </div>
+                  )}
+
+                  {/* Badge chip */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold ${badgeStyles[founder.badgeColor]}`}>
+                      <IconComp className="w-3 h-3" />
+                      {founder.badge}
+                    </div>
+                  </div>
+
+                  {/* Avatar */}
+                  <div className="mt-4 mb-4 relative flex justify-center">
+                    {isActive && (
+                      <motion.div
+                        variants={glowPulse}
+                        initial="initial"
+                        animate="animate"
+                        className={`absolute inset-0 rounded-full ${founder.role === 'founder' ? 'border-2 border-[#D4AF37]' : 'border-2 border-[#8B0000]'}`}
+                        style={{ width: 88, height: 88, margin: 'auto' }}
+                      />
+                    )}
+                    <Avatar
+                      className={`w-20 h-20 border-2 shadow-xl
+                        ${founder.role === 'founder' ? 'border-[#D4AF37]' :
+                          founder.role === 'ceo' ? 'border-[#8B0000]' : 'border-white/10'}
+                        ${!isActive ? 'opacity-40' : ''}`}
+                    >
+                      <AvatarImage src={founder.photo} alt={founder.name} />
+                      <AvatarFallback
+                        className={`text-lg font-bold
+                          ${founder.role === 'founder' ? 'bg-gradient-to-br from-[#D4AF37] to-[#a07a1a] text-[#1a1a2e]' :
+                            founder.role === 'ceo' ? 'bg-gradient-to-br from-[#8B0000] to-[#5a0000] text-white' :
+                            'bg-white/5 text-white/30'}`}
+                      >
+                        {isActive ? founder.initials : <Plus className="w-6 h-6" />}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+
+                  {/* Name */}
+                  <h4 className={`font-bold text-sm leading-tight mb-1 min-h-[2.5rem] flex items-center justify-center ${isActive ? 'text-white' : 'text-white/30'}`}>
+                    {isActive ? founder.shortName : 'Segera Diumumkan'}
+                  </h4>
+
+                  {/* Position */}
+                  <p className={`text-xs mb-3 font-medium
+                    ${founder.role === 'founder' ? 'text-[#D4AF37]' :
+                      founder.role === 'ceo' ? 'text-red-400' : 'text-white/20'}`}>
+                    {founder.position}
+                  </p>
+
+                  {/* Divider */}
+                  <div className={`w-8 h-px mx-auto mb-3
+                    ${founder.role === 'founder' ? 'bg-[#D4AF37]/60' :
+                      founder.role === 'ceo' ? 'bg-[#8B0000]/60' : 'bg-white/10'}`}
+                  />
+
+                  {/* Bio */}
+                  <p className={`text-xs leading-relaxed ${isActive ? 'text-gray-400' : 'text-white/20'}`}>
+                    {founder.bio}
+                  </p>
+
+                  {/* Since badge */}
+                  {isActive && founder.since && (
+                    <div className="mt-4">
+                      <span className={`inline-block text-xs px-3 py-1 rounded-full border
+                        ${founder.role === 'founder'
+                          ? 'border-[#D4AF37]/30 text-[#D4AF37]/80 bg-[#D4AF37]/5'
+                          : 'border-[#8B0000]/30 text-red-400/80 bg-[#8B0000]/5'}`}>
+                        {founder.since}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Bottom ornament */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="mt-16 flex items-center justify-center gap-4"
+        >
+          <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
+          <div className="flex items-center gap-2 text-[#D4AF37]/50 text-xs font-medium tracking-widest uppercase">
+            <Building2 className="w-3.5 h-3.5" />
+            Koperasi Nusantara Merah Putih
+            <Building2 className="w-3.5 h-3.5" />
+          </div>
+          <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: Legal & Compliance ──────────────────────────────────────────────
 function LegalComplianceSection() {
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center mb-16"
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
         >
           <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
             Legal & <span className="text-gradient-primary">Compliance</span>
@@ -349,11 +519,8 @@ function LegalComplianceSection() {
           </motion.p>
         </motion.div>
 
-        {/* Legal Info Cards */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
           variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
         >
@@ -368,11 +535,573 @@ function LegalComplianceSection() {
               </CardContent>
             </Card>
           </motion.div>
-          
           <motion.div variants={fadeInUp}>
             <Card className="h-full card-hover-lift">
               <CardContent className="p-6 text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
                   <Landmark className="w-7 h-7 text-[#D4AF37]" />
                 </div>
-                <h3 className
+                <h3 className="font-semibold mb-2">NPWP</h3>
+                <p className="text-sm text-muted-foreground">{LEGAL_INFO.npwp}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <Card className="h-full card-hover-lift">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#1a1a2e]/10 flex items-center justify-center">
+                  <Building className="w-7 h-7 text-[#1a1a2e]" />
+                </div>
+                <h3 className="font-semibold mb-2">Badan Hukum</h3>
+                <p className="text-sm text-muted-foreground">{LEGAL_INFO.legalEntity}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <Card className="h-full card-hover-lift">
+              <CardContent className="p-6 text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
+                  <Award className="w-7 h-7 text-[#8B0000]" />
+                </div>
+                <h3 className="font-semibold mb-2">Terdaftar di</h3>
+                <p className="text-sm text-muted-foreground">{LEGAL_INFO.registeredAt}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
+
+        {/* 7 Principles */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+          <Card className="border-[#D4AF37]/20">
+            <CardHeader className="text-center border-b">
+              <CardTitle className="flex items-center justify-center gap-2">
+                <Award className="w-6 h-6 text-[#D4AF37]" />
+                7 Prinsip Koperasi ICA + UU 25/1992
+              </CardTitle>
+              <CardDescription>Prinsip internasional koperasi yang menjadi landasan operasional kami</CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {COOPERATIVE_PRINCIPLES.map((principle) => (
+                  <motion.div
+                    key={principle.number} variants={fadeInUp}
+                    className="group p-4 rounded-lg border border-border hover:border-[#D4AF37] transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#8B0000]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8B0000] transition-colors">
+                        <span className="text-[#8B0000] group-hover:text-white font-bold text-sm">{principle.number}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-sm mb-1">{principle.title}</h4>
+                        <p className="text-xs text-muted-foreground">{principle.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+          className="mt-8 flex flex-wrap justify-center gap-4"
+        >
+          <Badge className="bg-green-100 text-green-800 px-4 py-2 text-sm">
+            <CheckCircle2 className="w-4 h-4 mr-2" />Terdaftar Resmi
+          </Badge>
+          <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-sm">
+            <Shield className="w-4 h-4 mr-2" />Berbadan Hukum
+          </Badge>
+          <Badge className="bg-amber-100 text-amber-800 px-4 py-2 text-sm">
+            <Award className="w-4 h-4 mr-2" />ICA Compliant
+          </Badge>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: Dual Entity ─────────────────────────────────────────────────────
+function DualEntitySection() {
+  return (
+    <section className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
+        >
+          <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
+            Dual Entity <span className="text-gradient-gold">Architecture</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Model unik yang memisahkan strategi dan operasional untuk efektivitas maksimal
+          </motion.p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+            <Card className="h-full border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] transition-colors">
+              <CardHeader className="border-b border-[#D4AF37]/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-14 h-14 rounded-xl bg-[#D4AF37] flex items-center justify-center">
+                    <Zap className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <Badge className="bg-[#D4AF37]/20 text-[#D4AF37] mb-1">{DUAL_ENTITY.jep3.type}</Badge>
+                    <CardTitle className="text-2xl">{DUAL_ENTITY.jep3.name}</CardTitle>
+                  </div>
+                </div>
+                <CardDescription className="mt-4 text-base">{DUAL_ENTITY.jep3.fullName}</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37]">{DUAL_ENTITY.jep3.role}</Badge>
+                </div>
+                <p className="text-muted-foreground mb-4">{DUAL_ENTITY.jep3.description}</p>
+                <h4 className="font-semibold mb-3">Tanggung Jawab:</h4>
+                <ul className="space-y-2">
+                  {DUAL_ENTITY.jep3.responsibilities.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+            <Card className="h-full border-2 border-[#8B0000]/30 hover:border-[#8B0000] transition-colors">
+              <CardHeader className="border-b border-[#8B0000]/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-14 h-14 rounded-xl bg-[#8B0000] flex items-center justify-center">
+                    <Heart className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <Badge className="bg-[#8B0000]/20 text-[#8B0000] mb-1">{DUAL_ENTITY.knmp.type}</Badge>
+                    <CardTitle className="text-2xl">{DUAL_ENTITY.knmp.name}</CardTitle>
+                  </div>
+                </div>
+                <CardDescription className="mt-4 text-base">{DUAL_ENTITY.knmp.fullName}</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <Badge variant="outline" className="border-[#8B0000] text-[#8B0000]">{DUAL_ENTITY.knmp.role}</Badge>
+                </div>
+                <p className="text-muted-foreground mb-4">{DUAL_ENTITY.knmp.description}</p>
+                <h4 className="font-semibold mb-3">Tanggung Jawab:</h4>
+                <ul className="space-y-2">
+                  {DUAL_ENTITY.knmp.responsibilities.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#8B0000] mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+            <CardContent className="p-8">
+              <div className="text-center mb-8">
+                <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-2">Framework</Badge>
+                <h3 className="text-2xl font-bold text-white mb-2">{DUAL_ENTITY.saf.name}</h3>
+                <p className="text-gray-300">{DUAL_ENTITY.saf.description}</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold text-white mb-4">Prinsip Utama:</h4>
+                  <ul className="space-y-2">
+                    {DUAL_ENTITY.saf.principles.map((principle, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-gray-300">
+                        <ChevronRight className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                        <span>{principle}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/5 rounded-lg p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37] flex items-center justify-center">
+                      <Users className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-white">{DUAL_ENTITY.jsc.name}</h4>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">{DUAL_ENTITY.jsc.description}</p>
+                  <div className="flex gap-4">
+                    <Badge variant="outline" className="border-white/30 text-white">{DUAL_ENTITY.jsc.members} Anggota</Badge>
+                    <Badge variant="outline" className="border-white/30 text-white">Rapat {DUAL_ENTITY.jsc.meetingFrequency}</Badge>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: Vision 2045 ─────────────────────────────────────────────────────
+function Vision2045Section() {
+  return (
+    <section className="py-20 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
+        >
+          <motion.div variants={fadeInUp}>
+            <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-4">Visi 2045</Badge>
+          </motion.div>
+          <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
+            Menuju <span className="text-gradient-gold">Indonesia Emas</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {VISION_2045.subtitle}
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+        >
+          {VISION_2045.targets.map((target) => (
+            <motion.div key={target.label} variants={scaleIn}>
+              <Card className="text-center card-hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
+                    {getIcon(target.icon, 'w-6 h-6 text-[#8B0000]')}
+                  </div>
+                  <div className="text-3xl font-bold text-[#8B0000] mb-1">
+                    {target.value.toLocaleString()}{target.suffix}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{target.label}</div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+          <Card className="mb-12">
+            <CardHeader className="border-b">
+              <CardTitle className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-[#D4AF37]" />
+                Roadmap 2045
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="relative">
+                <div className="absolute top-1/2 left-0 right-0 h-1 bg-muted transform -translate-y-1/2 hidden lg:block" />
+                <div className="absolute top-1/2 left-0 w-1/5 h-1 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] transform -translate-y-1/2 hidden lg:block" />
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {VISION_2045.milestones.map((milestone, idx) => (
+                    <div key={milestone.year} className="relative text-center">
+                      <div className={`w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center z-10 relative ${
+                        idx < 1 ? 'bg-[#8B0000] text-white' : idx < 2 ? 'bg-[#D4AF37] text-white' : 'bg-muted text-muted-foreground'
+                      }`}>
+                        {idx < 1 ? <CheckCircle2 className="w-6 h-6" /> : <span className="font-bold text-sm">{milestone.year}</span>}
+                      </div>
+                      <h4 className="font-semibold mb-1">{milestone.title}</h4>
+                      <p className="text-xs text-muted-foreground">{milestone.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B0000] flex items-center justify-center">
+                  <Globe className="w-12 h-12 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <Badge className="bg-[#D4AF37]/20 text-[#D4AF37] mb-2">Benchmark Global</Badge>
+                  <h3 className="text-2xl font-bold text-white mb-2">{VISION_2045.benchmark.name}</h3>
+                  <p className="text-gray-300 mb-4">{VISION_2045.benchmark.description}</p>
+                  <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <Badge variant="outline" className="border-white/30 text-white">{VISION_2045.benchmark.country}</Badge>
+                    <Badge variant="outline" className="border-white/30 text-white">Sejak {VISION_2045.benchmark.founded}</Badge>
+                    <Badge variant="outline" className="border-white/30 text-white">{VISION_2045.benchmark.members.toLocaleString()} Anggota</Badge>
+                    <Badge variant="outline" className="border-white/30 text-white">Revenue {VISION_2045.benchmark.revenue}</Badge>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: Team ────────────────────────────────────────────────────────────
+function TeamSection() {
+  return (
+    <section className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
+        >
+          <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
+            Struktur <span className="text-gradient-primary">Organisasi</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Pengurus, Pengawas, dan Dewan Penasihat yang berkomitmen untuk kemajuan koperasi
+          </motion.p>
+        </motion.div>
+
+        {/* Pengurus */}
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="mb-12"
+        >
+          <motion.h3 variants={fadeInUp} className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <Building2 className="w-5 h-5 text-[#8B0000]" />Pengurus
+          </motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM_STRUCTURE.pengurus.map((member) => (
+              <motion.div key={member.id} variants={scaleIn}>
+                <Card className="card-hover-lift h-full">
+                  <CardContent className="p-6 text-center">
+                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#D4AF37]">
+                      <AvatarImage src={member.photo} alt={member.name} />
+                      <AvatarFallback className="bg-[#8B0000] text-white text-lg">
+                        {member.name.split(' ').slice(0, 2).map((n: string) => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <h4 className="font-semibold mb-1">{member.name}</h4>
+                    <p className="text-sm text-[#D4AF37] mb-2">{member.position}</p>
+                    <p className="text-xs text-muted-foreground mb-2">{member.bio}</p>
+                    <Badge variant="outline" className="text-xs">{member.termStart} - {member.termEnd}</Badge>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Pengawas */}
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="mb-12"
+        >
+          <motion.h3 variants={fadeInUp} className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <Shield className="w-5 h-5 text-[#8B0000]" />Pengawas
+          </motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+            {TEAM_STRUCTURE.pengawas.map((member) => (
+              <motion.div key={member.id} variants={scaleIn}>
+                <Card className="card-hover-lift h-full">
+                  <CardContent className="p-6 flex items-center gap-4">
+                    <Avatar className="w-16 h-16 border-2 border-[#8B0000]">
+                      <AvatarImage src={member.photo} alt={member.name} />
+                      <AvatarFallback className="bg-[#8B0000] text-white">
+                        {member.name.split(' ').slice(0, 2).map((n: string) => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h4 className="font-semibold">{member.name}</h4>
+                      <p className="text-sm text-[#D4AF37]">{member.position}</p>
+                      <p className="text-xs text-muted-foreground">{member.bio}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Dewan Penasihat */}
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+        >
+          <motion.h3 variants={fadeInUp} className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <Star className="w-5 h-5 text-[#D4AF37]" />Dewan Penasihat
+          </motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TEAM_STRUCTURE.dewanPenasihat.map((member) => (
+              <motion.div key={member.id} variants={scaleIn}>
+                <Card className="card-hover-lift h-full border-[#D4AF37]/20">
+                  <CardContent className="p-6 text-center">
+                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#D4AF37]">
+                      <AvatarImage src={member.photo} alt={member.name} />
+                      <AvatarFallback className="bg-[#D4AF37] text-white text-lg">
+                        {member.name.split(' ').slice(0, 2).map((n: string) => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <h4 className="font-semibold mb-1">{member.name}</h4>
+                    <p className="text-sm text-[#8B0000] mb-2">{member.position}</p>
+                    <p className="text-xs text-muted-foreground mb-2">{member.bio}</p>
+                    <Badge variant="outline" className="text-xs border-[#D4AF37] text-[#D4AF37]">
+                      {member.termStart} - {member.termEnd}
+                    </Badge>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+          className="text-center mt-12"
+        >
+          <Button variant="outline" className="border-[#8B0000] text-[#8B0000]">
+            <Link href="/rat" className="flex items-center gap-2">
+              Lihat Struktur Governance Lengkap
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: Partner ─────────────────────────────────────────────────────────
+function PartnerSection() {
+  return (
+    <section className="py-20 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer} className="text-center mb-16"
+        >
+          <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
+            Partner & <span className="text-gradient-gold">Kemitraan</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Berkolaborasi dengan berbagai institusi untuk membangun ekosistem desa digital
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12"
+        >
+          {PARTNER_LOGOS.map((partner) => (
+            <motion.div key={partner.id} variants={scaleIn}>
+              <Card className="card-hover-lift h-full">
+                <CardContent className="p-6 flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-3">
+                    <Building2 className="w-8 h-8 text-muted-foreground" />
+                  </div>
+                  <p className="text-sm font-medium text-center">{partner.name}</p>
+                  <Badge variant="outline" className="mt-2 text-xs">{partner.category}</Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+          <Card className="bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 border-[#D4AF37]/30">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                  <Flag className="w-10 h-10 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <Badge className="bg-[#8B0000] text-white mb-2">Government Alignment</Badge>
+                  <h3 className="text-xl font-bold mb-2">KDMP Network</h3>
+                  <p className="text-muted-foreground mb-4">{KDMP_ALIGNMENT.description}</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {KDMP_ALIGNMENT.points.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── SECTION: CTA ─────────────────────────────────────────────────────────────
+function CTASection() {
+  return (
+    <section className="py-20 bg-gradient-to-r from-[#1a1a2e] via-[#8B0000] to-[#1a1a2e] relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#8B0000]/20 rounded-full blur-3xl" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+        >
+          <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold text-white mb-6">
+            Jadilah Bagian dari{' '}
+            <span className="text-gradient-gold">Peradaban</span>
+          </motion.h2>
+
+          <motion.p variants={fadeInUp} className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            Bergabunglah dengan 125.000+ anggota KNMP dan jadilah bagian dari transformasi ekonomi digital desa Indonesia
+          </motion.p>
+
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#1a1a2e] px-8 py-6 text-lg">
+              Gabung Sekarang
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              Pelajari Lebih Lanjut
+            </Button>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap justify-center gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#D4AF37]">{HERO_STATS.members.toLocaleString()}+</div>
+              <div className="text-sm text-gray-400">Anggota Aktif</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#D4AF37]">{HERO_STATS.villages.toLocaleString()}</div>
+              <div className="text-sm text-gray-400">Desa Terintegrasi</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#D4AF37]">{HERO_STATS.provinces}</div>
+              <div className="text-sm text-gray-400">Provinsi</div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── MAIN PAGE ────────────────────────────────────────────────────────────────
+export default function TentangPage() {
+  return (
+    <div className="min-h-screen">
+      <HeroSection />
+      <OriginStorySection />
+      {/* ✨ NEW: 5-Column Founders Section — setelah Origin Story */}
+      <FoundersSection />
+      <LegalComplianceSection />
+      <DualEntitySection />
+      <Vision2045Section />
+      <TeamSection />
+      <PartnerSection />
+      <CTASection />
+    </div>
+  );
+}
