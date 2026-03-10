@@ -177,6 +177,7 @@ export function Hero() {
       
       <section
         ref={ref}
+        id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Animated Background */}
@@ -489,7 +490,7 @@ export function Hero() {
       </section>
 
       {/* Simpanan Section - Separate from Hero */}
-      <section id="simpanan" className="py-12 md:py-16 bg-gradient-to-b from-white to-red-50/30">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-white to-red-50/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -550,7 +551,7 @@ export function Hero() {
       </section>
 
       {/* Navigasi Peradaban Section - Separate from Hero */}
-      <section id="navigasi-peradaban" className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

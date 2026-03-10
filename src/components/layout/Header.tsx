@@ -3,67 +3,99 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { Menu, X, ChevronDown, Zap, ChevronRight } from 'lucide-react'
+import { 
+  Menu, X, ChevronDown, Zap, ChevronRight, 
+  Home, Info, Building2, Store, Truck, GraduationCap,
+  Users, Vote, LayoutDashboard, HelpCircle, Phone,
+  MessageCircle, FileText, Shield, Sparkles, Heart,
+  TrendingUp, Package, Globe, MapPin, Clock, Bell,
+  Settings, User, LogIn, ArrowRight, ExternalLink,
+  Wallet, BarChart3, Landmark, Leaf, Laptop, Briefcase
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { SITE_CONFIG } from '@/constants'
 
-// Menu structure with dropdowns for better organization
+// Menu structure with icons and colors for brilliant mobile UX
 const menuStructure = [
   { 
     label: 'Beranda', 
-    href: '/' 
+    href: '/',
+    icon: Home,
+    color: '#8B0000',
+    description: 'Halaman utama'
   },
   { 
     label: 'Tentang', 
     href: '/tentang',
+    icon: Info,
+    color: '#D4AF37',
+    description: 'Profil KNMP',
     children: [
-      { label: 'Tentang KNMP', href: '/tentang' },
-      { label: 'Visi & Misi', href: '/visi-misi' },
-      { label: 'Struktur Organisasi', href: '/struktur-organisasi' },
-      { label: '6 KPA', href: '/kpa' },
+      { label: 'Tentang KNMP', href: '/tentang', icon: Building2, color: '#8B0000' },
+      { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#D4AF37' },
+      { label: 'Struktur Organisasi', href: '/struktur-organisasi', icon: Users, color: '#3b82f6' },
+      { label: '6 KPA', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
     ]
-  },
-  { 
-    label: 'Keanggotaan', 
-    href: '/membership',
-    highlight: true,
   },
   { 
     label: 'Layanan', 
     href: '#',
+    icon: Briefcase,
+    color: '#22c55e',
+    description: 'Produk & layanan',
     children: [
-      { label: 'Marketplace', href: '/marketplace' },
-      { label: 'Logistik Digital', href: '/logistik' },
-      { label: 'Smart Village', href: '/smart-village' },
-      { label: 'Unit Usaha', href: '/unit-usaha' },
-      { label: 'JE-P3 Academy', href: '/academy' },
+      { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#8B0000', badge: '8 Zona' },
+      { label: 'Logistik Digital', href: '/logistik', icon: Truck, color: '#f59e0b', badge: '3 Level' },
+      { label: 'Smart Village', href: '/smart-village', icon: Laptop, color: '#3b82f6' },
+      { label: 'Unit Usaha', href: '/unit-usaha', icon: Package, color: '#22c55e', badge: '5 Pilar' },
+      { label: 'JE-P3 Academy', href: '/academy', icon: GraduationCap, color: '#8b5cf6', badge: '3 Level' },
     ]
   },
   { 
     label: 'Publik', 
     href: '#',
+    icon: Globe,
+    color: '#3b82f6',
+    description: 'Transparansi',
     children: [
-      { label: 'Dashboard', href: '/dashboard' },
-      { label: 'SHU Transparansi', href: '/shu' },
-      { label: 'RAT & E-Voting', href: '/rat' },
-      { label: 'Integrasi Desa', href: '/integrasi-desa' },
+      { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#8B0000' },
+      { label: 'SHU Transparansi', href: '/shu', icon: BarChart3, color: '#22c55e' },
+      { label: 'RAT & E-Voting', href: '/rat', icon: Vote, color: '#D4AF37', badge: 'Live' },
+      { label: 'Keanggotaan', href: '/membership', icon: Users, color: '#8b5cf6', badge: '7 Tier' },
     ]
   },
   { 
     label: 'Bantuan', 
     href: '#',
+    icon: HelpCircle,
+    color: '#f59e0b',
+    description: 'FAQ & Kontak',
     children: [
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Kontak', href: '/kontak' },
+      { label: 'FAQ', href: '/faq', icon: MessageCircle, color: '#3b82f6' },
+      { label: 'Kontak', href: '/kontak', icon: Phone, color: '#22c55e' },
+      { label: 'Dokumentasi', href: '/docs', icon: FileText, color: '#8b5cf6' },
     ]
   },
 ]
+
+// Quick Actions for mobile
+const quickActions = [
+  { label: 'Daftar', href: '/membership', icon: User, color: '#8B0000' },
+  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#D4AF37' },
+  { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#22c55e' },
+  { label: 'Academy', href: '/academy', icon: GraduationCap, color: '#3b82f6' },
+]
+
+// Import Target icon
+import { Target } from 'lucide-react'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null)
   const { scrollY } = useScroll()
   
   // Animate header on scroll
@@ -84,6 +116,18 @@ export function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+  
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
 
   return (
     <>
@@ -130,7 +174,7 @@ export function Header() {
               </div>
             </Link>
 
-            {/* Desktop Navigation - Reorganized */}
+            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {menuStructure.map((item, index) => (
                 <div 
@@ -147,24 +191,17 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={cn(
-                        "relative px-3 py-2 text-sm font-medium transition-colors duration-200 group",
-                        item.highlight 
-                          ? "bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white rounded-lg shadow-md hover:shadow-lg"
-                          : "text-gray-600 hover:text-[#8B0000]"
-                      )}
+                      className="relative px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#8B0000] transition-colors duration-200 group"
                     >
                       {item.label}
-                      {!item.highlight && (
-                        <motion.span 
-                          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] group-hover:w-full transition-all duration-300"
-                          layoutId={`underline-${index}`}
-                        />
-                      )}
+                      <motion.span 
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] group-hover:w-full transition-all duration-300"
+                        layoutId={`underline-${index}`}
+                      />
                     </Link>
                   )}
                   
-                  {/* Dropdown Menu with Animation */}
+                  {/* Dropdown Menu */}
                   {item.children && (
                     <AnimatePresence>
                       {activeDropdown === item.label && (
@@ -173,7 +210,7 @@ export function Header() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute top-full left-0 pt-2 min-w-[200px]"
+                          className="absolute top-full left-0 pt-2 min-w-[220px]"
                         >
                           <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-xl shadow-xl shadow-gray-900/10 p-2 overflow-hidden">
                             {item.children.map((child, childIndex) => (
@@ -185,9 +222,15 @@ export function Header() {
                               >
                                 <Link
                                   href={child.href}
-                                  className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-600 hover:text-[#8B0000] hover:bg-red-50 rounded-lg transition-all duration-200 group"
+                                  className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-[#8B0000] hover:bg-red-50 rounded-lg transition-all duration-200 group"
                                 >
-                                  {child.label}
+                                  <child.icon className="w-4 h-4" style={{ color: child.color }} />
+                                  <span className="flex-1">{child.label}</span>
+                                  {child.badge && (
+                                    <Badge className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] text-white border-0">
+                                      {child.badge}
+                                    </Badge>
+                                  )}
                                   <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                                 </Link>
                               </motion.div>
@@ -212,7 +255,7 @@ export function Header() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link href="/kontak">
+                <Link href="/membership">
                   <Button size="sm" className="bg-gradient-to-r from-[#8B0000] to-[#B22222] hover:from-[#B22222] hover:to-[#DC143C] text-white shadow-lg shadow-red-900/20 hover:shadow-red-900/30 transition-all duration-300 relative overflow-hidden group">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <Zap className="w-4 h-4 mr-1 relative z-10" />
@@ -223,19 +266,52 @@ export function Header() {
               </motion.div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden text-gray-700 hover:bg-red-50"
-              onClick={() => setIsOpen(!isOpen)}
+            {/* Mobile Menu Button - Enhanced */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="lg:hidden"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn(
+                  "relative w-10 h-10 rounded-xl transition-all duration-300",
+                  isOpen 
+                    ? "bg-[#8B0000] text-white hover:bg-[#B22222]" 
+                    : "text-gray-700 hover:bg-red-50"
+                )}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <AnimatePresence mode="wait">
+                  {isOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <X className="h-5 w-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Menu className="h-5 w-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Button>
+            </motion.div>
           </div>
         </div>
         
-        {/* Progress bar at bottom - shows scroll progress */}
+        {/* Progress bar at bottom */}
         <motion.div 
           className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]"
           style={{
@@ -245,7 +321,7 @@ export function Header() {
         />
       </motion.header>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation Overlay - BRILLIANT DESIGN */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -254,88 +330,254 @@ export function Header() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            {/* Backdrop */}
+            {/* Backdrop with blur */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-gray-900/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-gray-900/30 to-gray-900/40 backdrop-blur-md"
               onClick={() => setIsOpen(false)}
             />
             
-            {/* Menu Panel */}
+            {/* Menu Panel - Full Height Brilliant Design */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white border-l border-gray-100 overflow-y-auto shadow-2xl"
+              className="absolute right-0 top-0 bottom-0 w-[88%] max-w-sm bg-white overflow-y-auto shadow-2xl"
             >
-              <div className="p-6 pt-20">
-                {/* Mobile Menu with collapsible sections */}
-                <div className="space-y-2">
-                  {menuStructure.map((item, i) => (
+              {/* Header Section with User Info */}
+              <div className="sticky top-0 z-10 bg-gradient-to-br from-[#8B0000] via-[#9B0F0F] to-[#8B0000] px-5 pt-16 pb-6">
+                {/* Close button */}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-4 right-4 w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+                
+                {/* Logo & Branding */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg">
+                    <span className="text-[#8B0000] font-bold text-xl">K</span>
+                  </div>
+                  <div>
+                    <h2 className="font-bold text-lg text-white">{SITE_CONFIG.name}</h2>
+                    <p className="text-xs text-white/70">Digital OS Desa Indonesia</p>
+                  </div>
+                </div>
+                
+                {/* Quick Actions Row */}
+                <div className="grid grid-cols-4 gap-2 mt-4">
+                  {quickActions.map((action, i) => (
                     <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
+                      key={action.label}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 + i * 0.05 }}
                     >
-                      {item.children ? (
-                        <div className="border-b border-gray-100 last:border-0">
-                          <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            {item.label}
-                          </div>
-                          <div className="pb-2">
-                            {item.children.map((child) => (
-                              <Link
-                                key={child.href}
-                                href={child.href}
-                                onClick={() => setIsOpen(false)}
-                                className="block px-4 py-2.5 text-base text-gray-700 hover:text-[#8B0000] hover:bg-red-50 rounded-lg transition-all duration-200"
-                              >
-                                {child.label}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className={cn(
-                            "block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200",
-                            item.highlight 
-                              ? "bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white text-center shadow-lg"
-                              : "text-gray-700 hover:text-[#8B0000] hover:bg-red-50"
-                          )}
+                      <Link
+                        href={action.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex flex-col items-center gap-1.5 p-2 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
+                      >
+                        <div 
+                          className="w-8 h-8 rounded-lg flex items-center justify-center"
+                          style={{ backgroundColor: `${action.color}20` }}
                         >
-                          {item.label}
-                        </Link>
-                      )}
+                          <action.icon className="w-4 h-4" style={{ color: action.color }} />
+                        </div>
+                        <span className="text-[10px] font-medium text-white/90">{action.label}</span>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>
-                
-                <motion.div 
+              </div>
+              
+              {/* Menu Items */}
+              <div className="p-4 space-y-1">
+                {menuStructure.map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.15 + i * 0.05 }}
+                  >
+                    {item.children ? (
+                      // Expandable Menu Item
+                      <div className="rounded-xl overflow-hidden">
+                        <button
+                          onClick={() => setExpandedMobile(expandedMobile === item.label ? null : item.label)}
+                          className={cn(
+                            "w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-200",
+                            expandedMobile === item.label 
+                              ? "bg-gradient-to-r from-red-50 to-amber-50" 
+                              : "hover:bg-gray-50"
+                          )}
+                        >
+                          <div 
+                            className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm"
+                            style={{ backgroundColor: `${item.color}15` }}
+                          >
+                            <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                          </div>
+                          <div className="flex-1 text-left">
+                            <p className="font-semibold text-gray-900 text-sm">{item.label}</p>
+                            <p className="text-xs text-gray-500">{item.description}</p>
+                          </div>
+                          <motion.div
+                            animate={{ rotate: expandedMobile === item.label ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <ChevronDown className="w-4 h-4 text-gray-400" />
+                          </motion.div>
+                        </button>
+                        
+                        {/* Sub Menu */}
+                        <AnimatePresence>
+                          {expandedMobile === item.label && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-4 pr-2 py-2 space-y-1">
+                                {item.children.map((child, ci) => (
+                                  <motion.div
+                                    key={child.href}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: ci * 0.03 }}
+                                  >
+                                    <Link
+                                      href={child.href}
+                                      onClick={() => setIsOpen(false)}
+                                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:text-[#8B0000] hover:bg-red-50 transition-all duration-200 group"
+                                    >
+                                      <child.icon className="w-4 h-4" style={{ color: child.color }} />
+                                      <span className="flex-1 text-sm">{child.label}</span>
+                                      {child.badge && (
+                                        <Badge className="text-[9px] px-1.5 py-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] text-white border-0">
+                                          {child.badge}
+                                        </Badge>
+                                      )}
+                                      <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      // Direct Link
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
+                      >
+                        <div 
+                          className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform"
+                          style={{ backgroundColor: `${item.color}15` }}
+                        >
+                          <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-gray-900 text-sm group-hover:text-[#8B0000] transition-colors">{item.label}</p>
+                          <p className="text-xs text-gray-500">{item.description}</p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-[#8B0000] group-hover:translate-x-0.5 transition-all" />
+                      </Link>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* CTA Section */}
+              <div className="p-4 pt-2 space-y-3">
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mt-8 pt-8 border-t border-gray-100 space-y-3"
+                  transition={{ delay: 0.4 }}
+                  className="p-4 bg-gradient-to-r from-red-50 via-amber-50 to-red-50 rounded-xl border border-red-100"
                 >
-                  <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full border-gray-200 text-gray-700 hover:bg-red-50 hover:text-[#8B0000] hover:border-[#8B0000]">
-                      Dashboard Member
-                    </Button>
-                  </Link>
-                  <Link href="/kontak" onClick={() => setIsOpen(false)}>
-                    <Button className="w-full bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white shadow-lg shadow-red-900/20">
-                      <Zap className="w-4 h-4 mr-2" />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Gabung KNMP</p>
+                      <p className="text-xs text-gray-500">7 Tier Keanggotaan</p>
+                    </div>
+                  </div>
+                  <Link href="/membership" onClick={() => setIsOpen(false)}>
+                    <Button className="w-full bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white shadow-lg shadow-red-900/20 hover:shadow-red-900/30 transition-all group">
+                      <Zap className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                       Gabung Sekarang
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </motion.div>
+                
+                {/* Stats Mini */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="grid grid-cols-3 gap-2"
+                >
+                  {[
+                    { value: '83.763', label: 'Desa', icon: Building2 },
+                    { value: '6', label: 'KPA', icon: Users },
+                    { value: '195', label: 'Negara', icon: Globe },
+                  ].map((stat, i) => (
+                    <div key={i} className="text-center p-3 bg-gray-50 rounded-xl">
+                      <stat.icon className="w-4 h-4 mx-auto mb-1 text-[#8B0000]" />
+                      <p className="font-bold text-sm text-gray-900">{stat.value}</p>
+                      <p className="text-[10px] text-gray-500">{stat.label}</p>
+                    </div>
+                  ))}
+                </motion.div>
               </div>
+              
+              {/* Footer Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="p-4 pt-0 border-t border-gray-100 mt-2"
+              >
+                <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                  <span>© 2026 KNMP</span>
+                  <span className="flex items-center gap-1">
+                    <Heart className="w-3 h-3 text-[#8B0000] fill-[#8B0000]" />
+                    Indonesia
+                  </span>
+                </div>
+                
+                {/* Social Links */}
+                <div className="flex items-center justify-center gap-2">
+                  {[
+                    { icon: Globe, label: 'Web', href: 'https://kopnusa.id' },
+                    { icon: MessageCircle, label: 'Chat', href: '#' },
+                    { icon: Phone, label: 'Call', href: 'tel:+62' },
+                  ].map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target={social.href.startsWith('http') ? '_blank' : undefined}
+                      rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-[#8B0000] hover:text-white text-gray-600 flex items-center justify-center transition-all duration-200"
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}

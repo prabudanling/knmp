@@ -22,13 +22,12 @@ import {
   Users,
   Building2,
   Sparkles,
-  Zap,
   Star,
-  TrendingUp,
   CheckCircle,
   ExternalLink,
   Clock,
-  HeadphonesIcon
+  HeadphonesIcon,
+  MessageCircle
 } from 'lucide-react'
 import { SITE_CONFIG, FOOTER_LINKS } from '@/constants'
 import { Button } from '@/components/ui/button'
@@ -114,7 +113,7 @@ const quickStats = [
   { icon: Users, value: 125000, suffix: '+', label: 'Anggota Aktif', color: '#D4AF37' },
   { icon: Building2, value: 83763, suffix: '', label: 'Desa Terintegrasi', color: '#8B0000' },
   { icon: Globe, value: 38, suffix: '', label: 'Provinsi', color: '#22c55e' },
-  { icon: TrendingUp, value: 2.5, suffix: 'T+', label: 'Nilai Transaksi (Rp)', color: '#3b82f6' },
+  { icon: Star, value: 2.5, suffix: 'T+', label: 'Nilai Transaksi (Rp)', color: '#3b82f6' },
 ]
 
 // Certifications Data
@@ -315,10 +314,10 @@ export function Footer() {
                 {SITE_CONFIG.description}
               </p>
 
-              {/* Contact Info */}
+              {/* Contact Info - Updated Address */}
               <div className="space-y-3">
                 <motion.a
-                  href={`https://maps.google.com/?q=${encodeURIComponent(SITE_CONFIG.contact.address)}`}
+                  href="https://maps.google.com/?q=Menara+Cakrawala+Jl+MH+Thamrin+Kav+9+Jakarta"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ x: 5 }}
@@ -327,7 +326,7 @@ export function Footer() {
                   <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#D4AF37]/20 flex items-center justify-center transition-colors">
                     <MapPin className="w-5 h-5 text-[#D4AF37]" />
                   </div>
-                  <span className="flex-1">{SITE_CONFIG.contact.address}</span>
+                  <span className="flex-1">Menara Cakrawala 12th Floor, Jl. MH Thamrin Kav. 9, Menteng, Jakarta Pusat 10340</span>
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.a>
                 <motion.a
@@ -377,7 +376,6 @@ export function Footer() {
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-11 h-11 rounded-xl bg-white/10 hover:bg-white text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 border border-white/10 hover:border-white/30"
-                    style={{ '--hover-color': social.color } as React.CSSProperties}
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -389,7 +387,7 @@ export function Footer() {
             {/* Platform Links */}
             <motion.div variants={itemVariants}>
               <h4 className="font-bold text-white mb-5 flex items-center gap-2">
-                <Zap className="w-4 h-4 text-[#D4AF37]" />
+                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
                 Platform
               </h4>
               <ul className="space-y-3">
@@ -622,6 +620,3 @@ export function Footer() {
     </footer>
   )
 }
-
-// Add MessageCircle import
-import { MessageCircle } from 'lucide-react'

@@ -13,9 +13,9 @@ export const SITE_CONFIG = {
   // Contact
   contact: {
     email: 'info@kopnusa.id',
-    phone: '+62 21 1234 5678',
+    phone: '+62 21 3983 8888',
     whatsapp: '+62 812 3456 7890',
-    address: 'Jl. Contoh No. 123, Jakarta Selatan, DKI Jakarta 12345, Indonesia',
+    address: 'Menara Cakrawala 12th Floor, Jl. MH Thamrin Kav. 9, Menteng, Jakarta Pusat 10340',
     officeHours: 'Senin - Jumat: 08:00 - 17:00 WIB',
   },
   

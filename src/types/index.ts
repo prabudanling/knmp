@@ -77,14 +77,11 @@ export type KPAType =
 export interface KPACategory {
   id: KPAType;
   name: string;
-  shortName: string;
   description: string;
   icon: string;
   color: string;
   votingPower: number;
   memberCount: number;
-  examples: string[];
-  ratNote?: string;
 }
 
 // =====================
@@ -258,15 +255,6 @@ export interface QuickAction {
 export interface SHUBreakdown {
   year: number;
   totalSHU: number;
-  percentages?: {
-    danaCadangan: number;
-    jasaModal: number;
-    jasaUsaha: number;
-    danaPengurus: number;
-    danaPendidikan: number;
-    danaSosial: number;
-    danaTeknologi: number;
-  };
   breakdown: {
     danaCadangan: number;
     jasaModal: number;
@@ -423,12 +411,9 @@ export interface HeroStats {
   villages: number;
   members: number;
   provinces: number;
-  kpaCount?: number;
-  exportCountries?: number;
   transactionValue: number;
   exportVolume: number;
   agents: number;
-  targetBy2045?: number;
 }
 
 export interface CounterStats {
