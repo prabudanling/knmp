@@ -20,8 +20,14 @@ const menuStructure = [
     children: [
       { label: 'Tentang KNMP', href: '/tentang' },
       { label: 'Visi & Misi', href: '/visi-misi' },
+      { label: 'Struktur Organisasi', href: '/struktur-organisasi' },
       { label: '6 KPA', href: '/kpa' },
     ]
+  },
+  { 
+    label: 'Keanggotaan', 
+    href: '/membership',
+    highlight: true,
   },
   { 
     label: 'Layanan', 
@@ -40,7 +46,7 @@ const menuStructure = [
     children: [
       { label: 'Dashboard', href: '/dashboard' },
       { label: 'SHU Transparansi', href: '/shu' },
-      { label: 'RAT', href: '/rat' },
+      { label: 'RAT & E-Voting', href: '/rat' },
       { label: 'Integrasi Desa', href: '/integrasi-desa' },
     ]
   },
@@ -141,13 +147,20 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="relative px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#8B0000] transition-colors duration-200 group"
+                      className={cn(
+                        "relative px-3 py-2 text-sm font-medium transition-colors duration-200 group",
+                        item.highlight 
+                          ? "bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white rounded-lg shadow-md hover:shadow-lg"
+                          : "text-gray-600 hover:text-[#8B0000]"
+                      )}
                     >
                       {item.label}
-                      <motion.span 
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] group-hover:w-full transition-all duration-300"
-                        layoutId={`underline-${index}`}
-                      />
+                      {!item.highlight && (
+                        <motion.span 
+                          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] group-hover:w-full transition-all duration-300"
+                          layoutId={`underline-${index}`}
+                        />
+                      )}
                     </Link>
                   )}
                   
@@ -290,7 +303,12 @@ export function Header() {
                         <Link
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#8B0000] hover:bg-red-50 rounded-lg transition-all duration-200"
+                          className={cn(
+                            "block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200",
+                            item.highlight 
+                              ? "bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white text-center shadow-lg"
+                              : "text-gray-700 hover:text-[#8B0000] hover:bg-red-50"
+                          )}
                         >
                           {item.label}
                         </Link>

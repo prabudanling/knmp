@@ -24,12 +24,15 @@ import type {
 // =====================
 
 export const HERO_STATS: HeroStats = {
-  villages: 83763,
+  villages: 83763, // 83.763 Desa
   members: 125000,
   provinces: 38,
+  kpaCount: 6, // 6 KPA
+  exportCountries: 195, // 195 Negara target ekspor
   transactionValue: 2500000000000, // 2.5 Triliun
   exportVolume: 25000000000000, // 25 Triliun
   agents: 83763,
+  targetBy2045: 500000000000000, // Rp 500 Triliun by 2045
 };
 
 // =====================
@@ -39,57 +42,70 @@ export const HERO_STATS: HeroStats = {
 export const KPA_DATA: KPACategory[] = [
   {
     id: 'KPA_1_PRODUCER',
-    name: 'Petani/Produsen',
-    description: 'Petani, pekebun, nelayan, peternak, pengrajin, dan produsen barang/jasa di tingkat desa',
+    name: 'KPA-1: Petani/Produsen',
+    shortName: 'Petani/Produsen',
+    description: 'Petani, nelayan, peternak, pengrajin, produsen desa',
     icon: 'Wheat',
     color: '#22c55e',
     votingPower: 30,
     memberCount: 45000,
+    examples: ['Gapoktan', 'Poktan', 'KWT', 'Kelompok Nelayan', 'Kelompok Peternak'],
   },
   {
     id: 'KPA_2_ENTREPRENEUR',
-    name: 'Pengusaha/Pengepul',
-    description: 'Pengusaha UMKM, pengepul, pedagang, dan distributor yang menghubungkan produsen dengan pasar',
+    name: 'KPA-2: Pengusaha/Pengepul',
+    shortName: 'Pengusaha/Pengepul',
+    description: 'Trader, eksportir, agregator, UMKM',
     icon: 'Briefcase',
     color: '#3b82f6',
     votingPower: 20,
     memberCount: 25000,
+    examples: ['Anggota JE-P3', 'Pengusaha PPP', 'Eksportir Komoditas', 'Agregator UMKM'],
   },
   {
     id: 'KPA_3_COOPERATIVE',
-    name: 'Koperasi/BUMDes',
-    description: 'Koperasi primer, koperasi desa, BUMDes, dan badan usaha milik desa lainnya',
+    name: 'KPA-3: Koperasi/BUMDes',
+    shortName: 'Koperasi/BUMDes',
+    description: 'Koperasi primer, BUMDes, BUMDesMA, KDMP',
     icon: 'Building2',
     color: '#8b5cf6',
     votingPower: 20,
     memberCount: 80000,
+    examples: ['KDMP', 'BUMDesMA', 'KUD', 'Koperasi Desa', 'Koperasi Primer'],
   },
   {
     id: 'KPA_4_WORKER',
-    name: 'Pekerji/Kader',
-    description: 'Pekerja, kader lapangan, agen logistik, dan tenaga profesional yang mendukung operasional KNMP',
+    name: 'KPA-4: Pekerja/Kader',
+    shortName: 'Pekerja/Kader',
+    description: 'Karyawan KNMP, agen logistik, kader digital',
     icon: 'Users',
     color: '#f59e0b',
-    votingPower: 10,
+    votingPower: 15,
     memberCount: 15000,
+    examples: ['Karang Taruna Digital', 'Kader PKK IT', 'Agen Logistik', 'Karyawan KNMP'],
   },
   {
     id: 'KPA_5_CONSUMER',
-    name: 'Konsumen',
-    description: 'Konsumen akhir yang menggunakan produk/jasa anggota KNMP',
+    name: 'KPA-5: Konsumen',
+    shortName: 'Konsumen',
+    description: 'Konsumen produk dan layanan KNMP',
     icon: 'ShoppingBag',
     color: '#ec4899',
     votingPower: 10,
     memberCount: 50000,
+    examples: ['Konsumen Platform', 'Anggota Rumah Tangga', 'Pembeli Produk Lokal'],
   },
   {
     id: 'KPA_6_INVESTOR',
-    name: 'Investor Pendukung',
-    description: 'Investor individu atau institusi yang menyediakan modal bagi pengembangan usaha KNMP',
+    name: 'KPA-6: Investor Pendukung',
+    shortName: 'Investor Pendukung',
+    description: 'Investor modal, impact investor, bank',
     icon: 'TrendingUp',
     color: '#D4AF37',
-    votingPower: 10,
+    votingPower: 5,
     memberCount: 500,
+    examples: ['Bank Himbara', 'ADB', 'World Bank', 'Angel Investor', 'Impact Investor'],
+    ratNote: 'Investor TIDAK BOLEH memiliki hak veto atas keputusan RAT',
   },
 ];
 
@@ -335,18 +351,35 @@ export const MEMBER_DASHBOARD: MemberDashboard = {
 // =====================
 // SHU Breakdown
 // =====================
+// Based on AD/ART KNMP:
+// - Dana Cadangan: 30%
+// - Jasa Modal: 10%
+// - Jasa Usaha Anggota: 40%
+// - Dana Pengurus & Pengawas: 5%
+// - Dana Pendidikan: 5%
+// - Dana Sosial: 5%
+// - Dana Teknologi Desa: 5%
 
 export const SHU_BREAKDOWN: SHUBreakdown = {
   year: 2026,
   totalSHU: 12500000000,
+  percentages: {
+    danaCadangan: 30,
+    jasaModal: 10,
+    jasaUsaha: 40,
+    danaPengurus: 5,
+    danaPendidikan: 5,
+    danaSosial: 5,
+    danaTeknologi: 5,
+  },
   breakdown: {
-    danaCadangan: 3750000000,
-    jasaModal: 1250000000,
-    jasaUsaha: 5000000000,
-    danaPengurus: 625000000,
-    danaPendidikan: 625000000,
-    danaSosial: 625000000,
-    danaTeknologi: 625000000,
+    danaCadangan: 3750000000, // 30% of 12.5M
+    jasaModal: 1250000000, // 10%
+    jasaUsaha: 5000000000, // 40%
+    danaPengurus: 625000000, // 5%
+    danaPendidikan: 625000000, // 5%
+    danaSosial: 625000000, // 5%
+    danaTeknologi: 625000000, // 5%
   },
   memberDistribution: [
     { kpa: 'KPA_1_PRODUCER', totalJasaUsaha: 2250000000, totalJasaModal: 500000000, memberCount: 45000 },
@@ -548,50 +581,67 @@ export const LEGAL_INFO = {
   foundingDate: '15 Januari 2026',
   notary: 'Notaris H. Ahmad Hidayat, S.H., M.Kn.',
   registeredAt: 'Kementerian Koperasi dan UKM RI',
+  legalBasis: {
+    primaryLaw: 'UU No. 25 Tahun 1992 tentang Perkoperasian',
+    regulation: 'Permenkop No. 8 Tahun 2021 tentang Koperasi Digital',
+    villageLaw: 'UU No. 27 Tahun 2022 tentang Desa',
+    references: [
+      'UU No. 25/1992 - Perkoperasian',
+      'Permenkop No. 8/2021 - Koperasi Digital',
+      'UU No. 27/2022 - Desa',
+    ],
+  },
 };
 
 export const COOPERATIVE_PRINCIPLES = [
   {
     number: 1,
     title: 'Keanggotaan Bersifat Sukarela dan Terbuka',
-    description: 'Koperasi adalah organisasi sukarela, terbuka bagi semua orang yang mampu menggunakan jasa koperasi.',
+    description: 'Koperasi adalah organisasi sukarela, terbuka bagi semua orang yang mampu menggunakan jasa koperasi dan bersedia menerima tanggung jawab keanggotaan.',
     icon: 'Users',
+    icaTitle: 'Voluntary and Open Membership',
   },
   {
     number: 2,
     title: 'Pengelolaan Dilakukan Secara Demokratis',
-    description: 'Koperasi adalah organisasi yang dikelola secara demokratis oleh anggota yang aktif berpartisipasi.',
+    description: 'Koperasi adalah organisasi yang dikelola secara demokratis oleh anggota yang aktif berpartisipasi dalam menetapkan kebijakan dan mengambil keputusan.',
     icon: 'Vote',
+    icaTitle: 'Democratic Member Control',
   },
   {
     number: 3,
     title: 'Pembagian SHU Dilakukan Secara Adil',
-    description: 'Anggota berkontribusi secara adil dan mengendalikan modal secara demokratis.',
+    description: 'Anggota berkontribusi secara adil dan mengendalikan modal secara demokratis. SHU dibagi berdasarkan kontribusi transaksi anggota.',
     icon: 'Scale',
+    icaTitle: 'Member Economic Participation',
   },
   {
     number: 4,
     title: 'Otonomi dan Kemandirian',
-    description: 'Koperasi bersifat otonom dan mandiri, organisasi swadaya yang dikelola oleh anggota.',
+    description: 'Koperasi bersifat otonom dan mandiri, organisasi swadaya yang dikelola oleh anggota. Jika bermitra, harus tetap menjaga otonomi.',
     icon: 'Shield',
+    icaTitle: 'Autonomy and Independence',
   },
   {
     number: 5,
     title: 'Pendidikan dan Pelatihan',
-    description: 'Koperasi menyediakan pendidikan dan pelatihan bagi anggota, pengurus, dan karyawan.',
+    description: 'Koperasi menyediakan pendidikan dan pelatihan bagi anggota, pengurus, dan karyawan agar dapat berkontribusi efektif.',
     icon: 'GraduationCap',
+    icaTitle: 'Education, Training and Information',
   },
   {
     number: 6,
     title: 'Kerjasama Antar Koperasi',
-    description: 'Koperasi melayani anggota secara efektif dan memperkuat gerakan koperasi.',
+    description: 'Koperasi melayani anggota secara efektif dan memperkuat gerakan koperasi melalui kerjasama antar koperasi lokal, nasional, dan internasional.',
     icon: 'Handshake',
+    icaTitle: 'Cooperation among Cooperatives',
   },
   {
     number: 7,
     title: 'Kepedulian Terhadap Komunitas',
-    description: 'Koperasi bekerja demi pembangunan berkelanjutan bagi komunitas.',
+    description: 'Koperasi bekerja demi pembangunan berkelanjutan bagi komunitas melalui kebijakan yang disetujui oleh anggota.',
     icon: 'Heart',
+    icaTitle: 'Concern for Community',
   },
 ];
 
@@ -674,9 +724,14 @@ export const VISION_2045 = {
     country: 'Spanyol',
     founded: 1956,
     members: 80000,
-    revenue: '€20 Miliar',
+    revenue: '€11.2 Miliar',
     workers: 81000,
-    description: 'Koperasi terbesar di dunia yang menjadi inspirasi KNMP',
+    description: 'Koperasi terbesar di dunia yang menjadi inspirasi KNMP. Target KNMP adalah menyalip Mondragon by 2045.',
+    targetComparison: {
+      knmpTarget2045: 'Rp 500 Triliun (~€30 Miliar)',
+      mondragonRevenue: '€11.2 Miliar',
+      surpassGoal: '2.5x lebih besar dari Mondragon',
+    },
   },
 };
 
@@ -732,4 +787,388 @@ export const KDMP_ALIGNMENT = {
     'Akses marketplace dan logistik terintegrasi',
     'Pemberdayaan ekonomi berbasis komoditas lokal',
   ],
+};
+
+// =====================
+// 5 Pilar Unit Usaha Strategis (AD/ART KNMP)
+// =====================
+
+export const PILAR_UNIT_USAHA = [
+  {
+    number: 1,
+    name: 'DESA CERDAS DIGITAL',
+    headline: 'Mengintegrasikan seluruh kelembagaan sosial desa ke dalam satu platform digital',
+    description: 'Platform digital untuk transformasi desa mencakup e-government, e-health, e-education, dan e-commerce desa',
+    icon: 'Smartphone',
+    color: '#3b82f6',
+    gradientFrom: '#3b82f6',
+    gradientTo: '#1d4ed8',
+    services: [
+      'Sistem Informasi Desa Terpadu',
+      'Dashboard Pemerintahan Desa',
+      'Layanan Publik Digital',
+      'E-Voting Musyawarah Desa',
+    ],
+    targetRevenue: 50000000000, // 50 Miliar
+    progress: 75,
+    subPilar: [
+      {
+        id: '1a',
+        name: 'Desa Digital',
+        description: 'Village Management System terintegrasi SID, Prodeskel, Siskeudes',
+        icon: 'LayoutDashboard',
+        color: '#3b82f6',
+      },
+      {
+        id: '1b',
+        name: 'Desa Aman',
+        description: 'Smart CCTV, BMKG Alert, Perlindungan Data',
+        icon: 'ShieldCheck',
+        color: '#22c55e',
+      },
+      {
+        id: '1c',
+        name: 'Desa Sehat',
+        description: 'Posyandu Digital, Health Score, integrasi PKK dan Pamsimas',
+        icon: 'HeartPulse',
+        color: '#ef4444',
+      },
+      {
+        id: '1d',
+        name: 'Desa Pintar',
+        description: 'JE-P3 Academy, Karang Taruna Digital, Perpustakaan Digital',
+        icon: 'GraduationCap',
+        color: '#8b5cf6',
+      },
+      {
+        id: '1e',
+        name: 'Desa Kaya',
+        description: 'Family Economy Tracker, KUBE Digital, Graduasi Kemiskinan',
+        icon: 'Wallet',
+        color: '#D4AF37',
+      },
+      {
+        id: '1f',
+        name: 'Desa Modern',
+        description: 'Cultural Heritage, Desa Wisata Digital, Infrastruktur Tracker',
+        icon: 'Building2',
+        color: '#f59e0b',
+      },
+    ],
+  },
+  {
+    number: 2,
+    name: 'HOLDING DESA',
+    headline: 'Menyatukan KDMP, BUMDes, BUMDesMA, Dana Desa, dan KUD',
+    description: 'KDMP-as-a-Service, BUMDes, dan BUMDesMA sebagai penggerak ekonomi desa terintegrasi',
+    icon: 'Building2',
+    color: '#8B0000',
+    gradientFrom: '#8B0000',
+    gradientTo: '#5c0000',
+    services: [
+      'KDMP-as-a-Service (KaaS)',
+      'BUMDes Management System',
+      'BUMDesMA Konsolidasi',
+      'Konsultasi Pengembangan Usaha',
+    ],
+    targetRevenue: 150000000000, // 150 Miliar
+    progress: 65,
+    subPilar: [
+      {
+        id: '2a',
+        name: 'KDMP-as-a-Service (KaaS)',
+        description: '80.081 gerai KDMP terintegrasi platform digital',
+        icon: 'Store',
+        color: '#8B0000',
+        highlight: '80.081 gerai',
+      },
+      {
+        id: '2b',
+        name: 'BUMDes & BUMDesMA',
+        description: 'Digitalisasi 57.000+ BUMDes dan BUMDesMA seluruh Indonesia',
+        icon: 'Network',
+        color: '#D4AF37',
+        highlight: '57.000+ BUMDes',
+      },
+      {
+        id: '2c',
+        name: 'Dana Desa Intelligence',
+        description: 'Analisis alokasi optimal Rp71 triliun untuk pembangunan desa',
+        icon: 'BarChart3',
+        color: '#22c55e',
+        highlight: 'Rp71 Triliun',
+      },
+      {
+        id: '2d',
+        name: 'KUD Revitalisasi',
+        description: 'Migrasi anggota aktif KUD ke platform digital KNMP',
+        icon: 'Users',
+        color: '#3b82f6',
+      },
+    ],
+  },
+  {
+    number: 3,
+    name: 'RESI GUDANG DIGITAL',
+    headline: 'Membangun infrastruktur pasca-panen untuk kedaulatan pangan',
+    description: 'Sistem resi gudang elektronik untuk komoditas pertanian dengan sertifikasi blockchain',
+    icon: 'Warehouse',
+    color: '#22c55e',
+    gradientFrom: '#22c55e',
+    gradientTo: '#15803d',
+    services: [
+      'E-Resi Gudang Terdaftar',
+      'Sertifikasi Komoditas',
+      'Skema Pembiayaan Resi',
+      'Trading Komoditas Digital',
+    ],
+    targetRevenue: 100000000000, // 100 Miliar
+    progress: 45,
+    subPilar: [
+      {
+        id: '3a',
+        name: 'Hilirisasi Komoditas',
+        description: 'Pengolahan bahan baku di level desa untuk nilai tambah maksimal',
+        icon: 'Package',
+        color: '#22c55e',
+      },
+      {
+        id: '3b',
+        name: 'Resi Gudang Bersertifikat BAPPEBTI',
+        description: 'Agunan kredit digital berbasis komoditas tersertifikasi',
+        icon: 'FileCheck',
+        color: '#3b82f6',
+        highlight: 'BAPPEBTI Certified',
+      },
+      {
+        id: '3c',
+        name: 'Supply Chain Tokenization',
+        description: 'Blockchain traceability untuk transparansi rantai pasok',
+        icon: 'Link',
+        color: '#8b5cf6',
+      },
+      {
+        id: '3d',
+        name: 'Cold Chain Network',
+        description: '80.081 Collection Point, 5.000+ Hub, 38 Distribution Hub',
+        icon: 'Refrigerator',
+        color: '#06b6d4',
+        highlight: '80.081 CP',
+      },
+    ],
+  },
+  {
+    number: 4,
+    name: 'INVESTASI & KAMPUNG MODAL',
+    headline: 'Mengubah potensi desa menjadi aset investasi produktif',
+    description: 'Platform investasi syariah dan konvensional untuk pemberdayaan ekonomi desa',
+    icon: 'TrendingUp',
+    color: '#D4AF37',
+    gradientFrom: '#D4AF37',
+    gradientTo: '#b8960c',
+    services: [
+      'Kampung Modal Platform',
+      'Investasi Syariah Desa',
+      'Crowdfunding Pertanian',
+      'Sukuk Desa Digital',
+    ],
+    targetRevenue: 200000000000, // 200 Miliar
+    progress: 35,
+    subPilar: [
+      {
+        id: '4a',
+        name: 'Pertanian Presisi',
+        description: 'Smart Farming AI, IoT sensors, KUR Desa untuk petani modern',
+        icon: 'Wheat',
+        color: '#22c55e',
+      },
+      {
+        id: '4b',
+        name: 'Perkebunan Ekspor',
+        description: 'Sertifikasi organik/Fair Trade untuk akses pasar global',
+        icon: 'TreeDeciduous',
+        color: '#84cc16',
+        highlight: 'Fair Trade',
+      },
+      {
+        id: '4c',
+        name: 'Peternakan',
+        description: 'Village Protein Hub, sertifikasi Halal MUI + GCC',
+        icon: 'Beef',
+        color: '#f59e0b',
+        highlight: 'Halal MUI + GCC',
+      },
+      {
+        id: '4d',
+        name: 'Perikanan',
+        description: 'Digital Fishery Hub, Fish Auction Blockchain',
+        icon: 'Fish',
+        color: '#06b6d4',
+      },
+      {
+        id: '4e',
+        name: 'Desa Wisata',
+        description: 'Platform booking, homestay management, OTA global integration',
+        icon: 'Palmtree',
+        color: '#8b5cf6',
+      },
+      {
+        id: '4f',
+        name: 'Energi Desa',
+        description: 'Biogas, panel surya, micro-hydro, Carbon Credits trading',
+        icon: 'Zap',
+        color: '#f59e0b',
+        highlight: 'Carbon Credits',
+      },
+    ],
+  },
+  {
+    number: 5,
+    name: 'LOGISTIK DIGITAL',
+    headline: 'Jaringan logistik terintegrasi dari desa ke dunia',
+    description: 'Jaringan logistik terintegrasi dengan 83.763 agen desa untuk distribusi barang',
+    icon: 'Truck',
+    color: '#f59e0b',
+    gradientFrom: '#f59e0b',
+    gradientTo: '#d97706',
+    services: [
+      'Agen Logistik Desa',
+      'Last Mile Delivery',
+      'Cold Chain Logistics',
+      'Cargo Domestik & Ekspor',
+    ],
+    targetRevenue: 250000000000, // 250 Miliar
+    progress: 80,
+    subPilar: [
+      {
+        id: '5a',
+        name: 'Ekspor Digital',
+        description: 'KNMP Global Trade Desk, FCL Consolidation ke 195 negara',
+        icon: 'Globe',
+        color: '#3b82f6',
+        highlight: '195 Negara',
+      },
+      {
+        id: '5b',
+        name: 'Impor Strategis',
+        description: 'Group Purchasing Order, penghematan 30-50% untuk desa',
+        icon: 'Ship',
+        color: '#22c55e',
+        highlight: 'Hemat 30-50%',
+      },
+      {
+        id: '5c',
+        name: 'Karang Taruna Digital',
+        description: '83.763 agen logistik desa sebagai last mile delivery',
+        icon: 'Users',
+        color: '#8B0000',
+        highlight: '83.763 agen',
+      },
+      {
+        id: '5d',
+        name: 'Tokenisasi Rantai Pasok',
+        description: 'Supply Chain Finance Rp50 triliun untuk modal kerja',
+        icon: 'Coins',
+        color: '#D4AF37',
+        highlight: 'Rp50 Triliun',
+      },
+      {
+        id: '5e',
+        name: 'Infrastruktur 3 Level',
+        description: '80.081 Collection Point, 5.000+ Hub, 38 Distribution Hub',
+        icon: 'MapPin',
+        color: '#f59e0b',
+        highlight: '3 Level Network',
+      },
+    ],
+  },
+];
+
+// =====================
+// Leadership / Key People
+// =====================
+
+export const LEADERSHIP = {
+  ceo: {
+    name: 'Drs. H. Arif Rachman Hakim',
+    title: 'CEO & Pendiri KNMP',
+    position: 'Ketua Umum',
+    photo: '/images/people/ceo.jpg',
+    bio: 'Pengalaman 25 tahun di bidang koperasi dan pembangunan desa. Visioner di balik pendirian KNMP sebagai koperasi digital terbesar di Indonesia.',
+    termStart: '2026',
+    termEnd: '2031',
+  },
+  coo: {
+    name: 'Tn. H. Gugun Gunara, S.E., M.M.',
+    title: 'Grand Architect & COO',
+    position: 'Ketua Dewan Penasihat',
+    photo: '/images/people/founder.jpg',
+    bio: 'Founder JE-P3 dan arsitek utama ekosistem KNMP. Perintis ekonomi digital desa sejak 2016 dengan visi menjadikan KNMP setara Mondragon.',
+    termStart: '2016',
+    termEnd: 'Seumur Hidup',
+  },
+  cfo: {
+    name: 'Tn. Fawwaz Arif Al Jabar, S.E., M.M.',
+    title: 'CFO',
+    position: 'Bendahara Umum',
+    photo: '/images/people/cfo.jpg',
+    bio: 'Expert keuangan dan investasi syariah dengan pengalaman di berbagai lembaga keuangan nasional.',
+    termStart: '2026',
+    termEnd: '2031',
+  },
+  board: [
+    {
+      name: 'Ir. H. Bambang Sutrisno',
+      title: 'Sekretaris Umum',
+      photo: '/images/people/secretary.jpg',
+      bio: 'Pengelola administrasi dan tata kelola organisasi',
+    },
+    {
+      name: 'Ir. H. Ahmad Sudrajat',
+      title: 'Ketua Pengawas',
+      photo: '/images/people/auditor1.jpg',
+      bio: 'Audit internal dan pengawasan keuangan',
+    },
+  ],
+};
+
+// =====================
+// KPA Voting Power Summary
+// =====================
+
+export const KPA_VOTING_SUMMARY = {
+  totalVotingPower: 100,
+  categories: [
+    { kpa: 'KPA-1', name: 'Petani/Produsen', votingPower: 30, description: 'Suara terbesar karena produsen adalah tulang punggung ekonomi desa' },
+    { kpa: 'KPA-2', name: 'Pengusaha/Pengepul', votingPower: 20, description: 'Penghubung antara produsen dan pasar' },
+    { kpa: 'KPA-3', name: 'Koperasi/BUMDes', votingPower: 20, description: 'Institusi ekonomi desa yang mandiri' },
+    { kpa: 'KPA-4', name: 'Pekerji/Kader', votingPower: 15, description: 'Tenaga operasional yang menjalankan roda koperasi' },
+    { kpa: 'KPA-5', name: 'Konsumen', votingPower: 10, description: 'Pengguna akhir produk dan jasa KNMP' },
+    { kpa: 'KPA-6', name: 'Investor Pendukung', votingPower: 5, description: 'Penyedia modal untuk pengembangan usaha' },
+  ],
+};
+
+// =====================
+// Tier Pricing Summary
+// =====================
+
+export const TIER_PRICING_SUMMARY = [
+  { tier: 'T1', name: 'Petani Digital', price: 0, priceFormatted: 'Gratis', description: 'Untuk petani yang ingin memulai journey digital' },
+  { tier: 'T2', name: 'Founding Member', price: 250000, priceFormatted: 'Rp 250.000', description: 'Anggota pendiri dengan hak suara Munas' },
+  { tier: 'T3', name: 'Koperasi/BUMDes', price: 2500000, priceFormatted: 'Rp 2.500.000', description: 'Hak usaha operasional via KNMP' },
+  { tier: 'T4', name: 'Regional Kecamatan', price: 10000000, priceFormatted: 'Rp 10.000.000', description: 'Hak eksklusif wilayah kecamatan' },
+  { tier: 'T5', name: 'Regional Kabupaten', price: 15000000, priceFormatted: 'Rp 15.000.000', description: 'Hak eksklusif kabupaten' },
+  { tier: 'T6', name: 'Provinsi', price: 125000000, priceFormatted: 'Rp 125.000.000', description: 'Koordinasi 38 provinsi' },
+  { tier: 'T7', name: 'Nasional Strategis', price: 1000000000, priceFormatted: 'Rp 1.000.000.000', description: 'Investor-level access' },
+];
+
+// =====================
+// Hero Stats for Display
+// =====================
+
+export const HERO_STATS_DISPLAY = {
+  villages: { value: 83763, label: 'Desa', suffix: '', description: 'Target integrasi seluruh desa Indonesia' },
+  kpaCount: { value: 6, label: 'KPA', suffix: '', description: 'Kelompok Penerima Manfaat terstruktur' },
+  exportCountries: { value: 195, label: 'Negara', suffix: '', description: 'Target ekspor ke seluruh dunia' },
+  targetBy2045: { value: 500, label: 'Triliun', suffix: ' Rp', description: 'Target nilai transaksi by 2045' },
 };
