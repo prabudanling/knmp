@@ -349,7 +349,7 @@ export function Hero() {
                 VISI DESA FUTURISTIK 2028 
               </span>
               <span className="block mt-1 bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
-                MENJADI DESA YG BERDIKARI, PANGAN, ENERGI, & KESEHATAN
+                MENUJU DESA YG BERDIKARI, PANGAN, ENERGI, & KESEHATAN
               </span>
             </motion.p>
 
