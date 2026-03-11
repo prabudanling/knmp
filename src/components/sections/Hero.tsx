@@ -327,7 +327,7 @@ export function Hero() {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight text-center"
             >
-              <span className="block">Navigasi Peradaban Dunia Baru</span>
+              <span className="block">Navigasi Peradaban Dunia Baru </span>
               <motion.span 
                 className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#8B0000] via-[#DC143C] to-[#D4AF37] bg-clip-text text-transparent"
                 animate={{ 
@@ -349,7 +349,7 @@ export function Hero() {
                 Dari Desa untuk Masa Depan Indonesia
               </span>
               <span className="block mt-1 bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
-                MENUJU DESA YG BERDIKARI, PANGAN, ENERGI, & KESEHATAN
+                MENUJU DESA BERDIKARI, PANGAN, ENERGI, & KESEHATAN
               </span>
             </motion.p>
 
