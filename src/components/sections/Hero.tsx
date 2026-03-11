@@ -57,7 +57,7 @@ const floatingIcons = [
 
 // Stats data - Professional, Precise & Powerful
 const stats = [
-  { value: '83.763', label: 'Desa Terhubung', sublabel: '(target nasional)', icon: Building2, color: '#8B0000' },
+  { value: '83.763', label: 'Desa Terintegrasi', sublabel: '(target nasional)', icon: Building2, color: '#8B0000' },
   { value: '6', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#D4AF37' },
   { value: '195', label: 'Akses Potensial', sublabel: 'ke Negara', icon: Globe, color: '#22c55e' },
   { value: 'Rp 850 T', label: 'Target Volume', sublabel: 'Transaksi 2028', icon: Target, color: '#3b82f6' },
