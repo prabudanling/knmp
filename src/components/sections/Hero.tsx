@@ -336,7 +336,7 @@ export function Hero() {
                 transition={{ duration: 5, repeat: Infinity }}
                 style={{ backgroundSize: '200% 100%' }}
               >
-                Desa Futuristik Indonesia
+                Desa FUTURISTIK Indonesia
               </motion.span>
             </motion.h1>
 
@@ -346,10 +346,10 @@ export function Hero() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-700 text-center mt-4 sm:mt-6 px-2"
             >
               <span className="bg-gradient-to-r from-[#8B0000] to-[#B22222] bg-clip-text text-transparent">
-                Ekosistem Digital untuk Menjadikan Desa Futuristik
+                VISI DESA FUTURISTIK 2028 
               </span>
               <span className="block mt-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
-                Berdaulat dan Berdikari 2028
+                MENJADI DESA yg BERDIKARI, PANGAN, ENERGI, & KESEHATAN
               </span>
             </motion.p>
 
