@@ -55,12 +55,12 @@ const floatingIcons = [
   { icon: TrendingUp, x: '92%', y: '70%', delay: 1.5, color: '#3b82f6' },
 ]
 
-// Stats data
+// Stats data - Professional, Precise & Powerful
 const stats = [
-  { value: '83.763', label: 'Desa', icon: Building2, color: '#8B0000' },
-  { value: '6', label: 'KPA', icon: Users, color: '#D4AF37' },
-  { value: '195', label: 'Negara', icon: Globe, color: '#22c55e' },
-  { value: 'Rp 500 T', label: 'Target 2045', icon: Target, color: '#3b82f6' },
+  { value: '83.763', label: 'Desa Terhubung', sublabel: '(target nasional)', icon: Building2, color: '#8B0000' },
+  { value: '6', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#D4AF37' },
+  { value: '195', label: 'Akses Potensial', sublabel: 'ke Negara', icon: Globe, color: '#22c55e' },
+  { value: 'Rp 2.000 T', label: 'Target Volume', sublabel: 'Transaksi 2045', icon: Target, color: '#3b82f6' },
 ]
 
 // Simpanan data
@@ -70,7 +70,7 @@ const simpananData = [
   { name: 'Simpanan Sukarela', desc: 'Atas kehendak anggota', icon: TrendingUp, color: '#22c55e' },
 ]
 
-// Scroll Progress Bar Component
+// Scroll Progress Bar Component - Clean & Professional
 function ScrollProgressBar() {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
@@ -80,6 +80,15 @@ function ScrollProgressBar() {
   })
   
   const [currentSection, setCurrentSection] = useState('')
+  const [isMobile, setIsMobile] = useState(false)
+  
+  useEffect(() => {
+    // Detect mobile
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   useEffect(() => {
     const handleScroll = () => {
@@ -110,27 +119,33 @@ function ScrollProgressBar() {
   }, [])
 
   return (
-    <motion.div 
-      className="fixed top-0 left-0 right-0 z-[100] h-1 bg-gradient-to-r from-gray-100 to-gray-200"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    >
-      <motion.div
-        className="h-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000] origin-left"
-        style={{ scaleX }}
-      />
-      {/* Section indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="absolute right-4 top-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg border border-gray-100"
+    <>
+      {/* Progress Bar - Thin line only, no background */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 z-[100] h-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
       >
-        <span className="text-xs font-medium text-gray-600">
-          {currentSection || 'Beranda'}
-        </span>
+        <motion.div
+          className="h-full bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000] origin-left"
+          style={{ scaleX }}
+        />
       </motion.div>
-    </motion.div>
+      
+      {/* Section indicator - Only visible on Desktop, positioned below header */}
+      {!isMobile && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="fixed right-4 top-20 z-[90] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-100"
+        >
+          <span className="text-xs font-medium text-gray-600">
+            {currentSection || 'Beranda'}
+          </span>
+        </motion.div>
+      )}
+    </>
   )
 }
 
@@ -328,10 +343,13 @@ export function Hero() {
             {/* Sub-headline */}
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 text-center mt-4 sm:mt-6"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-700 text-center mt-4 sm:mt-6 px-2"
             >
               <span className="bg-gradient-to-r from-[#8B0000] to-[#B22222] bg-clip-text text-transparent">
-                Menjadikan DESA BERDIKARI
+                Ekosistem Digital untuk Menjadikan Desa
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
+                Berdaulat dan Berdikari 2045
               </span>
             </motion.p>
 
@@ -355,19 +373,19 @@ export function Hero() {
                   >
                     <span className="text-[#8B0000] font-bold text-base sm:text-lg md:text-xl">KNMP</span> adalah{' '}
                     <span className="text-[#8B0000] font-bold">Koperasi Korporasi Multi Pihak</span>
-                    {' '}yang mengintegrasikan sistem dari{' '}
+                    {' '}yang mengintegrasikan seluruh sistem ekonomi desa{' '}
                     <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
-                      hulu ke hilir
+                      dari hulu ke hilir
                     </span>
-                    ,{' '}
+                    , secara{' '}
                     <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
-                      END to END
+                      end-to-end
                     </span>
-                    ,{' '}
+                    , menjadi{' '}
                     <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
-                      ONE STOP SERVICES SOLUTION
+                      one stop service solution
                     </span>
-                    {' '}— <span className="text-[#8B0000] font-bold">pertama dan terbesar di dunia</span>.
+                    {' '}— <span className="text-[#8B0000] font-bold">dirancang untuk menjadi yang terbesar di dunia</span>.
                   </motion.p>
                 </div>
               </motion.div>
@@ -397,7 +415,8 @@ export function Hero() {
                     <stat.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: stat.color }} />
                   </div>
                   <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{stat.value}</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 font-medium">{stat.label}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-700 font-semibold">{stat.label}</p>
+                  <p className="text-[9px] sm:text-[10px] text-gray-500">{stat.sublabel}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -442,15 +461,15 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Trust Badges */}
+            {/* Trust Badges - Enhanced Credibility */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6"
             >
               {[
-                { icon: Shield, text: 'Terdaftar', color: '#22c55e' },
+                { icon: Shield, text: 'Legal & Terdaftar', color: '#22c55e' },
                 { icon: Database, text: 'Blockchain', color: '#3b82f6' },
-                { icon: Eye, text: 'Transparan', color: '#8B0000' },
+                { icon: Eye, text: 'Transparan & Akuntabel', color: '#8B0000' },
               ].map((item, i) => (
                 <motion.div 
                   key={i} 

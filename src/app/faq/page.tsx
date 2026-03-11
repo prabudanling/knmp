@@ -54,8 +54,8 @@ const faqData = [
         answer: 'Biaya keanggotaan bervariasi sesuai tier. T1 (Petani Digital) gratis, T2 (Founding Member) Rp 250.000, T3 (Koperasi/BUMDes) Rp 2.500.000. Tier yang lebih tinggi memiliki hak usaha operasional lebih lengkap.',
       },
       {
-        question: 'Apa itu 6 KPA?',
-        answer: '6 KPA adalah 6 Kelompok Pihak Anggota: KPA-1 Petani/Produsen (30% suara), KPA-2 Pengusaha/Pengepul (20%), KPA-3 Koperasi/BUMDes (20%), KPA-4 Pekerji/Kader (10%), KPA-5 Konsumen (10%), dan KPA-6 Investor (10%). Setiap KPA memiliki proporsi suara dalam RAT.',
+        question: 'Apa itu 6 KPA (Anggota)?',
+        answer: '6 KPA (Anggota) adalah 6 Kelompok Pihak Anggota: KPA-1 Petani/Produsen (30% suara), KPA-2 Pengusaha/Pengepul (20%), KPA-3 Koperasi/BUMDes (20%), KPA-4 Pekerja/Kader (10%), KPA-5 Konsumen (10%), dan KPA-6 Investor (10%). Setiap KPA memiliki proporsi suara dalam RAT.',
       },
     ],
   },

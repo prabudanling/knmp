@@ -186,7 +186,7 @@ export default function KPAPage() {
               className="mb-6 px-4 py-2 text-sm font-semibold bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
             >
               <Vote className="w-4 h-4 mr-2" />
-              6 KPA = 6 Suara Demokratis
+              6 KPA (Anggota) = 6 Suara Demokratis
             </Badge>
             <h1 className="text-responsive-hero font-bold mb-6">
               <span className="text-gradient-gold">6 Kelompok</span>
@@ -354,10 +354,10 @@ export default function KPAPage() {
               Kelompok Pihak Anggota
             </Badge>
             <h2 className="text-responsive-title font-bold mb-4">
-              Mengenal 6 KPA KNMP
+              Mengenal 6 KPA (Anggota) KNMP
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Setiap KPA memiliki peran dan manfaat unik dalam ekosistem koperasi
+              Setiap KPA (Anggota) memiliki peran dan manfaat unik dalam ekosistem koperasi
             </p>
           </motion.div>
 
@@ -503,7 +503,7 @@ export default function KPAPage() {
             >
               <Card className="p-6">
                 <CardHeader className="p-0 mb-6">
-                  <CardTitle>Proporsi Suara per KPA</CardTitle>
+                  <CardTitle>Proporsi Suara per KPA (Anggota)</CardTitle>
                   <CardDescription>
                     Persentase voting power dalam RAT
                   </CardDescription>
@@ -623,7 +623,7 @@ export default function KPAPage() {
               Perbandingan Manfaat
             </Badge>
             <h2 className="text-responsive-title font-bold mb-4">
-              Benefit per KPA
+              Benefit per KPA (Anggota)
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Bandingkan manfaat dan keuntungan dari setiap kelompok anggota
@@ -809,7 +809,7 @@ export default function KPAPage() {
             >
               <Card className="h-full p-6">
                 <CardHeader className="p-0 mb-6">
-                  <CardTitle>Persyaratan per KPA</CardTitle>
+                  <CardTitle>Persyaratan per KPA (Anggota)</CardTitle>
                   <CardDescription>
                     Dokumen yang diperlukan untuk setiap KPA
                   </CardDescription>
@@ -871,7 +871,7 @@ export default function KPAPage() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Butuh Bantuan?</h3>
                   <p className="text-muted-foreground">
-                    Hubungi tim membership kami untuk konsultasi pemilihan KPA yang tepat
+                    Hubungi tim membership kami untuk konsultasi pemilihan KPA (Anggota) yang tepat
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -907,7 +907,7 @@ export default function KPAPage() {
             </Badge>
             <h2 className="text-responsive-title font-bold text-white mb-6">
               Temukan Tempatmu di{" "}
-              <span className="text-gradient-gold">6 KPA</span>
+              <span className="text-gradient-gold">6 KPA (Anggota)</span>
             </h2>
             <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
               Jadilah bagian dari ekosistem koperasi multipihak terbesar di Indonesia
@@ -956,7 +956,7 @@ export default function KPAPage() {
               {[
                 { value: "215.500+", label: "Total Anggota" },
                 { value: "34", label: "Provinsi" },
-                { value: "6", label: "Kelompok KPA" },
+                { value: "6", label: "Kelompok KPA (Anggota)" },
                 { value: "100%", label: "Demokratis" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">

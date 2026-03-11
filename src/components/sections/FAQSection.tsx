@@ -27,11 +27,11 @@ const faqs = [
   },
   {
     question: 'Bagaimana cara menjadi anggota?',
-    answer: 'Daftar online melalui portal KNMP, pilih KPA dan tier yang sesuai, kemudian lakukan verifikasi data. Prosesnya cepat dan transparan.',
+    answer: 'Daftar online melalui portal KNMP, pilih KPA (Anggota) dan tier yang sesuai, kemudian lakukan verifikasi data. Prosesnya cepat dan transparan.',
   },
   {
-    question: 'Apa itu 6 KPA?',
-    answer: '6 KPA adalah 6 Kelompok Pihak Anggota: Petani/Produsen, Pengusaha/Pengepul, Koperasi/BUMDes, Pekerja/Kader, Konsumen, dan Investor. Setiap KPA memiliki proporsi suara dalam RAT.',
+    question: 'Apa itu 6 KPA (Anggota)?',
+    answer: '6 KPA (Anggota) adalah 6 Kelompok Pihak Anggota: Petani/Produsen, Pengusaha/Pengepul, Koperasi/BUMDes, Pekerja/Kader, Konsumen, dan Investor. Setiap KPA memiliki proporsi suara dalam RAT.',
   },
   {
     question: 'Bagaimana pembagian SHU?',

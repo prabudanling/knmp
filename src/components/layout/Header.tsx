@@ -36,7 +36,7 @@ const menuStructure = [
       { label: 'Tentang KNMP', href: '/tentang', icon: Building2, color: '#8B0000' },
       { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#D4AF37' },
       { label: 'Struktur Organisasi', href: '/struktur-organisasi', icon: Users, color: '#3b82f6' },
-      { label: '6 KPA', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
+      { label: '6 KPA (Anggota)', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
     ]
   },
   { 
@@ -142,7 +142,7 @@ export function Header() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled 
-            ? 'backdrop-blur-xl border-b border-gray-100' 
+            ? 'backdrop-blur-xl' 
             : 'backdrop-blur-md'
         )}
       >
@@ -266,54 +266,49 @@ export function Header() {
               </motion.div>
             </div>
 
-            {/* Mobile Menu Button - Enhanced */}
-            <motion.div
+            {/* Mobile Menu Button - ENHANCED & VISIBLE */}
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="lg:hidden"
+              className={cn(
+                "lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-300 shadow-lg",
+                isOpen 
+                  ? "bg-[#8B0000] text-white shadow-red-900/30" 
+                  : "bg-gradient-to-br from-[#8B0000] to-[#B22222] text-white shadow-red-900/20"
+              )}
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Tutup menu" : "Buka menu"}
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn(
-                  "relative w-10 h-10 rounded-xl transition-all duration-300",
-                  isOpen 
-                    ? "bg-[#8B0000] text-white hover:bg-[#B22222]" 
-                    : "text-gray-700 hover:bg-red-50"
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X className="h-6 w-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu className="h-6 w-6" />
+                  </motion.div>
                 )}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <AnimatePresence mode="wait">
-                  {isOpen ? (
-                    <motion.div
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X className="h-5 w-5" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="menu"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Menu className="h-5 w-5" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </Button>
-            </motion.div>
+              </AnimatePresence>
+            </motion.button>
           </div>
         </div>
         
-        {/* Progress bar at bottom */}
+        {/* Progress bar at bottom - Hidden on mobile */}
         <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000] hidden md:block"
           style={{
             scaleX: useTransform(scrollY, [0, 5000], [0, 1]),
             transformOrigin: 'left',
@@ -532,7 +527,7 @@ export function Header() {
                 >
                   {[
                     { value: '83.763', label: 'Desa', icon: Building2 },
-                    { value: '6', label: 'KPA', icon: Users },
+                    { value: '6', label: 'KPA (Anggota)', icon: Users },
                     { value: '195', label: 'Negara', icon: Globe },
                   ].map((stat, i) => (
                     <div key={i} className="text-center p-3 bg-gray-50 rounded-xl">
@@ -549,7 +544,7 @@ export function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="p-4 pt-0 border-t border-gray-100 mt-2"
+                className="p-4 pt-0 mt-2"
               >
                 <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
                   <span>© 2026 KNMP</span>

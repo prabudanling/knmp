@@ -73,7 +73,7 @@ export function EcosystemSection() {
             variants={fadeInUp}
             className="text-gray-500 text-lg max-w-2xl mx-auto"
           >
-            Setiap KPA memiliki hak suara proposional. Keputusan diambil secara demokratis.
+            Setiap KPA (Anggota) memiliki hak suara proposional. Keputusan diambil secara demokratis.
           </motion.p>
         </motion.div>
 

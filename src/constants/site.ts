@@ -61,7 +61,7 @@ export const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
   { href: '/tentang', label: 'Tentang' },
   { href: '/visi-misi', label: 'Visi Misi' },
-  { href: '/kpa', label: '6 KPA' },
+  { href: '/kpa', label: '6 KPA (Anggota)' },
   { href: '/unit-usaha', label: 'Unit Usaha' },
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/logistik', label: 'Logistik' },
