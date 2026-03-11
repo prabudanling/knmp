@@ -336,7 +336,7 @@ export function Hero() {
                 transition={{ duration: 5, repeat: Infinity }}
                 style={{ backgroundSize: '200% 100%' }}
               >
-                Desa FUTURISTIK Indonesia
+                DESA FUTURISTIK INDONESIA
               </motion.span>
             </motion.h1>
 
@@ -348,8 +348,8 @@ export function Hero() {
               <span className="bg-gradient-to-r from-[#8B0000] to-[#B22222] bg-clip-text text-transparent">
                 VISI DESA FUTURISTIK 2028 
               </span>
-              <span className="block mt-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
-                MENJADI DESA yg BERDIKARI, PANGAN, ENERGI, & KESEHATAN
+              <span className="block mt-1 bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
+                MENJADI DESA YG BERDIKARI, PANGAN, ENERGI, & KESEHATAN
               </span>
             </motion.p>
 
@@ -374,15 +374,15 @@ export function Hero() {
                     <span className="text-[#8B0000] font-bold text-base sm:text-lg md:text-xl">KNMP</span> adalah{' '}
                     <span className="text-[#8B0000] font-bold">Koperasi Korporasi Multi Pihak</span>
                     {' '}yang mengintegrasikan seluruh sistem ekonomi desa{' '}
-                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
                       dari hulu ke hilir
                     </span>
                     , secara{' '}
-                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
                       end-to-end
                     </span>
                     , menjadi{' '}
-                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
                       one stop service solution
                     </span>
                     {' '}— <span className="text-[#8B0000] font-bold">dirancang untuk menjadi yang terbesar di dunia</span>.
