@@ -106,7 +106,7 @@ function HeroSection() {
           className="space-y-6"
         >
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37] px-4 py-1 text-sm">
+            <Badge variant="outline" className="border-[#D4AF37] text-[#008000] px-4 py-1 text-sm">
               Tentang Kami
             </Badge>
           </motion.div>
@@ -116,9 +116,9 @@ function HeroSection() {
             className="text-responsive-hero font-bold text-white leading-tight"
           >
             Tentang{' '}
-            <span className="text-gradient-gold">Koperasi Nusantara</span>
+            <span className="text-gradient-green">Koperasi Nusantara</span>
             <br />
-            <span className="text-gradient-gold">Merah Putih</span>
+            <span className="text-gradient-green">Merah Putih</span>
           </motion.h1>
           
           <motion.p
