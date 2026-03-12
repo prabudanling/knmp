@@ -32,6 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
 import {
   ORIGIN_TIMELINE,
   LEGAL_INFO,
@@ -106,7 +107,7 @@ function HeroSection() {
           className="space-y-6"
         >
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="border-[#D4AF37] text-[#008000] px-4 py-1 text-sm">
+            <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37] px-4 py-1 text-sm">
               Tentang Kami
             </Badge>
           </motion.div>
@@ -116,9 +117,9 @@ function HeroSection() {
             className="text-responsive-hero font-bold text-white leading-tight"
           >
             Tentang{' '}
-            <span className="text-gradient-green">Koperasi Nusantara</span>
+            <span className="text-gradient-gold">Koperasi Nusantara</span>
             <br />
-            <span className="text-gradient-green">Merah Putih</span>
+            <span className="text-gradient-gold">Merah Putih</span>
           </motion.h1>
           
           <motion.p
@@ -218,7 +219,7 @@ function OriginStorySection() {
           </motion.div>
         </div>
 
-        {/* Founder Card */}
+        {/* Dewan Pendiri - 9 Anggota */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -228,28 +229,43 @@ function OriginStorySection() {
         >
           <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
             <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B0000] flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
-                </div>
-                <div className="text-center md:text-left">
-                  <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-2">Founder</Badge>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Tn. H. Gugun Gunara, S.E., M.M.
-                  </h3>
-                  <p className="text-gray-300 mb-4">
-                    Visioner di balik transformasi digital koperasi Indonesia. Berawal dari bisnisPPP pada 2016, 
-                    beliau memimpin evolusi menjadi platform koperasi digital terintegrasi yang melayani seluruh desa Indonesia.
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37]">
-                      Chief Visionary
-                    </Badge>
-                    <Badge variant="outline" className="border-white/30 text-white">
-                      Sejak 2016
-                    </Badge>
-                  </div>
-                </div>
+              <div className="text-center mb-8">
+                <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-3">9 Dewan Pendiri</Badge>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Anggota Ganjil — Quorum & Legal
+                </h3>
+                <p className="text-gray-300 max-w-2xl mx-auto">
+                  Sembilan pendiri (angka ganjil) memenuhi persyaratan quorum pengambilan keputusan dengan prinsip simple majority (5:4) maupun supermajority (6:3 atau 7:2).
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { name: 'Prof. Wirono, S.E., M.Pd', position: 'Pendiri ke-1', role: 'Presiden / Ketua Umum' },
+                  { name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Pendiri ke-2', role: 'Wakil Presiden' },
+                  { name: 'Hj. Inna Hadianala, S.E.', position: 'Pendiri ke-3', role: 'Ketua Dewan Pembina' },
+                  { name: 'Dr. Cecep Sumarno', position: 'Pendiri ke-4', role: 'Sekretaris Jenderal' },
+                  { name: '(Posisi Kosong)', position: 'Pendiri ke-5', role: 'Wakil Sekretaris Jenderal' },
+                  { name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Pendiri ke-6', role: 'Ketua Dewan Penasihat' },
+                  { name: 'Andi Darmadji, S.E.', position: 'Pendiri ke-7', role: 'Koordinator Wilayah Kalimantan' },
+                  { name: 'Dr. Habib', position: 'Pendiri ke-8', role: 'Anggota Dewan Pengawas' },
+                  { name: 'Prof. Dr. Tedy Mantoro', position: 'Pendiri ke-9', role: 'Ketua Dewan Pengawas' },
+                ].map((founder, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className={cn(
+                      "p-4 rounded-xl border border-white/10",
+                      founder.name === '(Posisi Kosong)' ? 'bg-white/5 opacity-60' : 'bg-white/10'
+                    )}
+                  >
+                    <p className="font-semibold text-white text-sm">{founder.name}</p>
+                    <p className="text-xs text-[#D4AF37]">{founder.position}</p>
+                    <p className="text-xs text-gray-400 mt-1">{founder.role}</p>
+                  </motion.div>
+                ))}
               </div>
             </CardContent>
           </Card>

@@ -67,7 +67,7 @@ export const KPA_DATA: KPACategory[] = [
   {
     id: 'KPA_4_WORKER',
     name: 'Pekerji/Kader',
-    description: 'Pekerja, kader lapangan, agen logistik, dan tenaga profesional yang mendukung operasional KNMP',
+    description: 'Pekerji, kader lapangan, agen logistik, dan tenaga profesional yang mendukung operasional KNMP',
     icon: 'Users',
     color: '#f59e0b',
     votingPower: 10,
@@ -439,24 +439,132 @@ export const COURSES: Course[] = [
 ];
 
 // =====================
-// Governance Structure
+// Governance Structure - Updated based on PDF
 // =====================
 
 export const GOVERNANCE_STRUCTURE: GovernanceStructure = {
   pengurus: [
-    { id: 'p1', name: 'Drs. H. Arif Rachman Hakim', position: 'Ketua Umum', photo: '/images/people/ceo.jpg', termStart: '2026', termEnd: '2031' },
-    { id: 'p2', name: 'Tn. H. Gugun Gunara, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/founder.jpg', termStart: '2026', termEnd: 'Seumur Hidup' },
-    { id: 'p3', name: 'Tn. Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Bendahara Umum', photo: '/images/people/cfo.jpg', termStart: '2026', termEnd: '2031' },
+    { id: 'p1', name: 'Prof. Wirono, S.E., M.Pd', position: 'Presiden / Ketua Umum (Bakornas)', photo: '/images/people/ketua.jpg', termStart: '2026', termEnd: '2029' },
+    { id: 'p2', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Wakil Presiden / Wakil Ketua Umum', photo: '/images/people/waketum.jpg', termStart: '2026', termEnd: '2029' },
+    { id: 'p3', name: 'Dr. Cecep Sumarno', position: 'Sekretaris Jenderal (Sekjen)', photo: '/images/people/sekjen.jpg', termStart: '2026', termEnd: '2029' },
+    { id: 'p4', name: '(Posisi Kosong)', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '', termStart: '2026', termEnd: '2029' },
+    { id: 'p5', name: '(Posisi Kosong)', position: 'Bendahara Umum / CFO', photo: '', termStart: '2026', termEnd: '2029' },
   ],
   pengawas: [
-    { id: 'pw1', name: 'Ir. H. Ahmad Sudrajat', position: 'Ketua Pengawas', photo: '/images/people/auditor1.jpg', termStart: '2026', termEnd: '2031' },
+    { id: 'pw1', name: 'Prof. Dr. Tedy Mantoro', position: 'Ketua Dewan Pengawas', photo: '/images/people/pengawas1.jpg', termStart: '2026', termEnd: '2029' },
+    { id: 'pw2', name: 'Prof. Dr. Elan Masbulan', position: 'Wakil Ketua Pengawas', photo: '/images/people/pengawas2.jpg', termStart: '2026', termEnd: '2029' },
+    { id: 'pw3', name: 'Dr. Habib', position: 'Sekretaris Pengawas', photo: '/images/people/pengawas3.jpg', termStart: '2026', termEnd: '2029' },
   ],
   dewanPenasihat: [
-    { id: 'dp1', name: 'Tn. H. Gugun Gunara, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/founder.jpg', termStart: '2026', termEnd: 'Seumur Hidup' },
+    { id: 'dp1', name: 'Dr. A. Iskandar Zulkarnain', position: 'Ketua Dewan Penasihat Kehormatan', photo: '/images/people/penasihat1.jpg', termStart: '2026', termEnd: '2029' },
   ],
   dewanEtik: [],
   ombudsman: [],
 };
+
+// =====================
+// Dewan Pendiri - 9 Anggota (Updated from PDF)
+// =====================
+
+export const DEWAN_PENDIRI = [
+  { 
+    id: 'pendiri-1', 
+    name: 'Prof. Wirono, S.E., M.Pd', 
+    position: 'Pendiri ke-1 - Presiden / Ketua Umum (Bakornas)', 
+    role: 'Pimpinan Tertinggi Eksekutif KNMP, Ketua Umum Koperasi Periode 2026–2029',
+    photo: '/images/people/ketua.jpg' 
+  },
+  { 
+    id: 'pendiri-2', 
+    name: 'Drs. H. Arif Rachman Hakim, M.M.', 
+    position: 'Pendiri ke-2 - Wakil Presiden / Wakil Ketua Umum', 
+    role: 'Wakil Pimpinan Eksekutif & CEO JE-P3, Diplomat Utama 195 Negara',
+    photo: '/images/people/waketum.jpg' 
+  },
+  { 
+    id: 'pendiri-3', 
+    name: 'Hj. Inna Hadianala, S.E.', 
+    position: 'Pendiri ke-3 - Ketua Dewan Pembina', 
+    role: 'Penjaga Nilai & Konstitusi KNMP, Ketua Pembina Permanen Non-Jabatan, Koordinator Bidang Organisasi & Keanggotaan',
+    photo: '/images/people/pembina.jpg' 
+  },
+  { 
+    id: 'pendiri-4', 
+    name: 'Dr. Cecep Sumarno', 
+    position: 'Pendiri ke-4 - Sekretaris Jenderal (Sekjen)', 
+    role: 'Kepala Administrasi & Legal Koperasi, Koordinator Bidang Wisata, Umroh & Haji',
+    photo: '/images/people/sekjen.jpg' 
+  },
+  { 
+    id: 'pendiri-5', 
+    name: '(Posisi Kosong)', 
+    position: 'Pendiri ke-5 - Wakil Sekretaris Jenderal (Wasekjen)', 
+    role: 'COO, Arsitek Strategi & Ekosistem Digital KNMP',
+    photo: '' 
+  },
+  { 
+    id: 'pendiri-6', 
+    name: 'Fawwaz Arif Al Jabar, S.E., M.M.', 
+    position: 'Pendiri ke-6 - Ketua Dewan Penasihat', 
+    role: 'Chief Financial Advisor KNMP, Arsitek Sistem Keuangan & ESG, Koordinator Bidang Keuangan & Perbankan',
+    photo: '/images/people/penasihat1.jpg' 
+  },
+  { 
+    id: 'pendiri-7', 
+    name: 'Andi Darmadji, S.E.', 
+    position: 'Pendiri ke-7 - Koordinator Wilayah Kalimantan', 
+    role: 'Panglima Wilayah Kalimantan (Bakorwil Kalimantan), Pilar Ekspansi Kawasan Timur KNMP',
+    photo: '/images/people/wilayah.jpg' 
+  },
+  { 
+    id: 'pendiri-8', 
+    name: 'Dr. Habib', 
+    position: 'Pendiri ke-8 - Anggota Dewan Pengawas', 
+    role: 'Pengawas Internal KNMP, Ahli Ketahanan Pangan Nasional, Koordinator Bidang Pangan',
+    photo: '/images/people/pengawas3.jpg' 
+  },
+  { 
+    id: 'pendiri-9', 
+    name: 'Prof. Dr. Tedy Mantoro', 
+    position: 'Pendiri ke-9 - Ketua Dewan Pengawas', 
+    role: 'Ketua Pengawas Independen KNMP, Ahli Teknologi & Tata Kelola Digital',
+    photo: '/images/people/pengawas1.jpg' 
+  },
+];
+
+// =====================
+// Koordinator 15 Bidang (Updated from PDF)
+// =====================
+
+export const KOORDINATOR_BIDANG = [
+  { no: 1, bidang: 'Organisasi & Keanggotaan', ketua: 'Hj. Inna Hadianala, S.E.', sekretaris: '(Kosong)', catatan: 'Pendiri ke-3 | Pembina Organisasi' },
+  { no: 2, bidang: 'Pangan & Ketahanan Pangan', ketua: 'Dr. Habib', sekretaris: '(Kosong)', catatan: 'Pendiri ke-8 | Ketahanan Pangan Nasional' },
+  { no: 3, bidang: 'Industri & Manufaktur', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'Prioritas: Industri Pengolahan Desa' },
+  { no: 4, bidang: 'Logistik & Distribusi', ketua: 'M. Ilham', sekretaris: '(Kosong)', catatan: 'Jaringan Logistik 83.763 Desa' },
+  { no: 5, bidang: 'Kesehatan & Farmasi', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'Integrasi Posyandu 300rb Unit' },
+  { no: 6, bidang: 'Keuangan & Perbankan', ketua: 'Fawwaz Arif Al Jabar, S.E., M.M.', sekretaris: '(Kosong)', catatan: 'Pendiri ke-6 | JP3 Pay & Fintech Desa' },
+  { no: 7, bidang: 'Investasi & ESG', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'ESG, Green Bond, Impact Investing' },
+  { no: 8, bidang: 'Bisnis Kemitraan & UMKM', ketua: 'Ongky Putra', sekretaris: '(Kosong)', catatan: 'Ekosistem Mitra & UMKM Desa' },
+  { no: 9, bidang: 'Digital & Teknologi', ketua: 'M. Sidik', sekretaris: '(Kosong)', catatan: 'kopnusa.id | Blockchain | AI | IoT' },
+  { no: 10, bidang: 'Holding Trading Ekosistem', ketua: '(Posisi Kosong)', sekretaris: 'Cecep Abdul Jabbar', catatan: 'Grand Architect | Holding Strategis' },
+  { no: 11, bidang: 'Wisata, Umroh & Haji', ketua: 'Dr. Cecep Sumarno', sekretaris: '(Kosong)', catatan: 'Pendiri ke-4 | Sekjen merangkap Bid. 11' },
+  { no: 12, bidang: 'Hukum & Advokasi', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'Legal, Compliance, Advokasi Anggota' },
+  { no: 13, bidang: 'Pengembangan SDM & Diklat', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'JE-P3 Academy | Kader KNMP Nasional' },
+  { no: 14, bidang: 'Ekspor Impor & Perdagangan Internasional', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'Global Trade Desk | Komoditas Ekspor Desa' },
+  { no: 15, bidang: 'Hubungan Masyarakat & Media', ketua: '(Kosong)', sekretaris: '(Kosong)', catatan: 'Branding KNMP Nasional & Internasional' },
+];
+
+// =====================
+// Koordinator 5 Kawasan Bakorwil (Updated from PDF)
+// =====================
+
+export const KOORDINATOR_KAWASAN = [
+  { no: 1, kawasan: 'JAWA (Bakorwil Jawa)', panglima: '(Kosong - Prioritas Utama)', cakupan: 'DKI Jakarta, Jawa Barat, Jawa Tengah, Jawa Timur, DI Yogyakarta, Banten (6 Provinsi)', catatan: 'Pusat Populasi & Ekonomi NKRI Prioritas Rekrutmen' },
+  { no: 2, kawasan: 'SUMATERA (Bakorwil Sumatera)', panglima: 'Erick Hariadi (Jaringan KADIN)', cakupan: 'Aceh, Sumatera Utara, Sumatera Barat, Riau, Kepri, Jambi, Bengkulu, Sumatera Selatan, Babel, Lampung (10 Provinsi)', catatan: 'Komoditas: Sawit, Karet, Kopi, Lada, Batubara Gateway Ekspor ASEAN' },
+  { no: 3, kawasan: 'KALIMANTAN (Bakorwil Kalimantan)', panglima: 'Andi Darmadji, S.E. (Pendiri ke-7 KNMP)', cakupan: 'Kalimantan Barat, Kalimantan Tengah, Kalimantan Selatan, Kalimantan Timur, Kalimantan Utara (5 Provinsi)', catatan: 'IKN Nusantara - Episentrum Baru Komoditas: Sawit, Batubara, Rotan' },
+  { no: 4, kawasan: 'SULAWESI & MALUKU (Bakorwil Sulawesi-Maluku)', panglima: 'Imam Fauzan (Koordinator Sulawesi)', cakupan: 'Sulawesi Utara, Sulawesi Tengah, Sulawesi Selatan, Sulawesi Tenggara, Gorontalo, Sulawesi Barat, Maluku, Maluku Utara (8 Provinsi)', catatan: 'Komoditas: Nikel, Kakao, Cengkeh, Rempah, Perikanan Laut Dalam Ekonomi Biru' },
+  { no: 5, kawasan: 'PAPUA & WILAYAH TIMUR (Bakorwil Papua & NTT)', panglima: '(Kosong - Prioritas Strategis)', cakupan: 'Papua, Papua Barat, Papua Selatan, Papua Tengah, Papua Pegunungan, Papua Barat Daya, Nusa Tenggara Timur (7 Provinsi)', catatan: 'Kawasan Perbatasan & Sumber Daya Prioritas Program Keadilan Ekonomi' },
+];
 
 // =====================
 // Sample Products
@@ -509,7 +617,7 @@ export const ROADMAP_DATA = [
   { year: '2028', title: 'Ekspor Global', description: '25.000 desa, ekspor 10 negara, ICA membership', status: 'UPCOMING' as const },
   { year: '2030', title: 'Koperasi Digital Terbesar', description: '50.000 desa, 5 juta anggota, Rp1T revenue', status: 'UPCOMING' as const },
   { year: '2035', title: '100% Coverage', description: '83.763 desa terintegrasi penuh', status: 'UPCOMING' as const },
-  { year: '2045', title: 'World Class Cooperative', description: 'Setara Mondragon, Rp500T transaksi', status: 'UPCOMING' as const },
+  { year: '2045', title: 'World Class Cooperative', description: 'Setara Mondragon, Rp2.000 T transaksi', status: 'UPCOMING' as const },
 ];
 
 // =====================
@@ -659,7 +767,7 @@ export const VISION_2045 = {
   targets: [
     { label: 'Desa Terintegrasi', value: 83763, suffix: '', icon: 'MapPin' },
     { label: 'Anggota Aktif', value: 10, suffix: ' Juta', icon: 'Users' },
-    { label: 'Nilai Transaksi', value: 500, suffix: ' Triliun', icon: 'TrendingUp' },
+    { label: 'Nilai Transaksi', value: 2000, suffix: ' Triliun', icon: 'TrendingUp' },
     { label: 'Provinsi', value: 38, suffix: '', icon: 'Flag' },
   ],
   milestones: [
@@ -681,24 +789,29 @@ export const VISION_2045 = {
 };
 
 // =====================
-// Extended Team Structure
+// Extended Team Structure - Updated (No Gugun Gunara)
 // =====================
 
 export const TEAM_STRUCTURE = {
   pengurus: [
-    { id: 'p1', name: 'Drs. H. Arif Rachman Hakim', position: 'Ketua Umum', photo: '/images/people/ceo.jpg', termStart: '2026', termEnd: '2031', bio: 'Pengalaman 25 tahun di bidang koperasi dan pembangunan desa' },
-    { id: 'p2', name: 'Tn. H. Gugun Gunara, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/founder.jpg', termStart: '2016', termEnd: 'Seumur Hidup', bio: 'Founder KNMP, visioner ekonomi digital desa' },
-    { id: 'p3', name: 'Tn. Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Bendahara Umum', photo: '/images/people/cfo.jpg', termStart: '2026', termEnd: '2031', bio: 'Expert keuangan dan investasi syariah' },
-    { id: 'p4', name: 'Ir. H. Bambang Sutrisno', position: 'Sekretaris Umum', photo: '/images/people/secretary.jpg', termStart: '2026', termEnd: '2031', bio: 'Pengelola administrasi dan tata kelola organisasi' },
+    { id: 'p1', name: 'Prof. Wirono, S.E., M.Pd', position: 'Presiden / Ketua Umum (Bakornas)', photo: '/images/people/ketua.jpg', termStart: '2026', termEnd: '2029', bio: 'Pimpinan Tertinggi Eksekutif KNMP, Ketua Umum Koperasi Periode 2026–2029' },
+    { id: 'p2', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Wakil Presiden / Wakil Ketua Umum', photo: '/images/people/waketum.jpg', termStart: '2026', termEnd: '2029', bio: 'Wakil Pimpinan Eksekutif & CEO JE-P3, Diplomat Utama 195 Negara' },
+    { id: 'p3', name: 'Dr. Cecep Sumarno', position: 'Sekretaris Jenderal (Sekjen)', photo: '/images/people/sekjen.jpg', termStart: '2026', termEnd: '2029', bio: 'Kepala Administrasi & Legal Koperasi' },
+    { id: 'p4', name: '(Posisi Kosong)', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '', termStart: '2026', termEnd: '2029', bio: 'COO, Arsitek Strategi & Ekosistem Digital KNMP' },
+    { id: 'p5', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/penasihat1.jpg', termStart: '2026', termEnd: '2029', bio: 'Chief Financial Advisor KNMP, Arsitek Sistem Keuangan & ESG' },
   ],
   pengawas: [
-    { id: 'pw1', name: 'Ir. H. Ahmad Sudrajat', position: 'Ketua Pengawas', photo: '/images/people/auditor1.jpg', termStart: '2026', termEnd: '2031', bio: 'Audit internal dan pengawasan keuangan' },
-    { id: 'pw2', name: 'Dra. Hj. Siti Nurhaliza', position: 'Anggota Pengawas', photo: '/images/people/auditor2.jpg', termStart: '2026', termEnd: '2031', bio: 'Pengawasan operasional dan kepatuhan' },
+    { id: 'pw1', name: 'Prof. Dr. Tedy Mantoro', position: 'Ketua Dewan Pengawas', photo: '/images/people/pengawas1.jpg', termStart: '2026', termEnd: '2029', bio: 'Ketua Pengawas Independen KNMP, Ahli Teknologi & Tata Kelola Digital' },
+    { id: 'pw2', name: 'Prof. Dr. Elan Masbulan', position: 'Wakil Ketua Pengawas', photo: '/images/people/pengawas2.jpg', termStart: '2026', termEnd: '2029', bio: 'Pakar Pendidikan & Tata Kelola' },
+    { id: 'pw3', name: 'Dr. Habib', position: 'Sekretaris Pengawas', photo: '/images/people/pengawas3.jpg', termStart: '2026', termEnd: '2029', bio: 'Pengawas Internal KNMP, Ahli Ketahanan Pangan Nasional' },
   ],
   dewanPenasihat: [
-    { id: 'dp1', name: 'Tn. H. Gugun Gunara, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/founder.jpg', termStart: '2016', termEnd: 'Seumur Hidup', bio: 'Founder & Chief Visionary' },
-    { id: 'dp2', name: 'Prof. Dr. H. Bambang Brodjonegoro', position: 'Penasihat Ekonomi', photo: '/images/people/advisor1.jpg', termStart: '2026', termEnd: '2031', bio: 'Pakar ekonomi regional dan pembangunan' },
-    { id: 'dp3', name: 'Dr. H. Suharso Monoarfa', position: 'Penasihat Kebijakan', photo: '/images/people/advisor2.jpg', termStart: '2026', termEnd: '2031', bio: 'Expert kebijakan publik dan pembangunan nasional' },
+    { id: 'dp1', name: 'Dr. A. Iskandar Zulkarnain', position: 'Ketua Dewan Penasihat Kehormatan', photo: '/images/people/penasihat1.jpg', termStart: '2026', termEnd: '2029', bio: 'Finansial & ESG, GRCP, CIB, RIFA, WCW' },
+    { id: 'dp2', name: 'Dr. Heri Solahudin', position: 'Anggota Penasihat Bidang Hukum', photo: '/images/people/penasihat2.jpg', termStart: '2026', termEnd: '2029', bio: '46 Pakar Lintas Bidang' },
+  ],
+  dewanPembina: [
+    { id: 'dpm1', name: 'Dr. (H.C.) Ir. H. Suharso Monoarfa', position: 'Ketua Dewan Pembina', photo: '/images/people/pembina.jpg', termStart: '2026', termEnd: 'Seumur Hidup', bio: 'Pendiri ke-3 | Permanen' },
+    { id: 'dpm2', name: 'Dr. H. Anwar Sanusi, SH, S.Pel, MM.', position: 'Wakil Ketua Pembina', photo: '/images/people/pembina2.jpg', termStart: '2026', termEnd: '2029', bio: 'Representasi Pemerintah' },
   ],
 };
 

@@ -57,10 +57,10 @@ const floatingIcons = [
 
 // Stats data - Professional, Precise & Powerful
 const stats = [
-  { value: '83.763', label: 'Desa Terintegrasi', sublabel: '(target nasional)', icon: Building2, color: '#8B0000' },
+  { value: '83.763', label: 'Desa Terhubung', sublabel: '(target nasional)', icon: Building2, color: '#8B0000' },
   { value: '6', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#D4AF37' },
   { value: '195', label: 'Akses Potensial', sublabel: 'ke Negara', icon: Globe, color: '#22c55e' },
-  { value: 'Rp 850 T', label: 'Target Volume', sublabel: 'Transaksi 2028', icon: Target, color: '#3b82f6' },
+  { value: 'Rp 2.000 T', label: 'Target Volume', sublabel: 'Transaksi 2045', icon: Target, color: '#3b82f6' },
 ]
 
 // Simpanan data
@@ -327,7 +327,7 @@ export function Hero() {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight text-center"
             >
-              <span className="block">Navigasi Peradaban Dunia Baru </span>
+              <span className="block">Digital Operating System</span>
               <motion.span 
                 className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#8B0000] via-[#DC143C] to-[#D4AF37] bg-clip-text text-transparent"
                 animate={{ 
@@ -336,7 +336,7 @@ export function Hero() {
                 transition={{ duration: 5, repeat: Infinity }}
                 style={{ backgroundSize: '200% 100%' }}
               >
-                VISI DESA FUTURISTIK 2028 
+                Desa Indonesia
               </motion.span>
             </motion.h1>
 
@@ -346,10 +346,10 @@ export function Hero() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-700 text-center mt-4 sm:mt-6 px-2"
             >
               <span className="bg-gradient-to-r from-[#8B0000] to-[#B22222] bg-clip-text text-transparent">
-                Dari Desa untuk Masa Depan Indonesia
+                Ekosistem Digital untuk Menjadikan Desa
               </span>
-              <span className="block mt-1 bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
-                MENUJU DESA BERDIKARI, PANGAN, ENERGI, & KESEHATAN
+              <span className="block mt-1 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
+                Berdaulat dan Berdikari 2045
               </span>
             </motion.p>
 
@@ -374,15 +374,15 @@ export function Hero() {
                     <span className="text-[#8B0000] font-bold text-base sm:text-lg md:text-xl">KNMP</span> adalah{' '}
                     <span className="text-[#8B0000] font-bold">Koperasi Korporasi Multi Pihak</span>
                     {' '}yang mengintegrasikan seluruh sistem ekonomi desa{' '}
-                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
                       dari hulu ke hilir
                     </span>
                     , secara{' '}
-                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
                       end-to-end
                     </span>
                     , menjadi{' '}
-                    <span className="bg-gradient-to-r from-[#008000] to-[#008000] bg-clip-text text-transparent font-bold">
+                    <span className="bg-gradient-to-r from-[#D4AF37] to-[#FFD700] bg-clip-text text-transparent font-bold">
                       one stop service solution
                     </span>
                     {' '}— <span className="text-[#8B0000] font-bold">dirancang untuk menjadi yang terbesar di dunia</span>.

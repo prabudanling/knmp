@@ -60,6 +60,7 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { href: '/', label: 'Beranda' },
   { href: '/tentang', label: 'Tentang' },
+  { href: '/struktur-organisasi', label: 'Struktur Organisasi' },
   { href: '/visi-misi', label: 'Visi Misi' },
   { href: '/kpa', label: '6 KPA (Anggota)' },
   { href: '/unit-usaha', label: 'Unit Usaha' },
@@ -91,6 +92,7 @@ export const FOOTER_LINKS = {
   ],
   company: [
     { href: '/tentang', label: 'Tentang KNMP' },
+    { href: '/struktur-organisasi', label: 'Struktur Organisasi' },
     { href: '/visi-misi', label: 'Visi & Misi' },
     { href: '/faq', label: 'FAQ' },
     { href: '/kontak', label: 'Hubungi Kami' },
