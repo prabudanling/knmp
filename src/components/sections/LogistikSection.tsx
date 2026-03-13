@@ -49,7 +49,7 @@ const partners = [
 // Steps
 const steps = [
   { step: 1, title: 'Daftar Jadi Agen', desc: 'Daftar online via aplikasi KNMP', icon: Users, color: '#8B0000' },
-  { step: 2, title: 'Training Gratis', desc: 'Pelatihan 10 jam dengan sertifikat', icon: Zap, color: '#D4AF37' },
+  { step: 2, title: 'Training Gratis', desc: 'Pelatihan 10 jam dengan sertifikat', icon: Zap, color: '#008F3D' },
   { step: 3, title: 'Terima Paket', desc: 'Warga kirim paket ke lokasi Anda', icon: Package, color: '#22c55e' },
   { step: 4, title: 'Dapat Komisi', desc: 'Komisi otomatis ke dompet digital', icon: Wallet, color: '#8b5cf6' },
 ]
@@ -92,7 +92,7 @@ export function LogistikSection() {
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             Jaringan <span className="text-[#8B0000]">83.763 Titik</span> Coverage
           </motion.h2>
@@ -116,7 +116,7 @@ export function LogistikSection() {
             { value: '83.763', label: 'Agen Aktif', icon: Users, color: '#8B0000' },
             { value: '1.25 Juta', label: 'Paket/Bulan', icon: Package, color: '#3b82f6' },
             { value: '6+', label: 'Partner Ekspedisi', icon: Truck, color: '#22c55e' },
-            { value: 'Rp8.5M+', label: 'Komisi Dibagikan', icon: Wallet, color: '#D4AF37' },
+            { value: 'Rp8.5M+', label: 'Komisi Dibagikan', icon: Wallet, color: '#008F3D' },
           ].map((stat, i) => (
             <motion.div key={i} variants={fadeInUp} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
               <stat.icon className="w-6 h-6 mx-auto mb-2" style={{ color: stat.color }} />
@@ -261,15 +261,15 @@ export function LogistikSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h3 className="text-center text-lg font-semibold text-gray-900 mb-6">
-            Agen <span className="text-[#D4AF37]">Terbaik</span> Kami
+          <h3 className="text-center text-lg font-semibold text-[#1A1A1A] mb-6">
+            Agen <span className="text-[#008F3D]">Terbaik</span> Kami
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             {topAgents.map((agent, i) => (
               <Card key={i} className="bg-white border border-gray-100 hover:shadow-lg transition-all">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B0000] to-[#008F3D] flex items-center justify-center text-white font-bold">
                       {agent.name.split(' ')[1][0]}
                     </div>
                     <div className="flex-1 min-w-0">

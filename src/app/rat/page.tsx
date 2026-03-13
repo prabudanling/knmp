@@ -155,7 +155,7 @@ function GovernanceSection({ data }: { data: typeof GOVERNANCE_STRUCTURE }) {
 
   const sections = [
     { title: 'Pengurus', data: data.pengurus, icon: Building2, color: '#8B0000' },
-    { title: 'Pengawas', data: data.pengawas, icon: Eye, color: '#D4AF37' },
+    { title: 'Pengawas', data: data.pengawas, icon: Eye, color: '#008F3D' },
     { title: 'Dewan Penasihat', data: data.dewanPenasihat, icon: Award, color: '#3b82f6' },
   ]
 
@@ -233,7 +233,7 @@ function VotingPowerSection() {
     { name: 'Koperasi/BUMDes', power: 20, color: '#8b5cf6' },
     { name: 'Pekerja/Kader', power: 10, color: '#f59e0b' },
     { name: 'Konsumen', power: 10, color: '#ec4899' },
-    { name: 'Investor', power: 10, color: '#D4AF37' },
+    { name: 'Investor', power: 10, color: '#008F3D' },
   ]
 
   return (

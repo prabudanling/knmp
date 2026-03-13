@@ -133,7 +133,7 @@ function BreakdownSection({ data }: { data: typeof SHU_BREAKDOWN }) {
 
   const items = [
     { label: 'Dana Cadangan', value: data.breakdown.danaCadangan, percent: 30, color: '#8B0000' },
-    { label: 'Jasa Modal', value: data.breakdown.jasaModal, percent: 10, color: '#D4AF37' },
+    { label: 'Jasa Modal', value: data.breakdown.jasaModal, percent: 10, color: '#008F3D' },
     { label: 'Jasa Usaha Anggota', value: data.breakdown.jasaUsaha, percent: 40, color: '#22c55e' },
     { label: 'Dana Pengurus & Pengawas', value: data.breakdown.danaPengurus, percent: 5, color: '#3b82f6' },
     { label: 'Dana Pendidikan', value: data.breakdown.danaPendidikan, percent: 5, color: '#8b5cf6' },

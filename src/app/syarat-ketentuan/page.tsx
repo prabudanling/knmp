@@ -88,7 +88,7 @@ export default function SyaratKetentuanPage() {
             Dokumen Legal
           </Badge>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Syarat & <span className="text-[#D4AF37]">Ketentuan</span>
+            Syarat & <span className="text-[#008F3D]">Ketentuan</span>
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Terakhir diperbarui: Januari 2026
@@ -127,7 +127,7 @@ export default function SyaratKetentuanPage() {
                   <ul className="space-y-3">
                     {section.content.map((item, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-[#008F3D] mt-0.5 flex-shrink-0" />
                         <span className="text-gray-600">{item}</span>
                       </li>
                     ))}
@@ -145,14 +145,14 @@ export default function SyaratKetentuanPage() {
           transition={{ delay: 0.5 }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white">
+          <Card className="bg-gradient-to-r from-[#008F3D] to-[#B8860B] text-white">
             <CardContent className="p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Ada Pertanyaan?</h3>
               <p className="text-white/80 mb-6">
                 Hubungi tim legal kami di legal@kopnusa.id
               </p>
               <Link href="/kontak">
-                <Button className="bg-white text-[#D4AF37] hover:bg-gray-100">
+                <Button className="bg-white text-[#008F3D] hover:bg-gray-100">
                   Hubungi Kami
                 </Button>
               </Link>

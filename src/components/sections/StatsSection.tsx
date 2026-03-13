@@ -83,8 +83,8 @@ export function StatsSection() {
       label: 'Anggota Aktif', 
       value: HERO_STATS.members,
       suffix: '+',
-      color: '#D4AF37',
-      bgColor: 'from-amber-50 to-amber-100',
+      color: '#008F3D',
+      bgColor: 'from-green-50 to-green-100',
     },
     { 
       icon: Globe, 

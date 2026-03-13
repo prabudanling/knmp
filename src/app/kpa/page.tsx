@@ -125,7 +125,7 @@ const kpaData = [
   {
     id: 6,
     name: "Investor",
-    color: "#D4AF37",
+    color: "#008F3D",
     bgColor: "bg-yellow-500",
     lightBg: "bg-yellow-500/10",
     borderColor: "border-yellow-500",

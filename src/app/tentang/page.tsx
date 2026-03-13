@@ -90,14 +90,14 @@ const getIcon = (iconName: string, className?: string) => {
 // Hero Section Component
 function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-[#8B0000]">
       {/* Background Pattern */}
-      <div className="absolute inset-0 hero-gradient" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute inset-0 bg-[#8B0000]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#8B0000]/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#008F3D]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#6B0000]/30 rounded-full blur-3xl" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <motion.div
@@ -107,7 +107,7 @@ function HeroSection() {
           className="space-y-6"
         >
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37] px-4 py-1 text-sm">
+            <Badge variant="outline" className="border-white text-white px-4 py-1 text-sm bg-white/10">
               Tentang Kami
             </Badge>
           </motion.div>
@@ -117,14 +117,14 @@ function HeroSection() {
             className="text-responsive-hero font-bold text-white leading-tight"
           >
             Tentang{' '}
-            <span className="text-gradient-gold">Koperasi Nusantara</span>
+            <span className="text-[#00A847]">Koperasi Nusantara</span>
             <br />
-            <span className="text-gradient-gold">Merah Putih</span>
+            <span className="text-[#00A847]">Merah Putih</span>
           </motion.h1>
           
           <motion.p
             variants={fadeInUp}
-            className="text-responsive-subtitle text-gray-300 max-w-3xl mx-auto"
+            className="text-responsive-subtitle text-white/90 max-w-3xl mx-auto font-medium"
           >
             Platform koperasi digital pertama di Indonesia yang mengintegrasikan seluruh ekosistem desa
           </motion.p>
@@ -132,7 +132,7 @@ function HeroSection() {
           <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 pt-4">
             <Button
               size="lg"
-              className="bg-[#8B0000] hover:bg-[#6B0000] text-white px-8"
+              className="bg-[#008F3D] hover:bg-[#00A847] text-white px-8 font-semibold"
             >
               Gabung Sekarang
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -140,7 +140,7 @@ function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
+              className="border-white text-white hover:bg-white/10 px-8 font-semibold"
             >
               Lihat Visi 2045
             </Button>
@@ -174,7 +174,7 @@ function OriginStorySection() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#D4AF37] via-[#8B0000] to-[#1a1a2e] hidden md:block" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#8B0000] hidden md:block" />
           
           <motion.div
             initial="hidden"
@@ -193,11 +193,11 @@ function OriginStorySection() {
               >
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <Card className="card-hover-lift border-l-4 border-l-[#D4AF37]">
+                  <Card className="card-hover-lift border-l-4 border-l-[#008F3D]">
                     <CardHeader>
                       <div className={`flex items-center gap-3 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                         <Badge className="bg-[#8B0000] text-white">{item.year}</Badge>
-                        <span className="text-[#D4AF37]">{getIcon(item.icon, 'w-5 h-5')}</span>
+                        <span className="text-[#008F3D]">{getIcon(item.icon, 'w-5 h-5')}</span>
                       </div>
                       <CardTitle className="text-xl mt-2">{item.title}</CardTitle>
                     </CardHeader>
@@ -208,7 +208,7 @@ function OriginStorySection() {
                 </div>
                 
                 {/* Timeline dot */}
-                <div className="relative z-10 w-12 h-12 rounded-full bg-[#8B0000] border-4 border-[#D4AF37] flex items-center justify-center glow-gold">
+                <div className="relative z-10 w-12 h-12 rounded-full bg-[#8B0000] border-4 border-[#008F3D] flex items-center justify-center glow-gold">
                   <span className="text-white font-bold text-sm">{item.year.slice(-2)}</span>
                 </div>
                 
@@ -227,14 +227,14 @@ function OriginStorySection() {
           variants={scaleIn}
           className="mt-16"
         >
-          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+          <Card className="bg-[#8B0000] border-[#008F3D]/30 border-2">
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-3">9 Dewan Pendiri</Badge>
+                <Badge className="bg-[#008F3D] text-white mb-3">9 Dewan Pendiri</Badge>
                 <h3 className="text-2xl font-bold text-white mb-2">
                   Anggota Ganjil — Quorum & Legal
                 </h3>
-                <p className="text-gray-300 max-w-2xl mx-auto">
+                <p className="text-white/80 max-w-2xl mx-auto">
                   Sembilan pendiri (angka ganjil) memenuhi persyaratan quorum pengambilan keputusan dengan prinsip simple majority (5:4) maupun supermajority (6:3 atau 7:2).
                 </p>
               </div>
@@ -257,13 +257,13 @@ function OriginStorySection() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
                     className={cn(
-                      "p-4 rounded-xl border border-white/10",
+                      "p-4 rounded-xl border border-white/20",
                       founder.name === '(Posisi Kosong)' ? 'bg-white/5 opacity-60' : 'bg-white/10'
                     )}
                   >
                     <p className="font-semibold text-white text-sm">{founder.name}</p>
-                    <p className="text-xs text-[#D4AF37]">{founder.position}</p>
-                    <p className="text-xs text-gray-400 mt-1">{founder.role}</p>
+                    <p className="text-xs text-[#00A847] font-semibold">{founder.position}</p>
+                    <p className="text-xs text-white/70 mt-1">{founder.role}</p>
                   </motion.div>
                 ))}
               </div>
@@ -318,8 +318,8 @@ function LegalComplianceSection() {
           <motion.div variants={fadeInUp}>
             <Card className="h-full card-hover-lift">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                  <Landmark className="w-7 h-7 text-[#D4AF37]" />
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#008F3D]/10 flex items-center justify-center">
+                  <Landmark className="w-7 h-7 text-[#008F3D]" />
                 </div>
                 <h3 className="font-semibold mb-2">NPWP</h3>
                 <p className="text-sm text-muted-foreground">{LEGAL_INFO.npwp}</p>
@@ -359,10 +359,10 @@ function LegalComplianceSection() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <Card className="border-[#D4AF37]/20">
+          <Card className="border-[#008F3D]/20">
             <CardHeader className="text-center border-b">
               <CardTitle className="flex items-center justify-center gap-2">
-                <Award className="w-6 h-6 text-[#D4AF37]" />
+                <Award className="w-6 h-6 text-[#008F3D]" />
                 7 Prinsip Koperasi ICA + UU 25/1992
               </CardTitle>
               <CardDescription>
@@ -375,7 +375,7 @@ function LegalComplianceSection() {
                   <motion.div
                     key={principle.number}
                     variants={fadeInUp}
-                    className="group p-4 rounded-lg border border-border hover:border-[#D4AF37] transition-colors"
+                    className="group p-4 rounded-lg border border-border hover:border-[#008F3D] transition-colors"
                   >
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-full bg-[#8B0000]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8B0000] transition-colors">
@@ -450,14 +450,14 @@ function DualEntitySection() {
             viewport={{ once: true }}
             variants={scaleIn}
           >
-            <Card className="h-full border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] transition-colors">
-              <CardHeader className="border-b border-[#D4AF37]/20">
+            <Card className="h-full border-2 border-[#008F3D]/30 hover:border-[#008F3D] transition-colors">
+              <CardHeader className="border-b border-[#008F3D]/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-xl bg-[#D4AF37] flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-xl bg-[#008F3D] flex items-center justify-center">
                     <Zap className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <Badge className="bg-[#D4AF37]/20 text-[#D4AF37] mb-1">{DUAL_ENTITY.jep3.type}</Badge>
+                    <Badge className="bg-[#008F3D]/20 text-[#008F3D] mb-1">{DUAL_ENTITY.jep3.type}</Badge>
                     <CardTitle className="text-2xl">{DUAL_ENTITY.jep3.name}</CardTitle>
                   </div>
                 </div>
@@ -467,7 +467,7 @@ function DualEntitySection() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="mb-4">
-                  <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37]">
+                  <Badge variant="outline" className="border-[#008F3D] text-[#008F3D]">
                     {DUAL_ENTITY.jep3.role}
                   </Badge>
                 </div>
@@ -476,7 +476,7 @@ function DualEntitySection() {
                 <ul className="space-y-2">
                   {DUAL_ENTITY.jep3.responsibilities.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#008F3D] mt-0.5 flex-shrink-0" />
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
@@ -535,12 +535,12 @@ function DualEntitySection() {
           viewport={{ once: true }}
           variants={scaleIn}
         >
-          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+          <Card className="bg-[#8B0000] border-[#008F3D]/30 border-2">
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-2">Framework</Badge>
+                <Badge className="bg-[#008F3D] text-white mb-2">Framework</Badge>
                 <h3 className="text-2xl font-bold text-white mb-2">{DUAL_ENTITY.saf.name}</h3>
-                <p className="text-gray-300">{DUAL_ENTITY.saf.description}</p>
+                <p className="text-white/80">{DUAL_ENTITY.saf.description}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -548,9 +548,9 @@ function DualEntitySection() {
                 <div>
                   <h4 className="font-semibold text-white mb-4">Prinsip Utama:</h4>
                   <ul className="space-y-2">
-                    {DUAL_ENTITY.saf.principles.map((principle, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-300">
-                        <ChevronRight className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                    {DUAL_ENTITY.saf.principles?.map((principle, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-white/80">
+                        <ChevronRight className="w-4 h-4 text-[#00A847] mt-0.5 flex-shrink-0" />
                         <span>{principle}</span>
                       </li>
                     ))}
@@ -558,14 +558,14 @@ function DualEntitySection() {
                 </div>
 
                 {/* JSC Info */}
-                <div className="bg-white/5 rounded-lg p-6">
+                <div className="bg-white/10 rounded-lg p-6 border border-white/20">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-[#008F3D] flex items-center justify-center">
                       <Users className="w-5 h-5 text-white" />
                     </div>
                     <h4 className="font-semibold text-white">{DUAL_ENTITY.jsc.name}</h4>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">{DUAL_ENTITY.jsc.description}</p>
+                  <p className="text-white/80 text-sm mb-4">{DUAL_ENTITY.jsc.description}</p>
                   <div className="flex gap-4">
                     <Badge variant="outline" className="border-white/30 text-white">
                       {DUAL_ENTITY.jsc.members} Anggota
@@ -597,7 +597,7 @@ function Vision2045Section() {
           className="text-center mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-4">Visi 2045</Badge>
+            <Badge className="bg-[#008F3D] text-[#1a1a2e] mb-4">Visi 2045</Badge>
           </motion.div>
           <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
             Menuju <span className="text-gradient-gold">Indonesia Emas</span>
@@ -642,7 +642,7 @@ function Vision2045Section() {
           <Card className="mb-12">
             <CardHeader className="border-b">
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-[#D4AF37]" />
+                <TrendingUp className="w-5 h-5 text-[#008F3D]" />
                 Roadmap 2045
               </CardTitle>
             </CardHeader>
@@ -650,7 +650,7 @@ function Vision2045Section() {
               <div className="relative">
                 {/* Progress line */}
                 <div className="absolute top-1/2 left-0 right-0 h-1 bg-muted transform -translate-y-1/2 hidden lg:block" />
-                <div className="absolute top-1/2 left-0 w-1/5 h-1 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] transform -translate-y-1/2 hidden lg:block" />
+                <div className="absolute top-1/2 left-0 w-1/5 h-1 bg-gradient-to-r from-[#8B0000] to-[#008F3D] transform -translate-y-1/2 hidden lg:block" />
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                   {VISION_2045.milestones.map((milestone, idx) => (
@@ -659,7 +659,7 @@ function Vision2045Section() {
                         idx < 1 
                           ? 'bg-[#8B0000] text-white' 
                           : idx < 2 
-                            ? 'bg-[#D4AF37] text-white' 
+                            ? 'bg-[#008F3D] text-white' 
                             : 'bg-muted text-muted-foreground'
                       }`}>
                         {idx < 1 ? (
@@ -685,18 +685,18 @@ function Vision2045Section() {
           viewport={{ once: true }}
           variants={scaleIn}
         >
-          <Card className="bg-gradient-to-r from-[#1a1a2e] to-[#8B0000]/20 border-[#D4AF37]/30">
+          <Card className="bg-[#8B0000] border-[#008F3D]/30 border-2">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B0000] flex items-center justify-center">
+                <div className="w-24 h-24 rounded-full bg-[#008F3D] flex items-center justify-center">
                   <Globe className="w-12 h-12 text-white" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <Badge className="bg-[#D4AF37]/20 text-[#D4AF37] mb-2">Benchmark Global</Badge>
+                  <Badge className="bg-[#008F3D] text-white mb-2">Benchmark Global</Badge>
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {VISION_2045.benchmark.name}
                   </h3>
-                  <p className="text-gray-300 mb-4">{VISION_2045.benchmark.description}</p>
+                  <p className="text-white/80 mb-4">{VISION_2045.benchmark.description}</p>
                   <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                     <Badge variant="outline" className="border-white/30 text-white">
                       {VISION_2045.benchmark.country}
@@ -758,14 +758,14 @@ function TeamSection() {
               <motion.div key={member.id} variants={scaleIn}>
                 <Card className="card-hover-lift h-full">
                   <CardContent className="p-6 text-center">
-                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#D4AF37]">
+                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#008F3D]">
                       <AvatarImage src={member.photo} alt={member.name} />
                       <AvatarFallback className="bg-[#8B0000] text-white text-lg">
                         {member.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
                     <h4 className="font-semibold mb-1">{member.name}</h4>
-                    <p className="text-sm text-[#D4AF37] mb-2">{member.position}</p>
+                    <p className="text-sm text-[#008F3D] mb-2">{member.position}</p>
                     <p className="text-xs text-muted-foreground mb-2">{member.bio}</p>
                     <Badge variant="outline" className="text-xs">
                       {member.termStart} - {member.termEnd}
@@ -802,7 +802,7 @@ function TeamSection() {
                     </Avatar>
                     <div>
                       <h4 className="font-semibold">{member.name}</h4>
-                      <p className="text-sm text-[#D4AF37]">{member.position}</p>
+                      <p className="text-sm text-[#008F3D]">{member.position}</p>
                       <p className="text-xs text-muted-foreground">{member.bio}</p>
                     </div>
                   </CardContent>
@@ -820,24 +820,24 @@ function TeamSection() {
           variants={staggerContainer}
         >
           <motion.h3 variants={fadeInUp} className="text-xl font-semibold mb-6 flex items-center gap-2">
-            <Star className="w-5 h-5 text-[#D4AF37]" />
+            <Star className="w-5 h-5 text-[#008F3D]" />
             Dewan Penasihat
           </motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TEAM_STRUCTURE.dewanPenasihat.map((member) => (
               <motion.div key={member.id} variants={scaleIn}>
-                <Card className="card-hover-lift h-full border-[#D4AF37]/20">
+                <Card className="card-hover-lift h-full border-[#008F3D]/20">
                   <CardContent className="p-6 text-center">
-                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#D4AF37]">
+                    <Avatar className="w-20 h-20 mx-auto mb-4 border-2 border-[#008F3D]">
                       <AvatarImage src={member.photo} alt={member.name} />
-                      <AvatarFallback className="bg-[#D4AF37] text-white text-lg">
+                      <AvatarFallback className="bg-[#008F3D] text-white text-lg">
                         {member.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
                     <h4 className="font-semibold mb-1">{member.name}</h4>
                     <p className="text-sm text-[#8B0000] mb-2">{member.position}</p>
                     <p className="text-xs text-muted-foreground mb-2">{member.bio}</p>
-                    <Badge variant="outline" className="text-xs border-[#D4AF37] text-[#D4AF37]">
+                    <Badge variant="outline" className="text-xs border-[#008F3D] text-[#008F3D]">
                       {member.termStart} - {member.termEnd}
                     </Badge>
                   </CardContent>
@@ -917,20 +917,20 @@ function PartnerSection() {
           viewport={{ once: true }}
           variants={scaleIn}
         >
-          <Card className="bg-gradient-to-r from-[#8B0000]/10 to-[#D4AF37]/10 border-[#D4AF37]/30">
+          <Card className="bg-[#8B0000] border-[#008F3D]/30 border-2">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-[#008F3D] flex items-center justify-center">
                   <Flag className="w-10 h-10 text-white" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <Badge className="bg-[#8B0000] text-white mb-2">Government Alignment</Badge>
-                  <h3 className="text-xl font-bold mb-2">KDMP Network</h3>
-                  <p className="text-muted-foreground mb-4">{KDMP_ALIGNMENT.description}</p>
+                  <Badge className="bg-[#008F3D] text-white mb-2">Government Alignment</Badge>
+                  <h3 className="text-xl font-bold text-white mb-2">KDMP Network</h3>
+                  <p className="text-white/80 mb-4">{KDMP_ALIGNMENT.description}</p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {KDMP_ALIGNMENT.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-2 text-sm text-white/80">
+                        <CheckCircle2 className="w-4 h-4 text-[#00A847] mt-0.5 flex-shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -948,11 +948,11 @@ function PartnerSection() {
 // CTA Section
 function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-[#1a1a2e] via-[#8B0000] to-[#1a1a2e] relative overflow-hidden">
+    <section className="py-20 bg-[#8B0000] relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#8B0000]/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#008F3D]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#6B0000]/30 rounded-full blur-3xl" />
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -963,17 +963,17 @@ function CTASection() {
         >
           <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold text-white mb-6">
             Jadilah Bagian dari{' '}
-            <span className="text-gradient-gold">Peradaban</span>
+            <span className="text-[#00A847]">Peradaban Baru</span>
           </motion.h2>
           
-          <motion.p variants={fadeInUp} className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-white/90 text-lg mb-8 max-w-2xl mx-auto font-medium">
             Bergabunglah dengan 125.000+ anggota KNMP dan jadilah bagian dari transformasi ekonomi digital desa Indonesia
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-[#1a1a2e] px-8 py-6 text-lg"
+              className="bg-[#008F3D] hover:bg-[#00A847] text-white px-8 py-6 text-lg font-semibold shadow-lg"
             >
               Gabung Sekarang
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -981,7 +981,7 @@ function CTASection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold"
             >
               Pelajari Lebih Lanjut
             </Button>
@@ -989,22 +989,22 @@ function CTASection() {
           
           <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap justify-center gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#D4AF37]">
+              <div className="text-3xl font-bold text-[#00A847]">
                 {HERO_STATS.members.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-400">Anggota Aktif</div>
+              <div className="text-sm text-white/70">Anggota Aktif</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#D4AF37]">
+              <div className="text-3xl font-bold text-[#00A847]">
                 {HERO_STATS.villages.toLocaleString()}
               </div>
-              <div className="text-sm text-gray-400">Desa Terintegrasi</div>
+              <div className="text-sm text-white/70">Desa Terintegrasi</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#D4AF37]">
+              <div className="text-3xl font-bold text-[#00A847]">
                 {HERO_STATS.provinces}
               </div>
-              <div className="text-sm text-gray-400">Provinsi</div>
+              <div className="text-sm text-white/70">Provinsi</div>
             </div>
           </motion.div>
         </motion.div>

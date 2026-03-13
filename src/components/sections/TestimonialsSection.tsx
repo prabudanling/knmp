@@ -60,13 +60,13 @@ export function TestimonialsSection() {
           className="text-center mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="bg-amber-100 text-[#D4AF37] border-amber-200 mb-4 px-4 py-1.5">
+            <Badge className="bg-green-100 text-[#008F3D] border-green-200 mb-4 px-4 py-1.5">
               Testimoni
             </Badge>
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             Kata <span className="text-[#8B0000]">Anggota Kami</span>
           </motion.h2>
@@ -88,17 +88,17 @@ export function TestimonialsSection() {
                     "{t.content}"
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center text-white font-bold text-lg shadow-md">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#8B0000] to-[#008F3D] flex items-center justify-center text-white font-bold text-lg shadow-md">
                       {t.name.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">{t.name}</p>
-                      <p className="text-sm text-gray-500">{t.role}</p>
+                      <p className="font-semibold text-[#1A1A1A]">{t.name}</p>
+                      <p className="text-sm text-[#374151]">{t.role}</p>
                     </div>
                   </div>
                   <div className="flex gap-0.5 mt-4">
                     {[...Array(t.rating)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" />
+                      <Star key={j} className="w-4 h-4 text-[#008F3D] fill-[#008F3D]" />
                     ))}
                   </div>
                 </CardContent>

@@ -44,8 +44,8 @@ export function HowItWorks() {
       title: 'Verifikasi Data',
       description: 'Tim kami memverifikasi data diri dan kelengkapan persyaratan.',
       icon: FileCheck,
-      color: '#D4AF37',
-      bgColor: 'from-amber-50 to-amber-100',
+      color: '#008F3D',
+      bgColor: 'from-green-50 to-green-100',
     },
     {
       number: '03',
@@ -90,13 +90,13 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="bg-amber-100 text-[#D4AF37] border-amber-200 mb-4 px-4 py-1.5">
+            <Badge className="bg-green-100 text-[#008F3D] border-green-200 mb-4 px-4 py-1.5">
               Cara Kerja
             </Badge>
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             Bergabung <span className="text-[#8B0000]">Mudah & Cepat</span>
           </motion.h2>

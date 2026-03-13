@@ -65,7 +65,7 @@ export function EcosystemSection() {
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             6 Kelompok <span className="text-[#8B0000]">Pihak Anggota</span>
           </motion.h2>
@@ -129,7 +129,7 @@ export function EcosystemSection() {
                       
                       {/* Hover arrow */}
                       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ArrowUpRight className="w-5 h-5 text-[#D4AF37]" />
+                        <ArrowUpRight className="w-5 h-5 text-[#008F3D]" />
                       </div>
                     </CardContent>
                   </Card>

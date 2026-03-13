@@ -62,9 +62,9 @@ export function UnitUsahaSection() {
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
-            6 Unit <span className="text-[#D4AF37]">Usaha Strategis</span>
+            6 Unit <span className="text-[#008F3D]">Usaha Strategis</span>
           </motion.h2>
           <motion.p 
             variants={fadeInUp}

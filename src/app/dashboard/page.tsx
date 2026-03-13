@@ -139,7 +139,7 @@ export default function DashboardPage() {
             title="Volume Transaksi"
             value={`Rp ${(DEMO_DATA.transactionSummary.totalVolume / 1000000).toFixed(0)} Jt`}
             icon={Wallet}
-            color="#D4AF37"
+            color="#008F3D"
           />
           <StatsCard
             title="Komisi Logistik"
@@ -393,7 +393,7 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent className="grid grid-cols-2 gap-3">
                   <QuickActionButton title="Upload Produk" icon={ShoppingBag} href="/marketplace" color="#22c55e" />
-                  <QuickActionButton title="Lihat Komisi" icon={Wallet} href="/dashboard" color="#D4AF37" />
+                  <QuickActionButton title="Lihat Komisi" icon={Wallet} href="/dashboard" color="#008F3D" />
                   <QuickActionButton title="Pelatihan" icon={GraduationCap} href="/academy" color="#3b82f6" />
                   <QuickActionButton title="SHU Saya" icon={TrendingUp} href="/shu" color="#8b5cf6" />
                 </CardContent>

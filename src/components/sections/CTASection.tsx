@@ -28,8 +28,8 @@ export function CTASection() {
     <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        {/* Gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8B0000] via-[#B22222] to-[#D4AF37]" />
+        {/* Gradient base - Merah Tua to Green PPP */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#8B0000] via-[#9B0F0F] to-[#008F3D]" />
         
         {/* Pattern overlay */}
         <div className="absolute inset-0 opacity-10" style={{
@@ -71,7 +71,7 @@ export function CTASection() {
           >
             Jadilah Bagian dari
             <br />
-            <span className="text-[#FFD700]">
+            <span className="text-[#00A847]">
               Peradaban Baru
             </span>
           </motion.h2>

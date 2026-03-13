@@ -235,7 +235,7 @@ function HowItWorksSection() {
       title: 'Aktivasi & Training',
       description: 'Ikuti pelatihan gratis selama 10 jam. Dapatkan sertifikat agen resmi.',
       icon: Award,
-      color: '#D4AF37',
+      color: '#008F3D',
     },
     {
       step: 3,

@@ -88,7 +88,7 @@ const units = [
 
 const stats = [
   { icon: TrendingUp, value: 'Rp 2,5T+', label: 'Revenue 2025', color: '#8B0000' },
-  { icon: Users, value: '125.000+', label: 'Anggota Aktif', color: '#D4AF37' },
+  { icon: Users, value: '125.000+', label: 'Anggota Aktif', color: '#008F3D' },
   { icon: Globe, value: '83.763', label: 'Desa Terjangkau', color: '#22c55e' },
   { icon: Shield, value: '100%', label: 'Transparansi', color: '#3b82f6' },
 ]

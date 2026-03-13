@@ -54,12 +54,12 @@ const misiData = [
   { number: 4, title: "Diplomasi Ekonomi", desc: "Menjalankan diplomasi ekonomi dalam dan luar negeri" },
 ]
 
-// Roadmap data
+// Roadmap data - GREEN PPP as primary
 const roadmapData = [
   { year: "2026", title: "Fondasi & Launch", target: "1.000 desa pilot", progress: 10, color: "#f59e0b" },
-  { year: "2027", title: "Scale-Up", target: "10.000 desa", progress: 25, color: "#22c55e" },
+  { year: "2027", title: "Scale-Up", target: "10.000 desa", progress: 25, color: "#008F3D" },
   { year: "2030", title: "Ekspor Global", target: "50.000 desa", progress: 50, color: "#3b82f6" },
-  { year: "2045", title: "World Class", target: "83.763 desa", progress: 100, color: "#D4AF37" },
+  { year: "2045", title: "World Class", target: "83.763 desa", progress: 100, color: "#008F3D" },
 ]
 
 export function VisiMisiSection() {
@@ -91,13 +91,13 @@ export function VisiMisiSection() {
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             Menuju <span className="text-[#8B0000]">World Class</span> Cooperative
           </motion.h2>
           <motion.p 
             variants={fadeInUp}
-            className="text-gray-600 text-lg max-w-2xl mx-auto"
+            className="text-[#374151] text-lg max-w-2xl mx-auto"
           >
             Menjadi Digital Operating System Desa Indonesia Terbesar di Dunia
           </motion.p>
@@ -111,13 +111,13 @@ export function VisiMisiSection() {
           className="max-w-4xl mx-auto mb-16"
         >
           <Card className="relative overflow-hidden border-2 border-[#8B0000]/10 bg-gradient-to-br from-white to-red-50/50">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000]" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#8B0000] via-[#008F3D] to-[#8B0000]" />
             <CardContent className="p-8 md:p-12 text-center">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
                 <Target className="w-8 h-8 text-[#8B0000]" />
               </div>
-              <blockquote className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-relaxed mb-4">
-                "Menjadi <span className="text-[#D4AF37]">Digital Operating System</span> Desa Indonesia{' '}
+              <blockquote className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A1A1A] leading-relaxed mb-4">
+                "Menjadi <span className="text-[#008F3D]">Digital Operating System</span> Desa Indonesia{' '}
                 <span className="text-[#8B0000]">Terbesar di Dunia</span>"
               </blockquote>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -162,12 +162,12 @@ export function VisiMisiSection() {
           className="mb-16"
         >
           <motion.div variants={fadeInUp} className="text-center mb-8">
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4 px-4 py-1.5">
+            <Badge className="bg-green-100 text-[#008F3D] border-green-200 mb-4 px-4 py-1.5">
               <Flag className="w-4 h-4 mr-2" />
               Misi Utama
             </Badge>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-              4 Misi <span className="text-[#D4AF37]">Strategis</span>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+              4 Misi <span className="text-[#008F3D]">Strategis</span>
             </h3>
           </motion.div>
 
@@ -205,7 +205,7 @@ export function VisiMisiSection() {
               <Rocket className="w-4 h-4 mr-2" />
               Roadmap 2026-2045
             </Badge>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
               Perjalanan Menuju <span className="text-[#8B0000]">World Class</span>
             </h3>
           </motion.div>

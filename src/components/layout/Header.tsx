@@ -17,24 +17,24 @@ import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { SITE_CONFIG } from '@/constants'
 
-// Menu structure with icons and colors for brilliant mobile UX
+// Menu structure with icons and colors - GREEN PPP Theme
 const menuStructure = [
   { 
     label: 'Beranda', 
     href: '/',
     icon: Home,
-    color: '#8B0000',
+    color: '#008F3D',
     description: 'Halaman utama'
   },
   { 
     label: 'Tentang', 
     href: '/tentang',
     icon: Info,
-    color: '#D4AF37',
+    color: '#8B0000',
     description: 'Profil KNMP',
     children: [
       { label: 'Tentang KNMP', href: '/tentang', icon: Building2, color: '#8B0000' },
-      { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#D4AF37' },
+      { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#008F3D' },
       { label: 'Struktur Organisasi', href: '/struktur-organisasi', icon: Users, color: '#3b82f6' },
       { label: '6 KPA (Anggota)', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
     ]
@@ -43,13 +43,13 @@ const menuStructure = [
     label: 'Layanan', 
     href: '#',
     icon: Briefcase,
-    color: '#22c55e',
+    color: '#008F3D',
     description: 'Produk & layanan',
     children: [
       { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#8B0000', badge: '8 Zona' },
       { label: 'Logistik Digital', href: '/logistik', icon: Truck, color: '#f59e0b', badge: '3 Level' },
       { label: 'Smart Village', href: '/smart-village', icon: Laptop, color: '#3b82f6' },
-      { label: 'Unit Usaha', href: '/unit-usaha', icon: Package, color: '#22c55e', badge: '5 Pilar' },
+      { label: 'Unit Usaha', href: '/unit-usaha', icon: Package, color: '#008F3D', badge: '5 Pilar' },
       { label: 'JE-P3 Academy', href: '/academy', icon: GraduationCap, color: '#8b5cf6', badge: '3 Level' },
     ]
   },
@@ -61,8 +61,8 @@ const menuStructure = [
     description: 'Transparansi',
     children: [
       { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#8B0000' },
-      { label: 'SHU Transparansi', href: '/shu', icon: BarChart3, color: '#22c55e' },
-      { label: 'RAT & E-Voting', href: '/rat', icon: Vote, color: '#D4AF37', badge: 'Live' },
+      { label: 'SHU Transparansi', href: '/shu', icon: BarChart3, color: '#008F3D' },
+      { label: 'RAT & E-Voting', href: '/rat', icon: Vote, color: '#00A847', badge: 'Live' },
       { label: 'Keanggotaan', href: '/membership', icon: Users, color: '#8b5cf6', badge: '7 Tier' },
     ]
   },
@@ -74,17 +74,17 @@ const menuStructure = [
     description: 'FAQ & Kontak',
     children: [
       { label: 'FAQ', href: '/faq', icon: MessageCircle, color: '#3b82f6' },
-      { label: 'Kontak', href: '/kontak', icon: Phone, color: '#22c55e' },
+      { label: 'Kontak', href: '/kontak', icon: Phone, color: '#008F3D' },
       { label: 'Dokumentasi', href: '/docs', icon: FileText, color: '#8b5cf6' },
     ]
   },
 ]
 
-// Quick Actions for mobile
+// Quick Actions for mobile - GREEN PPP Theme
 const quickActions = [
-  { label: 'Daftar', href: '/membership', icon: User, color: '#8B0000' },
-  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#D4AF37' },
-  { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#22c55e' },
+  { label: 'Daftar', href: '/membership', icon: User, color: '#008F3D' },
+  { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#8B0000' },
+  { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#00A847' },
   { label: 'Academy', href: '/academy', icon: GraduationCap, color: '#3b82f6' },
 ]
 
@@ -155,17 +155,17 @@ export function Header() {
                 whileTap={{ scale: 0.95 }}
                 className="relative"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-[#8B0000] via-[#B22222] to-[#D4AF37] flex items-center justify-center shadow-lg shadow-red-900/20">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-[#008F3D] via-[#00A847] to-[#8B0000] flex items-center justify-center shadow-lg shadow-green-900/20">
                   <span className="text-white font-bold text-lg md:text-xl tracking-tight">K</span>
                 </div>
                 <motion.div 
-                  className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#FFD700]"
+                  className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-r from-[#008F3D] to-[#00A847]"
                   animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
               </motion.div>
               <div className="hidden sm:block">
-                <span className="font-bold text-lg md:text-xl text-gray-900 group-hover:text-[#8B0000] transition-colors duration-300">
+                <span className="font-bold text-lg md:text-xl text-gray-900 group-hover:text-[#008F3D] transition-colors duration-300">
                   {SITE_CONFIG.name}
                 </span>
                 <p className="text-[10px] md:text-[11px] text-gray-500 tracking-wide">
@@ -184,18 +184,18 @@ export function Header() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   {item.children ? (
-                    <button className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#8B0000] transition-colors duration-200 flex items-center gap-1 group">
+                    <button className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#008F3D] transition-colors duration-200 flex items-center gap-1 group">
                       {item.label}
                       <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
                   ) : (
                     <Link
                       href={item.href}
-                      className="relative px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#8B0000] transition-colors duration-200 group"
+                      className="relative px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#008F3D] transition-colors duration-200 group"
                     >
                       {item.label}
                       <motion.span 
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] group-hover:w-full transition-all duration-300"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#008F3D] to-[#8B0000] group-hover:w-full transition-all duration-300"
                         layoutId={`underline-${index}`}
                       />
                     </Link>
@@ -222,12 +222,12 @@ export function Header() {
                               >
                                 <Link
                                   href={child.href}
-                                  className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-[#8B0000] hover:bg-red-50 rounded-lg transition-all duration-200 group"
+                                  className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-[#008F3D] hover:bg-green-50 rounded-lg transition-all duration-200 group"
                                 >
                                   <child.icon className="w-4 h-4" style={{ color: child.color }} />
                                   <span className="flex-1">{child.label}</span>
                                   {child.badge && (
-                                    <Badge className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] text-white border-0">
+                                    <Badge className="text-[10px] px-1.5 py-0.5 bg-gradient-to-r from-[#008F3D] to-[#8B0000] text-white border-0">
                                       {child.badge}
                                     </Badge>
                                   )}
@@ -247,7 +247,7 @@ export function Header() {
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center gap-2 lg:gap-3">
               <Link href="/dashboard">
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-[#8B0000] hover:bg-red-50 transition-colors">
+                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-[#008F3D] hover:bg-green-50 transition-colors">
                   Dashboard
                 </Button>
               </Link>
@@ -256,7 +256,7 @@ export function Header() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Link href="/membership">
-                  <Button size="sm" className="bg-gradient-to-r from-[#8B0000] to-[#B22222] hover:from-[#B22222] hover:to-[#DC143C] text-white shadow-lg shadow-red-900/20 hover:shadow-red-900/30 transition-all duration-300 relative overflow-hidden group">
+                  <Button size="sm" className="bg-gradient-to-r from-[#008F3D] to-[#00A847] hover:from-[#00752F] hover:to-[#008F3D] text-white shadow-lg shadow-green-900/20 hover:shadow-green-900/30 transition-all duration-300 relative overflow-hidden group">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <Zap className="w-4 h-4 mr-1 relative z-10" />
                     <span className="hidden lg:inline relative z-10">Gabung Sekarang</span>
@@ -273,8 +273,8 @@ export function Header() {
               className={cn(
                 "lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-300 shadow-lg",
                 isOpen 
-                  ? "bg-[#8B0000] text-white shadow-red-900/30" 
-                  : "bg-gradient-to-br from-[#8B0000] to-[#B22222] text-white shadow-red-900/20"
+                  ? "bg-[#008F3D] text-white shadow-green-900/30" 
+                  : "bg-gradient-to-br from-[#008F3D] to-[#00A847] text-white shadow-green-900/20"
               )}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Tutup menu" : "Buka menu"}
@@ -308,7 +308,7 @@ export function Header() {
         
         {/* Progress bar at bottom - Hidden on mobile */}
         <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B0000] via-[#D4AF37] to-[#8B0000] hidden md:block"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#008F3D] via-[#8B0000] to-[#008F3D] hidden md:block"
           style={{
             scaleX: useTransform(scrollY, [0, 5000], [0, 1]),
             transformOrigin: 'left',
@@ -343,7 +343,7 @@ export function Header() {
               className="absolute right-0 top-0 bottom-0 w-[88%] max-w-sm bg-white overflow-y-auto shadow-2xl"
             >
               {/* Header Section with User Info */}
-              <div className="sticky top-0 z-10 bg-gradient-to-br from-[#8B0000] via-[#9B0F0F] to-[#8B0000] px-5 pt-16 pb-6">
+              <div className="sticky top-0 z-10 bg-gradient-to-br from-[#008F3D] via-[#00A847] to-[#008F3D] px-5 pt-16 pb-6">
                 {/* Close button */}
                 <button
                   onClick={() => setIsOpen(false)}
@@ -450,12 +450,12 @@ export function Header() {
                                     <Link
                                       href={child.href}
                                       onClick={() => setIsOpen(false)}
-                                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:text-[#8B0000] hover:bg-red-50 transition-all duration-200 group"
+                                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:text-[#008F3D] hover:bg-green-50 transition-all duration-200 group"
                                     >
                                       <child.icon className="w-4 h-4" style={{ color: child.color }} />
                                       <span className="flex-1 text-sm">{child.label}</span>
                                       {child.badge && (
-                                        <Badge className="text-[9px] px-1.5 py-0.5 bg-gradient-to-r from-[#8B0000] to-[#D4AF37] text-white border-0">
+                                        <Badge className="text-[9px] px-1.5 py-0.5 bg-gradient-to-r from-[#008F3D] to-[#8B0000] text-white border-0">
                                           {child.badge}
                                         </Badge>
                                       )}
@@ -482,10 +482,10 @@ export function Header() {
                           <item.icon className="w-5 h-5" style={{ color: item.color }} />
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-gray-900 text-sm group-hover:text-[#8B0000] transition-colors">{item.label}</p>
+                          <p className="font-semibold text-gray-900 text-sm group-hover:text-[#008F3D] transition-colors">{item.label}</p>
                           <p className="text-xs text-gray-500">{item.description}</p>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-[#8B0000] group-hover:translate-x-0.5 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-[#008F3D] group-hover:translate-x-0.5 transition-all" />
                       </Link>
                     )}
                   </motion.div>
@@ -501,7 +501,7 @@ export function Header() {
                   className="p-4 bg-gradient-to-r from-red-50 via-amber-50 to-red-50 rounded-xl border border-red-100"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#008F3D] to-[#8B0000] flex items-center justify-center">
                       <Sparkles className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -510,7 +510,7 @@ export function Header() {
                     </div>
                   </div>
                   <Link href="/membership" onClick={() => setIsOpen(false)}>
-                    <Button className="w-full bg-gradient-to-r from-[#8B0000] to-[#B22222] text-white shadow-lg shadow-red-900/20 hover:shadow-red-900/30 transition-all group">
+                    <Button className="w-full bg-gradient-to-r from-[#008F3D] to-[#00A847] text-white shadow-lg shadow-green-900/20 hover:shadow-green-900/30 transition-all group">
                       <Zap className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                       Gabung Sekarang
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

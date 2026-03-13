@@ -307,8 +307,8 @@ function ProvinceMap() {
                   <div
                     className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
                     style={{
-                      backgroundColor: index === 0 ? "#D4AF3720" : "transparent",
-                      color: index === 0 ? "#D4AF37" : "inherit",
+                      backgroundColor: index === 0 ? "#008F3D20" : "transparent",
+                      color: index === 0 ? "#008F3D" : "inherit",
                     }}
                   >
                     {index + 1}
@@ -538,7 +538,7 @@ function LogisticsStatus() {
       label: "Agen Aktif",
       value: logisticsStatus.activeAgents,
       icon: Users,
-      color: "#D4AF37",
+      color: "#008F3D",
     },
     {
       label: "Rata-rata Pengiriman",
@@ -757,7 +757,7 @@ function VillageCategories() {
     {
       name: "Desa Pilot",
       count: 5200,
-      color: "#D4AF37",
+      color: "#008F3D",
       icon: Zap,
       description: "Program percontohan berhasil",
     },
@@ -887,7 +887,7 @@ export default function SmartVillagePage() {
             title="Total Desa"
             value={summary.totalVillages}
             icon={Building2}
-            color="#D4AF37"
+            color="#008F3D"
             trend={12.5}
             delay={0}
           />

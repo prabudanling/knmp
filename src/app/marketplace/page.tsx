@@ -71,7 +71,7 @@ const zoneConfig: Record<string, { color: string; bgColor: string; icon: React.R
   DIGITAL: { color: '#8b5cf6', bgColor: '#8b5cf620', icon: <Laptop className="w-6 h-6" />, emoji: '💻' },
   HEALTH: { color: '#ef4444', bgColor: '#ef444420', icon: <HeartPulse className="w-6 h-6" />, emoji: '🏥' },
   SPIRITUAL: { color: '#06b6d4', bgColor: '#06b6d420', icon: <Moon className="w-6 h-6" />, emoji: '🕌' },
-  EXPORT: { color: '#D4AF37', bgColor: '#D4AF3720', icon: <Globe className="w-6 h-6" />, emoji: '🌍' },
+  EXPORT: { color: '#008F3D', bgColor: '#008F3D20', icon: <Globe className="w-6 h-6" />, emoji: '🌍' },
   ENERGY: { color: '#f97316', bgColor: '#f9731620', icon: <Zap className="w-6 h-6" />, emoji: '⚡' },
 };
 
@@ -108,7 +108,7 @@ function HeroSection() {
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-[#22c55e]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#008F3D]/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <motion.div
@@ -137,7 +137,7 @@ function HeroSection() {
             className="text-responsive-subtitle text-gray-300 max-w-3xl mx-auto"
           >
             Platform B2B/B2C untuk{' '}
-            <span className="text-[#D4AF37] font-semibold">83.763 Desa Indonesia</span>
+            <span className="text-[#008F3D] font-semibold">83.763 Desa Indonesia</span>
           </motion.p>
 
           {/* Search Bar */}
@@ -374,7 +374,7 @@ function ProductCard({ product }: { product: Product }) {
         <CardContent className="p-4">
           {/* Seller Info */}
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#8B0000] to-[#008F3D] flex items-center justify-center">
               <span className="text-white text-xs font-bold">
                 {product.sellerName.charAt(0)}
               </span>
@@ -397,7 +397,7 @@ function ProductCard({ product }: { product: Product }) {
           {/* Rating & Sold */}
           <div className="flex items-center gap-3 mb-3">
             <div className="flex items-center gap-1">
-              <Star className="w-3 h-3 fill-[#D4AF37] text-[#D4AF37]" />
+              <Star className="w-3 h-3 fill-[#008F3D] text-[#008F3D]" />
               <span className="text-xs font-medium">{product.rating}</span>
             </div>
             <span className="text-xs text-muted-foreground">
@@ -448,7 +448,7 @@ function HowItWorksSection() {
       title: 'Transaksi dengan Smart Contract',
       description: 'Transaksi aman dengan smart contract, pembayaran otomatis, dan tracking real-time',
       icon: <CreditCard className="w-8 h-8" />,
-      color: '#D4AF37',
+      color: '#008F3D',
     },
   ];
 
@@ -478,7 +478,7 @@ function HowItWorksSection() {
           className="relative"
         >
           {/* Connection Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#22c55e] via-[#3b82f6] via-[#8b5cf6] to-[#D4AF37] hidden lg:block transform -translate-y-1/2 z-0" />
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#22c55e] via-[#3b82f6] via-[#8b5cf6] to-[#008F3D] hidden lg:block transform -translate-y-1/2 z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step) => (
@@ -543,7 +543,7 @@ function SellerBenefitsSection() {
       title: 'Export Ready',
       description: 'Akses ke pasar global dengan sertifikasi internasional dan dukungan logistik ekspor',
       value: '195 Negara',
-      color: '#D4AF37',
+      color: '#008F3D',
     },
   ];
 
@@ -551,7 +551,7 @@ function SellerBenefitsSection() {
     <section className="py-20 bg-gradient-to-r from-[#1a1a2e] via-[#8B0000]/20 to-[#1a1a2e] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#008F3D]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#8B0000]/20 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -615,7 +615,7 @@ function ProductCertificationSection() {
     { name: 'Organik', icon: <Leaf className="w-6 h-6" />, color: '#22c55e', description: 'Produk organik tersertifikasi' },
     { name: 'Halal', icon: <BadgeCheck className="w-6 h-6" />, color: '#06b6d4', description: 'Terjamin kehalalan' },
     { name: 'Fair Trade', icon: <Users className="w-6 h-6" />, color: '#3b82f6', description: 'Perdagangan adil untuk petani' },
-    { name: 'SNI', icon: <Award className="w-6 h-6" />, color: '#D4AF37', description: 'Standar Nasional Indonesia' },
+    { name: 'SNI', icon: <Award className="w-6 h-6" />, color: '#008F3D', description: 'Standar Nasional Indonesia' },
     { name: 'Ekspor Ready', icon: <Globe className="w-6 h-6" />, color: '#8b5cf6', description: 'Siap untuk pasar global' },
   ];
 
@@ -705,7 +705,7 @@ function CTASection() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#D4AF37]/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#008F3D]/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
       </div>
 
@@ -752,15 +752,15 @@ function CTASection() {
             className="mt-10 flex flex-wrap justify-center gap-8"
           >
             <div className="flex items-center gap-2 text-white/60 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+              <CheckCircle2 className="w-4 h-4 text-[#008F3D]" />
               <span>Pendaftaran Gratis</span>
             </div>
             <div className="flex items-center gap-2 text-white/60 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+              <CheckCircle2 className="w-4 h-4 text-[#008F3D]" />
               <span>Verifikasi Cepat</span>
             </div>
             <div className="flex items-center gap-2 text-white/60 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+              <CheckCircle2 className="w-4 h-4 text-[#008F3D]" />
               <span>Support 24/7</span>
             </div>
           </motion.div>

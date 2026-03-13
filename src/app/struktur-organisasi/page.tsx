@@ -68,7 +68,7 @@ const HIERARKI_KOMANDO = [
     wilayah: 'Provinsi (34 Wilayah)',
     padanan: 'Koordinator Provinsi — Setara Gubernur KNMP',
     icon: MapPin,
-    color: '#D4AF37',
+    color: '#008F3D',
   },
   {
     tingkat: 'III',
@@ -253,13 +253,13 @@ function HeroSection() {
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#008F3D]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#8B0000]/10 rounded-full blur-3xl" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-6">
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="border-[#D4AF37] text-[#D4AF37] px-4 py-1">
+            <Badge variant="outline" className="border-[#008F3D] text-[#008F3D] px-4 py-1">
               Dokumen Resmi KNMP
             </Badge>
           </motion.div>
@@ -275,7 +275,7 @@ function HeroSection() {
             <Badge className="bg-[#8B0000] text-white px-4 py-2">
               <Scale className="w-4 h-4 mr-2" />UU 25/1992 · Permenkop 8/2021
             </Badge>
-            <Badge className="bg-[#D4AF37] text-[#1a1a2e] px-4 py-2">
+            <Badge className="bg-[#008F3D] text-[#1a1a2e] px-4 py-2">
               <Globe className="w-4 h-4 mr-2" />UU 27/2022 · Inpres 9/2025
             </Badge>
           </motion.div>
@@ -372,7 +372,7 @@ function DewanPendiriSection() {
             <motion.div key={pendiri.no} variants={scaleIn}>
               <Card className={cn(
                 "h-full card-hover-lift",
-                pendiri.kosong ? "border-dashed border-2 border-amber-400 dark:border-amber-600 bg-amber-50/50 dark:bg-amber-950/20" : "border-l-4 border-l-[#D4AF37]"
+                pendiri.kosong ? "border-dashed border-2 border-amber-400 dark:border-amber-600 bg-amber-50/50 dark:bg-amber-950/20" : "border-l-4 border-l-[#008F3D]"
               )}>
                 <CardContent className="p-4">
                   <div className="flex items-start gap-3">
@@ -386,7 +386,7 @@ function DewanPendiriSection() {
                       <h4 className={cn("font-semibold mb-1", pendiri.kosong && "text-muted-foreground italic")}>
                         {pendiri.nama || '(Posisi Kosong)'}
                       </h4>
-                      <p className="text-xs text-[#D4AF37] font-medium mb-1 line-clamp-2">{pendiri.jabatan}</p>
+                      <p className="text-xs text-[#008F3D] font-medium mb-1 line-clamp-2">{pendiri.jabatan}</p>
                       <p className="text-xs text-muted-foreground line-clamp-2">{pendiri.peran}</p>
                     </div>
                   </div>
@@ -449,9 +449,9 @@ function DewanSection() {
 
           {/* Dewan Pembina */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-            <Card className="border-[#D4AF37]/30">
-              <CardHeader className="bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-b py-3">
-                <CardTitle className="flex items-center gap-2 text-[#D4AF37] text-lg">
+            <Card className="border-[#008F3D]/30">
+              <CardHeader className="bg-gradient-to-r from-[#008F3D]/10 to-transparent border-b py-3">
+                <CardTitle className="flex items-center gap-2 text-[#008F3D] text-lg">
                   <Award className="w-5 h-5" />Dewan Pembina (Advisory & Covenant Board)
                 </CardTitle>
               </CardHeader>
@@ -474,7 +474,7 @@ function DewanSection() {
             <Card className="border-[#1a1a2e]/30">
               <CardHeader className="bg-gradient-to-r from-[#1a1a2e]/10 to-transparent border-b py-3">
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Star className="w-5 h-5 text-[#D4AF37]" />Dewan Penasihat
+                  <Star className="w-5 h-5 text-[#008F3D]" />Dewan Penasihat
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
@@ -526,7 +526,7 @@ function PresidiumSection() {
                     "p-3 flex flex-col md:flex-row md:items-center gap-2 md:gap-4 transition-colors",
                     item.status === 'kosong' && "bg-gray-50/50 dark:bg-gray-900/30",
                     item.kosong && "bg-amber-50/50 dark:bg-amber-950/20",
-                    item.highlight && "bg-[#D4AF37]/5"
+                    item.highlight && "bg-[#008F3D]/5"
                   )}>
                     <div className="md:w-2/5">
                       <p className={cn("font-medium text-sm", item.highlight && "text-[#8B0000] font-semibold")}>{item.jabatan}</p>
@@ -556,7 +556,7 @@ function KoordinatorBidangSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-10">
           <motion.div variants={fadeInUp}>
-            <Badge className="bg-[#D4AF37] text-[#1a1a2e] mb-3">15 Divisi Strategis</Badge>
+            <Badge className="bg-[#008F3D] text-[#1a1a2e] mb-3">15 Divisi Strategis</Badge>
           </motion.div>
           <motion.h2 variants={fadeInUp} className="text-responsive-title font-bold mb-4">
             Koordinator <span className="text-gradient-primary">Bidang</span>
@@ -713,7 +713,7 @@ function RekapitulasiSection() {
             <Card>
               <CardHeader className="border-b py-3">
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <TrendingUp className="w-5 h-5 text-[#D4AF37]" />Roadmap Pengisian Posisi
+                  <TrendingUp className="w-5 h-5 text-[#008F3D]" />Roadmap Pengisian Posisi
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
@@ -722,7 +722,7 @@ function RekapitulasiSection() {
                     <div key={idx} className="p-3 flex items-start gap-3">
                       <div className={cn(
                         "w-7 h-7 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-xs",
-                        idx < 2 ? "bg-[#8B0000]" : idx < 4 ? "bg-[#D4AF37]" : "bg-gray-400"
+                        idx < 2 ? "bg-[#8B0000]" : idx < 4 ? "bg-[#008F3D]" : "bg-gray-400"
                       )}>
                         {idx + 1}
                       </div>
@@ -748,7 +748,7 @@ function RekapitulasiSection() {
               <blockquote className="text-lg md:text-xl italic mb-4">
                 "KNMP bukan milik pendirinya. KNMP milik seluruh anggota — kini dan selamanya."
               </blockquote>
-              <cite className="text-[#D4AF37] not-italic text-sm">
+              <cite className="text-[#008F3D] not-italic text-sm">
                 — Drs. H. Arif Rachman Hakim, CEO – Wakil Presiden / Waketum KNMP
               </cite>
               <div className="mt-4 flex flex-wrap justify-center gap-3">
@@ -772,13 +772,13 @@ function CTASection() {
             <Badge className="bg-white/20 text-white mb-4">Gabung Bersama Kami</Badge>
           </motion.div>
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Jadilah Bagian dari <span className="text-[#D4AF37]">Peradaban Baru</span>
+            Jadilah Bagian dari <span className="text-[#008F3D]">Peradaban Baru</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-gray-300 mb-6 max-w-2xl mx-auto">
             KNMP membuka kesempatan bagi seluruh anggota untuk berkontribusi dalam struktur organisasi.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-[#D4AF37] hover:bg-[#B8960C] text-[#1a1a2e] font-semibold">
+            <Button size="lg" className="bg-[#008F3D] hover:bg-[#B8960C] text-[#1a1a2e] font-semibold">
               Daftar Sebagai Anggota
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

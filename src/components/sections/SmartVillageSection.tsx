@@ -38,11 +38,11 @@ const staggerContainer = {
   },
 }
 
-// Stats
+// Stats - GREEN PPP as primary accent
 const mainStats = [
-  { title: 'Total Desa', value: 83763, icon: Building2, color: '#D4AF37', trend: 12.5 },
-  { title: 'Anggota Terdaftar', value: 5218231, icon: Users, color: '#3b82f6', trend: 23.8 },
-  { title: 'Komponen Terintegrasi', value: 8500, icon: Layers, color: '#8b5cf6', trend: 18.2 },
+  { title: 'Total Desa', value: 83763, icon: Building2, color: '#008F3D', trend: 12.5 },
+  { title: 'Anggota Terdaftar', value: 5218231, icon: Users, color: '#00A847', trend: 23.8 },
+  { title: 'Komponen Terintegrasi', value: 8500, icon: Layers, color: '#10B981', trend: 18.2 },
   { title: 'Nilai Produksi', value: 2500, suffix: 'M', icon: TrendingUp, color: '#22c55e', trend: 15.3 },
 ]
 
@@ -57,17 +57,17 @@ const topProvinces = [
 
 // Commodities
 const commodities = [
-  { name: 'Kopi', value: 'Rp 850M', growth: 15, color: '#8B4513' },
-  { name: 'Beras', value: 'Rp 620M', growth: 8, color: '#DAA520' },
-  { name: 'Rempah', value: 'Rp 430M', growth: 22, color: '#DC143C' },
-  { name: 'Coklat', value: 'Rp 380M', growth: 18, color: '#8B0000' },
+  { name: 'Kopi', value: 'Rp 850M', growth: 15, color: '#008F3D' },
+  { name: 'Beras', value: 'Rp 620M', growth: 8, color: '#22c55e' },
+  { name: 'Rempah', value: 'Rp 430M', growth: 22, color: '#10B981' },
+  { name: 'Coklat', value: 'Rp 380M', growth: 18, color: '#00A847' },
 ]
 
 // Village categories
 const villageCategories = [
-  { name: 'Terintegrasi Penuh', count: 12450, color: '#22c55e', icon: ShieldCheck },
+  { name: 'Terintegrasi Penuh', count: 12450, color: '#008F3D', icon: ShieldCheck },
   { name: 'Dalam Proses', count: 28500, color: '#3b82f6', icon: Clock },
-  { name: 'Pilot Project', count: 5200, color: '#D4AF37', icon: Zap },
+  { name: 'Pilot Project', count: 5200, color: '#f59e0b', icon: Zap },
   { name: 'Target Q4', count: 37613, color: '#8b5cf6', icon: Building2 },
 ]
 
@@ -102,16 +102,15 @@ function StatCard({ title, value, suffix, icon: Icon, color, trend }: {
 
   return (
     <motion.div ref={ref} variants={fadeInUp}>
-      <Card className="bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm hover:border-gray-600 transition-all">
+      <Card className="bg-white/10 border border-white/20 backdrop-blur-sm hover:border-white/40 transition-all">
         <CardContent className="p-4">
           <div className="flex items-start justify-between mb-3">
             <div 
-              className="w-10 h-10 rounded-xl flex items-center justify-center"
-              style={{ backgroundColor: `${color}20` }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/20"
             >
-              <Icon className="w-5 h-5" style={{ color }} />
+              <Icon className="w-5 h-5 text-white" />
             </div>
-            <div className="flex items-center gap-1 text-xs text-green-400">
+            <div className="flex items-center gap-1 text-xs text-green-300">
               <TrendingUp className="w-3 h-3" />
               +{trend}%
             </div>
@@ -121,9 +120,9 @@ function StatCard({ title, value, suffix, icon: Icon, color, trend }: {
               {count.toLocaleString()}
               {value >= 1000000 ? 'K' : ''}
             </span>
-            {suffix && <span className="text-gray-400">{suffix}</span>}
+            {suffix && <span className="text-white/70">{suffix}</span>}
           </div>
-          <p className="text-xs text-gray-500 mt-1">{title}</p>
+          <p className="text-xs text-white/70 mt-1">{title}</p>
         </CardContent>
       </Card>
     </motion.div>
@@ -133,24 +132,26 @@ function StatCard({ title, value, suffix, icon: Icon, color, trend }: {
 export function SmartVillageSection() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const [currentTime, setCurrentTime] = useState(new Date())
+  const [currentTime, setCurrentTime] = useState<string>('')
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    const updateTime = () => setCurrentTime(new Date().toLocaleTimeString('id-ID'))
+    updateTime() // Set initial time on client
+    const timer = setInterval(updateTime, 1000)
     return () => clearInterval(timer)
   }, [])
 
   return (
-    <section ref={ref} className="relative py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 overflow-hidden">
+    <section ref={ref} className="relative py-20 md:py-28 bg-gradient-to-b from-[#8B0000] via-[#9B0F0F] to-[#6B0000] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(212,175,55,0.3) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,143,61,0.4) 1px, transparent 0)`,
           backgroundSize: '40px 40px',
         }} />
       </div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#8B0000]/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#008F3D]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00A847]/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -161,7 +162,7 @@ export function SmartVillageSection() {
           className="text-center mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="bg-[#D4AF37]/20 text-[#D4AF37] border-[#D4AF37]/30 mb-4 px-4 py-1.5">
+            <Badge className="bg-[#008F3D]/30 text-white border-[#008F3D]/50 mb-4 px-4 py-1.5">
               <Activity className="w-4 h-4 mr-2" />
               Real-time Dashboard
             </Badge>
@@ -170,25 +171,25 @@ export function SmartVillageSection() {
             variants={fadeInUp}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
-            Smart Village <span className="text-[#D4AF37]">Dashboard</span>
+            Smart Village <span className="text-[#00A847]">Dashboard</span>
           </motion.h2>
           <motion.p 
             variants={fadeInUp}
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-4"
+            className="text-white/80 text-lg max-w-2xl mx-auto mb-4"
           >
             Pemantauan Real-time <span className="text-white font-semibold">83.763 Desa Indonesia</span>
           </motion.p>
           <motion.div 
             variants={fadeInUp}
-            className="flex items-center justify-center gap-4 text-sm text-gray-500"
+            className="flex items-center justify-center gap-4 text-sm text-white/60"
           >
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span>Live Data</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span>{currentTime.toLocaleTimeString('id-ID')}</span>
+              <span>{currentTime || '--:--:--'}</span>
             </div>
             <div className="flex items-center gap-2">
               <Database className="w-4 h-4" />
@@ -227,26 +228,26 @@ export function SmartVillageSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <Card className="h-full bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+            <Card className="h-full bg-white/10 border border-white/20 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="font-semibold text-white flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-[#D4AF37]" />
+                      <MapPin className="w-5 h-5 text-[#00A847]" />
                       Distribusi Desa per Provinsi
                     </h3>
-                    <p className="text-sm text-gray-500">Pemetaan 83.763 desa</p>
+                    <p className="text-sm text-white/60">Pemetaan 83.763 desa</p>
                   </div>
-                  <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
+                  <Badge className="bg-green-500/30 text-green-300 border-green-500/50">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse mr-1" />
                     Live
                   </Badge>
                 </div>
                 
                 {/* Map visualization */}
-                <div className="relative aspect-video bg-gray-900/50 rounded-xl overflow-hidden mb-4">
+                <div className="relative aspect-video bg-white/5 rounded-xl overflow-hidden mb-4">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Globe className="w-24 h-24 text-gray-700" />
+                    <Globe className="w-24 h-24 text-white/20" />
                   </div>
                   {/* Dots representing provinces */}
                   {[
@@ -258,13 +259,13 @@ export function SmartVillageSection() {
                   ].map((dot, i) => (
                     <div
                       key={i}
-                      className="absolute rounded-full bg-[#D4AF37] animate-pulse"
+                      className="absolute rounded-full bg-[#00A847] animate-pulse"
                       style={{
                         left: `${dot.x}%`,
                         top: `${dot.y}%`,
                         width: `${dot.size}px`,
                         height: `${dot.size}px`,
-                        opacity: 0.7,
+                        opacity: 0.8,
                       }}
                     />
                   ))}
@@ -273,14 +274,14 @@ export function SmartVillageSection() {
                 {/* Top provinces list */}
                 <div className="space-y-2">
                   {topProvinces.map((province, i) => (
-                    <div key={province.name} className="flex items-center justify-between p-2 rounded-lg bg-gray-900/50 hover:bg-gray-900 transition-colors">
+                    <div key={province.name} className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
                       <div className="flex items-center gap-2">
-                        <span className="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-300">
+                        <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold text-white">
                           {i + 1}
                         </span>
-                        <span className="text-sm text-gray-300">{province.name}</span>
+                        <span className="text-sm text-white/90">{province.name}</span>
                       </div>
-                      <span className="text-sm font-semibold text-[#D4AF37]">
+                      <span className="text-sm font-semibold text-[#00A847]">
                         {province.count.toLocaleString('id-ID')}
                       </span>
                     </div>
@@ -299,25 +300,25 @@ export function SmartVillageSection() {
             className="space-y-6"
           >
             {/* Commodities */}
-            <Card className="bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+            <Card className="bg-white/10 border border-white/20 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-white flex items-center gap-2 mb-4">
-                  <Package className="w-5 h-5 text-[#D4AF37]" />
+                  <Package className="w-5 h-5 text-[#00A847]" />
                   Komoditas Unggulan
                 </h3>
                 <div className="space-y-3">
                   {commodities.map((commodity) => (
-                    <div key={commodity.name} className="flex items-center justify-between p-3 rounded-lg bg-gray-900/50 hover:bg-gray-900 transition-colors">
+                    <div key={commodity.name} className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
                       <div className="flex items-center gap-3">
                         <div 
                           className="w-3 h-3 rounded-full"
                           style={{ backgroundColor: commodity.color }}
                         />
-                        <span className="text-sm text-gray-300">{commodity.name}</span>
+                        <span className="text-sm text-white/90">{commodity.name}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="font-semibold text-white">{commodity.value}</span>
-                        <Badge className="bg-green-500/20 text-green-400 text-xs">+{commodity.growth}%</Badge>
+                        <Badge className="bg-green-500/20 text-green-300 text-xs">+{commodity.growth}%</Badge>
                       </div>
                     </div>
                   ))}
@@ -326,18 +327,18 @@ export function SmartVillageSection() {
             </Card>
 
             {/* Village Categories */}
-            <Card className="bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+            <Card className="bg-white/10 border border-white/20 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-white flex items-center gap-2 mb-4">
-                  <Building2 className="w-5 h-5 text-[#D4AF37]" />
+                  <Building2 className="w-5 h-5 text-[#00A847]" />
                   Kategori Desa
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {villageCategories.map((cat) => (
-                    <div key={cat.name} className="p-3 rounded-lg bg-gray-900/50 hover:bg-gray-900 transition-colors">
+                    <div key={cat.name} className="p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
                       <div className="flex items-center gap-2 mb-2">
-                        <cat.icon className="w-4 h-4" style={{ color: cat.color }} />
-                        <span className="text-xs text-gray-400">{cat.name}</span>
+                        <cat.icon className="w-4 h-4 text-white" style={{ color: cat.color }} />
+                        <span className="text-xs text-white/60">{cat.name}</span>
                       </div>
                       <p className="text-lg font-bold text-white">{cat.count.toLocaleString('id-ID')}</p>
                     </div>
@@ -356,19 +357,19 @@ export function SmartVillageSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <Card className="bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+          <Card className="bg-white/10 border border-white/20 backdrop-blur-sm">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="font-semibold text-white">Progress Integrasi Desa</h3>
-                  <p className="text-sm text-gray-500">Menuju 83.763 desa terintegrasi</p>
+                  <p className="text-sm text-white/60">Menuju 83.763 desa terintegrasi</p>
                 </div>
-                <Badge className="bg-[#D4AF37]/20 text-[#D4AF37]">
+                <Badge className="bg-[#008F3D]/30 text-[#00A847]">
                   {((12450 + 28500 + 5200) / 83763 * 100).toFixed(1)}% Complete
                 </Badge>
               </div>
-              <Progress value={(12450 + 28500 + 5200) / 83763 * 100} className="h-3 bg-gray-700" />
-              <div className="flex justify-between text-xs text-gray-500 mt-2">
+              <Progress value={(12450 + 28500 + 5200) / 83763 * 100} className="h-3 bg-white/20" />
+              <div className="flex justify-between text-xs text-white/50 mt-2">
                 <span>46.150 desa terintegrasi</span>
                 <span>Target: 83.763 desa</span>
               </div>
@@ -385,7 +386,7 @@ export function SmartVillageSection() {
           className="text-center"
         >
           <Link href="/smart-village">
-            <Button className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#996515] text-gray-900 font-semibold shadow-lg px-8 py-5">
+            <Button className="bg-[#008F3D] hover:bg-[#00A847] text-white font-semibold shadow-lg px-8 py-5">
               <Activity className="w-4 h-4 mr-2" />
               Buka Dashboard Lengkap
               <ArrowRight className="ml-2 w-4 h-4" />

@@ -87,7 +87,7 @@ export const KPA_DATA: KPACategory[] = [
     name: 'Investor Pendukung',
     description: 'Investor individu atau institusi yang menyediakan modal bagi pengembangan usaha KNMP',
     icon: 'TrendingUp',
-    color: '#D4AF37',
+    color: '#008F3D',
     votingPower: 10,
     memberCount: 500,
   },
@@ -326,7 +326,7 @@ export const MEMBER_DASHBOARD: MemberDashboard = {
   ],
   quickActions: [
     { id: '1', title: 'Upload Produk', icon: 'Plus', href: '/dashboard/upload', color: '#22c55e' },
-    { id: '2', title: 'Lihat Komisi', icon: 'Wallet', href: '/dashboard/komisi', color: '#D4AF37' },
+    { id: '2', title: 'Lihat Komisi', icon: 'Wallet', href: '/dashboard/komisi', color: '#008F3D' },
     { id: '3', title: 'Pelatihan', icon: 'GraduationCap', href: '/academy', color: '#3b82f6' },
     { id: '4', title: 'SHU Saya', icon: 'TrendingUp', href: '/shu', color: '#8b5cf6' },
   ],
@@ -721,7 +721,7 @@ export const DUAL_ENTITY = {
       'Riset dan inovasi bisnis',
       'Standardisasi dan sertifikasi',
     ],
-    color: '#D4AF37',
+    color: '#008F3D',
   },
   knmp: {
     name: 'KNMP',

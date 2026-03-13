@@ -49,11 +49,11 @@ export const SITE_CONFIG = {
     npwp: '00.000.000.0-000.000',
   },
   
-  // Brand
+  // Brand - PPP Green & Maroon
   brand: {
-    primaryColor: '#8B0000',
-    secondaryColor: '#D4AF37',
-    accentColor: '#1a1a2e',
+    primaryColor: '#008F3D',     // Hijau PPP
+    secondaryColor: '#8B0000',   // Merah Tua
+    accentColor: '#1A1A1A',      // Soft Black
   },
 };
 

@@ -45,7 +45,7 @@ const zones = [
   { id: 'DIGITAL', name: 'Digital', icon: Laptop, color: '#8b5cf6', count: '8.000+', desc: 'Produk digital & jasa' },
   { id: 'HEALTH', name: 'Kesehatan', icon: HeartPulse, color: '#ef4444', count: '5.500+', desc: 'Produk kesehatan herbal' },
   { id: 'SPIRITUAL', name: 'Spiritual', icon: Moon, color: '#06b6d4', count: '3.200+', desc: 'Perlengkapan ibadah' },
-  { id: 'EXPORT', name: 'Ekspor', icon: Globe, color: '#D4AF37', count: '7.800+', desc: 'Produk siap ekspor' },
+  { id: 'EXPORT', name: 'Ekspor', icon: Globe, color: '#008F3D', count: '7.800+', desc: 'Produk siap ekspor' },
   { id: 'ENERGY', name: 'Energi', icon: Zap, color: '#f97316', count: '2.150+', desc: 'Energi terbarukan' },
   { id: 'LOGISTICS', name: 'Logistik', icon: Truck, color: '#64748b', count: '2.500+', desc: 'Jasa pengiriman' },
 ]
@@ -93,7 +93,7 @@ export function MarketplaceSection() {
           </motion.div>
           <motion.h2 
             variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
             Platform B2B/B2C <span className="text-[#8B0000]">83.763 Desa</span>
           </motion.h2>
@@ -117,7 +117,7 @@ export function MarketplaceSection() {
             { value: '56.650+', label: 'Produk Aktif', color: '#22c55e' },
             { value: '125.000+', label: 'Seller T3+', color: '#3b82f6' },
             { value: '38', label: 'Provinsi', color: '#8B0000' },
-            { value: 'Rp 2,5T', label: 'Transaksi/bulan', color: '#D4AF37' },
+            { value: 'Rp 2,5T', label: 'Transaksi/bulan', color: '#008F3D' },
           ].map((stat, i) => (
             <div key={i} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
               <p className="text-2xl font-bold" style={{ color: stat.color }}>{stat.value}</p>
@@ -163,8 +163,8 @@ export function MarketplaceSection() {
           variants={staggerContainer}
           className="mb-12"
         >
-          <motion.h3 variants={fadeInUp} className="text-xl font-bold text-gray-900 mb-6 text-center">
-            Produk <span className="text-[#D4AF37]">Unggulan</span>
+          <motion.h3 variants={fadeInUp} className="text-xl font-bold text-[#1A1A1A] mb-6 text-center">
+            Produk <span className="text-[#008F3D]">Unggulan</span>
           </motion.h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -190,7 +190,7 @@ export function MarketplaceSection() {
                     </div>
                     <CardContent className="p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#8B0000] to-[#D4AF37] flex items-center justify-center">
+                        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#8B0000] to-[#008F3D] flex items-center justify-center">
                           <span className="text-white text-[10px] font-bold">{product.seller[0]}</span>
                         </div>
                         <span className="text-xs text-gray-500 truncate">{product.seller}</span>
@@ -229,7 +229,7 @@ export function MarketplaceSection() {
           {[
             { icon: Leaf, label: 'Organik', color: '#22c55e' },
             { icon: BadgeCheck, label: 'Halal', color: '#06b6d4' },
-            { icon: Shield, label: 'SNI', color: '#D4AF37' },
+            { icon: Shield, label: 'SNI', color: '#008F3D' },
             { icon: Globe, label: 'Ekspor Ready', color: '#8b5cf6' },
           ].map((cert, i) => (
             <div key={i} className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-100">
