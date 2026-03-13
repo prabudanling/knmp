@@ -130,10 +130,9 @@ const DEWAN_PENDIRI = [
   },
   {
     no: 5,
-    nama: '', // DIKOSONGKAN
+    nama: 'Tn. H. Gugun Gunara, S. E',
     jabatan: 'Wakil Sekretaris Jenderal (Wasekjen) + Ketua Bidang Holding Trading Ekosistem + Grand Architect',
     peran: 'COO, Arsitek Strategi & Ekosistem Digital KNMP | Chief Strategy & Innovation Officer',
-    kosong: true,
   },
   {
     no: 6,
@@ -190,7 +189,7 @@ const PRESIDIUM_BAKORNAS = [
   { jabatan: 'PRESIDEN / Ketua Umum (Bakornas)', nama: 'Prof. Wirono, S.E., M.Pd', keterangan: 'Pendiri ke-1 | Pemimpin Tertinggi Eksekutif', status: 'terisi', highlight: true },
   { jabatan: 'WAKIL PRESIDEN / Wakil Ketua Umum', nama: 'Drs. H. Arif Rachman Hakim, M.M.', keterangan: 'Pendiri ke-2 | CEO JE-P3 & Diplomasi Global', status: 'terisi', highlight: true },
   { jabatan: 'SEKRETARIS JENDERAL (Sekjen)', nama: 'Dr. Cecep Sumarno', keterangan: 'Pendiri ke-4 | Legal Koperasi', status: 'terisi' },
-  { jabatan: 'WAKIL SEKRETARIS JENDERAL (Wasekjen)', nama: '', keterangan: 'Pendiri ke-5 | COO + Grand Architect KNMP', status: 'kosong', kosong: true },
+  { jabatan: 'WAKIL SEKRETARIS JENDERAL (Wasekjen)', nama: 'Tn. H. Gugun Gunara', keterangan: 'Pendiri ke-5 | COO + Grand Architect KNMP', status: 'terisi', highlight: true },
   { jabatan: 'BENDAHARA UMUM / CFO', nama: '(Kosong — Usulan: Akuntan/CPA Berpengalaman)', keterangan: 'Dipilih RAT Perdana — Memiliki Sertifikasi Keuangan', status: 'kosong' },
   { jabatan: 'WAKIL BENDAHARA UMUM 1', nama: '(Kosong — Usulan: Ahli Keuangan Koperasi)', keterangan: 'Bidang Anggaran & Simpanan', status: 'kosong' },
   { jabatan: 'WAKIL BENDAHARA UMUM 2', nama: '(Kosong — Usulan: Ahli Pajak/Tax Specialist)', keterangan: 'Bidang Pajak & Kepatuhan Fiskal', status: 'kosong' },
@@ -208,7 +207,7 @@ const KOORDINATOR_BIDANG = [
   { no: 7, bidang: 'Bidang Investasi & ESG', ketua: '(Kosong — Usulan: Ahli Investasi/CFA)', sekretaris: '(Kosong)', catatan: 'ESG, Green Bond, Impact Investing', status: 'kosong' },
   { no: 8, bidang: 'Bidang Bisnis Kemitraan & UMKM', ketua: 'Ongky Putra', sekretaris: '(Kosong — Usulan: Ahli Kewirausahaan)', catatan: 'Ekosistem Mitra & UMKM Desa', status: 'terisi' },
   { no: 9, bidang: 'Bidang Digital & Teknologi', ketua: 'M. Sidik', sekretaris: '(Kosong — Usulan: Software Engineer/DevOps)', catatan: 'kopnusa.id | Blockchain | AI | IoT', status: 'terisi' },
-  { no: 10, bidang: 'Bidang Holding Trading Ekosistem', ketua: '', sekretaris: 'Cecep Abdul Jabbar', catatan: 'Pendiri ke-5 | Grand Architect | Holding Strategis', status: 'terisi', kosong: true },
+  { no: 10, bidang: 'Bidang Holding Trading Ekosistem', ketua: 'Tn. H. Gugun Gunara, S. E', sekretaris: 'Cecep Abdul Jabbar', catatan: 'Pendiri ke-5 | Grand Architect | Holding Strategis', status: 'terisi' },
   { no: 11, bidang: 'Bidang Wisata, Umroh & Haji', ketua: 'Dr. Cecep Sumarno', sekretaris: '(Kosong — Usulan: Ahli Bisnis Haji/Umroh)', catatan: 'Pendiri ke-4 | Sekjen merangkap Bid. 11', status: 'terisi' },
   { no: 12, bidang: 'Bidang Hukum & Advokasi', ketua: '(Kosong — Usulan: Advokat/Pakar Hukum Koperasi)', sekretaris: '(Kosong — Usulan: Konsultan Hukum/Notaris)', catatan: 'Legal, Compliance, Advokasi Anggota', status: 'kosong' },
   { no: 13, bidang: 'Bidang Pengembangan SDM & Diklat', ketua: '(Kosong — Usulan: Prof./Pakar Pendidikan Koperasi)', sekretaris: '(Kosong — Usulan: Trainer/HRD Bersertifikat)', catatan: 'JE-P3 Academy | Kader KNMP Nasional', status: 'kosong' },
