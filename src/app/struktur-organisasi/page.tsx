@@ -102,7 +102,7 @@ const HIERARKI_KOMANDO = [
   },
 ];
 
-// Dewan Pendiri 9 Anggota - Gugun Gunara DIKOSONGKAN
+// Dewan Pendiri 9 Anggota - 
 const DEWAN_PENDIRI = [
   {
     no: 1,
