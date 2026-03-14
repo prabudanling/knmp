@@ -797,7 +797,7 @@ export const TEAM_STRUCTURE = {
     { id: 'p1', name: 'Prof. Wirono, S.E., M.Pd', position: 'Presiden / Ketua Umum (Bakornas)', photo: '/images/people/ketua.jpg', termStart: '2026', termEnd: '2029', bio: 'Pimpinan Tertinggi Eksekutif KNMP, Ketua Umum Koperasi Periode 2026–2029' },
     { id: 'p2', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Wakil Presiden / Wakil Ketua Umum', photo: '/images/people/waketum.jpg', termStart: '2026', termEnd: '2029', bio: 'Wakil Pimpinan Eksekutif & CEO JE-P3, Diplomat Utama 195 Negara' },
     { id: 'p3', name: 'Dr. Cecep Sumarno', position: 'Sekretaris Jenderal (Sekjen)', photo: '/images/people/sekjen.jpg', termStart: '2026', termEnd: '2029', bio: 'Kepala Administrasi & Legal Koperasi' },
-    { id: 'p4', name: '(Posisi Kosong)', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '', termStart: '2026', termEnd: '2029', bio: 'COO, Arsitek Strategi & Ekosistem Digital KNMP' },
+    { id: 'p4', name: 'Tn. H. Gugun Gunara', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '/images/people/wasekjen.jpg', termStart: '2026', termEnd: '2029', bio: 'COO, Arsitek Strategi & Ekosistem Digital KNMP' },
     { id: 'p5', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/penasihat1.jpg', termStart: '2026', termEnd: '2029', bio: 'Chief Financial Advisor KNMP, Arsitek Sistem Keuangan & ESG' },
   ],
   pengawas: [
