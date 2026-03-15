@@ -670,9 +670,9 @@ SOFTWARE.
 
 | Platform | Link |
 |----------|------|
-| 📧 Email | info@knmp.or.id |
-| 📱 WhatsApp | +62 812-3456-7890 |
-| 🌐 Website | https://knmp.or.id |
+| 📧 Email | admin@kopnusa.id|
+| 📱 WhatsApp | +62813 16516524 |
+| 🌐 Website | https://kopnusa.id|
 | 📍 Alamat | Menara Cakrawala 12th Floor, Jl. MH Thamrin Kav. 9, Jakarta Pusat |
 
 <br/>
@@ -683,7 +683,7 @@ SOFTWARE.
 
 ### **© 2024-2026 KNMP - Koperasi Nusantara Merah Putih**
 
-**All Rights Reserved**
+**All Rights Reserved Tn. H. Gugun Gunara**
 
 <br/>
 
