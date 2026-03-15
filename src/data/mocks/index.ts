@@ -262,7 +262,7 @@ export const SMART_VILLAGE_DASHBOARD: SmartVillageDashboard = {
     commission: 8500000000,
   },
   roadmapProgress: [
-    { phase: 'Fase 1', year: '2026', target: '1.000 Desa Terintegrasi', progress: 100, status: 'COMPLETED' },
+    { phase: 'Fase 1', year: '2026', target: '5.000 Desa Terintegrasi', progress: 100, status: 'COMPLETED' },
     { phase: 'Fase 2', year: '2027', target: '10.000 Desa Terintegrasi', progress: 85, status: 'IN_PROGRESS' },
     { phase: 'Fase 3', year: '2028', target: '25.000 Desa Terintegrasi', progress: 45, status: 'IN_PROGRESS' },
     { phase: 'Fase 4', year: '2030', target: '50.000 Desa Terintegrasi', progress: 0, status: 'UPCOMING' },
