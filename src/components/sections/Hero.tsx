@@ -63,7 +63,7 @@ const stats = [
   { value: '83.763', label: 'Desa Terhubung', sublabel: '(target nasional)', icon: Building2, color: '#008F3D' },
   { value: '6', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#8B0000' },
   { value: '195', label: 'Akses Potensial', sublabel: 'ke Negara', icon: Globe, color: '#00A847' },
-  { value: 'Rp 2.000 T', label: 'Target Volume', sublabel: 'Transaksi 2045', icon: Target, color: '#3b82f6' },
+  { value: 'Rp 1.000 T', label: 'Target Volume', sublabel: 'Transaksi 2028', icon: Target, color: '#3b82f6' },
 ]
 
 // Simpanan data - GREEN PPP as primary
