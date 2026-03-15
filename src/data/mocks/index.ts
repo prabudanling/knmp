@@ -871,8 +871,8 @@ export const PIMPINAN_LEVELS = [
     ],
     stats: [
       { label: 'Wilayah', value: 38, suffix: ' Provinsi' },
-      { label: 'Anggota', value: 125000, suffix: '+' },
-      { label: 'Target', value: 2045, suffix: '' },
+      { label: 'Anggota', value: 5000000, suffix: '+' },
+      { label: 'Target', value: 2030, suffix: '' },
     ],
   },
   {
