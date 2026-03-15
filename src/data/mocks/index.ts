@@ -1004,7 +1004,7 @@ export const KORNAS_STRUCTURE = {
       positions: [
         { id: 'dp-1', position: 'Pendiri ke-1 - Presiden / Ketua Umum', name: 'Prof. Wirono, S.E., M.Pd', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-2', position: 'Pendiri ke-2 - Wakil Presiden', name: 'Drs. H. Arif Rachman Hakim, M.M.', status: 'filled' as const, termEnd: '2029' },
-        { id: 'dp-3', position: 'Pendiri ke-3 - Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: 'Seumur Hidup' },
+        { id: 'dp-3', position: 'Pendiri ke-3 - Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-4', position: 'Pendiri ke-4 - Sekretaris Jenderal', name: 'Dr. Cecep Sumarno', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-5', position: 'Pendiri ke-5 - Wasekjen & COO', name: 'Tn. H. Gugun Gunara', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-6', position: 'Pendiri ke-6 - Ketua Dewan Penasihat', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
@@ -1017,7 +1017,7 @@ export const KORNAS_STRUCTURE = {
     {
       category: 'Dewan Pembina',
       positions: [
-        { id: 'dpm-1', position: 'Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: 'Seumur Hidup' },
+        { id: 'dpm-1', position: 'Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: '2029' },
         { id: 'dpm-2', position: 'Wakil Ketua Pembina', name: '(Posisi Kosong)', status: 'vacant' as const },
         { id: 'dpm-3', position: 'Sekretaris Pembina', name: '(Posisi Kosong)', status: 'vacant' as const },
         { id: 'dpm-4', position: 'Anggota Pembina Bidang Pemerintahan', name: '(Posisi Kosong)', status: 'vacant' as const },
@@ -1032,7 +1032,7 @@ export const KORNAS_STRUCTURE = {
         { id: 'phn-1', position: 'Presiden / Ketua Umum', name: 'Prof. Wirono, S.E., M.Pd', status: 'filled' as const, termEnd: '2029' },
         { id: 'phn-2', position: 'Wakil Presiden / Wakil Ketua Umum', name: 'Drs. H. Arif Rachman Hakim, M.M.', status: 'filled' as const, termEnd: '2029' },
         { id: 'phn-3', position: 'Sekretaris Jenderal (Sekjen)', name: 'Dr. Cecep Sumarno', status: 'filled' as const, termEnd: '2029' },
-        { id: 'phn-4', position: 'Wakil Sekretaris Jenderal (Wasekjen)', name: 'Tn. H. Gugun Gunara', status: 'filled' as const, termEnd: '2029' },
+        { id: 'phn-4', position: 'Wakil Sekretaris Jenderal (Wasekjen)', name: 'Tn. H. Gugun Gunara', status: 'filled' as const, termEnd: '2045' },
         { id: 'phn-5', position: 'Bendahara Umum / CFO', name: '(Posisi Kosong)', status: 'vacant' as const },
         { id: 'phn-6', position: 'Wakil Bendahara', name: '(Posisi Kosong)', status: 'vacant' as const },
       ]
