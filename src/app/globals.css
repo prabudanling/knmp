@@ -4,19 +4,21 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================
-   KNMP COLOR SYSTEM - PPP GREEN & MAROON RED
-   WCAG AA/AAA Compliant - High Contrast
-   ============================================
+   KOPNUSA COLOR SYSTEM - COMPREHENSIVE
+   Based on User's Detailed Specification
    
-   PRIMARY COLOR: Hijau PPP = #008F3D
-   SECONDARY COLOR: Merah Tua = #8B0000
-   NEUTRAL: Putih, Hitam Lembut, Abu
+   BRAND COLORS:
+   - Hijau PPP: #008F3D (Primary)
+   - Merah Tua: #8B0000 (Secondary)
    
-   Hierarchy:
-   - Hero Titles → Hijau PPP (Green)
-   - Section Titles → Merah Tua (Maroon)
-   - Body Text → Hitam Lembut (#1A1A1A)
-   - Background → Putih atau Abu Lembut
+   TIER COLORS (7 Levels):
+   - Tier 1: #6B7280 (Gray)
+   - Tier 2: #10B981 (Emerald)
+   - Tier 3: #0EA5E9 (Sky)
+   - Tier 4: #7C3AED (Violet)
+   - Tier 5: #DB2777 (Pink)
+   - Tier 6: #B7791F (Gold/Bronze)
+   - Tier 7: #C81E1E (Red)
    ============================================ */
 
 @theme inline {
@@ -32,6 +34,22 @@
   --color-maroon: var(--maroon);
   --color-maroon-light: var(--maroon-light);
   --color-maroon-dark: var(--maroon-dark);
+  
+  /* Tier Colors */
+  --color-tier-1: var(--tier-1);
+  --color-tier-1-soft: var(--tier-1-soft);
+  --color-tier-2: var(--tier-2);
+  --color-tier-2-soft: var(--tier-2-soft);
+  --color-tier-3: var(--tier-3);
+  --color-tier-3-soft: var(--tier-3-soft);
+  --color-tier-4: var(--tier-4);
+  --color-tier-4-soft: var(--tier-4-soft);
+  --color-tier-5: var(--tier-5);
+  --color-tier-5-soft: var(--tier-5-soft);
+  --color-tier-6: var(--tier-6);
+  --color-tier-6-soft: var(--tier-6-soft);
+  --color-tier-7: var(--tier-7);
+  --color-tier-7-soft: var(--tier-7-soft);
   
   /* UI Colors */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -84,45 +102,62 @@
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
   
-  /* BRAND COLORS */
+  /* ==========================================
+     BRAND COLORS - Main Foundation
+     ========================================== */
   
   /* Primary - Hijau PPP (#008F3D) */
   --green: #008F3D;
   --green-light: #00A847;
-  --green-dark: #00752F;
-  --green-bg: #E8F5E9;
-  --green-border: #C8E6C9;
+  --green-dark: #006F30;
+  --green-bg: rgba(0, 143, 61, 0.10);
+  --green-border: rgba(0, 143, 61, 0.20);
   
   /* Secondary - Merah Tua (#8B0000) */
   --maroon: #8B0000;
   --maroon-light: #A50000;
-  --maroon-dark: #6B0000;
-  --maroon-bg: #FFEBEE;
-  --maroon-border: #FFCDD2;
+  --maroon-dark: #6E0000;
+  --maroon-bg: rgba(139, 0, 0, 0.10);
+  --maroon-border: rgba(139, 0, 0, 0.20);
   
   /* Primary Button - Hijau PPP */
   --primary: #008F3D;
   --primary-foreground: #FFFFFF;
+  --primary-hover: #006F30;
   
   /* Secondary Button - Merah Tua */
   --secondary: #8B0000;
   --secondary-foreground: #FFFFFF;
+  --secondary-hover: #6E0000;
   
   /* Muted - Soft Gray */
   --muted: #F5F5F5;
-  --muted-foreground: #6B7280;
+  --muted-foreground: #4F4F4F;
   
   /* Accent - Soft Green */
-  --accent: #E8F5E9;
+  --accent: rgba(0, 143, 61, 0.08);
   --accent-foreground: #008F3D;
   
   /* Destructive */
   --destructive: #DC2626;
   
   /* Border & Input */
-  --border: #E5E7EB;
+  --border: #D9D9D9;
+  --border-soft: #EAEAEA;
   --input: #F3F4F6;
   --ring: #008F3D;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --bg-main: #FFFFFF;
+  --bg-soft: #F5F5F5;
+  --bg-soft-2: #EFEFEF;
+  --bg-dark: #111111;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4F4F4F;
+  --text-on-dark: #FFFFFF;
+  --text-disabled: #BDBDBD;
+  --success: #16A34A;
   
   /* Chart Colors */
   --chart-1: #008F3D;
@@ -131,15 +166,61 @@
   --chart-4: #DC2626;
   --chart-5: #10B981;
   
+  /* ==========================================
+     TIER COLORS - 7 Level Membership
+     ========================================== */
+  
+  /* Tier 1 - Warga Digital */
+  --tier-1: #6B7280;
+  --tier-1-soft: rgba(107, 114, 128, 0.10);
+  --tier-1-border: rgba(107, 114, 128, 0.20);
+  
+  /* Tier 2 - Anggota Dasar */
+  --tier-2: #10B981;
+  --tier-2-soft: rgba(16, 185, 129, 0.10);
+  --tier-2-border: rgba(16, 185, 129, 0.20);
+  
+  /* Tier 3 - Mitra Desa (KORDES) */
+  --tier-3: #0EA5E9;
+  --tier-3-soft: rgba(14, 165, 233, 0.10);
+  --tier-3-border: rgba(14, 165, 233, 0.20);
+  
+  /* Tier 4 - Mitra Kecamatan (KORCAM) */
+  --tier-4: #7C3AED;
+  --tier-4-soft: rgba(124, 58, 237, 0.10);
+  --tier-4-border: rgba(124, 58, 237, 0.20);
+  
+  /* Tier 5 - Mitra Kabupaten (KORDA) */
+  --tier-5: #DB2777;
+  --tier-5-soft: rgba(219, 39, 119, 0.10);
+  --tier-5-border: rgba(219, 39, 119, 0.20);
+  
+  /* Tier 6 - Mitra Provinsi (KORWIL) - Gold/Bronze */
+  --tier-6: #B7791F;
+  --tier-6-soft: rgba(183, 121, 31, 0.12);
+  --tier-6-border: rgba(183, 121, 31, 0.25);
+  
+  /* Tier 7 - Mitra Nasional (KORNAS) */
+  --tier-7: #C81E1E;
+  --tier-7-soft: rgba(200, 30, 30, 0.10);
+  --tier-7-border: rgba(200, 30, 30, 0.20);
+  
   /* Sidebar */
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1A1A1A;
   --sidebar-primary: #008F3D;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E8F5E9;
+  --sidebar-accent: rgba(0, 143, 61, 0.08);
   --sidebar-accent-foreground: #008F3D;
   --sidebar-border: #E5E7EB;
   --sidebar-ring: #008F3D;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 
 .dark {
@@ -167,7 +248,7 @@
   --muted-foreground: #9CA3AF;
   
   /* Accent */
-  --accent: #1A3D2E;
+  --accent: rgba(0, 168, 71, 0.15);
   --accent-foreground: #00A847;
   
   /* Destructive */
@@ -190,7 +271,7 @@
   --sidebar-foreground: #F5F5F5;
   --sidebar-primary: #00A847;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1A3D2E;
+  --sidebar-accent: rgba(0, 168, 71, 0.15);
   --sidebar-accent-foreground: #00A847;
   --sidebar-border: #374151;
   --sidebar-ring: #00A847;
@@ -203,11 +284,326 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  /* Ensure proper text colors */
+  p, li, td, th, label, input, textarea, select {
+    color: var(--text-primary);
+  }
+  
+  small, .text-muted, .meta {
+    color: var(--text-secondary);
+  }
+  
+  a {
+    color: var(--green);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--green-dark);
   }
 }
 
 /* ==========================================
-   CUSTOM SCROLLBAR - Brand Colors
+   TIER-SPECIFIC UTILITIES
+   ========================================== */
+@layer utilities {
+  /* Tier Chips */
+  .tier-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid transparent;
+  }
+  
+  /* Tier Top Accent */
+  .tier-accent-top {
+    position: relative;
+  }
+  
+  .tier-accent-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  /* Tier Cards */
+  .tier-card {
+    background: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Tier 1 Styling */
+  .tier-1 { color: var(--tier-1); }
+  .tier-1-bg { background: var(--tier-1-soft); }
+  .tier-1-border { border-color: var(--tier-1-border); }
+  .tier-card.tier-1::before { background: var(--tier-1); }
+  
+  /* Tier 2 Styling */
+  .tier-2 { color: var(--tier-2); }
+  .tier-2-bg { background: var(--tier-2-soft); }
+  .tier-2-border { border-color: var(--tier-2-border); }
+  .tier-card.tier-2::before { background: var(--tier-2); }
+  
+  /* Tier 3 Styling */
+  .tier-3 { color: var(--tier-3); }
+  .tier-3-bg { background: var(--tier-3-soft); }
+  .tier-3-border { border-color: var(--tier-3-border); }
+  .tier-card.tier-3::before { background: var(--tier-3); }
+  
+  /* Tier 4 Styling */
+  .tier-4 { color: var(--tier-4); }
+  .tier-4-bg { background: var(--tier-4-soft); }
+  .tier-4-border { border-color: var(--tier-4-border); }
+  .tier-card.tier-4::before { background: var(--tier-4); }
+  
+  /* Tier 5 Styling */
+  .tier-5 { color: var(--tier-5); }
+  .tier-5-bg { background: var(--tier-5-soft); }
+  .tier-5-border { border-color: var(--tier-5-border); }
+  .tier-card.tier-5::before { background: var(--tier-5); }
+  
+  /* Tier 6 Styling (Gold/Bronze) */
+  .tier-6 { color: var(--tier-6); }
+  .tier-6-bg { background: var(--tier-6-soft); }
+  .tier-6-border { border-color: var(--tier-6-border); }
+  .tier-card.tier-6::before { background: var(--tier-6); }
+  
+  /* Tier 7 Styling (Red - Highest) */
+  .tier-7 { color: var(--tier-7); }
+  .tier-7-bg { background: var(--tier-7-soft); }
+  .tier-7-border { border-color: var(--tier-7-border); }
+  .tier-card.tier-7::before { background: var(--tier-7); }
+}
+
+/* ==========================================
+   BUTTON SYSTEM
+   ========================================== */
+@layer utilities {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--primary-hover);
+    color: var(--white);
+  }
+  
+  .btn-secondary {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--secondary-hover);
+    color: var(--white);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    color: var(--green);
+    border-color: var(--green);
+  }
+  
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    background: rgba(0, 143, 61, 0.08);
+    color: var(--green-dark);
+  }
+  
+  .btn-light {
+    background: var(--white);
+    color: var(--green);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .btn-light:hover,
+  .btn-light:focus-visible {
+    background: #F7FFF9;
+  }
+}
+
+/* ==========================================
+   CARD UI GLOBAL
+   ========================================== */
+@layer utilities {
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-title {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  
+  .card-subtitle,
+  .card-meta,
+  .card-text {
+    color: var(--text-secondary);
+  }
+}
+
+/* ==========================================
+   NAVBAR, HERO, FOOTER
+   ========================================== */
+@layer utilities {
+  .navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  
+  .navbar a {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--green);
+  }
+  
+  .hero {
+    background: var(--bg-main);
+  }
+  
+  .hero--soft {
+    background: var(--bg-soft);
+  }
+  
+  .hero-stat-value {
+    color: var(--green);
+    font-weight: 800;
+  }
+  
+  .hero-stat-label {
+    color: var(--text-secondary);
+  }
+  
+  .footer {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+  }
+  
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer p,
+  .footer li,
+  .footer a {
+    color: var(--text-on-dark);
+  }
+  
+  .footer a:hover {
+    color: #D8FFE7;
+  }
+  
+  .footer .divider {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ==========================================
+   BADGES
+   ========================================== */
+@layer utilities {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .badge-brand {
+    background: rgba(0, 143, 61, 0.10);
+    color: var(--green);
+  }
+  
+  .badge-danger {
+    background: rgba(139, 0, 0, 0.10);
+    color: var(--maroon);
+  }
+  
+  .badge-success {
+    background: rgba(22, 163, 74, 0.10);
+    color: var(--success);
+  }
+}
+
+/* ==========================================
+   FORMS
+   ========================================== */
+@layer utilities {
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    background: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+  }
+  
+  .input::placeholder,
+  .textarea::placeholder {
+    color: #8A8A8A;
+  }
+  
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(0, 143, 61, 0.10);
+  }
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
    ========================================== */
 @layer utilities {
   .scrollbar-thin {
@@ -235,18 +631,16 @@
 }
 
 /* ==========================================
-   TEXT GRADIENTS - Brand Colors
+   TEXT GRADIENTS
    ========================================== */
 @layer utilities {
-  /* Green Gradient for Hero Titles */
   .text-gradient-green {
-    background: linear-gradient(135deg, #008F3D 0%, #00A847 50%, #00752F 100%);
+    background: linear-gradient(135deg, #008F3D 0%, #00A847 50%, #006F30 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  /* Maroon Gradient for Section Titles */
   .text-gradient-maroon {
     background: linear-gradient(135deg, #8B0000 0%, #A50000 100%);
     -webkit-background-clip: text;
@@ -254,17 +648,8 @@
     background-clip: text;
   }
   
-  /* Primary text gradient (Green) */
   .text-gradient-primary {
     background: linear-gradient(135deg, #008F3D 0%, #00A847 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  /* Legacy support - maps to green */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #008F3D 0%, #00A847 50%, #00752F 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -298,7 +683,7 @@
 }
 
 /* ==========================================
-   GLOW EFFECTS - Brand Colors
+   GLOW EFFECTS
    ========================================== */
 @layer utilities {
   .glow-green {
@@ -307,10 +692,6 @@
   
   .glow-maroon {
     box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(139, 0, 0, 0.1);
-  }
-  
-  .glow-primary {
-    box-shadow: 0 0 20px rgba(0, 143, 61, 0.3), 0 0 40px rgba(0, 143, 61, 0.1);
   }
   
   .glow-soft {
@@ -378,7 +759,6 @@
    HERO GRADIENT BACKGROUNDS
    ========================================== */
 @layer utilities {
-  /* Main Hero Gradient - Green & White */
   .hero-gradient {
     background: linear-gradient(135deg, 
       #FFFFFF 0%, 
@@ -388,7 +768,6 @@
     );
   }
   
-  /* Light Hero with Green tint */
   .hero-gradient-light {
     background: linear-gradient(135deg, 
       #FFFFFF 0%, 
@@ -397,7 +776,6 @@
     );
   }
   
-  /* Hero with Maroon accent */
   .hero-gradient-maroon {
     background: linear-gradient(135deg, 
       #FFFFFF 0%, 
@@ -406,21 +784,11 @@
     );
   }
   
-  /* Combined - Green to White to Maroon */
   .hero-gradient-brand {
     background: linear-gradient(135deg, 
       #E8F5E9 0%, 
       #FFFFFF 50%, 
       #FFEBEE 100%
-    );
-  }
-  
-  /* Legacy support */
-  .hero-gradient-red {
-    background: linear-gradient(135deg, 
-      #FFFFFF 0%, 
-      #FFEBEE 50%,
-      #FFF5F5 100%
     );
   }
 }
@@ -452,7 +820,7 @@
    ========================================== */
 @layer utilities {
   .section-white {
-    @apply bg-white;
+    background: #FFFFFF;
   }
   
   .section-green-light {
@@ -465,18 +833,6 @@
   
   .section-gray {
     background: linear-gradient(to bottom, #F5F5F5, #FFFFFF);
-  }
-  
-  .section-cream {
-    background: linear-gradient(to bottom, #FFFFFF, #F5F5F5);
-  }
-  
-  .section-red-light {
-    background: linear-gradient(to bottom, #FFEBEE, #FFFFFF);
-  }
-  
-  .section-gold-light {
-    background: linear-gradient(to bottom, #E8F5E9, #FFFFFF);
   }
 }
 
@@ -495,81 +851,15 @@
    ========================================== */
 @layer utilities {
   .text-responsive-hero {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
+    font-size: clamp(28px, 8vw, 80px);
   }
   
   .text-responsive-title {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    font-size: clamp(24px, 5vw, 48px);
   }
   
   .text-responsive-subtitle {
-    @apply text-lg sm:text-xl md:text-2xl;
-  }
-}
-
-/* ==========================================
-   BUTTON STYLES
-   ========================================== */
-@layer utilities {
-  /* Primary Button - Hijau PPP */
-  .btn-primary {
-    @apply bg-[#008F3D] hover:bg-[#00752F] text-white font-semibold transition-colors;
-  }
-  
-  /* Secondary Button - Merah Tua */
-  .btn-secondary {
-    @apply bg-[#8B0000] hover:bg-[#6B0000] text-white font-semibold transition-colors;
-  }
-  
-  /* Outline Button - Green */
-  .btn-outline-green {
-    @apply border-2 border-[#008F3D] text-[#008F3D] hover:bg-[#008F3D] hover:text-white font-semibold transition-colors;
-  }
-  
-  /* Outline Button - Maroon */
-  .btn-outline-maroon {
-    @apply border-2 border-[#8B0000] text-[#8B0000] hover:bg-[#8B0000] hover:text-white font-semibold transition-colors;
-  }
-}
-
-/* ==========================================
-   BADGE STYLES
-   ========================================== */
-@layer utilities {
-  .badge-green {
-    @apply bg-[#E8F5E9] text-[#008F3D] border border-[#C8E6C9];
-  }
-  
-  .badge-maroon {
-    @apply bg-[#FFEBEE] text-[#8B0000] border border-[#FFCDD2];
-  }
-  
-  .badge-green-solid {
-    @apply bg-[#008F3D] text-white;
-  }
-  
-  .badge-maroon-solid {
-    @apply bg-[#8B0000] text-white;
-  }
-}
-
-/* ==========================================
-   STAT COUNTER ANIMATION
-   ========================================== */
-@layer utilities {
-  .counter-up {
-    animation: countUp 2s ease-out forwards;
-  }
-}
-
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    font-size: clamp(16px, 3vw, 24px);
   }
 }
 
@@ -577,7 +867,6 @@
    ACCESSIBILITY - HIGH CONTRAST
    ========================================== */
 @layer utilities {
-  /* Ensure minimum contrast ratios */
   .text-high-contrast {
     color: #1A1A1A;
   }
@@ -600,15 +889,33 @@
 }
 
 /* ==========================================
-   FOCUS STATES - Accessibility
+   FOCUS STATES
    ========================================== */
 @layer utilities {
   .focus-green:focus {
-    @apply outline-none ring-2 ring-[#008F3D] ring-offset-2;
+    outline: none;
+    ring: 2px solid #008F3D;
+    ring-offset: 2px;
   }
   
   .focus-maroon:focus {
-    @apply outline-none ring-2 ring-[#8B0000] ring-offset-2;
+    outline: none;
+    ring: 2px solid #8B0000;
+    ring-offset: 2px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+   ========================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .btn {
+    min-height: 44px;
+    width: 100%;
   }
 }
 
@@ -616,12 +923,10 @@
    UTILITY OVERRIDES
    ========================================== */
 
-/* Ensure white backgrounds are truly white */
 .bg-white {
   background-color: #FFFFFF !important;
 }
 
-/* Ensure proper text colors */
 .text-primary-green {
   color: #008F3D;
 }
@@ -630,7 +935,6 @@
   color: #8B0000;
 }
 
-/* Background colors */
 .bg-primary-green {
   background-color: #008F3D;
 }
@@ -647,11 +951,24 @@
   background-color: #FFEBEE;
 }
 
-/* Border colors */
 .border-primary-green {
   border-color: #008F3D;
 }
 
 .border-primary-maroon {
   border-color: #8B0000;
+}
+
+/* Discount Badge Animation */
+@keyframes pulse-discount {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.discount-badge {
+  animation: pulse-discount 2s ease-in-out infinite;
 }

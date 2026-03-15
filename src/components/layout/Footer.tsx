@@ -27,51 +27,12 @@ import {
   ExternalLink,
   Clock,
   HeadphonesIcon,
-  MessageCircle
+  MessageCircle,
+  Leaf
 } from 'lucide-react'
 import { SITE_CONFIG, FOOTER_LINKS } from '@/constants'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
-// Floating particles animation
-const FloatingParticle = ({ delay, duration, x, y }: { delay: number; duration: number; x: number; y: number }) => (
-  <motion.div
-    className="absolute w-1 h-1 bg-[#008F3D] rounded-full opacity-30"
-    initial={{ x: 0, y: 0, opacity: 0 }}
-    animate={{
-      x: [0, x, 0],
-      y: [0, y, 0],
-      opacity: [0, 0.6, 0],
-      scale: [1, 1.5, 1],
-    }}
-    transition={{
-      duration,
-      delay,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    }}
-  />
-)
-
-// Wave SVG Component
-const WaveDivider = () => (
-  <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none transform -translate-y-1">
-    <svg
-      className="relative block w-full h-16 md:h-24"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-    >
-      <motion.path
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: 'easeInOut' }}
-        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-        className="fill-white"
-      />
-    </svg>
-  </div>
-)
 
 // Animated Counter Component
 const AnimatedCounter = ({ value, suffix = '', duration = 2 }: { value: number; suffix?: string; duration?: number }) => {
@@ -159,41 +120,10 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative bg-gradient-to-br from-[#008F3D] via-[#00A847] to-[#008F3D] text-white overflow-hidden"
+      className="relative bg-[#111111] text-white overflow-hidden"
     >
-      {/* Wave Divider */}
-      <WaveDivider />
-
-      {/* Floating Particles Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <FloatingParticle
-            key={i}
-            delay={i * 0.5}
-            duration={3 + Math.random() * 2}
-            x={(Math.random() - 0.5) * 100}
-            y={(Math.random() - 0.5) * 100}
-          />
-        ))}
-      </div>
-
-      {/* Decorative Elements */}
-      <motion.div
-        className="absolute top-20 right-10 w-64 h-64 bg-[#8B0000]/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-40 left-10 w-48 h-48 bg-white/5 rounded-full blur-2xl"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.05, 0.1, 0.05],
-        }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
+      {/* Decorative Top Border */}
+      <div className="h-1 bg-gradient-to-r from-[#008F3D] via-[#8B0000] to-[#008F3D]" />
 
       {/* Main Footer Content */}
       <motion.div
@@ -203,32 +133,32 @@ export function Footer() {
         className="relative z-10"
       >
         {/* Top Section - Newsletter & Stats */}
-        <div className="container mx-auto px-4 lg:px-8 pt-28 md:pt-32 pb-12">
+        <div className="container mx-auto px-4 lg:px-8 pt-12 pb-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Newsletter Section */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#008F3D]/20 backdrop-blur-sm rounded-full border border-[#008F3D]/30">
                 <Sparkles className="w-4 h-4 text-[#008F3D]" />
-                <span className="text-sm font-medium">Newsletter</span>
+                <span className="text-sm font-medium text-[#008F3D]">Newsletter</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Dapatkan Update Terbaru
                 <span className="block text-[#008F3D]">Langsung ke Email Anda</span>
               </h3>
-              <p className="text-white/70 max-w-md">
+              <p className="text-gray-400 max-w-md">
                 Bergabung dengan 125.000+ anggota yang mendapatkan informasi terkini tentang program, 
                 peluang usaha, dan kegiatan KNMP.
               </p>
               
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
                 <div className="relative flex-1">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
                   <Input
                     type="email"
                     placeholder="Masukkan email Anda"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-12 h-12 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#008F3D] focus:ring-[#008F3D]/20"
+                    className="pl-12 h-12 bg-[#1A1A1A] border-gray-700 text-white placeholder:text-gray-500 focus:border-[#008F3D] focus:ring-[#008F3D]/20"
                   />
                 </div>
                 <Button
@@ -263,16 +193,13 @@ export function Footer() {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: 0.3 + index * 0.1 }}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className="relative p-5 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group"
+                  className="relative p-5 bg-[#1A1A1A] rounded-2xl border border-gray-800 overflow-hidden group"
                 >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-                  />
                   <stat.icon className="w-8 h-8 mb-3" style={{ color: stat.color }} />
                   <div className="text-2xl md:text-3xl font-bold text-white">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </div>
-                  <p className="text-sm text-white/70 mt-1">{stat.label}</p>
+                  <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -281,12 +208,7 @@ export function Footer() {
 
         {/* Divider */}
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="h-px bg-gradient-to-r from-transparent via-[#008F3D]/50 to-transparent"
-          />
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
         </div>
 
         {/* Main Links Section */}
@@ -298,7 +220,7 @@ export function Footer() {
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-[#008F3D] flex items-center justify-center shadow-xl shadow-black/20"
+                  className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#008F3D] to-[#006B2D] flex items-center justify-center shadow-xl shadow-[#008F3D]/20"
                 >
                   <span className="text-white font-bold text-2xl">K</span>
                 </motion.div>
@@ -306,24 +228,24 @@ export function Footer() {
                   <span className="font-bold text-2xl text-white group-hover:text-[#008F3D] transition-colors">
                     {SITE_CONFIG.name}
                   </span>
-                  <p className="text-xs text-white/60">{SITE_CONFIG.fullName}</p>
+                  <p className="text-xs text-gray-500">{SITE_CONFIG.fullName}</p>
                 </div>
               </Link>
 
-              <p className="text-sm text-white/70 max-w-md leading-relaxed">
+              <p className="text-sm text-gray-400 max-w-md leading-relaxed">
                 {SITE_CONFIG.description}
               </p>
 
-              {/* Contact Info - Updated Address */}
+              {/* Contact Info */}
               <div className="space-y-3">
                 <motion.a
                   href="https://maps.google.com/?q=Menara+Cakrawala+Jl+MH+Thamrin+Kav+9+Jakarta"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-3 text-sm text-white/70 hover:text-[#008F3D] transition-colors group"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#008F3D] transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-[#1A1A1A] group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
                     <MapPin className="w-5 h-5 text-[#008F3D]" />
                   </div>
                   <span className="flex-1">Menara Cakrawala 12th Floor, Jl. MH Thamrin Kav. 9, Menteng, Jakarta Pusat 10340</span>
@@ -332,9 +254,9 @@ export function Footer() {
                 <motion.a
                   href={`tel:${SITE_CONFIG.contact.phone}`}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-3 text-sm text-white/70 hover:text-[#008F3D] transition-colors group"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#008F3D] transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-[#1A1A1A] group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
                     <Phone className="w-5 h-5 text-[#008F3D]" />
                   </div>
                   <span>{SITE_CONFIG.contact.phone}</span>
@@ -342,9 +264,9 @@ export function Footer() {
                 <motion.a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-3 text-sm text-white/70 hover:text-[#008F3D] transition-colors group"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#008F3D] transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-[#1A1A1A] group-hover:bg-[#008F3D]/20 flex items-center justify-center transition-colors">
                     <Mail className="w-5 h-5 text-[#008F3D]" />
                   </div>
                   <span>{SITE_CONFIG.contact.email}</span>
@@ -352,12 +274,12 @@ export function Footer() {
               </div>
 
               {/* Operating Hours */}
-              <div className="flex items-center gap-3 text-sm text-white/60">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+              <div className="flex items-center gap-3 text-sm text-gray-500">
+                <div className="w-10 h-10 rounded-xl bg-[#1A1A1A] flex items-center justify-center">
                   <Clock className="w-5 h-5 text-[#008F3D]" />
                 </div>
                 <div>
-                  <p className="text-white/80">Senin - Jumat: 08:00 - 17:00 WIB</p>
+                  <p className="text-gray-300">Senin - Jumat: 08:00 - 17:00 WIB</p>
                   <p className="text-xs">Hotline 24 Jam Tersedia</p>
                 </div>
               </div>
@@ -375,7 +297,7 @@ export function Footer() {
                     transition={{ delay: 0.5 + index * 0.1 }}
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-11 h-11 rounded-xl bg-white/10 hover:bg-white text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 border border-white/10 hover:border-white/30"
+                    className="w-11 h-11 rounded-xl bg-[#1A1A1A] hover:bg-[#008F3D] text-gray-400 hover:text-white flex items-center justify-center transition-all duration-300 border border-gray-800 hover:border-[#008F3D]"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -400,7 +322,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
+                      className="text-sm text-gray-400 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-4 h-4 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                       {link.label}
@@ -427,7 +349,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
+                      className="text-sm text-gray-400 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-4 h-4 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                       {link.label}
@@ -454,7 +376,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
+                      className="text-sm text-gray-400 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-4 h-4 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                       {link.label}
@@ -477,7 +399,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm text-white/70 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
+                      className="text-sm text-gray-400 hover:text-[#008F3D] transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-4 h-4 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                       {link.label}
@@ -494,7 +416,7 @@ export function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
-          className="border-y border-white/10 bg-white/5 backdrop-blur-sm"
+          className="border-y border-gray-800 bg-[#0A0A0A]"
         >
           <div className="container mx-auto px-4 lg:px-8 py-6">
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
@@ -502,12 +424,12 @@ export function Footer() {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#008F3D]/30 transition-all cursor-default"
+                  className="flex items-center gap-3 px-4 py-2 rounded-xl bg-[#1A1A1A] border border-gray-800 hover:border-[#008F3D]/30 transition-all cursor-default"
                 >
                   <cert.icon className="w-5 h-5 text-[#008F3D]" />
                   <div>
                     <p className="text-sm font-medium text-white">{cert.label}</p>
-                    <p className="text-xs text-white/60">{cert.desc}</p>
+                    <p className="text-xs text-gray-500">{cert.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -522,20 +444,20 @@ export function Footer() {
           transition={{ delay: 1 }}
           className="container mx-auto px-4 lg:px-8 py-8"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-gradient-to-r from-[#008F3D]/20 via-transparent to-[#008F3D]/20 rounded-2xl border border-[#008F3D]/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-gradient-to-r from-[#008F3D]/10 via-[#1A1A1A] to-[#008F3D]/10 rounded-2xl border border-gray-800">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#008F3D]/20 flex items-center justify-center">
                 <HeadphonesIcon className="w-6 h-6 text-[#008F3D]" />
               </div>
               <div>
                 <p className="font-semibold text-white">Butuh Bantuan?</p>
-                <p className="text-sm text-white/70">Tim support kami siap membantu 24/7</p>
+                <p className="text-sm text-gray-400">Tim support kami siap membantu 24/7</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <Button
                 variant="outline"
-                className="border-[#008F3D]/30 text-[#008F3D] hover:bg-[#008F3D]/10"
+                className="border-gray-700 text-gray-300 hover:bg-[#008F3D]/10 hover:text-[#008F3D] hover:border-[#008F3D]"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Hubungi Kami
@@ -549,19 +471,19 @@ export function Footer() {
         </motion.div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 bg-black/20">
+        <div className="border-t border-gray-800 bg-[#0A0A0A]">
           <div className="container mx-auto px-4 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.2 }}
-                className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-white/60"
+                className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-gray-500"
               >
                 <span>© {currentYear} {SITE_CONFIG.fullName}.</span>
                 <span className="hidden sm:inline">All rights reserved.</span>
                 <span className="hidden md:inline">|</span>
-                <span className="text-xs bg-white/10 px-2 py-0.5 rounded">
+                <span className="text-xs bg-[#008F3D]/20 text-[#008F3D] px-2 py-0.5 rounded">
                   {SITE_CONFIG.legal.licenseNumber}
                 </span>
               </motion.div>
@@ -570,14 +492,14 @@ export function Footer() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.3 }}
-                className="flex items-center gap-2 text-sm text-white/60"
+                className="flex items-center gap-2 text-sm text-gray-500"
               >
                 <span>Dibuat dengan</span>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
-                  <Heart className="w-4 h-4 text-[#008F3D] fill-[#008F3D]" />
+                  <Heart className="w-4 h-4 text-[#8B0000] fill-[#8B0000]" />
                 </motion.div>
                 <span>untuk Indonesia Raya</span>
               </motion.div>
@@ -586,7 +508,7 @@ export function Footer() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.4 }}
-                className="flex items-center gap-4 text-xs text-white/50"
+                className="flex items-center gap-4 text-xs text-gray-600"
               >
                 <span className="flex items-center gap-1">
                   <Globe className="w-3 h-3" />

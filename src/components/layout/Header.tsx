@@ -3,14 +3,15 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { 
-  Menu, X, ChevronDown, Zap, ChevronRight, 
+import {
+  Menu, X, ChevronDown, Zap, ChevronRight,
   Home, Info, Building2, Store, Truck, GraduationCap,
   Users, Vote, LayoutDashboard, HelpCircle, Phone,
   MessageCircle, FileText, Shield, Sparkles, Heart,
   TrendingUp, Package, Globe, MapPin, Clock, Bell,
   Settings, User, LogIn, ArrowRight, ExternalLink,
-  Wallet, BarChart3, Landmark, Leaf, Laptop, Briefcase
+  Wallet, BarChart3, Landmark, Leaf, Laptop, Briefcase,
+  Crown, Map, Target
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -26,8 +27,8 @@ const menuStructure = [
     color: '#008F3D',
     description: 'Halaman utama'
   },
-  { 
-    label: 'Tentang', 
+  {
+    label: 'Tentang',
     href: '/tentang',
     icon: Info,
     color: '#8B0000',
@@ -35,8 +36,21 @@ const menuStructure = [
     children: [
       { label: 'Tentang KNMP', href: '/tentang', icon: Building2, color: '#8B0000' },
       { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#008F3D' },
-      { label: 'Struktur Organisasi', href: '/struktur-organisasi', icon: Users, color: '#3b82f6' },
       { label: '6 KPA (Anggota)', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
+    ]
+  },
+  {
+    label: 'Pimpinan',
+    href: '/pimpinan',
+    icon: Users,
+    color: '#008F3D',
+    description: 'Struktur Pimpinan',
+    children: [
+      { label: 'Kornas (Presiden)', href: '/pimpinan/kornas', icon: Crown, color: '#8B0000', badge: '1' },
+      { label: 'Korwil (Panglima Wilayah)', href: '/pimpinan/korwil', icon: Map, color: '#008F3D', badge: '38' },
+      { label: 'Korda (Panglima Distrik)', href: '/pimpinan/korda', icon: Building2, color: '#3b82f6', badge: '514' },
+      { label: 'Korcam (Panglima Sektor)', href: '/pimpinan/korcam', icon: MapPin, color: '#f59e0b', badge: '7.2K' },
+      { label: 'Kordes (Komandan Lapangan)', href: '/pimpinan/kordes', icon: Home, color: '#8b5cf6', badge: '83K' },
     ]
   },
   { 
@@ -82,14 +96,11 @@ const menuStructure = [
 
 // Quick Actions for mobile - GREEN PPP Theme
 const quickActions = [
-  { label: 'Daftar', href: '/membership', icon: User, color: '#008F3D' },
+  { label: 'Daftar', href: '/daftar', icon: User, color: '#008F3D' },
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, color: '#8B0000' },
   { label: 'Marketplace', href: '/marketplace', icon: Store, color: '#00A847' },
   { label: 'Academy', href: '/academy', icon: GraduationCap, color: '#3b82f6' },
 ]
-
-// Import Target icon
-import { Target } from 'lucide-react'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -255,7 +266,7 @@ export function Header() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link href="/membership">
+                <Link href="/daftar">
                   <Button size="sm" className="bg-gradient-to-r from-[#008F3D] to-[#00A847] hover:from-[#00752F] hover:to-[#008F3D] text-white shadow-lg shadow-green-900/20 hover:shadow-green-900/30 transition-all duration-300 relative overflow-hidden group">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <Zap className="w-4 h-4 mr-1 relative z-10" />
@@ -509,7 +520,7 @@ export function Header() {
                       <p className="text-xs text-gray-500">7 Tier Keanggotaan</p>
                     </div>
                   </div>
-                  <Link href="/membership" onClick={() => setIsOpen(false)}>
+                  <Link href="/daftar" onClick={() => setIsOpen(false)}>
                     <Button className="w-full bg-gradient-to-r from-[#008F3D] to-[#00A847] text-white shadow-lg shadow-green-900/20 hover:shadow-green-900/30 transition-all group">
                       <Zap className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                       Gabung Sekarang

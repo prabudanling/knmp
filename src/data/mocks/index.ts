@@ -797,7 +797,7 @@ export const TEAM_STRUCTURE = {
     { id: 'p1', name: 'Prof. Wirono, S.E., M.Pd', position: 'Presiden / Ketua Umum (Bakornas)', photo: '/images/people/ketua.jpg', termStart: '2026', termEnd: '2029', bio: 'Pimpinan Tertinggi Eksekutif KNMP, Ketua Umum Koperasi Periode 2026–2029' },
     { id: 'p2', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Wakil Presiden / Wakil Ketua Umum', photo: '/images/people/waketum.jpg', termStart: '2026', termEnd: '2029', bio: 'Wakil Pimpinan Eksekutif & CEO JE-P3, Diplomat Utama 195 Negara' },
     { id: 'p3', name: 'Dr. Cecep Sumarno', position: 'Sekretaris Jenderal (Sekjen)', photo: '/images/people/sekjen.jpg', termStart: '2026', termEnd: '2029', bio: 'Kepala Administrasi & Legal Koperasi' },
-    { id: 'p4', name: '(Posisi Kosong)', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '', termStart: '2026', termEnd: '2029', bio: 'COO, Arsitek Strategi & Ekosistem Digital KNMP' },
+    { id: 'p4', name: 'Tn. H. Gugun Gunara', position: 'Wakil Sekretaris Jenderal (Wasekjen)', photo: '/images/people/wasekjen.jpg', termStart: '2026', termEnd: '2029', bio: 'COO, Arsitek Strategi & Ekosistem Digital KNMP' },
     { id: 'p5', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Ketua Dewan Penasihat', photo: '/images/people/penasihat1.jpg', termStart: '2026', termEnd: '2029', bio: 'Chief Financial Advisor KNMP, Arsitek Sistem Keuangan & ESG' },
   ],
   pengawas: [
@@ -846,3 +846,406 @@ export const KDMP_ALIGNMENT = {
     'Pemberdayaan ekonomi berbasis komoditas lokal',
   ],
 };
+
+// =====================
+// Struktur Pimpinan KNMP
+// =====================
+
+export const PIMPINAN_LEVELS = [
+  {
+    id: 'kornas',
+    name: 'Koordinator Nasional',
+    shortName: 'Kornas',
+    title: 'Presiden',
+    description: 'Pimpinan tertinggi KNMP yang bertanggung jawab atas strategi nasional dan koordinasi seluruh wilayah Indonesia',
+    icon: 'Crown',
+    color: '#8B0000',
+    href: '/pimpinan/kornas',
+    totalPositions: 1,
+    responsibilities: [
+      'Menetapkan kebijakan strategis nasional',
+      'Mengkoordinasikan seluruh Panglima Wilayah',
+      'Mewakili KNMP dalam forum nasional dan internasional',
+      'Mengesahkan keputusan Rapat Anggota Tahunan',
+      'Memimpin Dewan Pimpinan Nasional',
+    ],
+    stats: [
+      { label: 'Wilayah', value: 38, suffix: ' Provinsi' },
+      { label: 'Anggota', value: 125000, suffix: '+' },
+      { label: 'Target', value: 2045, suffix: '' },
+    ],
+  },
+  {
+    id: 'korwil',
+    name: 'Koordinator Wilayah',
+    shortName: 'Korwil',
+    title: 'Panglima Wilayah',
+    description: 'Pimpinan tingkat provinsi yang mengkoordinasikan seluruh aktivitas KNMP di wilayahnya',
+    icon: 'Map',
+    color: '#008F3D',
+    href: '/pimpinan/korwil',
+    totalPositions: 38,
+    responsibilities: [
+      'Mengkoordinasikan seluruh Panglima Distrik di provinsi',
+      'Menjalankan kebijakan nasional di tingkat provinsi',
+      'Mengembangkan kemitraan regional',
+      'Memantau kinerja Koordinator Daerah',
+      'Membuat laporan berkala ke Kornas',
+    ],
+    stats: [
+      { label: 'Provinsi', value: 38, suffix: '' },
+      { label: 'Kab/Kota', value: 514, suffix: '' },
+      { label: 'Target', value: 2030, suffix: '' },
+    ],
+  },
+  {
+    id: 'korda',
+    name: 'Koordinator Daerah',
+    shortName: 'Korda',
+    title: 'Panglima Distrik',
+    description: 'Pimpinan tingkat kabupaten/kota yang mengelola operasional KNMP di daerahnya',
+    icon: 'Building',
+    color: '#3b82f6',
+    href: '/pimpinan/korda',
+    totalPositions: 514,
+    responsibilities: [
+      'Mengkoordinasikan seluruh Panglima Sektor di kabupaten/kota',
+      'Mengelola keanggotaan dan perekrutan anggota baru',
+      'Mengembangkan unit usaha lokal',
+      'Memantau kinerja Koordinator Kecamatan',
+      'Menyelenggarakan rapat daerah',
+    ],
+    stats: [
+      { label: 'Kab/Kota', value: 514, suffix: '' },
+      { label: 'Kecamatan', value: 7252, suffix: '' },
+      { label: 'Target', value: 2028, suffix: '' },
+    ],
+  },
+  {
+    id: 'korcam',
+    name: 'Koordinator Kecamatan',
+    shortName: 'Korcam',
+    title: 'Panglima Sektor',
+    description: 'Pimpinan tingkat kecamatan yang mengkoordinasikan aktivitas KNMP di kecamatannya',
+    icon: 'MapPin',
+    color: '#f59e0b',
+    href: '/pimpinan/korcam',
+    totalPositions: 7252,
+    responsibilities: [
+      'Mengkoordinasikan seluruh Komandan Lapangan di kecamatan',
+      'Mengelola marketplace dan logistik tingkat kecamatan',
+      'Mengembangkan komoditas unggulan lokal',
+      'Memantau kinerja Koordinator Desa',
+      'Membina hubungan dengan pemerintah kecamatan',
+    ],
+    stats: [
+      { label: 'Kecamatan', value: 7252, suffix: '' },
+      { label: 'Desa/Kel', value: 83763, suffix: '' },
+      { label: 'Target', value: 2027, suffix: '' },
+    ],
+  },
+  {
+    id: 'kordes',
+    name: 'Koordinator Desa/Kelurahan',
+    shortName: 'Kordes',
+    title: 'Komandan Lapangan',
+    description: 'Pimpinan tingkat desa/kelurahan yang mengelola operasional harian KNMP di desanya',
+    icon: 'Home',
+    color: '#8b5cf6',
+    href: '/pimpinan/kordes',
+    totalPositions: 83763,
+    responsibilities: [
+      'Mengelola keanggotaan desa',
+      'Mengkoordinasikan produksi dan distribusi komoditas',
+      'Mengelola agen logistik desa',
+      'Membina kelompok tani dan UMKM lokal',
+      'Menghubungkan desa dengan marketplace KNMP',
+    ],
+    stats: [
+      { label: 'Desa/Kel', value: 83763, suffix: '' },
+      { label: 'Target', value: 2026, suffix: '' },
+      { label: 'Aktif', value: 1000, suffix: ' Desa' },
+    ],
+  },
+];
+
+// =====================
+// Struktur Organisasi Lengkap - Posisi Kosong untuk Backend
+// =====================
+
+// Tipe posisi untuk struktur organisasi
+export interface PositionSlot {
+  id: string;
+  position: string;
+  name: string; // Kosong = '(Posisi Kosong)'
+  status: 'vacant' | 'filled' | 'pending';
+  province?: string;
+  kabKota?: string;
+  kecamatan?: string;
+  desa?: string;
+  email?: string;
+  phone?: string;
+  joinDate?: string;
+  termEnd?: string;
+}
+
+// =====================
+// KORNAS - Struktur Nasional (1 Presiden)
+// =====================
+export const KORNAS_STRUCTURE = {
+  level: 'Kornas',
+  title: 'Presiden / Ketua Umum (Bakornas)',
+  totalPositions: 1,
+  filledPositions: 1,
+  structure: [
+    // Dewan Pendiri (9 Anggota)
+    {
+      category: 'Dewan Pendiri',
+      positions: [
+        { id: 'dp-1', position: 'Pendiri ke-1 - Presiden / Ketua Umum', name: 'Prof. Wirono, S.E., M.Pd', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-2', position: 'Pendiri ke-2 - Wakil Presiden', name: 'Drs. H. Arif Rachman Hakim, M.M.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-3', position: 'Pendiri ke-3 - Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: 'Seumur Hidup' },
+        { id: 'dp-4', position: 'Pendiri ke-4 - Sekretaris Jenderal', name: 'Dr. Cecep Sumarno', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-5', position: 'Pendiri ke-5 - Wasekjen & COO', name: 'Tn. H. Gugun Gunara', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-6', position: 'Pendiri ke-6 - Ketua Dewan Penasihat', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-7', position: 'Pendiri ke-7 - Korwil Kalimantan', name: 'Andi Darmadji, S.E.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-8', position: 'Pendiri ke-8 - Anggota Dewan Pengawas', name: 'Dr. Habib', status: 'filled' as const, termEnd: '2029' },
+        { id: 'dp-9', position: 'Pendiri ke-9 - Ketua Dewan Pengawas', name: 'Prof. Dr. Tedy Mantoro', status: 'filled' as const, termEnd: '2029' },
+      ]
+    },
+    // Dewan Pembina
+    {
+      category: 'Dewan Pembina',
+      positions: [
+        { id: 'dpm-1', position: 'Ketua Dewan Pembina', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: 'Seumur Hidup' },
+        { id: 'dpm-2', position: 'Wakil Ketua Pembina', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'dpm-3', position: 'Sekretaris Pembina', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'dpm-4', position: 'Anggota Pembina Bidang Pemerintahan', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'dpm-5', position: 'Anggota Pembina Bidang Ekonomi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'dpm-6', position: 'Anggota Pembina Bidang Sosial', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+    // Pengurus Harian Nasional
+    {
+      category: 'Pengurus Harian Nasional (Bakornas)',
+      positions: [
+        { id: 'phn-1', position: 'Presiden / Ketua Umum', name: 'Prof. Wirono, S.E., M.Pd', status: 'filled' as const, termEnd: '2029' },
+        { id: 'phn-2', position: 'Wakil Presiden / Wakil Ketua Umum', name: 'Drs. H. Arif Rachman Hakim, M.M.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'phn-3', position: 'Sekretaris Jenderal (Sekjen)', name: 'Dr. Cecep Sumarno', status: 'filled' as const, termEnd: '2029' },
+        { id: 'phn-4', position: 'Wakil Sekretaris Jenderal (Wasekjen)', name: 'Tn. H. Gugun Gunara', status: 'filled' as const, termEnd: '2029' },
+        { id: 'phn-5', position: 'Bendahara Umum / CFO', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'phn-6', position: 'Wakil Bendahara', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+    // Dewan Pengawas
+    {
+      category: 'Dewan Pengawas',
+      positions: [
+        { id: 'pw-1', position: 'Ketua Dewan Pengawas', name: 'Prof. Dr. Tedy Mantoro', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pw-2', position: 'Wakil Ketua Pengawas', name: 'Prof. Dr. Elan Masbulan', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pw-3', position: 'Sekretaris Pengawas', name: 'Dr. Habib', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pw-4', position: 'Anggota Pengawas Bidang Keuangan', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pw-5', position: 'Anggota Pengawas Bidang Operasional', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pw-6', position: 'Anggota Pengawas Bidang Organisasi', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+    // Dewan Penasihat
+    {
+      category: 'Dewan Penasihat',
+      positions: [
+        { id: 'pn-1', position: 'Ketua Dewan Penasihat', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pn-2', position: 'Ketua Dewan Penasihat Kehormatan', name: 'Dr. A. Iskandar Zulkarnain', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pn-3', position: 'Wakil Ketua Penasihat', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pn-4', position: 'Sekretaris Penasihat', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pn-5', position: 'Anggota Penasihat Bidang Hukum', name: 'Dr. Heri Solahudin', status: 'filled' as const, termEnd: '2029' },
+        { id: 'pn-6', position: 'Anggota Penasihat Bidang Ekonomi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pn-7', position: 'Anggota Penasihat Bidang Teknologi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'pn-8', position: 'Anggota Penasihat Bidang Pertanian', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+    // Koordinator 15 Bidang
+    {
+      category: 'Koordinator Bidang (15 Bidang)',
+      positions: [
+        { id: 'kb-1', position: 'Bidang Organisasi & Keanggotaan', name: 'Hj. Inna Hadianala, S.E.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-2', position: 'Bidang Pangan & Ketahanan Pangan', name: 'Dr. Habib', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-3', position: 'Bidang Industri & Manufaktur', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-4', position: 'Bidang Logistik & Distribusi', name: 'M. Ilham', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-5', position: 'Bidang Kesehatan & Farmasi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-6', position: 'Bidang Keuangan & Perbankan', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-7', position: 'Bidang Investasi & ESG', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-8', position: 'Bidang Bisnis Kemitraan & UMKM', name: 'Ongky Putra', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-9', position: 'Bidang Digital & Teknologi', name: 'M. Sidik', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-10', position: 'Bidang Holding Trading Ekosistem', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-11', position: 'Bidang Wisata, Umroh & Haji', name: 'Dr. Cecep Sumarno', status: 'filled' as const, termEnd: '2029' },
+        { id: 'kb-12', position: 'Bidang Hukum & Advokasi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-13', position: 'Bidang Pengembangan SDM & Diklat', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-14', position: 'Bidang Ekspor Impor & Perdagangan Internasional', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'kb-15', position: 'Bidang Hubungan Masyarakat & Media', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+    // Sekretaris Masing-masing Bidang
+    {
+      category: 'Sekretaris Koordinator Bidang',
+      positions: [
+        { id: 'sk-1', position: 'Sekretaris Bidang Organisasi & Keanggotaan', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-2', position: 'Sekretaris Bidang Pangan & Ketahanan Pangan', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-3', position: 'Sekretaris Bidang Industri & Manufaktur', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-4', position: 'Sekretaris Bidang Logistik & Distribusi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-5', position: 'Sekretaris Bidang Kesehatan & Farmasi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-6', position: 'Sekretaris Bidang Keuangan & Perbankan', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-7', position: 'Sekretaris Bidang Investasi & ESG', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-8', position: 'Sekretaris Bidang Bisnis Kemitraan & UMKM', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-9', position: 'Sekretaris Bidang Digital & Teknologi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-10', position: 'Sekretaris Bidang Holding Trading Ekosistem', name: 'Cecep Abdul Jabbar', status: 'filled' as const, termEnd: '2029' },
+        { id: 'sk-11', position: 'Sekretaris Bidang Wisata, Umroh & Haji', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-12', position: 'Sekretaris Bidang Hukum & Advokasi', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-13', position: 'Sekretaris Bidang Pengembangan SDM & Diklat', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-14', position: 'Sekretaris Bidang Ekspor Impor', name: '(Posisi Kosong)', status: 'vacant' as const },
+        { id: 'sk-15', position: 'Sekretaris Bidang Hubungan Masyarakat & Media', name: '(Posisi Kosong)', status: 'vacant' as const },
+      ]
+    },
+  ]
+};
+
+// =====================
+// KORWIL - Struktur Provinsi (38 Panglima Wilayah)
+// =====================
+export const KORWIL_STRUCTURE = {
+  level: 'Korwil',
+  title: 'Panglima Wilayah',
+  totalPositions: 38,
+  filledPositions: 5,
+  provinces: [
+    // Jawa
+    { id: 'korwil-1', province: 'DKI Jakarta', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-2', province: 'Jawa Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-3', province: 'Jawa Tengah', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-4', province: 'Jawa Timur', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-5', province: 'DI Yogyakarta', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-6', province: 'Banten', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    // Sumatera
+    { id: 'korwil-7', province: 'Aceh', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-8', province: 'Sumatera Utara', panglima: 'Erick Hariadi', status: 'filled' as const },
+    { id: 'korwil-9', province: 'Sumatera Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-10', province: 'Riau', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-11', province: 'Kepulauan Riau', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-12', province: 'Jambi', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-13', province: 'Bengkulu', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-14', province: 'Sumatera Selatan', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-15', province: 'Bangka Belitung', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-16', province: 'Lampung', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    // Kalimantan
+    { id: 'korwil-17', province: 'Kalimantan Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-18', province: 'Kalimantan Tengah', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-19', province: 'Kalimantan Selatan', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-20', province: 'Kalimantan Timur', panglima: 'Andi Darmadji, S.E.', status: 'filled' as const },
+    { id: 'korwil-21', province: 'Kalimantan Utara', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    // Sulawesi & Maluku
+    { id: 'korwil-22', province: 'Sulawesi Utara', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-23', province: 'Sulawesi Tengah', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-24', province: 'Sulawesi Selatan', panglima: 'Imam Fauzan', status: 'filled' as const },
+    { id: 'korwil-25', province: 'Sulawesi Tenggara', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-26', province: 'Gorontalo', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-27', province: 'Sulawesi Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-28', province: 'Maluku', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-29', province: 'Maluku Utara', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    // Nusa Tenggara
+    { id: 'korwil-30', province: 'Bali', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-31', province: 'Nusa Tenggara Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-32', province: 'Nusa Tenggara Timur', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    // Papua
+    { id: 'korwil-33', province: 'Papua', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-34', province: 'Papua Barat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-35', province: 'Papua Selatan', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-36', province: 'Papua Tengah', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-37', province: 'Papua Pegunungan', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korwil-38', province: 'Papua Barat Daya', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+  ],
+  // Struktur per Korwil
+  structure: [
+    { position: 'Panglima Wilayah', total: 38, filled: 5 },
+    { position: 'Wakil Panglima Wilayah', total: 38, filled: 0 },
+    { position: 'Sekretaris Wilayah', total: 38, filled: 0 },
+    { position: 'Bendahara Wilayah', total: 38, filled: 0 },
+    { position: 'Koordinator Bidang (15 per wilayah)', total: 570, filled: 0 },
+    { position: 'Staff Administrasi', total: 38, filled: 0 },
+  ]
+};
+
+// =====================
+// KORDA - Struktur Kabupaten/Kota (514 Panglima Distrik)
+// =====================
+export const KORDA_STRUCTURE = {
+  level: 'Korda',
+  title: 'Panglima Distrik',
+  totalPositions: 514,
+  filledPositions: 0,
+  structure: [
+    { position: 'Panglima Distrik', total: 514, filled: 0 },
+    { position: 'Wakil Panglima Distrik', total: 514, filled: 0 },
+    { position: 'Sekretaris Distrik', total: 514, filled: 0 },
+    { position: 'Bendahara Distrik', total: 514, filled: 0 },
+    { position: 'Koordinator Sektor (Korcam)', total: 7252, filled: 0 },
+    { position: 'Staff Administrasi', total: 514, filled: 0 },
+  ],
+  sampleDistricts: [
+    { id: 'korda-jkt-1', kabKota: 'Kota Jakarta Selatan', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korda-jkt-2', kabKota: 'Kota Jakarta Pusat', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korda-jbr-1', kabKota: 'Kab. Bandung', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korda-jbr-2', kabKota: 'Kab. Bogor', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+    { id: 'korda-jtg-1', kabKota: 'Kab. Semarang', panglima: '(Posisi Kosong)', status: 'vacant' as const },
+  ]
+};
+
+// =====================
+// KORCAM - Struktur Kecamatan (7.252 Panglima Sektor)
+// =====================
+export const KORCAM_STRUCTURE = {
+  level: 'Korcam',
+  title: 'Panglima Sektor',
+  totalPositions: 7252,
+  filledPositions: 0,
+  structure: [
+    { position: 'Panglima Sektor', total: 7252, filled: 0 },
+    { position: 'Wakil Panglima Sektor', total: 7252, filled: 0 },
+    { position: 'Sekretaris Sektor', total: 7252, filled: 0 },
+    { position: 'Bendahara Sektor', total: 7252, filled: 0 },
+    { position: 'Koordinator Desa (Kordes)', total: 83763, filled: 1000 },
+    { position: 'Staff Administrasi', total: 7252, filled: 0 },
+  ]
+};
+
+// =====================
+// KORDES - Struktur Desa/Kelurahan (83.763 Komandan Lapangan)
+// =====================
+export const KORDES_STRUCTURE = {
+  level: 'Kordes',
+  title: 'Komandan Lapangan',
+  totalPositions: 83763,
+  filledPositions: 1000,
+  structure: [
+    { position: 'Komandan Lapangan', total: 83763, filled: 1000 },
+    { position: 'Wakil Komandan Lapangan', total: 83763, filled: 0 },
+    { position: 'Sekretaris Desa', total: 83763, filled: 0 },
+    { position: 'Bendahara Desa', total: 83763, filled: 0 },
+    { position: 'Koordinator RT/RW', total: 83763, filled: 0 },
+    { position: 'Agen Logistik KNMP', total: 83763, filled: 45230 },
+    { position: 'Kader Pemberdayaan', total: 83763, filled: 0 },
+  ]
+};
+
+// =====================
+// Dewan Pendiri Lengkap (9 Anggota)
+// =====================
+export const DEWAN_PENDIRI_LENGKAP = [
+  { id: 'pendiri-1', name: 'Prof. Wirono, S.E., M.Pd', position: 'Pendiri ke-1 - Presiden / Ketua Umum (Bakornas)', role: 'Pimpinan Tertinggi Eksekutif KNMP, Ketua Umum Koperasi Periode 2026–2029', status: 'filled' as const },
+  { id: 'pendiri-2', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Pendiri ke-2 - Wakil Presiden / Wakil Ketua Umum', role: 'Wakil Pimpinan Eksekutif & CEO JE-P3, Diplomat Utama 195 Negara', status: 'filled' as const },
+  { id: 'pendiri-3', name: 'Hj. Inna Hadianala, S.E.', position: 'Pendiri ke-3 - Ketua Dewan Pembina', role: 'Penjaga Nilai & Konstitusi KNMP, Ketua Pembina Permanen Non-Jabatan', status: 'filled' as const },
+  { id: 'pendiri-4', name: 'Dr. Cecep Sumarno', position: 'Pendiri ke-4 - Sekretaris Jenderal (Sekjen)', role: 'Kepala Administrasi & Legal Koperasi', status: 'filled' as const },
+  { id: 'pendiri-5', name: 'Tn. H. Gugun Gunara', position: 'Pendiri ke-5 - Wasekjen & COO', role: 'Grand Architect - Arsitek Strategi & Ekosistem Digital KNMP', status: 'filled' as const },
+  { id: 'pendiri-6', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Pendiri ke-6 - Ketua Dewan Penasihat', role: 'Chief Financial Advisor KNMP, Arsitek Sistem Keuangan & ESG', status: 'filled' as const },
+  { id: 'pendiri-7', name: 'Andi Darmadji, S.E.', position: 'Pendiri ke-7 - Korwil Kalimantan', role: 'Panglima Wilayah Kalimantan (Bakorwil Kalimantan), Pilar Ekspansi Kawasan Timur KNMP', status: 'filled' as const },
+  { id: 'pendiri-8', name: 'Dr. Habib', position: 'Pendiri ke-8 - Anggota Dewan Pengawas', role: 'Pengawas Internal KNMP, Ahli Ketahanan Pangan Nasional', status: 'filled' as const },
+  { id: 'pendiri-9', name: 'Prof. Dr. Tedy Mantoro', position: 'Pendiri ke-9 - Ketua Dewan Pengawas', role: 'Ketua Pengawas Independen KNMP, Ahli Teknologi & Tata Kelola Digital', status: 'filled' as const },
+];

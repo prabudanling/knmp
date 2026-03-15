@@ -244,7 +244,7 @@ function OriginStorySection() {
                   { name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Pendiri ke-2', role: 'Wakil Presiden' },
                   { name: 'Hj. Inna Hadianala, S.E.', position: 'Pendiri ke-3', role: 'Ketua Dewan Pembina' },
                   { name: 'Dr. Cecep Sumarno', position: 'Pendiri ke-4', role: 'Sekretaris Jenderal' },
-                  { name: '(Posisi Kosong)', position: 'Pendiri ke-5', role: 'Wakil Sekretaris Jenderal' },
+                  { name: 'Tn. H. Gugun Gunara S. E', position: 'Pendiri ke-5', role: 'Grand Architect - COO - Wakil Sekretaris Jenderal' },
                   { name: 'Fawwaz Arif Al Jabar, S.E., M.M.', position: 'Pendiri ke-6', role: 'Ketua Dewan Penasihat' },
                   { name: 'Andi Darmadji, S.E.', position: 'Pendiri ke-7', role: 'Koordinator Wilayah Kalimantan' },
                   { name: 'Dr. Habib', position: 'Pendiri ke-8', role: 'Anggota Dewan Pengawas' },
@@ -258,7 +258,7 @@ function OriginStorySection() {
                     transition={{ delay: i * 0.05 }}
                     className={cn(
                       "p-4 rounded-xl border border-white/20",
-                      founder.name === '(Posisi Kosong)' ? 'bg-white/5 opacity-60' : 'bg-white/10'
+                      founder.name === 'Tn. H. Gugun Gunara' ? 'bg-white/5 opacity-60' : 'bg-white/10'
                     )}
                   >
                     <p className="font-semibold text-white text-sm">{founder.name}</p>

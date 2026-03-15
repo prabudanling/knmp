@@ -21,11 +21,14 @@ import {
   Truck,
   GraduationCap,
   BadgeCheck,
+  Leaf,
+  Percent,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -37,49 +40,65 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 }
 
-// 7 Tier Membership Data based on JE-P3 documents
+// Tier Colors - Sesuai spesifikasi user
+const tierColors: Record<number, { main: string; soft: string; gradient: string }> = {
+  1: { main: '#6B7280', soft: 'rgba(107, 114, 128, 0.10)', gradient: 'from-gray-500 to-gray-700' },
+  2: { main: '#10B981', soft: 'rgba(16, 185, 129, 0.10)', gradient: 'from-emerald-500 to-emerald-700' },
+  3: { main: '#0EA5E9', soft: 'rgba(14, 165, 233, 0.10)', gradient: 'from-sky-500 to-sky-700' },
+  4: { main: '#7C3AED', soft: 'rgba(124, 58, 237, 0.10)', gradient: 'from-violet-500 to-violet-700' },
+  5: { main: '#DB2777', soft: 'rgba(219, 39, 119, 0.10)', gradient: 'from-pink-500 to-pink-700' },
+  6: { main: '#B7791F', soft: 'rgba(183, 121, 31, 0.12)', gradient: 'from-amber-500 to-amber-700' },
+  7: { main: '#C81E1E', soft: 'rgba(200, 30, 30, 0.10)', gradient: 'from-red-600 to-red-800' },
+}
+
+// 7 Tier Membership Data - HARGA SESUAI MEMBERSHIP PAGE ASLI
+// Discount: Harga Normal → Harga Early Bird (75% off) → Promo Maret 2026 (95% off dari harga normal)
 const TIERS = [
   {
     id: 1,
-    name: 'Tier 1',
-    title: 'Digital Citizen',
-    subtitle: 'Warga Digital',
-    price: 0,
-    originalPrice: 0,
-    color: '#6b7280',
-    bgColor: 'bg-gray-50',
-    borderColor: 'border-gray-200',
-    icon: Users,
-    description: 'Pintu masuk ke ekosistem JE-P3. Gratis selamanya.',
+    name: 'PETANI',
+    title: 'Petani Koperasi',
+    subtitle: 'Tier 1 - Gratis',
+    normalPrice: 0,           // Harga normal
+    earlyBirdPrice: 0,        // Harga early bird (75% off)
+    promoPrice: 0,            // Promo Maret 2026 (95% off)
+    discountPercent: 0,
+    color: tierColors[1].main,
+    softColor: tierColors[1].soft,
+    gradient: tierColors[1].gradient,
+    icon: Leaf,
+    description: 'Petani - Gratis bergabung dengan syarat KTP dan foto kebun.',
     benefits: [
       { text: 'Kartu Anggota Digital (Blockchain Passport)', included: true },
       { text: 'Akses JE-P3 Academy Tingkat 1', included: true },
       { text: 'Akses Marketplace Basic', included: true },
+      { text: 'Hak SHU dari Hasil Panen', included: true },
+      { text: 'Gratis selamanya', included: true },
       { text: 'Profil Direktori Pengusaha', included: false },
-      { text: 'Prioritas Pelatihan', included: false },
-      { text: 'Hak Prioritas Kemitraan Wilayah', included: false },
-      { text: 'Hak Usaha Operasional KNMP', included: false },
       { text: 'Hak Suara di Munas', included: false },
+      { text: 'Hak Prioritas Kemitraan Wilayah', included: false },
     ],
+    specialRequirement: 'Wajib upload KTP dan foto kebun/pertanian',
     cta: 'Daftar Gratis',
     popular: false,
+    isFree: true,
   },
   {
     id: 2,
-    name: 'Tier 2',
-    title: 'Basic Member',
-    subtitle: 'Anggota Dasar',
-    price: 250000,
-    originalPrice: 1000000,
-    color: '#059669',
-    bgColor: 'bg-emerald-50',
-    borderColor: 'border-emerald-200',
+    name: 'ANGGOTA BIASA',
+    title: 'Anggota Koperasi',
+    subtitle: 'Tier 2 - Anggota',
+    normalPrice: 1000000,      // Rp 1 Juta
+    earlyBirdPrice: 250000,    // Rp 250 Ribu (75% off)
+    promoPrice: 50000,         // Rp 50 Ribu (95% off)
+    discountPercent: 95,
+    color: tierColors[2].main,
+    softColor: tierColors[2].soft,
+    gradient: tierColors[2].gradient,
     icon: BadgeCheck,
-    description: 'Anggota resmi JE-P3 dengan hak suara di Munas.',
+    description: 'Anggota resmi dengan hak suara di Munas.',
     benefits: [
-      { text: 'Kartu Anggota Digital (Blockchain Passport)', included: true },
-      { text: 'Akses JE-P3 Academy Tingkat 1', included: true },
-      { text: 'Akses Marketplace Basic', included: true },
+      { text: 'Semua benefit Petani', included: true },
       { text: 'Profil Direktori Pengusaha', included: true },
       { text: 'Prioritas Pelatihan Batch Awal', included: true },
       { text: 'Hak Suara di Munas', included: true },
@@ -88,46 +107,52 @@ const TIERS = [
     ],
     cta: 'Daftar Sekarang',
     popular: true,
+    isFree: false,
   },
   {
     id: 3,
-    name: 'Tier 3',
-    title: 'Village Partner',
-    subtitle: 'Mitra Desa',
-    price: 2500000,
-    originalPrice: 10000000,
-    color: '#0284c7',
-    bgColor: 'bg-sky-50',
-    borderColor: 'border-sky-200',
+    name: 'KORDES',
+    title: 'Panglima Desa',
+    subtitle: 'Tier 3 - Mitra Desa',
+    normalPrice: 10000000,     // Rp 10 Juta
+    earlyBirdPrice: 2500000,   // Rp 2.5 Juta (75% off)
+    promoPrice: 500000,        // Rp 500 Ribu (95% off)
+    discountPercent: 95,
+    color: tierColors[3].main,
+    softColor: tierColors[3].soft,
+    gradient: tierColors[3].gradient,
     icon: Building,
-    description: 'Hak usaha logistik + prioritas kemitraan tingkat desa.',
+    description: 'Panglima Desa - Hak usaha logistik + prioritas kemitraan tingkat desa.',
     benefits: [
-      { text: 'Semua benefit Tier 2', included: true },
+      { text: 'Semua benefit Anggota Biasa', included: true },
       { text: 'Hak Prioritas Kemitraan Wilayah (Desa)', included: true },
       { text: 'Hak Usaha Operasional via KNMP', included: true },
-      { text: 'Agen Logistik (J&T, JNE, SiCepat, dll)', included: true },
+      { text: 'Agen Logistik (J&T, JNE, SiCepat)', included: true },
       { text: 'Dashboard Agen Realtime', included: true },
-      { text: 'Pelatihan Operasional Gratis', included: true },
       { text: 'Hak SHU dari Koperasi KNMP', included: true },
       { text: 'Hak Suara RAT KNMP', included: true },
+      { text: 'Akses Dewan Nasional JE-P3', included: false },
     ],
     cta: 'Daftar Sekarang',
     popular: false,
+    isFree: false,
   },
   {
     id: 4,
-    name: 'Tier 4',
-    title: 'District Partner',
-    subtitle: 'Mitra Kecamatan',
-    price: 10000000,
-    originalPrice: 40000000,
-    color: '#7c3aed',
-    bgColor: 'bg-violet-50',
-    borderColor: 'border-violet-200',
+    name: 'KORCAM',
+    title: 'Panglima Camat',
+    subtitle: 'Tier 4 - Mitra Kecamatan',
+    normalPrice: 40000000,     // Rp 40 Juta
+    earlyBirdPrice: 10000000,  // Rp 10 Juta (75% off)
+    promoPrice: 2000000,       // Rp 2 Juta (95% off)
+    discountPercent: 95,
+    color: tierColors[4].main,
+    softColor: tierColors[4].soft,
+    gradient: tierColors[4].gradient,
     icon: Landmark,
-    description: 'Eksklusivitas kemitraan tingkat kecamatan.',
+    description: 'Panglima Camat - Eksklusivitas kemitraan tingkat kecamatan.',
     benefits: [
-      { text: 'Semua benefit Tier 3', included: true },
+      { text: 'Semua benefit KORDES', included: true },
       { text: 'Hak Prioritas Kemitraan Wilayah (Kecamatan)', included: true },
       { text: 'Koordinator Agen di Kecamatan', included: true },
       { text: 'Revenue Sharing dari Network Agen', included: true },
@@ -138,21 +163,24 @@ const TIERS = [
     ],
     cta: 'Daftar Sekarang',
     popular: false,
+    isFree: false,
   },
   {
     id: 5,
-    name: 'Tier 5',
-    title: 'Regency Partner',
-    subtitle: 'Mitra Kabupaten',
-    price: 15000000,
-    originalPrice: 60000000,
-    color: '#db2777',
-    bgColor: 'bg-pink-50',
-    borderColor: 'border-pink-200',
+    name: 'KORDA',
+    title: 'Panglima Distrik',
+    subtitle: 'Tier 5 - Mitra Kabupaten',
+    normalPrice: 60000000,     // Rp 60 Juta
+    earlyBirdPrice: 15000000,  // Rp 15 Juta (75% off)
+    promoPrice: 3000000,       // Rp 3 Juta (95% off)
+    discountPercent: 95,
+    color: tierColors[5].main,
+    softColor: tierColors[5].soft,
+    gradient: tierColors[5].gradient,
     icon: Sparkles,
-    description: 'Eksklusivitas kemitraan tingkat kabupaten/kota.',
+    description: 'Panglima Distrik - Master Koordinator Kabupaten/Kota.',
     benefits: [
-      { text: 'Semua benefit Tier 4', included: true },
+      { text: 'Semua benefit KORCAM', included: true },
       { text: 'Hak Prioritas Kemitraan Wilayah (Kabupaten)', included: true },
       { text: 'Master Koordinator Kabupaten', included: true },
       { text: 'Dedicated Account Manager', included: true },
@@ -163,21 +191,24 @@ const TIERS = [
     ],
     cta: 'Hubungi Kami',
     popular: false,
+    isFree: false,
   },
   {
     id: 6,
-    name: 'Tier 6',
-    title: 'Provincial Partner',
-    subtitle: 'Mitra Provinsi',
-    price: 100000000,
-    originalPrice: 400000000,
-    color: '#D4AF37',
-    bgColor: 'bg-amber-50',
-    borderColor: 'border-amber-300',
+    name: 'KORWIL',
+    title: 'Panglima Wilayah',
+    subtitle: 'Tier 6 - Mitra Provinsi',
+    normalPrice: 400000000,    // Rp 400 Juta
+    earlyBirdPrice: 100000000, // Rp 100 Juta (75% off)
+    promoPrice: 20000000,      // Rp 20 Juta (95% off)
+    discountPercent: 95,
+    color: tierColors[6].main,
+    softColor: tierColors[6].soft,
+    gradient: tierColors[6].gradient,
     icon: Crown,
-    description: 'Eksklusivitas kemitraan tingkat provinsi.',
+    description: 'Panglima Wilayah - Regional Director Provinsi.',
     benefits: [
-      { text: 'Semua benefit Tier 5', included: true },
+      { text: 'Semua benefit KORDA', included: true },
       { text: 'Hak Prioritas Kemitraan Wilayah (Provinsi)', included: true },
       { text: 'Regional Director Status', included: true },
       { text: 'Akses Dewan Nasional JE-P3', included: true },
@@ -188,21 +219,24 @@ const TIERS = [
     ],
     cta: 'Hubungi Kami',
     popular: false,
+    isFree: false,
   },
   {
     id: 7,
-    name: 'Tier 7',
-    title: 'National Partner',
-    subtitle: 'Mitra Nasional',
-    price: 1000000000,
-    originalPrice: 4000000000,
-    color: '#8B0000',
-    bgColor: 'bg-red-50',
-    borderColor: 'border-red-300',
+    name: 'KORNAS',
+    title: 'Panglima Besar',
+    subtitle: 'Tier 7 - Mitra Nasional',
+    normalPrice: 4000000000,   // Rp 4 Miliar
+    earlyBirdPrice: 1000000000, // Rp 1 Miliar (75% off)
+    promoPrice: 200000000,     // Rp 200 Juta (95% off)
+    discountPercent: 95,
+    color: tierColors[7].main,
+    softColor: tierColors[7].soft,
+    gradient: tierColors[7].gradient,
     icon: Rocket,
-    description: 'Partner level tertinggi dengan hak veto terbatas.',
+    description: 'Panglima Besar - Badan Koordinasi Nasional / Pusat. Level tertinggi dengan hak veto terbatas.',
     benefits: [
-      { text: 'Semua benefit Tier 6', included: true },
+      { text: 'Semua benefit KORWIL', included: true },
       { text: 'Hak Prioritas Kemitraan (Nasional)', included: true },
       { text: 'National Director Status', included: true },
       { text: 'Board of Directors Seat', included: true },
@@ -213,11 +247,12 @@ const TIERS = [
     ],
     cta: 'Hubungi Founder',
     popular: false,
+    isFree: false,
   },
 ]
 
 const formatPrice = (price: number) => {
-  if (price === 0) return 'Gratis'
+  if (price === 0) return 'GRATIS'
   if (price >= 1000000000) return `Rp${(price / 1000000000).toFixed(0)} Miliar`
   if (price >= 1000000) return `Rp${(price / 1000000).toFixed(0)} Juta`
   return new Intl.NumberFormat('id-ID', {
@@ -233,6 +268,7 @@ export default function MembershipPage() {
     <main className="min-h-screen bg-gradient-to-b from-white via-red-50 to-white pt-24 pb-12">
       <div className="container mx-auto px-4">
         <HeroSection />
+        <PromoBanner />
         <TierComparisonSection />
         <TierCardsSection />
         <BenefitsSection />
@@ -256,12 +292,12 @@ function HeroSection() {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={staggerContainer}
-      className="mb-16 text-center"
+      className="mb-12 text-center"
     >
       <motion.div variants={fadeInUp}>
         <Badge className="bg-red-100 text-[#8B0000] border-red-200 mb-4">
           <Crown className="w-4 h-4 mr-2" />
-          7-Tier Membership System
+          7 Level Pimpinan KNMP
         </Badge>
       </motion.div>
       <motion.h1
@@ -274,7 +310,8 @@ function HeroSection() {
         variants={fadeInUp}
         className="text-muted-foreground max-w-2xl mx-auto mb-6"
       >
-        Dari Warga Digital gratis hingga Mitra Nasional eksklusif. Setiap tier membuka akses ke ekosistem JE-P3 × KNMP yang berbeda.
+        Dari Petani gratis hingga Panglima Besar (KORNAS). 
+        Setiap tier membuka akses ke ekosistem JE-P3 × KNMP yang berbeda.
       </motion.p>
       <motion.div
         variants={fadeInUp}
@@ -298,6 +335,40 @@ function HeroSection() {
 }
 
 // =====================
+// Promo Banner
+// =====================
+function PromoBanner() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="mb-12"
+    >
+      <Card className="bg-gradient-to-r from-[#8B0000] to-[#C81E1E] text-white border-0 overflow-hidden">
+        <CardContent className="p-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <Percent className="w-6 h-6 animate-pulse" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">PROMO SPESIAL MARET 2026</h3>
+                <p className="text-red-100 text-sm">Diskon 95% untuk semua tier keanggotaan!</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-yellow-300" />
+              <span className="font-medium">Jangan sampai terlewat!</span>
+              <Star className="w-5 h-5 text-yellow-300" />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  )
+}
+
+// =====================
 // Tier Comparison Section
 // =====================
 function TierComparisonSection() {
@@ -308,6 +379,7 @@ function TierComparisonSection() {
     'Kartu Digital',
     'Academy T1',
     'Marketplace',
+    'Hak SHU Petani',
     'Direktori',
     'Hak Suara',
     'Hak Usaha',
@@ -331,21 +403,22 @@ function TierComparisonSection() {
         <CardHeader className="bg-gradient-to-r from-red-50 to-amber-50">
           <CardTitle className="flex items-center justify-between">
             <span>Perbandingan <span className="text-[#8B0000]">Tier</span></span>
+            <Badge className="bg-red-100 text-red-700">7 Level</Badge>
           </CardTitle>
-          <CardDescription>Fitur utama yang tersedia di setiap tier</CardDescription>
+          <CardDescription>Fitur utama yang tersedia di setiap tier keanggotaan</CardDescription>
         </CardHeader>
         <CardContent className="p-0">
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[800px]">
+            <table className="w-full min-w-[900px]">
               <thead>
                 <tr className="border-b bg-gray-50">
                   <th className="p-4 text-left font-medium text-muted-foreground">Benefit</th>
                   {TIERS.map((tier) => (
-                    <th key={tier.id} className="p-4 text-center">
+                    <th key={tier.id} className="p-4 text-center min-w-[100px]">
                       <div className="flex flex-col items-center">
                         <tier.icon className="w-5 h-5 mb-1" style={{ color: tier.color }} />
                         <span className="font-semibold text-sm">{tier.name}</span>
-                        <span className="text-xs text-muted-foreground">{tier.subtitle}</span>
+                        <span className="text-xs text-muted-foreground">{tier.title}</span>
                       </div>
                     </th>
                   ))}
@@ -366,6 +439,7 @@ function TierComparisonSection() {
                         (benefit === 'Kartu Digital' && tier.id >= 1) ||
                         (benefit === 'Academy T1' && tier.id >= 1) ||
                         (benefit === 'Marketplace' && tier.id >= 1) ||
+                        (benefit === 'Hak SHU Petani' && tier.id >= 1) ||
                         (benefit === 'Direktori' && tier.id >= 2) ||
                         (benefit === 'Hak Suara' && tier.id >= 2) ||
                         (benefit === 'Hak Usaha' && tier.id >= 3) ||
@@ -414,7 +488,7 @@ function TierCardsSection() {
     >
       <motion.div variants={fadeInUp} className="mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Detail <span className="text-[#8B0000]">Tier</span>
+          Detail <span className="text-[#8B0000]">Tier</span> Keanggotaan
         </h2>
         <p className="text-muted-foreground">
           Pilih tier yang sesuai dengan kebutuhan dan kapasitas Anda
@@ -431,8 +505,8 @@ function TierCardsSection() {
               className={cn(
                 'h-full relative overflow-hidden transition-all hover:shadow-xl',
                 tier.popular ? 'ring-2 ring-[#8B0000] ring-offset-2' : '',
-                tier.borderColor
               )}
+              style={{ borderTop: `4px solid ${tier.color}` }}
             >
               {tier.popular && (
                 <div className="absolute top-0 right-0">
@@ -442,8 +516,17 @@ function TierCardsSection() {
                   </Badge>
                 </div>
               )}
+              
+              {tier.isFree && (
+                <div className="absolute top-0 right-0">
+                  <Badge className="bg-green-500 text-white rounded-none rounded-bl-lg">
+                    <Leaf className="w-3 h-3 mr-1" />
+                    Gratis
+                  </Badge>
+                </div>
+              )}
 
-              <CardHeader className={cn('pb-2', tier.bgColor)}>
+              <CardHeader className="pb-2" style={{ backgroundColor: tier.softColor }}>
                 <div className="flex items-center gap-3 mb-2">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -463,26 +546,42 @@ function TierCardsSection() {
 
               <CardContent className="pt-4">
                 <div className="mb-4">
-                  <div className="flex items-end gap-2">
-                    <span className="text-3xl font-bold" style={{ color: tier.color }}>
-                      {formatPrice(tier.price)}
-                    </span>
-                    {tier.originalPrice > tier.price && tier.price > 0 && (
-                      <span className="text-sm text-muted-foreground line-through">
-                        {formatPrice(tier.originalPrice)}
-                      </span>
-                    )}
-                  </div>
-                  {tier.originalPrice > tier.price && tier.price > 0 && (
-                    <Badge variant="outline" className="mt-1 text-xs">
-                      Hemat 75%
-                    </Badge>
+                  {tier.isFree ? (
+                    <div className="text-3xl font-bold text-[#008F3D]">GRATIS</div>
+                  ) : (
+                    <>
+                      {/* Promo Price (95% off) */}
+                      <div className="flex items-end gap-2">
+                        <span className="text-3xl font-bold" style={{ color: tier.color }}>
+                          {formatPrice(tier.promoPrice)}
+                        </span>
+                      </div>
+                      {/* Early Bird Price (75% off) */}
+                      <div className="text-sm text-muted-foreground line-through">
+                        Early Bird: {formatPrice(tier.earlyBirdPrice)}
+                      </div>
+                      {/* Normal Price */}
+                      <div className="text-xs text-gray-400 line-through">
+                        Normal: {formatPrice(tier.normalPrice)}
+                      </div>
+                      <Badge variant="outline" className="text-xs border-red-200 text-red-600 mt-1">
+                        <Percent className="w-3 h-3 mr-1" />
+                        Hemat {tier.discountPercent}%!
+                      </Badge>
+                    </>
                   )}
+                  <p className="text-xs text-muted-foreground mt-1">/ tahun</p>
                 </div>
 
                 <p className="text-sm text-muted-foreground mb-4">
                   {tier.description}
                 </p>
+                
+                {tier.specialRequirement && (
+                  <div className="text-xs text-amber-700 bg-amber-50 p-2 rounded mb-4 border border-amber-200">
+                    <strong>Syarat:</strong> {tier.specialRequirement}
+                  </div>
+                )}
 
                 <ul className="space-y-2">
                   {tier.benefits.slice(0, 5).map((benefit, i) => (
@@ -497,24 +596,34 @@ function TierCardsSection() {
                       </span>
                     </li>
                   ))}
+                  {tier.benefits.length > 5 && (
+                    <li className="text-xs text-muted-foreground">
+                      +{tier.benefits.length - 5} benefit lainnya
+                    </li>
+                  )}
                 </ul>
               </CardContent>
 
               <CardFooter className="pt-0">
-                <Button
-                  className={cn(
-                    'w-full',
-                    tier.popular
-                      ? 'bg-[#8B0000] hover:bg-[#6B0000] text-white'
-                      : tier.id >= 6
-                      ? 'bg-gray-900 hover:bg-gray-800 text-white'
-                      : ''
-                  )}
-                  variant={tier.popular || tier.id >= 6 ? 'default' : 'outline'}
-                >
-                  {tier.cta}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link href="/daftar" className="w-full">
+                  <Button
+                    className={cn(
+                      'w-full',
+                      tier.popular
+                        ? 'bg-[#8B0000] hover:bg-[#6B0000] text-white'
+                        : tier.id >= 6
+                        ? 'bg-gray-900 hover:bg-gray-800 text-white'
+                        : tier.isFree
+                        ? 'bg-green-600 hover:bg-green-700 text-white'
+                        : ''
+                    )}
+                    variant={tier.popular || tier.id >= 6 || tier.isFree ? 'default' : 'outline'}
+                    style={!tier.popular && tier.id < 6 && !tier.isFree ? { borderColor: tier.color, color: tier.color } : {}}
+                  >
+                    {tier.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           </motion.div>
@@ -620,12 +729,12 @@ function FAQSection() {
     {
       question: 'Kapan saya mendapat hak usaha logistik?',
       answer:
-        'Hak usaha logistik (agen J&T, JNE, SiCepat, dll) tersedia untuk Tier 3 ke atas, setelah KNMP berbadan hukum dan MoU dengan ekspedisi ditandatangani. Estimasi: Q2-Q3 2026.',
+        'Hak usaha logistik (agen J&T, JNE, SiCepat, dll) tersedia untuk Tier 3 (KORDES) ke atas, setelah KNMP berbadan hukum dan MoU dengan ekspedisi ditandatangani. Estimasi: Q2-Q3 2026.',
     },
     {
       question: 'Bagaimana cara pembayaran membership?',
       answer:
-        'Pembayaran melalui daftar.pppbisnis.com dengan DP 5% dari harga tier, lalu pelunasan dalam deadline yang ditentukan. 20+ metode pembayaran via Midtrans (transfer, kartu kredit, e-wallet).',
+        'Pembayaran melalui halaman pendaftaran dengan berbagai metode (transfer bank, e-wallet, QRIS). Untuk promo Maret 2026, Anda mendapat diskon 95% dari harga normal.',
     },
     {
       question: 'Apakah ada garansi uang kembali?',
@@ -641,6 +750,11 @@ function FAQSection() {
       question: 'Apa itu HPKW (Hak Prioritas Kemitraan Wilayah)?',
       answer:
         'HPKW memberikan prioritas eksklusif untuk menjadi koordinator/mitra utama JE-P3 dan KNMP di wilayah tertentu (desa/kecamatan/kabupaten/provinsi/nasional). Ini berarti prioritas dalam pembukaan unit usaha, koordinasi agen, dan akses proyek pemerintah di wilayah tersebut.',
+    },
+    {
+      question: 'Bagaimana cara mendaftar sebagai Petani (GRATIS)?',
+      answer:
+        'Untuk mendaftar sebagai Petani, Anda cukup mengisi data diri, upload KTP, dan upload foto kebun/pertanian Anda. Setelah diverifikasi oleh tim kami, Anda akan mendapat kartu anggota digital dan akses ke semua benefit Petani secara gratis selamanya.',
     },
   ]
 
@@ -707,21 +821,28 @@ function CTASection() {
     >
       <Card className="bg-gradient-to-br from-red-50 via-white to-amber-50 border border-red-200 max-w-3xl mx-auto">
         <CardContent className="p-8">
-          <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-[#8B0000] to-[#D4AF37] rounded-2xl flex items-center justify-center">
+          <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-[#8B0000] to-[#B7791F] rounded-2xl flex items-center justify-center">
             <Crown className="w-10 h-10 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-foreground mb-2">
             Siap Bergabung dengan Ekosistem?
           </h3>
-          <p className="text-muted-foreground mb-6">
-            Daftar sekarang dan jadi bagian dari 83.763 desa yang terhubung dengan 195 negara. 
-            Early bird discount 75% masih berlaku.
+          <p className="text-muted-foreground mb-4">
+            Daftar sekarang dan jadi bagian dari 83.763 desa yang terhubung dengan 195 negara.
           </p>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Badge className="bg-red-100 text-red-700">
+              <Percent className="w-3 h-3 mr-1" />
+              Diskon 95% Maret 2026
+            </Badge>
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-[#8B0000] hover:bg-[#6B0000] text-white">
-              Daftar Sekarang
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <Link href="/daftar">
+              <Button className="bg-[#8B0000] hover:bg-[#6B0000] text-white">
+                Daftar Sekarang
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
             <Button variant="outline" className="border-[#8B0000] text-[#8B0000]">
               Hubungi Kami
             </Button>

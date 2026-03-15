@@ -331,7 +331,7 @@ export function Hero() {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-[1.1] tracking-tight text-center"
             >
-              <span className="block">Digital Operating System</span>
+              <span className="block text-[#8B0000]">NAVIGASI PERADABAN</span>
               <motion.span 
                 className="block mt-1 sm:mt-2 text-[#008F3D]"
                 animate={{ 
@@ -339,7 +339,7 @@ export function Hero() {
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                Desa Indonesia
+                DUNIA BARU
               </motion.span>
             </motion.h1>
 
@@ -348,11 +348,11 @@ export function Hero() {
               variants={fadeInUp}
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-center mt-4 sm:mt-6 px-2"
             >
-              <span className="text-[#8B0000]">
-                Ekosistem Digital untuk Menjadikan Desa
+              <span className="text-[#008F3D] font-bold">
+                DESA FUTURISTIK FULL DIGITAL INDONESIA 2028
               </span>
-              <span className="block mt-1 text-[#008F3D] font-bold">
-                Berdaulat dan Berdikari 2045
+              <span className="block mt-1 text-[#8B0000]">
+                Transformasi Desa Berdikari Pangan, Energi dan Kesehatan
               </span>
             </motion.p>
 
