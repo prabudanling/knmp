@@ -1,0 +1,974 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   KOPNUSA COLOR SYSTEM - COMPREHENSIVE
+   Based on User's Detailed Specification
+   
+   BRAND COLORS:
+   - Hijau PPP: #008F3D (Primary)
+   - Merah Tua: #8B0000 (Secondary)
+   
+   TIER COLORS (7 Levels):
+   - Tier 1: #6B7280 (Gray)
+   - Tier 2: #10B981 (Emerald)
+   - Tier 3: #0EA5E9 (Sky)
+   - Tier 4: #7C3AED (Violet)
+   - Tier 5: #DB2777 (Pink)
+   - Tier 6: #B7791F (Gold/Bronze)
+   - Tier 7: #C81E1E (Red)
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Brand Colors */
+  --color-green: var(--green);
+  --color-green-light: var(--green-light);
+  --color-green-dark: var(--green-dark);
+  --color-maroon: var(--maroon);
+  --color-maroon-light: var(--maroon-light);
+  --color-maroon-dark: var(--maroon-dark);
+  
+  /* Tier Colors */
+  --color-tier-1: var(--tier-1);
+  --color-tier-1-soft: var(--tier-1-soft);
+  --color-tier-2: var(--tier-2);
+  --color-tier-2-soft: var(--tier-2-soft);
+  --color-tier-3: var(--tier-3);
+  --color-tier-3-soft: var(--tier-3-soft);
+  --color-tier-4: var(--tier-4);
+  --color-tier-4-soft: var(--tier-4-soft);
+  --color-tier-5: var(--tier-5);
+  --color-tier-5-soft: var(--tier-5-soft);
+  --color-tier-6: var(--tier-6);
+  --color-tier-6-soft: var(--tier-6-soft);
+  --color-tier-7: var(--tier-7);
+  --color-tier-7-soft: var(--tier-7-soft);
+  
+  /* UI Colors */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* ==========================================
+     LIGHT MODE - Clean & Professional
+     ========================================== */
+  
+  /* Base Colors */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  
+  /* ==========================================
+     BRAND COLORS - Main Foundation
+     ========================================== */
+  
+  /* Primary - Hijau PPP (#008F3D) */
+  --green: #008F3D;
+  --green-light: #00A847;
+  --green-dark: #006F30;
+  --green-bg: rgba(0, 143, 61, 0.10);
+  --green-border: rgba(0, 143, 61, 0.20);
+  
+  /* Secondary - Merah Tua (#8B0000) */
+  --maroon: #8B0000;
+  --maroon-light: #A50000;
+  --maroon-dark: #6E0000;
+  --maroon-bg: rgba(139, 0, 0, 0.10);
+  --maroon-border: rgba(139, 0, 0, 0.20);
+  
+  /* Primary Button - Hijau PPP */
+  --primary: #008F3D;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #006F30;
+  
+  /* Secondary Button - Merah Tua */
+  --secondary: #8B0000;
+  --secondary-foreground: #FFFFFF;
+  --secondary-hover: #6E0000;
+  
+  /* Muted - Soft Gray */
+  --muted: #F5F5F5;
+  --muted-foreground: #4F4F4F;
+  
+  /* Accent - Soft Green */
+  --accent: rgba(0, 143, 61, 0.08);
+  --accent-foreground: #008F3D;
+  
+  /* Destructive */
+  --destructive: #DC2626;
+  
+  /* Border & Input */
+  --border: #D9D9D9;
+  --border-soft: #EAEAEA;
+  --input: #F3F4F6;
+  --ring: #008F3D;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --bg-main: #FFFFFF;
+  --bg-soft: #F5F5F5;
+  --bg-soft-2: #EFEFEF;
+  --bg-dark: #111111;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4F4F4F;
+  --text-on-dark: #FFFFFF;
+  --text-disabled: #BDBDBD;
+  --success: #16A34A;
+  
+  /* Chart Colors */
+  --chart-1: #008F3D;
+  --chart-2: #8B0000;
+  --chart-3: #059669;
+  --chart-4: #DC2626;
+  --chart-5: #10B981;
+  
+  /* ==========================================
+     TIER COLORS - 7 Level Membership
+     ========================================== */
+  
+  /* Tier 1 - Warga Digital */
+  --tier-1: #6B7280;
+  --tier-1-soft: rgba(107, 114, 128, 0.10);
+  --tier-1-border: rgba(107, 114, 128, 0.20);
+  
+  /* Tier 2 - Anggota Dasar */
+  --tier-2: #10B981;
+  --tier-2-soft: rgba(16, 185, 129, 0.10);
+  --tier-2-border: rgba(16, 185, 129, 0.20);
+  
+  /* Tier 3 - Mitra Desa (KORDES) */
+  --tier-3: #0EA5E9;
+  --tier-3-soft: rgba(14, 165, 233, 0.10);
+  --tier-3-border: rgba(14, 165, 233, 0.20);
+  
+  /* Tier 4 - Mitra Kecamatan (KORCAM) */
+  --tier-4: #7C3AED;
+  --tier-4-soft: rgba(124, 58, 237, 0.10);
+  --tier-4-border: rgba(124, 58, 237, 0.20);
+  
+  /* Tier 5 - Mitra Kabupaten (KORDA) */
+  --tier-5: #DB2777;
+  --tier-5-soft: rgba(219, 39, 119, 0.10);
+  --tier-5-border: rgba(219, 39, 119, 0.20);
+  
+  /* Tier 6 - Mitra Provinsi (KORWIL) - Gold/Bronze */
+  --tier-6: #B7791F;
+  --tier-6-soft: rgba(183, 121, 31, 0.12);
+  --tier-6-border: rgba(183, 121, 31, 0.25);
+  
+  /* Tier 7 - Mitra Nasional (KORNAS) */
+  --tier-7: #C81E1E;
+  --tier-7-soft: rgba(200, 30, 30, 0.10);
+  --tier-7-border: rgba(200, 30, 30, 0.20);
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #008F3D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(0, 143, 61, 0.08);
+  --sidebar-accent-foreground: #008F3D;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #008F3D;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+.dark {
+  /* ==========================================
+     DARK MODE - Professional Dark Theme
+     ========================================== */
+  
+  --background: #0F1419;
+  --foreground: #F5F5F5;
+  --card: #1A1F2C;
+  --card-foreground: #F5F5F5;
+  --popover: #1A1F2C;
+  --popover-foreground: #F5F5F5;
+  
+  /* Primary - Hijau PPP (Brighter for dark mode) */
+  --primary: #00A847;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary - Merah Tua */
+  --secondary: #A50000;
+  --secondary-foreground: #FFFFFF;
+  
+  /* Muted */
+  --muted: #1F2937;
+  --muted-foreground: #9CA3AF;
+  
+  /* Accent */
+  --accent: rgba(0, 168, 71, 0.15);
+  --accent-foreground: #00A847;
+  
+  /* Destructive */
+  --destructive: #EF4444;
+  
+  /* Border & Input */
+  --border: #374151;
+  --input: #1F2937;
+  --ring: #00A847;
+  
+  /* Chart Colors */
+  --chart-1: #00A847;
+  --chart-2: #A50000;
+  --chart-3: #10B981;
+  --chart-4: #EF4444;
+  --chart-5: #34D399;
+  
+  /* Sidebar */
+  --sidebar: #1A1F2C;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: #00A847;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(0, 168, 71, 0.15);
+  --sidebar-accent-foreground: #00A847;
+  --sidebar-border: #374151;
+  --sidebar-ring: #00A847;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  /* Ensure proper text colors */
+  p, li, td, th, label, input, textarea, select {
+    color: var(--text-primary);
+  }
+  
+  small, .text-muted, .meta {
+    color: var(--text-secondary);
+  }
+  
+  a {
+    color: var(--green);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--green-dark);
+  }
+}
+
+/* ==========================================
+   TIER-SPECIFIC UTILITIES
+   ========================================== */
+@layer utilities {
+  /* Tier Chips */
+  .tier-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid transparent;
+  }
+  
+  /* Tier Top Accent */
+  .tier-accent-top {
+    position: relative;
+  }
+  
+  .tier-accent-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  /* Tier Cards */
+  .tier-card {
+    background: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Tier 1 Styling */
+  .tier-1 { color: var(--tier-1); }
+  .tier-1-bg { background: var(--tier-1-soft); }
+  .tier-1-border { border-color: var(--tier-1-border); }
+  .tier-card.tier-1::before { background: var(--tier-1); }
+  
+  /* Tier 2 Styling */
+  .tier-2 { color: var(--tier-2); }
+  .tier-2-bg { background: var(--tier-2-soft); }
+  .tier-2-border { border-color: var(--tier-2-border); }
+  .tier-card.tier-2::before { background: var(--tier-2); }
+  
+  /* Tier 3 Styling */
+  .tier-3 { color: var(--tier-3); }
+  .tier-3-bg { background: var(--tier-3-soft); }
+  .tier-3-border { border-color: var(--tier-3-border); }
+  .tier-card.tier-3::before { background: var(--tier-3); }
+  
+  /* Tier 4 Styling */
+  .tier-4 { color: var(--tier-4); }
+  .tier-4-bg { background: var(--tier-4-soft); }
+  .tier-4-border { border-color: var(--tier-4-border); }
+  .tier-card.tier-4::before { background: var(--tier-4); }
+  
+  /* Tier 5 Styling */
+  .tier-5 { color: var(--tier-5); }
+  .tier-5-bg { background: var(--tier-5-soft); }
+  .tier-5-border { border-color: var(--tier-5-border); }
+  .tier-card.tier-5::before { background: var(--tier-5); }
+  
+  /* Tier 6 Styling (Gold/Bronze) */
+  .tier-6 { color: var(--tier-6); }
+  .tier-6-bg { background: var(--tier-6-soft); }
+  .tier-6-border { border-color: var(--tier-6-border); }
+  .tier-card.tier-6::before { background: var(--tier-6); }
+  
+  /* Tier 7 Styling (Red - Highest) */
+  .tier-7 { color: var(--tier-7); }
+  .tier-7-bg { background: var(--tier-7-soft); }
+  .tier-7-border { border-color: var(--tier-7-border); }
+  .tier-card.tier-7::before { background: var(--tier-7); }
+}
+
+/* ==========================================
+   BUTTON SYSTEM
+   ========================================== */
+@layer utilities {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--primary-hover);
+    color: var(--white);
+  }
+  
+  .btn-secondary {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--secondary-hover);
+    color: var(--white);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    color: var(--green);
+    border-color: var(--green);
+  }
+  
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    background: rgba(0, 143, 61, 0.08);
+    color: var(--green-dark);
+  }
+  
+  .btn-light {
+    background: var(--white);
+    color: var(--green);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .btn-light:hover,
+  .btn-light:focus-visible {
+    background: #F7FFF9;
+  }
+}
+
+/* ==========================================
+   CARD UI GLOBAL
+   ========================================== */
+@layer utilities {
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-title {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  
+  .card-subtitle,
+  .card-meta,
+  .card-text {
+    color: var(--text-secondary);
+  }
+}
+
+/* ==========================================
+   NAVBAR, HERO, FOOTER
+   ========================================== */
+@layer utilities {
+  .navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  
+  .navbar a {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--green);
+  }
+  
+  .hero {
+    background: var(--bg-main);
+  }
+  
+  .hero--soft {
+    background: var(--bg-soft);
+  }
+  
+  .hero-stat-value {
+    color: var(--green);
+    font-weight: 800;
+  }
+  
+  .hero-stat-label {
+    color: var(--text-secondary);
+  }
+  
+  .footer {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+  }
+  
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer p,
+  .footer li,
+  .footer a {
+    color: var(--text-on-dark);
+  }
+  
+  .footer a:hover {
+    color: #D8FFE7;
+  }
+  
+  .footer .divider {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ==========================================
+   BADGES
+   ========================================== */
+@layer utilities {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .badge-brand {
+    background: rgba(0, 143, 61, 0.10);
+    color: var(--green);
+  }
+  
+  .badge-danger {
+    background: rgba(139, 0, 0, 0.10);
+    color: var(--maroon);
+  }
+  
+  .badge-success {
+    background: rgba(22, 163, 74, 0.10);
+    color: var(--success);
+  }
+}
+
+/* ==========================================
+   FORMS
+   ========================================== */
+@layer utilities {
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    background: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+  }
+  
+  .input::placeholder,
+  .textarea::placeholder {
+    color: #8A8A8A;
+  }
+  
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(0, 143, 61, 0.10);
+  }
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+   ========================================== */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--green) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green-dark);
+  }
+}
+
+/* ==========================================
+   TEXT GRADIENTS
+   ========================================== */
+@layer utilities {
+  .text-gradient-green {
+    background: linear-gradient(135deg, #008F3D 0%, #00A847 50%, #006F30 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-maroon {
+    background: linear-gradient(135deg, #8B0000 0%, #A50000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #008F3D 0%, #00A847 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ==========================================
+   GLASS EFFECTS
+   ========================================== */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.1);
+  }
+  
+  .glass-white {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.1);
+  }
+  
+  .glass-green {
+    background: rgba(0, 143, 61, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.2);
+  }
+}
+
+/* ==========================================
+   GLOW EFFECTS
+   ========================================== */
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 143, 61, 0.3), 0 0 40px rgba(0, 143, 61, 0.1);
+  }
+  
+  .glow-maroon {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(139, 0, 0, 0.1);
+  }
+  
+  .glow-soft {
+    box-shadow: 0 0 30px rgba(0, 143, 61, 0.1), 0 0 60px rgba(139, 0, 0, 0.05);
+  }
+}
+
+/* ==========================================
+   BACKGROUND PATTERNS
+   ========================================== */
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 143, 61, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 143, 61, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .bg-dots-pattern {
+    background-image: radial-gradient(rgba(0, 143, 61, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+/* ==========================================
+   ANIMATION UTILITIES
+   ========================================== */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================
+   HERO GRADIENT BACKGROUNDS
+   ========================================== */
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #E8F5E9 40%, 
+      #F5F5F5 70%,
+      #FFFFFF 100%
+    );
+  }
+  
+  .hero-gradient-light {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #E8F5E9 50%,
+      #F0FDF4 100%
+    );
+  }
+  
+  .hero-gradient-maroon {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #FFEBEE 50%,
+      #FFF5F5 100%
+    );
+  }
+  
+  .hero-gradient-brand {
+    background: linear-gradient(135deg, 
+      #E8F5E9 0%, 
+      #FFFFFF 50%, 
+      #FFEBEE 100%
+    );
+  }
+}
+
+/* ==========================================
+   CARD EFFECTS
+   ========================================== */
+@layer utilities {
+  .card-hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 143, 61, 0.1);
+  }
+  
+  .card-green {
+    border-left: 4px solid #008F3D;
+  }
+  
+  .card-maroon {
+    border-left: 4px solid #8B0000;
+  }
+}
+
+/* ==========================================
+   SECTION BACKGROUNDS
+   ========================================== */
+@layer utilities {
+  .section-white {
+    background: #FFFFFF;
+  }
+  
+  .section-green-light {
+    background: linear-gradient(to bottom, #E8F5E9, #FFFFFF);
+  }
+  
+  .section-maroon-light {
+    background: linear-gradient(to bottom, #FFEBEE, #FFFFFF);
+  }
+  
+  .section-gray {
+    background: linear-gradient(to bottom, #F5F5F5, #FFFFFF);
+  }
+}
+
+/* ==========================================
+   SECTION DIVIDER
+   ========================================== */
+@layer utilities {
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================== */
+@layer utilities {
+  .text-responsive-hero {
+    font-size: clamp(28px, 8vw, 80px);
+  }
+  
+  .text-responsive-title {
+    font-size: clamp(24px, 5vw, 48px);
+  }
+  
+  .text-responsive-subtitle {
+    font-size: clamp(16px, 3vw, 24px);
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY - HIGH CONTRAST
+   ========================================== */
+@layer utilities {
+  .text-high-contrast {
+    color: #1A1A1A;
+  }
+  
+  .text-on-green {
+    color: #FFFFFF;
+  }
+  
+  .text-on-maroon {
+    color: #FFFFFF;
+  }
+  
+  .text-on-light-green {
+    color: #00752F;
+  }
+  
+  .text-on-light-maroon {
+    color: #6B0000;
+  }
+}
+
+/* ==========================================
+   FOCUS STATES
+   ========================================== */
+@layer utilities {
+  .focus-green:focus {
+    outline: none;
+    ring: 2px solid #008F3D;
+    ring-offset: 2px;
+  }
+  
+  .focus-maroon:focus {
+    outline: none;
+    ring: 2px solid #8B0000;
+    ring-offset: 2px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+   ========================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .btn {
+    min-height: 44px;
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   UTILITY OVERRIDES
+   ========================================== */
+
+.bg-white {
+  background-color: #FFFFFF !important;
+}
+
+.text-primary-green {
+  color: #008F3D;
+}
+
+.text-primary-maroon {
+  color: #8B0000;
+}
+
+.bg-primary-green {
+  background-color: #008F3D;
+}
+
+.bg-primary-maroon {
+  background-color: #8B0000;
+}
+
+.bg-light-green {
+  background-color: #E8F5E9;
+}
+
+.bg-light-maroon {
+  background-color: #FFEBEE;
+}
+
+.border-primary-green {
+  border-color: #008F3D;
+}
+
+.border-primary-maroon {
+  border-color: #8B0000;
+}
+
+/* Discount Badge Animation */
+@keyframes pulse-discount {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.discount-badge {
+  animation: pulse-discount 2s ease-in-out infinite;
+}

@@ -1,0 +1,643 @@
+// KMNMP - Koperasi Multipihak Nusa Merah Putih
+// Prisma Schema for Complete Enterprise Dashboard
+// Version: 2.0.0 (SQLite)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== TIERS ====================
+model Tier {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  price       Int
+  description String
+  benefits    String
+  hasOperationalRights Boolean @default(false)
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  pendaftaran Pendaftaran[]
+  users       User[]
+}
+
+// ==================== KPA ====================
+model KPA {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  description String
+  icon        String
+  color       String
+  votingPower Int      @default(10)
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  users       User[]
+}
+
+// ==================== USERS / ANGGOTA ====================
+model User {
+  id            String   @id @default(cuid())
+  niak          String?  @unique
+  email         String   @unique
+  phone         String?
+  password      String
+  name          String
+  nik           String?
+  tempatLahir   String?
+  tanggalLahir  DateTime?
+  jenisKelamin  String?
+  alamat        String?
+  rt            String?
+  rw            String?
+  kelurahan     String?
+  kecamatan     String?
+  kabKota       String?
+  provinsi      String?
+  kodePos       String?
+  fotoKtp       String?
+  fotoDiri      String?
+  
+  tierId        String?
+  tier          Tier?   @relation(fields: [tierId], references: [id])
+  kpaId         String?
+  kpa           KPA?    @relation(fields: [kpaId], references: [id])
+  
+  status        String  @default("PENDING")
+  role          String  @default("MEMBER")
+  
+  simpananPokok Int      @default(0)
+  simpananWajib Int      @default(0)
+  simpananSukarela Int   @default(0)
+  
+  joinDate      DateTime?
+  approvedAt    DateTime?
+  approvedBy    String?
+  rejectedAt    DateTime?
+  rejectedReason String?
+  lastLoginAt   DateTime?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  pendaftaran   Pendaftaran[]
+  payments      Payment[]
+  activityLogs  ActivityLog[]
+  jabatan       Jabatan?
+  member        Member?
+  notifications Notification[]
+  shuDistributions SHUDistribution[]
+  transactions  Transaction[]
+}
+
+// ==================== PENDAFTARAN ====================
+model Pendaftaran {
+  id              String   @id @default(cuid())
+  nomorPendaftaran String @unique
+  
+  namaLengkap     String
+  email           String
+  phone           String
+  nik             String?
+  tempatLahir     String?
+  tanggalLahir    DateTime?
+  jenisKelamin    String?
+  alamat          String?
+  rt              String?
+  rw              String?
+  kelurahan       String?
+  kecamatan       String?
+  kabKota         String?
+  provinsi        String?
+  kodePos         String?
+  
+  fotoKtp         String?
+  fotoDiri        String?
+  
+  tierId          String
+  tier            Tier     @relation(fields: [tierId], references: [id])
+  kpaId           String?
+  
+  status          String   @default("PENDING")
+  notes           String?
+  
+  reviewedAt      DateTime?
+  reviewedBy      String?
+  approvedAt      DateTime?
+  approvedBy      String?
+  rejectedAt      DateTime?
+  rejectedBy      String?
+  rejectedReason  String?
+  
+  niak            String?
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id])
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  payments        Payment[]
+}
+
+// ==================== PAYMENTS ====================
+model Payment {
+  id              String   @id @default(cuid())
+  orderId         String   @unique
+  transactionId   String?
+  
+  pendaftaranId   String
+  pendaftaran     Pendaftaran @relation(fields: [pendaftaranId], references: [id])
+  
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id])
+  
+  amount          Int
+  status          String   @default("PENDING")
+  paymentType     String?
+  paymentMethod   String?
+  
+  snapToken       String?
+  snapRedirectUrl String?
+  vaNumber        String?
+  
+  paidAt          DateTime?
+  expiredAt       DateTime?
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ==================== NIAK SEQUENCE ====================
+model NIAKSequence {
+  id          String   @id @default(cuid())
+  year        Int      @unique
+  month       Int
+  lastSequence Int     @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== JABATAN ====================
+model Jabatan {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  level       Int
+  description String?
+  province    String?
+  kabKota     String?
+  kecamatan   String?
+  kelurahan   String?
+  
+  userId      String?  @unique
+  user        User?    @relation(fields: [userId], references: [id])
+  
+  status      String   @default("VACANT")
+  startDate   DateTime?
+  endDate     DateTime?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== SETTINGS ====================
+model Setting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  type        String   @default("STRING")
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== ACTIVITY LOGS ====================
+model ActivityLog {
+  id          String   @id @default(cuid())
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id])
+  
+  action      String
+  entity      String
+  entityId    String?
+  description String
+  ipAddress   String?
+  userAgent   String?
+  metadata    String?
+  
+  createdAt   DateTime @default(now())
+}
+
+// ==================== DEWAN PENDIRI ====================
+model DewanPendiri {
+  id          String   @id @default(cuid())
+  no          Int      @unique
+  name        String
+  position    String
+  role        String
+  photo       String?
+  status      String   @default("ACTIVE")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== KOORDINATOR BIDANG ====================
+model KoordinatorBidang {
+  id          String   @id @default(cuid())
+  no          Int      @unique
+  bidang      String
+  ketua       String?
+  sekretaris  String?
+  catatan     String?
+  status      String   @default("VACANT")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== KORWIL ====================
+model Korwil {
+  id          String   @id @default(cuid())
+  no          Int      @unique
+  kawasan     String
+  panglima    String?
+  cakupan     String
+  catatan     String?
+  status      String   @default("VACANT")
+  prioritas   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== SESSION ====================
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  token        String   @unique
+  userAgent    String?
+  ipAddress    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+}
+
+// ==================== VERIFICATION TOKEN ====================
+model VerificationToken {
+  id          String   @id @default(cuid())
+  userId      String?
+  email       String
+  token       String   @unique
+  type        String
+  expiresAt   DateTime
+  usedAt      DateTime?
+  createdAt   DateTime @default(now())
+}
+
+// ==================== MEMBER ====================
+model Member {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id])
+  
+  pekerjaan       String?
+  bidangUsaha     String?
+  penghasilan     Int?
+  
+  namaBank        String?
+  nomorRekening   String?
+  namaPemilik     String?
+  
+  kontakDaruratNama   String?
+  kontakDaruratPhone  String?
+  kontakDaruratHubungan String?
+  
+  totalTransaksi   Int      @default(0)
+  totalPembelian   Int      @default(0)
+  totalPenjualan   Int      @default(0)
+  totalKomisi      Int      @default(0)
+  rating           Float?
+  
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  
+  products         Product[]
+  orders           Order[]
+}
+
+// ==================== SHU CONFIG ====================
+model SHUConfig {
+  id                String   @id @default(cuid())
+  year              Int      @unique
+  totalSHU          Int
+  
+  danaCadangan      Float    @default(20)
+  jasaModal         Float    @default(25)
+  jasaUsaha         Float    @default(35)
+  danaPengurus      Float    @default(5)
+  danaPendidikan    Float    @default(5)
+  danaSosial        Float    @default(5)
+  danaTeknologi     Float    @default(5)
+  
+  status            String   @default("DRAFT")
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  publishedAt       DateTime?
+  distributedAt     DateTime?
+  
+  distributions     SHUDistribution[]
+}
+
+// ==================== SHU DISTRIBUTION ====================
+model SHUDistribution {
+  id                String   @id @default(cuid())
+  configId          String
+  config            SHUConfig @relation(fields: [configId], references: [id])
+  
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  
+  jasaUsaha         Int
+  jasaModal         Int
+  total             Int
+  
+  method            String?
+  distributedAt     DateTime?
+  status            String   @default("PENDING")
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== PRODUCT ====================
+model Product {
+  id                String   @id @default(cuid())
+  productCode       String   @unique
+  sellerId          String
+  seller            Member   @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  
+  name              String
+  slug              String   @unique
+  description       String?
+  category          String
+  zone              String
+  
+  price             Int
+  discountPrice     Int?
+  wholesalePrice    Int?
+  wholesaleMinQty   Int?
+  
+  stock             Int
+  minOrder          Int      @default(1)
+  maxOrder          Int?
+  sku               String?
+  
+  images            String?
+  videos            String?
+  
+  province          String?
+  
+  weight            Float?
+  dimensions        String?
+  certifications    String?
+  
+  views             Int      @default(0)
+  sold              Int      @default(0)
+  rating            Float?
+  totalReviews      Int      @default(0)
+  
+  status            String   @default("DRAFT")
+  featured          Boolean  @default(false)
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  publishedAt       DateTime?
+  
+  orderItems        OrderItem[]
+}
+
+// ==================== ORDER ====================
+model Order {
+  id                String   @id @default(cuid())
+  orderCode         String   @unique
+  buyerId           String
+  buyer             Member   @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  
+  sellerId          String
+  
+  items             OrderItem[]
+  
+  subtotal          Int
+  shippingCost      Int      @default(0)
+  discount          Int      @default(0)
+  tax               Int      @default(0)
+  total             Int
+  
+  shippingAddress   String?
+  shippingMethod    String?
+  shippingProvider  String?
+  trackingNumber    String?
+  
+  status            String   @default("PENDING")
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  shippedAt         DateTime?
+  deliveredAt       DateTime?
+  cancelledAt       DateTime?
+}
+
+// ==================== ORDER ITEM ====================
+model OrderItem {
+  id                String   @id @default(cuid())
+  orderId           String
+  order             Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  productId         String
+  product           Product  @relation(fields: [productId], references: [id])
+  
+  quantity          Int
+  price             Int
+  subtotal          Int
+  
+  createdAt         DateTime @default(now())
+}
+
+// ==================== NOTIFICATION ====================
+model Notification {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  title             String
+  message           String
+  type              String
+  
+  link              String?
+  
+  read              Boolean  @default(false)
+  readAt            DateTime?
+  
+  createdAt         DateTime @default(now())
+}
+
+// ==================== ANNOUNCEMENT ====================
+model Announcement {
+  id                String   @id @default(cuid())
+  title             String
+  content           String
+  type              String
+  
+  targetRoles       String?
+  targetKPAs        String?
+  targetTiers       String?
+  
+  image             String?
+  attachment        String?
+  
+  status            String   @default("DRAFT")
+  pinned            Boolean  @default(false)
+  
+  publishedAt       DateTime?
+  expiresAt         DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== FAQ ====================
+model FAQ {
+  id                String   @id @default(cuid())
+  question          String
+  answer            String
+  category          String?
+  
+  order             Int      @default(0)
+  
+  status            Boolean  @default(true)
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== SUPPORT TICKET ====================
+model SupportTicket {
+  id                String   @id @default(cuid())
+  ticketCode        String   @unique
+  userId            String
+  
+  subject           String
+  message           String
+  category          String?
+  priority          String   @default("NORMAL")
+  
+  status            String   @default("OPEN")
+  assignedTo        String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  resolvedAt        DateTime?
+  closedAt          DateTime?
+}
+
+// ==================== MEMBER CARD ====================
+model MemberCard {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  cardNumber        String   @unique
+  
+  issuedAt          DateTime @default(now())
+  expiresAt         DateTime?
+  
+  status            String   @default("ACTIVE")
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== DOCUMENT ====================
+model Document {
+  id                String   @id @default(cuid())
+  name              String
+  type              String
+  category          String?
+  
+  filePath          String
+  fileSize          Int?
+  mimeType          String?
+  
+  uploadedBy        String?
+  relatedEntity     String?
+  relatedEntityId   String?
+  
+  status            String   @default("ACTIVE")
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== PROVINSI ====================
+model Provinsi {
+  id                String   @id @default(cuid())
+  code              String   @unique
+  name              String
+  
+  kabKotaCount      Int      @default(0)
+  memberCount       Int      @default(0)
+  
+  korwilId          String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  kabKotas          KabKota[]
+}
+
+// ==================== KABUPATEN/KOTA ====================
+model KabKota {
+  id                String   @id @default(cuid())
+  code              String   @unique
+  name              String
+  provinsiId        String
+  provinsi          Provinsi @relation(fields: [provinsiId], references: [id])
+  type              String
+  
+  districtCount     Int      @default(0)
+  memberCount       Int      @default(0)
+  
+  kordaId           String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ==================== TRANSACTION ====================
+model Transaction {
+  id                String   @id @default(cuid())
+  transactionCode   String   @unique
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  
+  type              String
+  
+  subtotal          Int
+  discount          Int      @default(0)
+  fee               Int      @default(0)
+  total             Int
+  
+  status            String   @default("PENDING")
+  
+  orderId           String?
+  paymentId         String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  completedAt       DateTime?
+}
