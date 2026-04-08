@@ -71,7 +71,7 @@ export async function POST(
       let niak = null;
       if (pendaftaran.tier?.code) {
         // Get KPA code
-        let kpaCode = 'KPA_1_PRODUCER'; // default
+        let kpaCode = 'KPA_1_PRODUSEN_PEKERJA'; // default
         if (pendaftaran.kpaId) {
           const kpa = await db.kPA.findUnique({ where: { id: pendaftaran.kpaId } });
           if (kpa) kpaCode = kpa.code;

@@ -15,12 +15,11 @@
 import { db } from './db';
 
 const KPA_CODES: Record<string, string> = {
-  'KPA_1_PRODUCER': '1',
-  'KPA_2_ENTREPRENEUR': '2',
-  'KPA_3_COOPERATIVE': '3',
-  'KPA_4_WORKER': '4',
-  'KPA_5_CONSUMER': '5',
-  'KPA_6_INVESTOR': '6',
+  'KPA_1_PRODUSEN_PEKERJA': '1',
+  'KPA_2_KONSUMEN_UMUM': '2',
+  'KPA_3_ABDI_NEGARA': '3',
+  'KPA_4_ENTITAS_BISNIS': '4',
+  'KPA_5_PEMODAL_INVESTOR': '5',
 };
 
 const TIER_CODES: Record<string, string> = {

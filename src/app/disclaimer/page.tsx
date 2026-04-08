@@ -26,6 +26,8 @@ export default function DisclaimerPage() {
         'Investasi di koperasi memiliki risiko seperti instrumen keuangan lainnya',
         'Return investasi tidak dijamin dan dapat berubah sewaktu-waktu',
         'SHU dibagikan berdasarkan partisipasi ekonomi, bukan return tetap',
+        'Kampung Modal sebagai platform investasi berlandaskan prinsip Ring-Fencing — dana anggota terpisah dan dilindungi',
+        'Keanggotaan koperasi tidak sama dengan produk keuangan yang dijamin oleh LPS',
         'Konsultasikan dengan penasihat keuangan sebelum berinvestasi'
       ]
     },
@@ -57,6 +59,16 @@ export default function DisclaimerPage() {
         'Kerusakan sistem, kehilangan data, atau gangguan layanan',
         'Tindakan yang dilakukan berdasarkan informasi di website',
         'Gangguan yang disebabkan oleh force majeure'
+      ]
+    },
+    {
+      title: 'Penyelesaian Sengketa',
+      icon: AlertTriangle,
+      content: [
+        'Seluruh sengketa internal wajib diselesaikan melalui Badan Arbitrase Nasional Indonesia (BANI) sesuai AD Pasal 29 (The Mute Arbitration)',
+        'Putusan arbitrase BANI bersifat final, mengikat, dan rahasia (tertutup untuk publik)',
+        'Para pihak melepaskan hak gugatan perdata ke Pengadilan Negeri',
+        'Hukum yang berlaku adalah Hukum Negara Republik Indonesia'
       ]
     }
   ]
@@ -95,9 +107,9 @@ export default function DisclaimerPage() {
                 <div>
                   <h3 className="font-bold text-orange-800 mb-2">PENTING - BACA DENGAN SEKSAMA</h3>
                   <p className="text-orange-700 leading-relaxed">
-                    Disclaimer ini merupakan penyangkalan resmi dari Koperasi Nusantara Merah Putih (KNMP). 
-                    Dengan mengakses dan menggunakan layanan kami, Anda dianggap telah membaca, memahami, 
-                    dan menyetujui disclaimer ini.
+                    Disclaimer ini merupakan penyangkalan resmi dari Koperasi Nusantara Merah Putih (KKMNMP/KNMP) 
+                    berdasarkan AD Versi 7 Super Final. Dengan mengakses dan menggunakan layanan kami, Anda dianggap telah membaca, memahami, 
+                    dan menyetujui disclaimer ini beserta seluruh konstitusi KKMNMP/KNMP (AD/ART/Kode Etik).
                   </p>
                 </div>
               </div>

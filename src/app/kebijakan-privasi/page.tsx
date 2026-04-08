@@ -43,6 +43,7 @@ export default function KebijakanPrivasiPage() {
       title: '4. Keamanan Data',
       content: [
         'Enkripsi data end-to-end untuk transaksi',
+        'Verifikasi transaksi menggunakan Zero-Knowledge Proof (ZKP) tanpa mengungkap data pribadi',
         'Sistem keamanan blockchain untuk transparansi',
         'Akses terbatas hanya untuk personel yang berwenang',
         'Audit keamanan berkala oleh pihak ketiga',
@@ -67,6 +68,24 @@ export default function KebijakanPrivasiPage() {
         'Cookie preferensi untuk pengalaman personalisasi',
         'Pengguna dapat mengatur preferensi cookie di browser',
         'Penggunaan cookie sesuai dengan regulasi yang berlaku'
+      ]
+    },
+    {
+      title: '7. Wali Amanat Data (AD Pasal 24-25)',
+      content: [
+        'KKMNMP/KNMP bertindak sebagai Wali Amanat Data (Data Fiduciary) bagi seluruh anggota',
+        'Data adalah milik anggota, Koperasi adalah pelindung dan pengelola — bukan pemilik',
+        'Seluruh pengelolaan data mematuhi UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)',
+        'Verifikasi transaksi menggunakan Zero-Knowledge Proof (ZKP) untuk menjaga kerahasiaan data',
+        'Koperasi wajib memperoleh persetujuan eksplisit sebelum memproses data pribadi anggota'
+      ]
+    },
+    {
+      title: '8. Kode Etik & Sumpah Kedaulatan Privasi',
+      content: [
+        'Seluruh anggota dan pengelola wajib mematuhi Kode Etik KKMNMP/KNMP',
+        'Kode Etik Pasal 5: Sumpah Kedaulatan Privasi — data anggota adalah kedaulatan pribadi',
+        'Pelanggaran terhadap perlindungan data akan dikenakan sanksi sesuai ketentuan AD/ART'
       ]
     }
   ]
@@ -101,9 +120,10 @@ export default function KebijakanPrivasiPage() {
           <Card className="bg-red-50 border-red-100 mb-8">
             <CardContent className="p-6">
               <p className="text-gray-700 leading-relaxed">
-                Koperasi Nusantara Merah Putih (KNMP) berkomitmen untuk melindungi privasi dan keamanan data pribadi 
-                anggota dan pengguna platform. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, 
-                menggunakan, dan melindungi informasi Anda.
+                Koperasi Nusantara Merah Putih (KKMNMP/KNMP) berkomitmen untuk melindungi privasi dan keamanan data pribadi 
+                anggota dan pengguna platform. Berdasarkan AD Pasal 24-25, KKMNMP/KNMP bertindak sebagai Wali Amanat Data (Data Fiduciary). 
+                Data adalah milik anggota, Koperasi adalah pelindung dan pengelola. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, 
+                menggunakan, dan melindungi informasi Anda sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP).
               </p>
             </CardContent>
           </Card>

@@ -17,6 +17,10 @@ import {
   TrendingUp,
   UserPlus,
   Info,
+  Banknote,
+  Landmark,
+  Scale,
+  AlertTriangle,
 } from "lucide-react";
 import {
   Card,
@@ -45,98 +49,100 @@ import {
   Legend,
 } from "recharts";
 
-// KPA Data
+// KPA Data — Pentagon Kedaulatan (AD/ART Versi 7)
 const kpaData = [
   {
     id: 1,
-    name: "Petani/Produsen",
+    name: "Produsen & Pekerja",
+    subtitle: "Pencipta Nilai",
     color: "#22c55e",
     bgColor: "bg-green-500",
     lightBg: "bg-green-500/10",
     borderColor: "border-green-500",
     textColor: "text-green-500",
-    proporsi: 30,
-    deskripsi: "Petani, pekebun, nelayan, peternak, pengrajin",
-    manfaat: ["Akses pasar langsung", "Modal usaha", "Teknologi pertanian", "Pelatihan gratis"],
+    proporsi: 20,
+    deskripsi: "Petani murni, nelayan, peternak, pekebun, pengrajin, buruh tani, agen logistik (Kordes/Korcam/Korda/Korwil), kurir ekosistem, kader digital",
+    manfaat: ["Akses pasar langsung", "Modal usaha via Kampung Modal", "Teknologi pertanian", "Pelatihan gratis via JE-P3 Academy"],
     anggota: "45.000+",
     icon: Sprout,
-    requirements: ["KTP/Identitas valid", "Bukti aktivitas produksi", "Rekomendasi kelompok tani"],
+    requirements: ["KTP valid", "Bukti aktivitas produksi", "Rekomendasi kelompok"],
+    simpananPokok: "Rp 100.000",
+    simpananWajib: "Rp 50.000/bulan",
   },
   {
     id: 2,
-    name: "Pengusaha/Pengepul",
+    name: "Konsumen Umum",
+    subtitle: "Mesin Permintaan",
     color: "#3b82f6",
     bgColor: "bg-blue-500",
     lightBg: "bg-blue-500/10",
     borderColor: "border-blue-500",
     textColor: "text-blue-500",
     proporsi: 20,
-    deskripsi: "UMKM, pengepul, pedagang, distributor",
-    manfaat: ["Supply chain terintegrasi", "Financing UMKM", "Network expansion", "Digital platform"],
-    anggota: "25.000+",
-    icon: Building2,
-    requirements: ["SIUP/NIB aktif", "Omzet minimal Rp 50 juta/tahun", "Pengalaman usaha 1 tahun"],
+    deskripsi: "Warga masyarakat umum pengguna JP3 Pay, pembeli retail Marketplace, wisatawan & jemaah perjalanan",
+    manfaat: ["Harga khusus anggota", "Rewards & cashback", "Bagi SHU tahunan", "Priority access"],
+    anggota: "50.000+",
+    icon: ShoppingBag,
+    requirements: ["KTP valid", "Minat produk lokal"],
+    simpananPokok: "Rp 100.000",
+    simpananWajib: "Rp 50.000/bulan",
   },
   {
     id: 3,
-    name: "Koperasi/BUMDes",
+    name: "Abdi Negara & Pejabat Publik",
+    subtitle: "Jangkar Stabilitas",
     color: "#8b5cf6",
     bgColor: "bg-violet-500",
     lightBg: "bg-violet-500/10",
     borderColor: "border-violet-500",
     textColor: "text-violet-500",
     proporsi: 20,
-    deskripsi: "Koperasi primer, BUMDes, BUMDesMA",
-    manfaat: ["Platform sharing ekonomi", "Aggregasi hasil produksi", "Penguatan modal", "Kemitraan strategis"],
-    anggota: "80.000+ unit",
-    icon: Users,
-    requirements: ["Badan hukum koperasi/BUMDes", "AD/ART lengkap", "Minimal 50 anggota aktif"],
+    deskripsi: "PNS, ASN, P3K, Pensiunan, TNI/POLRI aktif & purnawirawan, Pejabat Negara, DPR/DPRD/DPD, Kepala Daerah",
+    manfaat: ["Jangkar stabilitas ekosistem", "Hak suara politik", "Akses VIP", "Auto-debet gaji"],
+    anggota: "25.000+",
+    icon: Shield,
+    requirements: ["Identitas ASN/TNI/POLRI", "Surat keterangan instansi"],
+    simpananPokok: "Rp 250.000",
+    simpananWajib: "Rp 100.000/bulan",
+    note: "Klausul Netralitas berlaku",
   },
   {
     id: 4,
-    name: "Pekerja/Kader",
+    name: "Entitas Bisnis & Pelaku Usaha",
+    subtitle: "Mesin B2B",
     color: "#f59e0b",
     bgColor: "bg-amber-500",
     lightBg: "bg-amber-500/10",
     borderColor: "border-amber-500",
     textColor: "text-amber-500",
-    proporsi: 10,
-    deskripsi: "Karyawan, kader lapangan, agen logistik",
-    manfaat: ["Training & sertifikasi", "Commission system", "Career path jelas", "Asuransi kesehatan"],
-    anggota: "15.000+",
-    icon: Briefcase,
-    requirements: ["Usia 18-45 tahun", "Pendidikan minimal SMA", "Bersedia training"],
+    proporsi: 20,
+    deskripsi: "Bandar lokal, pengepul hasil bumi, pedagang besar, PT/CV/Firma, Yayasan, BUMDes, Koperasi Primer",
+    manfaat: ["Supply chain terintegrasi", "Financing B2B", "Dashboard VIP", "Network expansion"],
+    anggota: "80.000+ unit",
+    icon: Building2,
+    requirements: ["SIUP/NIB aktif", "Badan hukum valid", "AD/ART (koperasi)"],
+    simpananPokok: "Rp 5.000.000",
+    simpananWajib: "Rp 1.000.000/bulan",
   },
   {
     id: 5,
-    name: "Konsumen",
-    color: "#ec4899",
-    bgColor: "bg-pink-500",
-    lightBg: "bg-pink-500/10",
-    borderColor: "border-pink-500",
-    textColor: "text-pink-500",
-    proporsi: 10,
-    deskripsi: "Konsumen akhir produk/jasa KNMP",
-    manfaat: ["Harga khusus anggota", "Rewards & cashback", "Bagi SHU tahunan", "Priority access produk baru"],
-    anggota: "50.000+",
-    icon: ShoppingBag,
-    requirements: ["KTP/Identitas valid", "Minat produk lokal", "Transaksi minimal Rp 100rb/bulan"],
-  },
-  {
-    id: 6,
-    name: "Investor",
+    name: "Pemodal & Investor",
+    subtitle: "Likuiditas Berdaulat",
     color: "#008F3D",
-    bgColor: "bg-yellow-500",
-    lightBg: "bg-yellow-500/10",
-    borderColor: "border-yellow-500",
-    textColor: "text-yellow-600",
-    proporsi: 10,
-    deskripsi: "Investor individu/institusi",
+    bgColor: "bg-emerald-700",
+    lightBg: "bg-emerald-700/10",
+    borderColor: "border-emerald-700",
+    textColor: "text-emerald-700",
+    proporsi: 20,
+    deskripsi: "Angel Investor, Venture Capital, Bank Pemerintah (Himbara), Bank Swasta, Institusi internasional",
     manfaat: ["ROI kompetitif", "Impact investment", "Governance participation", "Reporting transparan"],
     anggota: "500+",
     icon: Crown,
-    requirements: ["Investasi minimal Rp 10 juta", "Verifikasi KYC", "Memahami risiko investasi"],
-    note: "Tidak punya hak veto!",
+    requirements: ["KYC/AML verification", "Lembar saham/kontrak investasi", "Memahami risiko investasi"],
+    simpananPokok: "Individu: Rp 50.000.000 | Institusi: Rp 250.000.000",
+    simpananWajib: "Rp 1.000.000/bulan (dividen deduction)",
+    note1: "Doktrin Anti-Oligarki: 1 Anggota 1 Suara",
+    note2: "Lock-up 24 bulan",
   },
 ];
 
@@ -186,15 +192,15 @@ export default function KPAPage() {
               className="mb-6 px-4 py-2 text-sm font-semibold bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
             >
               <Vote className="w-4 h-4 mr-2" />
-              6 KPA (Anggota) = 6 Suara Demokratis
+              5 KPA = 5 Suara Demokratis — Pentagon Kedaulatan
             </Badge>
             <h1 className="text-responsive-hero font-bold mb-6">
-              <span className="text-gradient-gold">6 Kelompok</span>
+              <span className="text-gradient-gold">Pentagon</span>
               <br />
-              <span className="text-white">Pihak Anggota</span>
+              <span className="text-white">Kedaulatan — 5 Kelompok Pihak Anggota</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-8">
-              Model Koperasi Multipihak sesuai Permenkop 8/2021
+              Setiap KPA mendapat <span className="text-yellow-400 font-bold">20% suara</span> — Demokrasi sempurna dalam keputusan koperasi
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold">
@@ -229,20 +235,22 @@ export default function KPAPage() {
             <motion.div variants={fadeInUp}>
               <Badge variant="outline" className="mb-4">
                 <Info className="w-3 h-3 mr-1" />
-                Tentang KMP
+                Pentagon Kedaulatan
               </Badge>
               <h2 className="text-responsive-title font-bold mb-6">
-                Apa itu Koperasi Multipihak?
+                Apa itu Pentagon Kedaulatan?
               </h2>
               <p className="text-muted-foreground text-lg mb-6">
-                Koperasi Multipihak (KMP) adalah model koperasi yang mengakomodasi
-                berbagai kepentingan pihak yang terlibat dalam ekosistem bisnis koperasi.
-                Sesuai dengan{" "}
+                Pentagon Kedaulatan adalah model tata kelola koperasi multipihak yang memberikan{" "}
                 <span className="font-semibold text-foreground">
-                  Permenkop No. 8 Tahun 2021
+                  suara seimbang 20%
+                </span>{" "}
+                kepada setiap dari 5 Kelompok Pihak Anggota (KPA). Dilandasi{" "}
+                <span className="font-semibold text-foreground">
+                  AD/ART Versi 7
                 </span>
-                , model ini memungkinkan representasi suara yang adil dari berbagai
-                kelompok anggota.
+                , model ini memastikan tidak ada dominasi satu pihak dan kedaulatan
+                ekonomi rakyat terjaga.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -250,20 +258,20 @@ export default function KPAPage() {
                     <Shield className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Tata Kelola Demokratis</h4>
+                    <h4 className="font-semibold">5 KPA × 20% = 100% Demokratis</h4>
                     <p className="text-muted-foreground text-sm">
-                      Setiap KPA memiliki proporsi suara yang jelas dalam RAT
+                      Setiap KPA memiliki proporsi suara yang sama dalam RAT
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
-                    <Target className="w-5 h-5 text-primary" />
+                    <Scale className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Keseimbangan Kepentingan</h4>
+                    <h4 className="font-semibold">Anti-Oligarki</h4>
                     <p className="text-muted-foreground text-sm">
-                      Tidak ada satu pihak yang mendominasi pengambilan keputusan
+                      Doktrin Anti-Oligarki berlaku — 1 Anggota 1 Suara, bahkan untuk investor
                     </p>
                   </div>
                 </div>
@@ -286,10 +294,10 @@ export default function KPAPage() {
                 <CardHeader className="p-0 mb-6">
                   <CardTitle className="flex items-center gap-2">
                     <PieChartIcon className="w-5 h-5 text-primary" />
-                    Distribusi Suara RAT
+                    Pentagon Kedaulatan — Distribusi Suara RAT
                   </CardTitle>
                   <CardDescription>
-                    Proporsi voting power dalam Rapat Anggota Tahunan
+                    Proporsi voting power: 5 KPA masing-masing 20%
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -302,7 +310,7 @@ export default function KPAPage() {
                           cy="50%"
                           innerRadius={60}
                           outerRadius={100}
-                          paddingAngle={2}
+                          paddingAngle={3}
                           dataKey="value"
                           animationBegin={0}
                           animationDuration={1000}
@@ -316,7 +324,7 @@ export default function KPAPage() {
                           ))}
                         </Pie>
                         <Tooltip
-                          formatter={(value: number) => [`${value}%`, "Proporsi"]}
+                          formatter={(value: number) => [`${value}%`, "Proporsi Suara"]}
                           contentStyle={{
                             backgroundColor: "var(--card)",
                             border: "1px solid var(--border)",
@@ -340,7 +348,7 @@ export default function KPAPage() {
         </div>
       </section>
 
-      {/* 6 KPA Cards Section */}
+      {/* 5 KPA Cards Section */}
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
@@ -354,10 +362,10 @@ export default function KPAPage() {
               Kelompok Pihak Anggota
             </Badge>
             <h2 className="text-responsive-title font-bold mb-4">
-              Mengenal 6 KPA (Anggota) KNMP
+              Mengenal 5 KPA Pentagon Kedaulatan
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Setiap KPA (Anggota) memiliki peran dan manfaat unik dalam ekosistem koperasi
+              Setiap KPA memiliki peran, manfaat, dan simpanan unik dalam ekosistem koperasi
             </p>
           </motion.div>
 
@@ -399,7 +407,10 @@ export default function KPAPage() {
                         </Badge>
                       </div>
                       <CardTitle className="text-xl">{kpa.name}</CardTitle>
-                      <CardDescription>{kpa.deskripsi}</CardDescription>
+                      <CardDescription>
+                        <span className="font-semibold" style={{ color: kpa.color }}>{kpa.subtitle}</span>
+                        {" — "}{kpa.deskripsi}
+                      </CardDescription>
                     </CardHeader>
                     <CardContent>
                       {/* Proporsi Suara */}
@@ -424,6 +435,24 @@ export default function KPAPage() {
                         />
                       </div>
 
+                      {/* Simpanan */}
+                      <div className="mb-4 p-3 rounded-lg bg-muted/50">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Banknote className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-sm font-semibold">Simpanan</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                          <div>
+                            <span className="text-muted-foreground block">Pokok</span>
+                            <span className="font-semibold text-foreground">{kpa.simpananPokok}</span>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground block">Wajib</span>
+                            <span className="font-semibold text-foreground">{kpa.simpananWajib}</span>
+                          </div>
+                        </div>
+                      </div>
+
                       {/* Manfaat */}
                       <div className="mb-4">
                         <span className="text-sm font-medium text-muted-foreground mb-2 block">
@@ -442,7 +471,7 @@ export default function KPAPage() {
                         </ul>
                       </div>
 
-                      {/* Anggota & Note */}
+                      {/* Anggota & Notes */}
                       <div className="pt-4 border-t flex items-center justify-between">
                         <div>
                           <span className="text-xs text-muted-foreground">Anggota</span>
@@ -453,13 +482,34 @@ export default function KPAPage() {
                             {kpa.anggota}
                           </p>
                         </div>
-                        {kpa.note && (
-                          <Badge
-                            variant="destructive"
-                            className="text-xs"
-                          >
-                            {kpa.note}
-                          </Badge>
+                        {(kpa.note || kpa.note1) && (
+                          <div className="flex flex-col gap-1 items-end">
+                            {kpa.note && (
+                              <Badge
+                                variant="outline"
+                                className="text-xs border-current"
+                                style={{ color: kpa.color }}
+                              >
+                                {kpa.note}
+                              </Badge>
+                            )}
+                            {kpa.note1 && (
+                              <Badge
+                                variant="destructive"
+                                className="text-xs"
+                              >
+                                {kpa.note1}
+                              </Badge>
+                            )}
+                            {kpa.note2 && (
+                              <Badge
+                                variant="secondary"
+                                className="text-xs"
+                              >
+                                {kpa.note2}
+                              </Badge>
+                            )}
+                          </div>
                         )}
                       </div>
                     </CardContent>
@@ -483,13 +533,13 @@ export default function KPAPage() {
           >
             <Badge variant="outline" className="mb-4">
               <Vote className="w-3 h-3 mr-1" />
-              Sistem Voting
+              Pentagon Kedaulatan
             </Badge>
             <h2 className="text-responsive-title font-bold mb-4">
               Distribusi Kekuatan Suara
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Sistem voting yang adil dan demokratis dalam pengambilan keputusan
+              Sistem voting adil dan demokratis — 5 KPA, masing-masing 20% suara
             </p>
           </motion.div>
 
@@ -503,9 +553,9 @@ export default function KPAPage() {
             >
               <Card className="p-6">
                 <CardHeader className="p-0 mb-6">
-                  <CardTitle>Proporsi Suara per KPA (Anggota)</CardTitle>
+                  <CardTitle>Pentagon Kedaulatan — 20% per KPA</CardTitle>
                   <CardDescription>
-                    Persentase voting power dalam RAT
+                    Proporsi voting power yang seimbang dalam RAT
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0 space-y-4">
@@ -554,6 +604,23 @@ export default function KPAPage() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
+              <Card className="p-6 border-l-4 border-l-yellow-500">
+                <CardHeader className="p-0 mb-4">
+                  <CardTitle className="text-lg">Prinsip Pentagon Kedaulatan</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground">
+                    Dalam model{" "}
+                    <span className="font-semibold text-foreground">
+                      Pentagon Kedaulatan
+                    </span>
+                    , setiap KPA mendapat proporsi suara yang sama —{" "}
+                    <span className="font-bold" style={{ color: "#f59e0b" }}>20% masing-masing</span>.
+                    Ini memastikan tidak ada dominasi dan keputusan diambil secara konsensual.
+                  </p>
+                </CardContent>
+              </Card>
+
               <Card className="p-6">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="text-lg">Prinsip 1 Anggota = 1 Suara</CardTitle>
@@ -565,7 +632,7 @@ export default function KPAPage() {
                       1 anggota = 1 suara
                     </span>
                     . Ini memastikan kesetaraan dalam proses pengambilan keputusan
-                    internal masing-masing KPA.
+                    internal masing-masing KPA. Doktrin Anti-Oligarki berlaku untuk semua level.
                   </p>
                 </CardContent>
               </Card>
@@ -577,8 +644,8 @@ export default function KPAPage() {
                 <CardContent className="p-0">
                   <p className="text-muted-foreground">
                     Setiap KPA memilih delegasi yang akan mewakili suara kolektif
-                    mereka dalam RAT. Jumlah delegasi sebanding dengan proporsi
-                    suara masing-masing KPA.
+                    mereka dalam RAT. Dengan 5 KPA masing-masing 20%, keputusan
+                    membutuhkan minimal 3 KPA setuju (60% mayoritas).
                   </p>
                 </CardContent>
               </Card>
@@ -591,15 +658,19 @@ export default function KPAPage() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Keputusan biasa: mayoritas suara
+                      Keputusan biasa: mayoritas suara (3+ KPA)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Perubahan AD/ART: 2/3 suara
+                      Perubahan AD/ART: 2/3 suara (4 KPA)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Likuidasi: 3/4 suara
+                      Likuidasi: 3/4 suara (4-5 KPA)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-500" />
+                      Investor TIDAK punya hak veto
                     </li>
                   </ul>
                 </CardContent>
@@ -623,10 +694,10 @@ export default function KPAPage() {
               Perbandingan Manfaat
             </Badge>
             <h2 className="text-responsive-title font-bold mb-4">
-              Benefit per KPA (Anggota)
+              Benefit per KPA Pentagon Kedaulatan
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Bandingkan manfaat dan keuntungan dari setiap kelompok anggota
+              Bandingkan manfaat, simpanan, dan keuntungan dari setiap kelompok anggota
             </p>
           </motion.div>
 
@@ -637,74 +708,66 @@ export default function KPAPage() {
             transition={{ duration: 0.5 }}
           >
             <Card className="overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-muted/50">
-                    <TableHead className="font-bold">KPA</TableHead>
-                    <TableHead className="font-bold">Proporsi</TableHead>
-                    <TableHead className="font-bold">Manfaat Utama</TableHead>
-                    <TableHead className="font-bold">SHU</TableHead>
-                    <TableHead className="font-bold">Akses Modal</TableHead>
-                    <TableHead className="font-bold">Governance</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {kpaData.map((kpa) => {
-                    const IconComponent = kpa.icon;
-                    return (
-                      <TableRow key={kpa.id} className="hover:bg-muted/30">
-                        <TableCell>
-                          <div className="flex items-center gap-2">
-                            <div
-                              className="w-3 h-3 rounded-full"
-                              style={{ backgroundColor: kpa.color }}
-                            />
-                            <div>
-                              <span className="font-medium">{kpa.name}</span>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconComponent className="w-3 h-3" />
-                                {kpa.anggota}
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="font-bold">KPA</TableHead>
+                      <TableHead className="font-bold">Suara</TableHead>
+                      <TableHead className="font-bold">Simpanan Pokok</TableHead>
+                      <TableHead className="font-bold">Simpanan Wajib</TableHead>
+                      <TableHead className="font-bold">Manfaat Utama</TableHead>
+                      <TableHead className="font-bold">SHU</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {kpaData.map((kpa) => {
+                      const IconComponent = kpa.icon;
+                      return (
+                        <TableRow key={kpa.id} className="hover:bg-muted/30">
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: kpa.color }}
+                              />
+                              <div>
+                                <span className="font-medium">{kpa.name}</span>
+                                <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                  <IconComponent className="w-3 h-3" />
+                                  {kpa.anggota}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <span
-                            className="font-bold"
-                            style={{ color: kpa.color }}
-                          >
-                            {kpa.proporsi}%
-                          </span>
-                        </TableCell>
-                        <TableCell>
-                          <span className="text-sm">{kpa.manfaat[0]}</span>
-                        </TableCell>
-                        <TableCell>
-                          <CheckCircle2
-                            className="w-5 h-5 text-green-500"
-                          />
-                        </TableCell>
-                        <TableCell>
-                          {kpa.id <= 3 ? (
-                            <CheckCircle2 className="w-5 h-5 text-green-500" />
-                          ) : kpa.id === 6 ? (
-                            <span className="text-xs text-muted-foreground">
-                              Investor
+                          </TableCell>
+                          <TableCell>
+                            <span
+                              className="font-bold"
+                              style={{ color: kpa.color }}
+                            >
+                              {kpa.proporsi}%
                             </span>
-                          ) : (
-                            <span className="text-xs text-muted-foreground">
-                              Terbatas
-                            </span>
-                          )}
-                        </TableCell>
-                        <TableCell>
-                          <CheckCircle2 className="w-5 h-5 text-green-500" />
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
+                          </TableCell>
+                          <TableCell>
+                            <span className="text-sm font-medium">{kpa.simpananPokok}</span>
+                          </TableCell>
+                          <TableCell>
+                            <span className="text-sm">{kpa.simpananWajib}</span>
+                          </TableCell>
+                          <TableCell>
+                            <span className="text-sm">{kpa.manfaat[0]}</span>
+                          </TableCell>
+                          <TableCell>
+                            <CheckCircle2
+                              className="w-5 h-5 text-green-500"
+                            />
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </div>
             </Card>
           </motion.div>
         </div>
@@ -753,7 +816,7 @@ export default function KPAPage() {
                       {
                         step: 1,
                         title: "Pilih KPA",
-                        desc: "Tentukan KPA yang sesuai dengan aktivitas Anda",
+                        desc: "Tentukan KPA yang sesuai dengan aktivitas Anda dari 5 KPA Pentagon Kedaulatan",
                       },
                       {
                         step: 2,
@@ -768,12 +831,12 @@ export default function KPAPage() {
                       {
                         step: 4,
                         title: "Bayar Simpanan",
-                        desc: "Lakukan pembayaran simpanan pokok & wajib",
+                        desc: "Lakukan pembayaran simpanan pokok & wajib pertama",
                       },
                       {
                         step: 5,
                         title: "Aktivasi",
-                        desc: "Akun Anda aktif dan siap digunakan",
+                        desc: "Akun Anda aktif dan siap digunakan — Selamat bergabung!",
                       },
                     ].map((item, index) => (
                       <motion.div
@@ -809,7 +872,7 @@ export default function KPAPage() {
             >
               <Card className="h-full p-6">
                 <CardHeader className="p-0 mb-6">
-                  <CardTitle>Persyaratan per KPA (Anggota)</CardTitle>
+                  <CardTitle>Persyaratan per KPA Pentagon Kedaulatan</CardTitle>
                   <CardDescription>
                     Dokumen yang diperlukan untuk setiap KPA
                   </CardDescription>
@@ -871,7 +934,7 @@ export default function KPAPage() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Butuh Bantuan?</h3>
                   <p className="text-muted-foreground">
-                    Hubungi tim membership kami untuk konsultasi pemilihan KPA (Anggota) yang tepat
+                    Hubungi tim membership kami untuk konsultasi pemilihan KPA yang tepat dalam Pentagon Kedaulatan
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -907,7 +970,7 @@ export default function KPAPage() {
             </Badge>
             <h2 className="text-responsive-title font-bold text-white mb-6">
               Temukan Tempatmu di{" "}
-              <span className="text-gradient-gold">6 KPA (Anggota)</span>
+              <span className="text-gradient-gold">5 KPA Pentagon Kedaulatan</span>
             </h2>
             <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
               Jadilah bagian dari ekosistem koperasi multipihak terbesar di Indonesia
@@ -954,10 +1017,10 @@ export default function KPAPage() {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
             >
               {[
-                { value: "215.500+", label: "Total Anggota" },
+                { value: "200.500+", label: "Total Anggota" },
                 { value: "34", label: "Provinsi" },
-                { value: "6", label: "Kelompok KPA (Anggota)" },
-                { value: "100%", label: "Demokratis" },
+                { value: "5", label: "KPA Pentagon Kedaulatan" },
+                { value: "100%", label: "Demokratis (20%×5)" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <p className="text-2xl md:text-3xl font-bold text-gradient-gold">

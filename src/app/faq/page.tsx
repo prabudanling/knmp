@@ -43,7 +43,7 @@ const faqData = [
     faqs: [
       {
         question: 'Apa itu KNMP?',
-        answer: 'KNMP (Koperasi Nusantara Merah Putih) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global. Kami menghubungkan petani, pengusaha, koperasi, pekerja, konsumen, dan investor dalam satu ekosistem.',
+        answer: 'KNMP (KKMNMP/KNMP — Koperasi Nusantara Merah Putih) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global. Berlandaskan Pentagon Kedaulatan dengan 5 KPA, kami menghubungkan petani, pengusaha, koperasi, pekerja, dan investor dalam satu ekosistem berdaulat.',
       },
       {
         question: 'Bagaimana cara menjadi anggota?',
@@ -51,11 +51,11 @@ const faqData = [
       },
       {
         question: 'Berapa biaya menjadi anggota?',
-        answer: 'Biaya keanggotaan bervariasi sesuai tier. T1 (Petani Digital) gratis, T2 (Founding Member) Rp 250.000, T3 (Koperasi/BUMDes) Rp 2.500.000. Tier yang lebih tinggi memiliki hak usaha operasional lebih lengkap.',
+        answer: 'Biaya keanggotaan (iuran) sesuai KPA masing-masing: KPA-1 Petani/Produsen — Simpanan Pokok Rp 100.000 + Simpanan Wajib Rp 50.000/bulan; KPA-2 Pengusaha/Pengepul — Simpanan Pokok Rp 250.000 + Simpanan Wajib Rp 100.000/bulan; KPA-3 Koperasi/BUMDes — Simpanan Pokok Rp 2.500.000 + Simpanan Wajib Rp 500.000/bulan; KPA-4 Pekerja/Kader — Simpanan Pokok Rp 50.000 + Simpanan Wajib Rp 25.000/bulan; KPA-5 Investor — Simpanan Pokok Rp 1.000.000 + Simpanan Wajib Rp 200.000/bulan. Detail lengkap mengacu pada ART KKMNMP/KNMP.',
       },
       {
-        question: 'Apa itu 6 KPA (Anggota)?',
-        answer: '6 KPA (Anggota) adalah 6 Kelompok Pihak Anggota: KPA-1 Petani/Produsen (30% suara), KPA-2 Pengusaha/Pengepul (20%), KPA-3 Koperasi/BUMDes (20%), KPA-4 Pekerja/Kader (10%), KPA-5 Konsumen (10%), dan KPA-6 Investor (10%). Setiap KPA memiliki proporsi suara dalam RAT.',
+        question: 'Apa itu 5 KPA?',
+        answer: '5 KPA (Pentagon Kedaulatan) adalah 5 Kelompok Pihak Anggota yang masing-masing memiliki 20% suara dalam RAT: KPA-1 Petani/Produsen, KPA-2 Pengusaha/Pengepul, KPA-3 Koperasi/BUMDes, KPA-4 Pekerja/Kader, dan KPA-5 Investor. Struktur Pentagon Kedaulatan menjamin kesetaraan suara setiap kelompok dalam pengambilan keputusan.',
       },
     ],
   },
@@ -69,7 +69,7 @@ const faqData = [
       },
       {
         question: 'Bagaimana pembagian SHU?',
-        answer: 'SHU dibagikan berdasarkan partisipasi ekonomi anggota. Komposisi: 30% Dana Cadangan, 40% Jasa Usaha Anggota, 10% Jasa Modal, dan sisanya untuk dana operasional. Pembagian dilakukan setelah RAT.',
+        answer: 'SHU dibagikan berdasarkan partisipasi ekonomi anggota sesuai AD/ART KKMNMP/KNMP. Komposisi: 25% Dana Cadangan, 45% Jasa Usaha Anggota, 10% Jasa Modal, 10% Dana Riset & Teknologi, 5% Dana Sosial & Peradaban, dan 5% Insentif Manajemen. Pembagian dilakukan setelah RAT.',
       },
       {
         question: 'Kapan SHU dibagikan?',
@@ -96,8 +96,24 @@ const faqData = [
     icon: Shield,
     faqs: [
       {
+        question: 'Apa itu Kampung Modal?',
+        answer: 'Kampung Modal adalah platform agregasi modal berlandaskan prinsip Ring-Fencing yang dikembangkan oleh KKMNMP/KNMP. Platform ini memungkinkan penghimpunan dana dari berbagai KPA untuk membiayai proyek-proyek strategis desa secara transparan, aman, dan terukur melalui mekanisme Pentagon Kedaulatan.',
+      },
+      {
+        question: 'Bagaimana sistem Invisible Dues?',
+        answer: 'Invisible Dues adalah sistem pemotongan otomatis iuran/simpanan wajib anggota melalui platform kopnusa.id dan JP3 Pay. Setiap transaksi ekonomi anggota akan secara otomatis memotong persentase simpanan wajib sesuai ketentuan ART, sehingga anggota tidak perlu melakukan pembayaran manual.',
+      },
+      {
+        question: 'Siapa Arsitek Konstitusi?',
+        answer: 'Arsitek Konstitusi KKMNMP/KNMP adalah Arif Rachman Hakim dan Gugun Gunara. Keduanya berstatus sebagai Organ Ekstra-Struktural yang bertugas merancang, menjaga, dan mengawal konsistensi konstitusi (AD/ART/Kode Etik) KKMNMP/KNMP Versi 7 Super Final.',
+      },
+      {
+        question: 'Apa itu Poison Pill?',
+        answer: 'Poison Pill (Aset Kedaulatan Tak Terasingkan) adalah aset-aset strategis KKMNMP/KNMP yang secara konstitusional tidak dapat dijual, digadaikan, dipindahtangankan, atau dialihkan kepada pihak mana pun. Mekanisme ini dirancang untuk melindungi kedaulatan koperasi dan keberlanjutan ekosistem Pentagon Kedaulatan.',
+      },
+      {
         question: 'Apakah KNMP terdaftar resmi?',
-        answer: 'Ya, KNMP terdaftar sebagai badan hukum koperasi dengan Akta Notaris dan SK Kemenkop. Kami beroperasi sesuai UU 25/1992 tentang Perkoperasian dan Permenkop 8/2021 tentang Koperasi Multipihak.',
+        answer: 'Ya, KNMP terdaftar sebagai badan hukum koperasi dengan Akta Notaris dan SK Kemenkop. Kami beroperasi sesuai UU 25/1992 tentang Perkoperasian dan Permenkop 8/2021 tentang Koperasi Multipihak. Konstitusi terbaru mengacu pada AD/ART/Kode Etik KKMNMP/KNMP Versi 7 Super Final.',
       },
       {
         question: 'Bagaimana keamanan data anggota?',

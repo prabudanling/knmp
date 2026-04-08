@@ -15,6 +15,11 @@ import {
   BarChart3,
   ArrowUpRight,
   ChevronDown,
+  AlertTriangle,
+  Shield,
+  Target,
+  Gavel,
+  Ban,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -40,6 +45,7 @@ export default function SHUPage() {
       <div className="container mx-auto px-4">
         <HeroSection data={shuData} />
         <BreakdownSection data={shuData} />
+        <HardCapKPISection />
         <DistributionSection />
         <TransparencySection />
         <CTASection />
@@ -66,13 +72,13 @@ function HeroSection({ data }: { data: typeof SHU_BREAKDOWN }) {
       <motion.div variants={fadeInUp} className="text-center mb-8">
         <Badge className="bg-amber-100 text-amber-700 border-amber-200 mb-4">
           <Eye className="w-4 h-4 mr-2" />
-          Transparansi Total
+          Formula Distribusi Ekuilibrium — AD Pasal 21 Versi 7
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
           SHU <span className="text-[#8B0000]">Transparansi</span>
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Setiap rupiah terlacak dan terverifikasi. Lihat pembagian SHU secara real-time.
+          Setiap rupiah terlacak dan terverifikasi. Formula distribusi ekuilibrium 100% sesuai AD/ART Versi 7.
         </p>
       </motion.div>
 
@@ -100,21 +106,21 @@ function HeroSection({ data }: { data: typeof SHU_BREAKDOWN }) {
                 <p className="text-2xl font-bold text-[#8B0000]">
                   Rp {(data.breakdown.jasaUsaha / 1000000000).toFixed(1)}M
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">40% dari SHU</p>
+                <p className="text-xs text-muted-foreground mt-1">45% dari SHU</p>
               </div>
               <div className="bg-white/70 rounded-xl p-4 text-center border border-amber-200">
                 <p className="text-sm text-muted-foreground mb-1">Dana Cadangan</p>
                 <p className="text-2xl font-bold text-amber-700">
                   Rp {(data.breakdown.danaCadangan / 1000000000).toFixed(1)}M
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">30% dari SHU</p>
+                <p className="text-xs text-muted-foreground mt-1">25% dari SHU</p>
               </div>
               <div className="bg-white/70 rounded-xl p-4 text-center border border-amber-200">
-                <p className="text-sm text-muted-foreground mb-1">Jasa Modal</p>
+                <p className="text-sm text-muted-foreground mb-1">Jasa Modal Anggota</p>
                 <p className="text-2xl font-bold text-green-700">
                   Rp {(data.breakdown.jasaModal / 1000000000).toFixed(1)}M
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">10% dari SHU</p>
+                <p className="text-xs text-muted-foreground mt-1">Maks. 10% dari SHU</p>
               </div>
             </div>
           </CardContent>
@@ -132,13 +138,12 @@ function BreakdownSection({ data }: { data: typeof SHU_BREAKDOWN }) {
   const isInView = useInView(ref, { once: true })
 
   const items = [
-    { label: 'Dana Cadangan', value: data.breakdown.danaCadangan, percent: 30, color: '#8B0000' },
-    { label: 'Jasa Modal', value: data.breakdown.jasaModal, percent: 10, color: '#008F3D' },
-    { label: 'Jasa Usaha Anggota', value: data.breakdown.jasaUsaha, percent: 40, color: '#22c55e' },
-    { label: 'Dana Pengurus & Pengawas', value: data.breakdown.danaPengurus, percent: 5, color: '#3b82f6' },
-    { label: 'Dana Pendidikan', value: data.breakdown.danaPendidikan, percent: 5, color: '#8b5cf6' },
-    { label: 'Dana Sosial', value: data.breakdown.danaSosial, percent: 5, color: '#ec4899' },
-    { label: 'Dana Teknologi Desa', value: data.breakdown.danaTeknologi, percent: 5, color: '#06b6d4' },
+    { label: 'Dana Cadangan', value: data.breakdown.danaCadangan, percent: 25, color: '#8B0000', desc: 'Mitigasi risiko dan pembesaran aset' },
+    { label: 'Jasa Usaha Anggota', value: data.breakdown.jasaUsaha, percent: 45, color: '#22c55e', desc: 'Berdasarkan partisipasi transaksi di platform' },
+    { label: 'Jasa Modal Anggota (Maks. 10%)', value: data.breakdown.jasaModal, percent: 10, color: '#008F3D', desc: 'Hard-cap untuk mencegah karakter kapitalistik' },
+    { label: 'Dana Riset & Teknologi', value: data.breakdown.danaRisetTeknologi, percent: 10, color: '#3b82f6', desc: 'Pengembangan AI dan pemeliharaan server' },
+    { label: 'Dana Sosial & Peradaban', value: data.breakdown.danaSosialPeradaban, percent: 5, color: '#ec4899', desc: 'Dampak lingkungan dan kemanusiaan' },
+    { label: 'Insentif Manajemen (Maks. 5%)', value: data.breakdown.insentifManajemen, percent: 5, color: '#f59e0b', desc: 'Hanya cair jika memenuhi Hard-Cap KPI' },
   ]
 
   return (
@@ -151,10 +156,10 @@ function BreakdownSection({ data }: { data: typeof SHU_BREAKDOWN }) {
     >
       <motion.div variants={fadeInUp} className="mb-6">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Pembagian <span className="text-[#8B0000]">SHU</span>
+          Pembagian <span className="text-[#8B0000]">SHU</span> — Formula Distribusi Ekuilibrium
         </h2>
         <p className="text-muted-foreground">
-          Komposisi pembagian SHU sesuai AD/ART KNMP
+          Komposisi pembagian SHU sesuai AD Pasal 21 — AD/ART KNMP Versi 7
         </p>
       </motion.div>
 
@@ -188,8 +193,104 @@ function BreakdownSection({ data }: { data: typeof SHU_BREAKDOWN }) {
                       style={{ backgroundColor: item.color }}
                     />
                   </div>
+                  <p className="text-xs text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </motion.section>
+  )
+}
+
+// =====================
+// Hard-Cap KPI Section (ART Pasal 11)
+// =====================
+function HardCapKPISection() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true })
+
+  const kpis = [
+    {
+      icon: Users,
+      title: 'Pertumbuhan Anggota Aktif',
+      value: '≥ 15%/tahun',
+      description: 'Jumlah anggota aktif harus tumbuh minimal 15% setiap tahun.',
+      color: '#22c55e',
+    },
+    {
+      icon: Shield,
+      title: 'Zero Fraud',
+      value: '0 Kecurangan Material',
+      description: 'Tidak boleh ada kecurangan material yang terdeteksi selama periode audit.',
+      color: '#8B0000',
+    },
+    {
+      icon: Gavel,
+      title: 'Opini Audit WTP',
+      value: 'Wajar Tanpa Pengecualian',
+      description: 'Laporan keuangan harus mendapat opini "Wajar Tanpa Pengecualian" (WTP) dari auditor independen.',
+      color: '#3b82f6',
+    },
+  ]
+
+  return (
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={staggerContainer}
+      className="mb-12"
+    >
+      <motion.div variants={fadeInUp} className="mb-6">
+        <Badge className="bg-red-100 text-red-700 border-red-200 mb-2">
+          <AlertTriangle className="w-4 h-4 mr-1" />
+          ART Pasal 11
+        </Badge>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          Hard-Cap KPI <span className="text-[#8B0000]">Insentif Manajemen</span>
+        </h2>
+        <p className="text-muted-foreground">
+          Insentif Manajemen (maks. 5%) hanya dicairkan jika seluruh KPI terpenuhi. Jika gagal, bonus 5% DIRAMPAS → Dana Cadangan.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-3 gap-4 mb-6">
+        {kpis.map((kpi, i) => (
+          <motion.div key={i} variants={fadeInUp}>
+            <Card className="h-full border border-red-100 hover:shadow-md transition-shadow">
+              <CardContent className="p-5">
+                <div className="flex items-start gap-3 mb-3">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${kpi.color}15` }}
+                  >
+                    <kpi.icon className="w-5 h-5" style={{ color: kpi.color }} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">{kpi.title}</h3>
+                    <p className="text-xs font-bold" style={{ color: kpi.color }}>{kpi.value}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">{kpi.description}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div variants={fadeInUp}>
+        <Card className="border-l-4 border-l-red-600 bg-red-50/50">
+          <CardContent className="p-5">
+            <div className="flex items-start gap-3">
+              <Ban className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-bold text-foreground mb-1">Sanksi: Bonus DIRAMPAS</h3>
+                <p className="text-sm text-muted-foreground">
+                  Jika <span className="font-semibold text-foreground">salah satu</span> KPI di atas gagal dipenuhi, maka alokasi Insentif Manajemen (5%) <span className="font-bold text-red-600">DIRAMPAS dan dialihkan ke Dana Cadangan</span>. Mekanisme ini memastikan akuntabilitas penuh pengurus dan pengawas.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -216,10 +317,10 @@ function DistributionSection() {
     >
       <motion.div variants={fadeInUp} className="mb-6">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Distribusi per <span className="text-[#8B0000]">KPA</span>
+          Distribusi per <span className="text-[#8B0000]">KPA</span> Pentagon Kedaulatan
         </h2>
         <p className="text-muted-foreground">
-          Pembagian jasa usaha berdasarkan Kelompok Pihak Anggota
+          Pembagian jasa usaha berdasarkan 5 Kelompok Pihak Anggota
         </p>
       </motion.div>
 
@@ -259,6 +360,12 @@ function DistributionSection() {
                       <span className="text-muted-foreground">Jasa Modal</span>
                       <span className="font-medium text-amber-700">
                         Rp {(item.totalJasaModal / 1000000).toFixed(0)}Jt
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-sm pt-1 border-t">
+                      <span className="text-muted-foreground">Total</span>
+                      <span className="font-bold text-foreground">
+                        Rp {((item.totalJasaUsaha + item.totalJasaModal) / 1000000).toFixed(0)}Jt
                       </span>
                     </div>
                   </div>

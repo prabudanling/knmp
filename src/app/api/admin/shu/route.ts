@@ -55,12 +55,11 @@ export async function POST(request: NextRequest) {
         year,
         totalSHU,
         danaCadangan,
-        jasaModal,
         jasaUsaha,
-        danaPengurus,
-        danaPendidikan,
-        danaSosial,
-        danaTeknologi,
+        jasaModal,
+        danaRisetTeknologi,
+        danaSosialPeradaban,
+        insentifManajemen,
       } = body;
 
       // Validate year
@@ -75,15 +74,14 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      // Validate percentages total 100% (excluding danaTeknologi which is part of the total)
+      // Validate percentages total 100% (Formula Distribusi Ekuilibrium - AD Pasal 21 Versi 7)
       const totalPercentage = 
-        (danaCadangan || 20) + 
-        (jasaModal || 25) + 
-        (jasaUsaha || 35) + 
-        (danaPengurus || 5) + 
-        (danaPendidikan || 5) + 
-        (danaSosial || 5) + 
-        (danaTeknologi || 5);
+        (danaCadangan || 25) + 
+        (jasaUsaha || 45) + 
+        (jasaModal || 10) + 
+        (danaRisetTeknologi || 10) + 
+        (danaSosialPeradaban || 5) + 
+        (insentifManajemen || 5);
 
       if (Math.abs(totalPercentage - 100) > 0.01) {
         return Response.json(
@@ -97,13 +95,12 @@ export async function POST(request: NextRequest) {
         data: {
           year,
           totalSHU,
-          danaCadangan: danaCadangan || 20,
-          jasaModal: jasaModal || 25,
-          jasaUsaha: jasaUsaha || 35,
-          danaPengurus: danaPengurus || 5,
-          danaPendidikan: danaPendidikan || 5,
-          danaSosial: danaSosial || 5,
-          danaTeknologi: danaTeknologi || 5,
+          danaCadangan: danaCadangan || 25,
+          jasaUsaha: jasaUsaha || 45,
+          jasaModal: jasaModal || 10,
+          danaRisetTeknologi: danaRisetTeknologi || 10,
+          danaSosialPeradaban: danaSosialPeradaban || 5,
+          insentifManajemen: insentifManajemen || 5,
         },
       });
 

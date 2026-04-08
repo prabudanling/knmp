@@ -4,11 +4,11 @@
 
 export const SITE_CONFIG = {
   name: 'KOPNUSA',
-  fullName: 'Koperasi Nusantara Merah Putih',
+  fullName: 'Koperasi Korporasi Multipihak Nusa Merah Putih',
   tagline: 'Digital Operating System Desa Indonesia',
-  description: 'Menghubungkan 83.763 desa Indonesia dengan pasar global melalui transformasi digital, tata kelola demokratis, dan gotong royong ekonomi kerakyatan.',
+  description: 'Digital Operating System Desa Indonesia — mengintegrasikan 83.763 desa dan 8.506 kelurahan ke dalam satu ekosistem ekonomi berdaulat berdasarkan AD/ART KKMNMP Super Final Versi 7.',
   url: 'https://kopnusa.id',
-  version: '1.0.0',
+  version: '2.0.0',
   
   // Contact
   contact: {
@@ -31,8 +31,8 @@ export const SITE_CONFIG = {
   
   // SEO
   seo: {
-    title: 'KOPNUSA - Koperasi Nusantara Merah Putih | Digital OS Desa Indonesia',
-    description: 'Portal resmi Koperasi Nusantara Merah Putih (KNMP). Mengintegrasikan 83.763 desa, 6 Kelompok Pihak Anggota, marketplace zonasi, logistik digital, dan smart village dashboard.',
+    title: 'KOPNUSA - Koperasi Korporasi Multipihak Nusa Merah Putih | Digital OS Desa Indonesia',
+    description: 'Portal resmi Koperasi Korporasi Multipihak Nusa Merah Putih (KKMNMP/KNMP). Mengintegrasikan 83.763 desa, 5 Kelompok Pihak Anggota (KPA), marketplace zonasi, logistik digital, dan smart village dashboard.',
     keywords: [
       'koperasi', 'koperasi digital', 'KNMP', 'KOPNUSA', 
       'koperasi nusantara merah putih', 'desa digital', 
@@ -63,7 +63,7 @@ export const NAV_LINKS = [
   { href: '/nusa-futuristik', label: 'Nusa Futuristik' },
   { href: '/struktur-organisasi', label: 'Struktur Organisasi' },
   { href: '/visi-misi', label: 'Visi Misi' },
-  { href: '/kpa', label: '6 KPA (Anggota)' },
+  { href: '/kpa', label: '5 KPA (Anggota)' },
   { href: '/unit-usaha', label: 'Unit Usaha' },
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/logistik', label: 'Logistik' },
@@ -89,7 +89,7 @@ export const FOOTER_LINKS = {
     { href: '/shu', label: 'SHU Transparansi' },
     { href: '/rat', label: 'RAT & E-Voting' },
     { href: '/unit-usaha', label: 'Unit Usaha' },
-    { href: '/kpa', label: '6 Kelompok Pihak Anggota' },
+    { href: '/kpa', label: '5 Kelompok Pihak Anggota (KPA)' },
     { href: '/dashboard', label: 'Dashboard' },
     { href: '/membership', label: 'Keanggotaan' },
   ],
@@ -102,6 +102,9 @@ export const FOOTER_LINKS = {
     { href: '/docs', label: 'Dokumentasi' },
   ],
   legal: [
+    { href: '/anggaran-dasar', label: 'Anggaran Dasar (AD)' },
+    { href: '/anggaran-rumah-tangga', label: 'Anggaran Rumah Tangga (ART)' },
+    { href: '/kode-etik', label: 'Kode Etik KKMNMP' },
     { href: '/kebijakan-privasi', label: 'Kebijakan Privasi' },
     { href: '/syarat-ketentuan', label: 'Syarat & Ketentuan' },
     { href: '/disclaimer', label: 'Disclaimer' },

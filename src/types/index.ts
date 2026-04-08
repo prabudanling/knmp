@@ -67,12 +67,11 @@ export interface Transaction {
 // =====================
 
 export type KPAType = 
-  | 'KPA_1_PRODUCER'
-  | 'KPA_2_ENTREPRENEUR'
-  | 'KPA_3_COOPERATIVE'
-  | 'KPA_4_WORKER'
-  | 'KPA_5_CONSUMER'
-  | 'KPA_6_INVESTOR';
+  | 'KPA_1_PRODUSEN_PEKERJA'
+  | 'KPA_2_KONSUMEN_UMUM'
+  | 'KPA_3_ABDI_NEGARA'
+  | 'KPA_4_ENTITAS_BISNIS'
+  | 'KPA_5_PEMODAL_INVESTOR';
 
 export interface KPACategory {
   id: KPAType;
@@ -257,12 +256,11 @@ export interface SHUBreakdown {
   totalSHU: number;
   breakdown: {
     danaCadangan: number;
-    jasaModal: number;
     jasaUsaha: number;
-    danaPengurus: number;
-    danaPendidikan: number;
-    danaSosial: number;
-    danaTeknologi: number;
+    jasaModal: number;
+    danaRisetTeknologi: number;
+    danaSosialPeradaban: number;
+    insentifManajemen: number;
   };
   memberDistribution: SHUMemberDistribution[];
 }

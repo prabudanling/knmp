@@ -41,6 +41,10 @@ import {
   Rocket,
   Flag,
   Trophy,
+  Database,
+  Lock,
+  Vote,
+  ShieldCheck,
 } from "lucide-react";
 
 // Animation variants
@@ -139,7 +143,7 @@ const roadmapData = [
   {
     year: "2026",
     title: "Fondasi & Launch",
-    description: "1.000 desa pilot project",
+    description: "1.000 desa pilot project, JP3 Pay & Marketplace live",
     target: "Pilot Phase",
     progress: 10,
     icon: Rocket,
@@ -148,7 +152,7 @@ const roadmapData = [
   {
     year: "2027",
     title: "Scale-Up",
-    description: "10.000 desa, 500K anggota",
+    description: "10.000 desa, 500K anggota, Logistik Digital operasional",
     target: "Growth Phase",
     progress: 20,
     icon: TrendingUp,
@@ -157,7 +161,7 @@ const roadmapData = [
   {
     year: "2028",
     title: "Ekspor Global",
-    description: "25.000 desa, ICA membership",
+    description: "25.000 desa, Trading Internasional ke 195 negara",
     target: "International",
     progress: 35,
     icon: Globe,
@@ -166,7 +170,7 @@ const roadmapData = [
   {
     year: "2030",
     title: "Koperasi Digital Terbesar",
-    description: "50.000 desa, Rp1T revenue",
+    description: "50.000 desa, Kampung Modal mature, Karbon Trading aktif",
     target: "Market Leader",
     progress: 55,
     icon: Trophy,
@@ -175,7 +179,7 @@ const roadmapData = [
   {
     year: "2035",
     title: "100% Coverage",
-    description: "83.763 desa tersentuh",
+    description: "83.763 desa tersentuh, ESG reporting global",
     target: "National Scale",
     progress: 80,
     icon: MapPin,
@@ -183,8 +187,8 @@ const roadmapData = [
   },
   {
     year: "2045",
-    title: "World Class Cooperative",
-    description: "Setara Mondragon, Spanyol",
+    title: "Digital OS Desa Terbesar di Dunia",
+    description: "Setara Mondragon, menghubungkan desa ke 195 negara",
     target: "World Class",
     progress: 100,
     icon: Star,
@@ -206,84 +210,107 @@ const visiDimensions = [
   { icon: Sparkles, title: "Peradaban", desc: "Kontribusi pada kemajuan peradaban bangsa" },
 ];
 
-// Misi data
+// Misi data (AD Pasal 8 - 4 Misi)
 const misiData = [
   {
     number: 1,
-    title: "Menghimpun dan Mengembangkan Kapasitas Anggota",
+    title: "Hilirisasi Produk Desa",
     description:
-      "Menghimpun dan mengembangkan kapasitas anggota KNMP, anggota koperasi primer, dan anggota kelompok usaha desa untuk menciptakan ekosistem ekonomi yang kuat.",
-    icon: Users,
-  },
-  {
-    number: 2,
-    title: "Membangun Sistem Ekonomi Terintegrasi",
-    description:
-      "Membangun sistem ekonomi terintegrasi dari tingkat desa hingga nasional untuk memperkuat ketahanan ekonomi masyarakat pedesaan.",
-    icon: Building2,
-  },
-  {
-    number: 3,
-    title: "Mendorong Akses Pasar, Pembiayaan, Pelatihan",
-    description:
-      "Mendorong keterlibatan masyarakat dalam akses pasar, pembiayaan, dan pelatihan untuk meningkatkan kapasitas produktif anggota.",
-    icon: TrendingUp,
-  },
-  {
-    number: 4,
-    title: "Menjalankan Diplomasi Ekonomi",
-    description:
-      "Menjalankan diplomasi ekonomi kerakyatan dalam negeri maupun luar negeri untuk memperluas jaringan dan peluang usaha.",
-    icon: Globe,
-  },
-  {
-    number: 5,
-    title: "Mengintegrasikan Infrastruktur Ekonomi Desa",
-    description:
-      "Mengintegrasikan infrastruktur ekonomi desa ke dalam sistem ekonomi nasional yang lebih luas dan terkoneksi.",
+      "Mengeksekusi hilirisasi produk desa melalui integrasi logistik, resi gudang digital, dan pemasaran global untuk meningkatkan nilai tambah produk-produk desa Indonesia.",
     icon: Truck,
   },
   {
-    number: 6,
-    title: "Mendukung Program Pemerintah",
+    number: 2,
+    title: "Dekonstruksi Monopoli Permodalan",
     description:
-      "Mendukung program pemerintah dalam pembangunan ekonomi pedesaan yang berkelanjutan dan inklusif.",
-    icon: Landmark,
+      "Mendekonstruksi monopoli permodalan dengan membangun platform agregasi investasi (Kampung Modal) yang adil dan merata untuk seluruh lapisan masyarakat desa.",
+    icon: Scale,
   },
   {
-    number: 7,
-    title: "Meningkatkan Kesejahteraan Anggota",
+    number: 3,
+    title: "Agregator Pariwisata & Destinasi Spiritual",
     description:
-      "Meningkatkan kesejahteraan anggota melalui program-program ekonomi produktif dan berkelanjutan.",
-    icon: Award,
+      "Menjadi agregator utama pariwisata nusantara dan destinasi spiritual lintas agama, menghubungkan potensi wisata desa dengan pasar domestik dan internasional.",
+    icon: Globe,
+  },
+  {
+    number: 4,
+    title: "Jangkar Stabilitas Ekonomi Ekosistem",
+    description:
+      "Melibatkan aktif Abdi Negara (PNS/TNI/POLRI/Legislatif) sebagai jangkar stabilitas ekonomi ekosistem, memperkuat fondasi dan keberlanjutan ekonomi kerakyatan.",
+    icon: Shield,
   },
 ];
 
-// Strategic pillars data
+// Strategic pillars data (updated from AD Versi 7)
 const strategicPillars = [
   {
-    title: "6 KPA (Komisi Pengelola Aset)",
-    description: "Pengelolaan aset terstruktur melalui 6 komisi utama untuk efisiensi dan transparansi",
-    items: ["KPA Pertanian", "KPA Perikanan", "KPA Peternakan", "KPA Industri", "KPA Pariwisata", "KPA Jasa"],
+    title: "5 KPA Pentagon Kedaulatan",
+    description: "Pengelolaan keanggotaan terstruktur melalui 5 komisi utama untuk kedaulatan ekonomi",
+    items: ["KPA-1 Produsen & Pekerja", "KPA-2 Konsumen Umum", "KPA-3 Abdi Negara", "KPA-4 Entitas Bisnis", "KPA-5 Pemodal/Investor"],
     icon: Building2,
   },
   {
-    title: "Unit Usaha Strategy",
-    description: "Diversifikasi unit usaha untuk menciptakan multiple revenue streams",
-    items: ["Trading & Distribusi", "Agribisnis", "Fintech", "Logistik", "E-commerce"],
+    title: "13 Pilar Bisnis Terintegrasi",
+    description: "Ekosistem bisnis lengkap dari fintech hingga trading internasional",
+    items: ["JP3 Pay", "Marketplace", "Logistik Digital", "Resi Gudang", "Kampung Modal", "Trading Internasional"],
     icon: Briefcase,
   },
   {
     title: "Technology Roadmap",
-    description: "Transformasi digital menyeluruh untuk operasional yang efisien",
-    items: ["Platform Digital", "Mobile App", "IoT Integration", "AI & Analytics", "Blockchain"],
+    description: "Transformasi digital menyeluruh untuk operasional yang efisien dan terukur",
+    items: ["Village Management System", "Mobile App", "IoT Integration", "AI & Analytics", "Blockchain Verified"],
     icon: Cpu,
   },
   {
     title: "Partnership Strategy",
     description: "Kemitraan strategis dengan berbagai pihak untuk percepatan pertumbuhan",
-    items: ["Pemerintah", "BUMN/BUMD", "Swasta", "Internasional", "Akademisi"],
+    items: ["Pemerintah & BUMN", "Koperasi Internasional", "Diaspora Indonesia", "Academia & R&D", "ESG Partners"],
     icon: HandshakeIcon,
+  },
+];
+
+// Prinsip Pertahanan Ekosistem (AD Pasal 6)
+const prinsipPertahanan = [
+  {
+    number: 1,
+    title: "Kedaulatan Data Absolut",
+    description: "Data anggota dilarang dikomersialisasikan. Privasi dan keamanan data menjadi fondasi utama ekosistem.",
+    icon: Database,
+    color: "#8B0000",
+    bgColor: "from-red-50 to-red-100",
+  },
+  {
+    number: 2,
+    title: "Keadilan Radikal",
+    description: "Beban iuran asimetris dengan hak suara setara 20% per KPA — memastikan keadilan bagi seluruh anggota.",
+    icon: Scale,
+    color: "#008F3D",
+    bgColor: "from-green-50 to-green-100",
+  },
+  {
+    number: 3,
+    title: "Isolasi Risiko Terintegrasi",
+    description: "Ring-Fencing untuk proyek berisiko tinggi, melindungi aset dan kepentingan seluruh anggota koperasi.",
+    icon: ShieldCheck,
+    color: "#0d9488",
+    bgColor: "from-teal-50 to-teal-100",
+  },
+  {
+    number: 4,
+    title: "Anti-Oligarki Finansial",
+    description: "1 Anggota 1 Suara di KPA Investasi — mencegah konsentrasi kekuasaan finansial pada segelintir pihak.",
+    icon: Vote,
+    color: "#9333ea",
+    bgColor: "from-violet-50 to-violet-100",
+  },
+  {
+    number: 5,
+    title: "Inklusivitas Peradaban",
+    description: "Bebas diskriminasi SARA — setiap warga negara berhak menjadi bagian dari ekosistem tanpa memandang latar belakang.",
+    icon: Heart,
+    color: "#f59e0b",
+    bgColor: "from-amber-50 to-amber-100",
   },
 ];
 
@@ -320,16 +347,16 @@ const kpiTargets = [
     suffix: " T",
     prefix: "Rp",
     icon: Globe,
-    color: "text-blue-600",
-    bgColor: "bg-blue-100 dark:bg-blue-900/20",
+    color: "text-rose-600",
+    bgColor: "bg-rose-100 dark:bg-rose-900/20",
   },
   {
     label: "Lapangan Kerja",
     value: 518231,
     suffix: "",
     icon: GraduationCap,
-    color: "text-purple-600",
-    bgColor: "bg-purple-100 dark:bg-purple-900/20",
+    color: "text-amber-600",
+    bgColor: "bg-amber-100 dark:bg-amber-900/20",
   },
 ];
 
@@ -391,7 +418,7 @@ export default function VisiMisiPage() {
                 className="border-secondary/30 text-secondary px-4 py-1.5 text-sm backdrop-blur-sm bg-white/5"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
-                Visi & Misi KNMP
+                Visi & Misi KNMP — AD Versi 7
               </Badge>
             </motion.div>
 
@@ -407,7 +434,7 @@ export default function VisiMisiPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto"
             >
-              Menuju Koperasi Digital Terbesar Indonesia 2045
+              Menuju Digital Operating System Desa Indonesia Terbesar di Dunia 2045
             </motion.p>
 
             <motion.div
@@ -455,10 +482,10 @@ export default function VisiMisiPage() {
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
                 <Target className="w-4 h-4 mr-2" />
-                Visi Utama
+                AD Pasal 7
               </Badge>
               <h2 className="text-responsive-title font-bold mb-6">
-                Visi <span className="text-gradient-primary">Besar</span> KNMP
+                Visi <span className="text-gradient-primary">Utama</span> KNMP
               </h2>
             </div>
           </AnimatedSection>
@@ -480,10 +507,9 @@ export default function VisiMisiPage() {
                   </motion.div>
                 </div>
                 <blockquote className="text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed mb-6">
-                  <span className="text-gradient-primary">"</span>
-                  Menjadi <span className="text-gradient-gold">Digital Operating System</span> Desa Indonesia{" "}
-                  <span className="text-gradient-primary">Terbesar di Dunia</span>
-                  <span className="text-gradient-primary">"</span>
+                  <span className="text-gradient-primary">&ldquo;</span>
+                  Menjadi <span className="text-gradient-gold">Digital Operating System Desa Indonesia Terbesar di Dunia</span>{" "}
+                  —mengintegrasikan <span className="text-gradient-primary">83.763 desa</span> ke dalam satu arsitektur ekonomi berdaulat yang menyejahterakan rakyat, menghubungkan desa ke <span className="text-gradient-primary">195 negara</span> pada tahun <span className="text-gradient-gold">2045</span>
                 </blockquote>
                 <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
                   KNMP hadir sebagai platform ekonomi digital yang menghubungkan seluruh desa di Indonesia,
@@ -533,13 +559,13 @@ export default function VisiMisiPage() {
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 border-secondary/50 text-secondary">
                 <Flag className="w-4 h-4 mr-2" />
-                Misi Utama
+                AD Pasal 8
               </Badge>
               <h2 className="text-responsive-title font-bold mb-6">
-                7 Misi <span className="text-gradient-gold">Strategis</span> KNMP
+                4 Misi <span className="text-gradient-gold">Strategis</span> KNMP
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Langkah-langkah strategis untuk mewujudkan visi besar KNMP sebagai koperasi digital terbesar Indonesia
+                Langkah-langkah strategis untuk mewujudkan visi besar KNMP sebagai Digital Operating System Desa Indonesia
               </p>
             </div>
           </AnimatedSection>
@@ -549,7 +575,7 @@ export default function VisiMisiPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 gap-6"
           >
             {misiData.map((misi, index) => {
               const Icon = misi.icon;
@@ -563,7 +589,7 @@ export default function VisiMisiPage() {
                   <Card className="h-full card-hover-lift border-border/50 hover:border-primary/30 transition-all overflow-hidden">
                     <CardHeader className="pb-4">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           {misi.number}
                         </div>
                         <div className="flex-1">
@@ -586,8 +612,71 @@ export default function VisiMisiPage() {
         </div>
       </section>
 
+      {/* Prinsip Pertahanan Ekosistem Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <Badge variant="outline" className="mb-4 border-[#8B0000]/50 text-[#8B0000]">
+                <ShieldCheck className="w-4 h-4 mr-2" />
+                AD Pasal 6
+              </Badge>
+              <h2 className="text-responsive-title font-bold mb-6">
+                5 Prinsip <span className="text-gradient-gold">Pertahanan Ekosistem</span>
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Fondasi pertahanan yang melindungi kedaulatan, keadilan, dan keberlanjutan ekosistem KNMP
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {prinsipPertahanan.map((prinsip) => {
+              const Icon = prinsip.icon;
+              return (
+                <motion.div
+                  key={prinsip.number}
+                  variants={fadeInUp}
+                  whileHover={{ y: -5 }}
+                  className="group"
+                >
+                  <Card className="h-full card-hover-lift border-border/50 hover:border-[#8B0000]/30 transition-all overflow-hidden">
+                    <CardContent className="p-0">
+                      <div className={`bg-gradient-to-br ${prinsip.bgColor} p-6`}>
+                        <div className="flex items-center gap-4 mb-3">
+                          <div 
+                            className="w-14 h-14 rounded-xl flex items-center justify-center bg-white shadow-md group-hover:scale-110 transition-transform duration-300"
+                          >
+                            <Icon className="w-7 h-7" style={{ color: prinsip.color }} />
+                          </div>
+                          <Badge className="bg-white/80 text-gray-700 border-0 font-semibold">
+                            Prinsip {prinsip.number}
+                          </Badge>
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900">{prinsip.title}</h3>
+                      </div>
+                      <div className="p-6">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {prinsip.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Roadmap Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section className="py-20 bg-muted/30 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-50" />
 
@@ -602,7 +691,7 @@ export default function VisiMisiPage() {
                 Perjalanan Menuju <span className="text-gradient-primary">World Class</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Timeline strategis pertumbuhan KNMP dari pilot project hingga world class cooperative
+                Timeline strategis pertumbuhan KNMP dari pilot project hingga Digital Operating System Desa terbesar di dunia
               </p>
             </div>
           </AnimatedSection>
@@ -676,7 +765,7 @@ export default function VisiMisiPage() {
       </section>
 
       {/* Strategic Pillars Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -735,7 +824,7 @@ export default function VisiMisiPage() {
       </section>
 
       {/* KPIs & Targets Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section className="py-20 bg-muted/30 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -812,7 +901,7 @@ export default function VisiMisiPage() {
 
               <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
                 Bergabunglah dengan KNMP untuk menjadi bagian dari transformasi ekonomi desa Indonesia
-                menuju koperasi digital terbesar di dunia.
+                menuju Digital Operating System Desa Terbesar di Dunia.
               </p>
 
               <motion.div
@@ -856,7 +945,7 @@ export default function VisiMisiPage() {
                 <div className="w-1 h-1 rounded-full bg-white/30" />
                 <div className="flex items-center gap-2">
                   <Globe className="w-5 h-5" />
-                  <span>1.000+ Desa</span>
+                  <span>83.763 Desa Target</span>
                 </div>
               </motion.div>
             </div>

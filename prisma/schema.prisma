@@ -338,13 +338,12 @@ model SHUConfig {
   year              Int      @unique
   totalSHU          Int
   
-  danaCadangan      Float    @default(20)
-  jasaModal         Float    @default(25)
-  jasaUsaha         Float    @default(35)
-  danaPengurus      Float    @default(5)
-  danaPendidikan    Float    @default(5)
-  danaSosial        Float    @default(5)
-  danaTeknologi     Float    @default(5)
+  danaCadangan         Float    @default(25)
+  jasaUsaha            Float    @default(45)
+  jasaModal            Float    @default(10)
+  danaRisetTeknologi   Float    @default(10)
+  danaSosialPeradaban  Float    @default(5)
+  insentifManajemen    Float    @default(5)
   
   status            String   @default("DRAFT")
   

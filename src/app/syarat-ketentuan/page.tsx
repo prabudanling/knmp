@@ -23,7 +23,7 @@ export default function SyaratKetentuanPage() {
       content: [
         'Keanggotaan terbuka untuk Warga Negara Indonesia yang berusia minimal 17 tahun',
         'Pendaftaran memerlukan verifikasi identitas dan dokumen pendukung sesuai KPA yang dipilih',
-        'Setiap anggota wajib membayar simpanan pokok dan simpanan wajib sesuai ketentuan',
+        'Setiap anggota wajib membayar Simpanan Pokok dan Simpanan Wajib sesuai KPA (mengacu pada ART KKMNMP/KNMP)',
         'Anggota bertanggung jawab untuk menjaga kerahasiaan akun dan password'
       ]
     },
@@ -39,9 +39,9 @@ export default function SyaratKetentuanPage() {
     {
       title: '4. Hak dan Kewajiban Anggota',
       content: [
-        'Hak suara dalam Rapat Anggota Tahunan (RAT) sesuai proporsi KPA',
+        'Hak suara dalam Rapat Anggota Tahunan (RAT) sesuai proporsi 5 KPA (Pentagon Kedaulatan)',
         'Hak atas SHU sesuai dengan partisipasi ekonomi',
-        'Kewajiban mematuhi AD/ART dan keputusan RAT',
+        'Kewajiban mematuhi AD/ART/Kode Etik KKMNMP/KNMP dan keputusan RAT',
         'Kewajiban menjaga nama baik koperasi dan anggota lainnya'
       ]
     },
@@ -66,10 +66,27 @@ export default function SyaratKetentuanPage() {
     {
       title: '7. Penyelesaian Sengketa',
       content: [
-        'Sengketa diselesaikan secara musyawarah terlebih dahulu',
-        'Jika musyawarah gagal, diselesaikan melalui mediasi',
-        'Arbitrase menjadi pilihan terakhir sesuai BANI (Badan Arbitrase Nasional Indonesia)',
-        'Hukum yang berlaku adalah Hukum Negara Republik Indonesia'
+        'Seluruh sengketa internal wajib diselesaikan melalui Badan Arbitrase Nasional Indonesia (BANI) secara final, mengikat, dan rahasia (tertutup untuk publik) sesuai AD Pasal 29 (The Mute Arbitration)',
+        'Para pihak melepaskan hak gugatan perdata ke Pengadilan Negeri',
+        'Hukum yang berlaku adalah Hukum Negara Republik Indonesia',
+        'Keputusan arbitrase BANI bersifat final dan tidak dapat diajukan banding'
+      ]
+    },
+    {
+      title: '8. Perlindungan Data',
+      content: [
+        'KKMNMP/KNMP bertindak sebagai Wali Amanat Data (Data Fiduciary) sesuai AD Pasal 24-25',
+        'Seluruh pengelolaan data mematuhi UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)',
+        'Data adalah milik anggota, Koperasi adalah pelindung dan pengelola',
+        'Verifikasi transaksi menggunakan Zero-Knowledge Proof (ZKP) untuk menjaga kerahasiaan'
+      ]
+    },
+    {
+      title: '9. Kode Etik',
+      content: [
+        'Seluruh anggota wajib mematuhi Kode Etik KKMNMP/KNMP',
+        'Pelanggaran Kode Etik dapat dikenakan sanksi sesuai ketentuan AD/ART',
+        'Kode Etik mencakup Sumpah Kedaulatan Privasi dan prinsip-prinsip integritas anggota'
       ]
     }
   ]

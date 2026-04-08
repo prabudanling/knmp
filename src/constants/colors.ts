@@ -93,12 +93,11 @@ export const COLORS = {
 // KPA COLORS - Updated with Green PPP
 // ==========================================
 export const KPA_COLORS = {
-  KPA_1_PRODUCER: '#008F3D',     // Green PPP - Primary
-  KPA_2_ENTREPRENEUR: '#3B82F6', // Blue
-  KPA_3_COOPERATIVE: '#8B5CF6',  // Purple
-  KPA_4_WORKER: '#F59E0B',       // Amber
-  KPA_5_CONSUMER: '#EC4899',     // Pink
-  KPA_6_INVESTOR: '#8B0000',     // Maroon - Secondary
+  KPA_1_PRODUSEN_PEKERJA: '#22c55e', // Green - Pencipta Nilai
+  KPA_2_KONSUMEN_UMUM: '#3B82F6',    // Blue - Mesin Permintaan
+  KPA_3_ABDI_NEGARA: '#8B5CF6',      // Purple - Jangkar Stabilitas
+  KPA_4_ENTITAS_BISNIS: '#F59E0B',   // Amber - Mesin B2B
+  KPA_5_PEMODAL_INVESTOR: '#008F3D', // Brand Green - Likuiditas Berdaulat
 };
 
 // ==========================================

@@ -91,7 +91,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
       const niak = await generateNIAK({
         provinsi: provinsi || '00',
         kabKota: kabKota || '00',
-        kpaCode: pendaftaran.kpaId || 'KPA_1_PRODUCER',
+        kpaCode: pendaftaran.kpaId || 'KPA_1_PRODUSEN_PEKERJA',
         tierCode: pendaftaran.tier.code,
       });
 
