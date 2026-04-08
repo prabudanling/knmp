@@ -216,12 +216,11 @@ function ContactForm() {
                       className="w-full h-10 px-3 rounded-md border border-red-100 focus:border-[#8B0000] focus:outline-none"
                     >
                       <option value="">Pilih KPA</option>
-                      <option value="KPA1">KPA-1: Petani/Produsen</option>
-                      <option value="KPA2">KPA-2: Pengusaha/Pengepul</option>
-                      <option value="KPA3">KPA-3: Koperasi/BUMDes</option>
-                      <option value="KPA4">KPA-4: Pekerja/Kader</option>
-                      <option value="KPA5">KPA-5: Konsumen</option>
-                      <option value="KPA6">KPA-6: Investor</option>
+                      <option value="KPA1">KPA-1: Produsen & Pekerja</option>
+                      <option value="KPA2">KPA-2: Konsumen Umum</option>
+                      <option value="KPA3">KPA-3: Abdi Negara & Pejabat Publik</option>
+                      <option value="KPA4">KPA-4: Entitas Bisnis & Pelaku Usaha</option>
+                      <option value="KPA5">KPA-5: Pemodal & Investor</option>
                     </select>
                   </div>
                 </div>

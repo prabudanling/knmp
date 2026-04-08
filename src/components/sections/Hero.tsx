@@ -61,7 +61,7 @@ const floatingIcons = [
 // Stats data - GREEN PPP as primary color
 const stats = [
   { value: '83.763', label: 'Desa Terhubung', sublabel: '(target nasional)', icon: Building2, color: '#008F3D' },
-  { value: '6', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#8B0000' },
+  { value: '5', label: 'Kelompok Pihak', sublabel: 'Anggota (KPA)', icon: Users, color: '#8B0000' },
   { value: '195', label: 'Akses Potensial', sublabel: 'ke Negara', icon: Globe, color: '#00A847' },
   { value: 'Rp 1.000 T', label: 'Target Volume', sublabel: 'Transaksi 2028', icon: Target, color: '#3b82f6' },
 ]
@@ -567,7 +567,7 @@ export function Hero() {
             {/* Note */}
             <p className="text-xs text-[#6B7280] text-center mt-6 max-w-xl mx-auto">
               <Shield className="w-3 h-3 inline mr-1" />
-              Simpanan Sukarela tidak mempengaruhi hak suara dalam RAT. Modal Penyertaan dari KPA-6 (Investor) maksimal 30% total modal.
+              Simpanan Sukarela tidak mempengaruhi hak suara dalam RAT. Pentagon Kedaulatan — 5 KPA masing-masing 20% suara, berlaku Doktrin Anti-Oligarki.
             </p>
           </motion.div>
         </div>

@@ -43,7 +43,7 @@ const faqData = [
     faqs: [
       {
         question: 'Apa itu KNMP?',
-        answer: 'KNMP (KKMNMP/KNMP — Koperasi Nusantara Merah Putih) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global. Berlandaskan Pentagon Kedaulatan dengan 5 KPA, kami menghubungkan petani, pengusaha, koperasi, pekerja, dan investor dalam satu ekosistem berdaulat.',
+        answer: 'KNMP (KKMNMP — Koperasi Korporasi Multipihak Nusa Merah Putih) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global. Berlandaskan Pentagon Kedaulatan dengan 5 KPA, kami menghubungkan produsen, konsumen, abdi negara, pelaku usaha, dan pemodal dalam satu ekosistem berdaulat.',
       },
       {
         question: 'Bagaimana cara menjadi anggota?',
@@ -51,11 +51,11 @@ const faqData = [
       },
       {
         question: 'Berapa biaya menjadi anggota?',
-        answer: 'Biaya keanggotaan (iuran) sesuai KPA masing-masing: KPA-1 Petani/Produsen — Simpanan Pokok Rp 100.000 + Simpanan Wajib Rp 50.000/bulan; KPA-2 Pengusaha/Pengepul — Simpanan Pokok Rp 250.000 + Simpanan Wajib Rp 100.000/bulan; KPA-3 Koperasi/BUMDes — Simpanan Pokok Rp 2.500.000 + Simpanan Wajib Rp 500.000/bulan; KPA-4 Pekerja/Kader — Simpanan Pokok Rp 50.000 + Simpanan Wajib Rp 25.000/bulan; KPA-5 Investor — Simpanan Pokok Rp 1.000.000 + Simpanan Wajib Rp 200.000/bulan. Detail lengkap mengacu pada ART KKMNMP/KNMP.',
+        answer: 'Biaya keanggotaan sesuai Pentagon Kedaulatan (ART Super Final v7): KPA-1 Produsen & Pekerja — Pokok Rp 100.000 + Wajib Rp 50.000/bulan; KPA-2 Konsumen Umum — Pokok Rp 100.000 + Wajib Rp 50.000/bulan; KPA-3 Abdi Negara & Pejabat Publik — Pokok Rp 250.000 + Wajib Rp 100.000/bulan; KPA-4 Entitas Bisnis & Pelaku Usaha — Pokok Rp 5.000.000 + Wajib Rp 1.000.000/bulan; KPA-5 Pemodal & Investor (Individu) — Pokok Rp 50.000.000 + Wajib Rp 1.000.000/bulan. Semua iuran dieksekusi via auto-deduct (Doktrin Invisible Dues).',
       },
       {
         question: 'Apa itu 5 KPA?',
-        answer: '5 KPA (Pentagon Kedaulatan) adalah 5 Kelompok Pihak Anggota yang masing-masing memiliki 20% suara dalam RAT: KPA-1 Petani/Produsen, KPA-2 Pengusaha/Pengepul, KPA-3 Koperasi/BUMDes, KPA-4 Pekerja/Kader, dan KPA-5 Investor. Struktur Pentagon Kedaulatan menjamin kesetaraan suara setiap kelompok dalam pengambilan keputusan.',
+        answer: '5 KPA (Pentagon Kedaulatan) adalah 5 Kelompok Pihak Anggota yang masing-masing memiliki 20% suara dalam RAT: KPA-1 Produsen & Pekerja, KPA-2 Konsumen Umum, KPA-3 Abdi Negara & Pejabat Publik, KPA-4 Entitas Bisnis & Pelaku Usaha, dan KPA-5 Pemodal & Investor. Struktur Pentagon Kedaulatan menjamin kesetaraan suara setiap kelompok dalam pengambilan keputusan.',
       },
     ],
   },

@@ -228,12 +228,11 @@ function VotingPowerSection() {
   const isInView = useInView(ref, { once: true })
 
   const kpaVotes = [
-    { name: 'Petani/Produsen', power: 30, color: '#22c55e' },
-    { name: 'Pengusaha/Pengepul', power: 20, color: '#3b82f6' },
-    { name: 'Koperasi/BUMDes', power: 20, color: '#8b5cf6' },
-    { name: 'Pekerja/Kader', power: 10, color: '#f59e0b' },
-    { name: 'Konsumen', power: 10, color: '#ec4899' },
-    { name: 'Investor', power: 10, color: '#008F3D' },
+    { name: 'KPA-1: Produsen & Pekerja', power: 20, color: '#22c55e' },
+    { name: 'KPA-2: Konsumen Umum', power: 20, color: '#3b82f6' },
+    { name: 'KPA-3: Abdi Negara', power: 20, color: '#8b5cf6' },
+    { name: 'KPA-4: Entitas Bisnis', power: 20, color: '#f59e0b' },
+    { name: 'KPA-5: Pemodal & Investor', power: 20, color: '#008F3D' },
   ]
 
   return (
@@ -286,7 +285,7 @@ function VotingPowerSection() {
             {/* Note */}
             <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
               <p className="text-sm text-amber-800">
-                <strong>Catatan:</strong> Investor (KPA-6) tidak memiliki hak veto meskipun memberikan modal penyertaan.
+                <strong>Catatan:</strong> Investor (KPA-5) tidak memiliki hak veto meskipun memberikan modal penyertaan. Doktrin Anti-Oligarki berlaku — One Member One Vote.
               </p>
             </div>
           </CardContent>

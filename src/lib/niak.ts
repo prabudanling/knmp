@@ -4,7 +4,7 @@
  * Format: PP KK KPA T YY MM NNNNN C
  * - PP (2 digit): Provinsi code (00 untuk nasional)
  * - KK (2 digit): Kabupaten/Kota code (00 untuk level provinsi+)
- * - KPA (1 digit): Klasifikasi Pihak Anggota (1-6)
+ * - KPA (1 digit): Klasifikasi Pihak Anggota (1-5)
  * - T (1 digit): Tier (1-7)
  * - YY (2 digit): Tahun (26 untuk 2026)
  * - MM (2 digit): Bulan (01-12)
