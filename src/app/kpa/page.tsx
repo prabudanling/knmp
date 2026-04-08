@@ -519,7 +519,7 @@ export default function KPAPage() {
               <div className="relative">
                 <div className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm p-1 border border-white/10">
                   <Image
-                    src="/logo-knmp.png"
+                    src="/logo-knmp-v2.png"
                     alt="Logo Koperasi Korporasi Multipihak Nusa Merah Putih"
                     width={1408}
                     height={768}

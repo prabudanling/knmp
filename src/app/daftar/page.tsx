@@ -386,7 +386,7 @@ export default function RegistrationPage() {
           <div className="flex items-center gap-4 mb-3">
             <div className="h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white shadow-lg p-0.5">
               <Image
-                src="/logo-knmp.png"
+                src="/logo-knmp-v2.png"
                 alt="KNMP Logo"
                 width={1408}
                 height={768}

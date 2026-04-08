@@ -224,7 +224,7 @@ export function Footer() {
                   className="h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white p-1"
                 >
                   <Image
-                    src="/logo-knmp.png"
+                    src="/logo-knmp-v2.png"
                     alt="KNMP Logo"
                     width={1408}
                     height={768}

@@ -173,7 +173,7 @@ export default function AdminDashboardPage() {
               </Link>
               <div className="flex items-center gap-3">
                 <div className="h-10 w-auto rounded-lg overflow-hidden bg-white shadow-sm">
-                  <Image src="/logo-knmp.png" alt="KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
+                  <Image src="/logo-knmp-v2.png" alt="KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
                 </div>
                 <div>
                   <h1 className="text-2xl md:text-3xl font-bold text-gray-900">

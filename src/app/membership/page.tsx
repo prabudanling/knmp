@@ -298,7 +298,7 @@ function HeroSection() {
       <motion.div variants={fadeInUp}>
         <div className="flex justify-center mb-4">
           <div className="h-14 sm:h-16 md:h-20 w-auto">
-            <Image src="/logo-knmp.png" alt="Logo KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
+            <Image src="/logo-knmp-v2.png" alt="Logo KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
           </div>
         </div>
       </motion.div>

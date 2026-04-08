@@ -176,7 +176,7 @@ export function Header() {
               >
                 <div className="h-10 md:h-12 w-auto rounded-xl overflow-hidden shadow-lg shadow-green-900/20">
                   <Image
-                    src="/logo-knmp.png"
+                    src="/logo-knmp-v2.png"
                     alt="KNMP Logo"
                     width={1408}
                     height={768}
@@ -400,7 +400,7 @@ export function Header() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-12 w-auto rounded-xl overflow-hidden shadow-lg bg-white">
                     <Image
-                      src="/logo-knmp.png"
+                      src="/logo-knmp-v2.png"
                       alt="KNMP Logo"
                       width={1408}
                       height={768}

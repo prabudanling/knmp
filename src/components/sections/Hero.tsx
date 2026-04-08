@@ -335,7 +335,7 @@ export function Hero() {
               >
                 <div className="h-16 sm:h-20 md:h-24 w-auto">
                   <Image 
-                    src="/logo-knmp.png" 
+                    src="/logo-knmp-v2.png" 
                     alt="Logo Koperasi Korporasi Multipihak Nusa Merah Putih" 
                     width={1408} 
                     height={768} 

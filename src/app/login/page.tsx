@@ -86,7 +86,7 @@ export default function LoginPage() {
             <CardHeader className="text-center pb-2">
               <div className="h-14 w-auto mx-auto mb-4 rounded-xl overflow-hidden bg-white shadow-lg">
                 <Image 
-                  src="/logo-knmp.png" 
+                  src="/logo-knmp-v2.png" 
                   alt="KNMP Logo" 
                   width={1408} 
                   height={768} 
