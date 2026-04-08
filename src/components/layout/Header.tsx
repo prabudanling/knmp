@@ -39,7 +39,7 @@ const menuStructure = [
       { label: '17 Dewan Pendiri', href: '/tentang/dewan-pendiri', icon: Crown, color: '#008F3D', badge: 'NEW' },
       { label: '17 Korbid Strategis', href: '/tentang/dewan-pendiri#korbid', icon: Briefcase, color: '#f59e0b' },
       { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#008F3D' },
-      { label: '6 KPA (Anggota)', href: '/tentang#kpa', icon: Landmark, color: '#8b5cf6' },
+      { label: '5 KPA (Anggota)', href: '/kpa', icon: Landmark, color: '#8b5cf6' },
     ]
   },
   {

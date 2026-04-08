@@ -28,7 +28,7 @@ export default function Home() {
       {/* Stats Section */}
       <StatsSection />
 
-      {/* 6 KPA Section */}
+      {/* 5 KPA Section */}
       <EcosystemSection />
 
       {/* Unit Usaha Section */}

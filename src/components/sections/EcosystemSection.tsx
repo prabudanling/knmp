@@ -67,7 +67,7 @@ export function EcosystemSection() {
             variants={fadeInUp}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
           >
-            6 Kelompok <span className="text-[#8B0000]">Pihak Anggota</span>
+            5 Kelompok <span className="text-[#8B0000]">Pihak Anggota</span>
           </motion.h2>
           <motion.p 
             variants={fadeInUp}
@@ -149,7 +149,7 @@ export function EcosystemSection() {
           <Card className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 shadow-sm">
             <CardContent className="p-8">
               <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">
-                Distribusi Voting Power dalam RAT
+                Pentagon Kedaulatan — 5 KPA masing-masing 20% suara
               </h3>
               <div className="h-4 rounded-full overflow-hidden flex bg-gray-100">
                 {KPA_DATA.map((kpa, i) => (

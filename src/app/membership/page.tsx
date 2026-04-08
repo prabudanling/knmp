@@ -744,7 +744,7 @@ function FAQSection() {
     {
       question: 'Bagaimana sistem voting di RAT KNMP?',
       answer:
-        'Setiap anggota memiliki 1 suara dalam internal KPA. Hasil voting KPA diperhitungkan berdasarkan proporsi: Petani 30%, Pengusaha 20%, Koperasi/BUMDes 20%, Pekerja 10%, Konsumen 10%, Investor 10%. Investor tidak punya hak veto.',
+        'Pentagon Kedaulatan: Setiap KPA mendapat 20% suara kolektif dalam RAT. Total 5 KPA × 20% = 100% demokratis. Di internal masing-masing KPA berlaku 1 Anggota = 1 Suara. Investor (KPA-5) TIDAK punya hak veto berdasarkan Doktrin Anti-Oligarki.',
     },
     {
       question: 'Apa itu HPKW (Hak Prioritas Kemitraan Wilayah)?',

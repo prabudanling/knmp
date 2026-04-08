@@ -30,8 +30,8 @@ const faqs = [
     answer: 'Daftar online melalui portal KNMP, pilih KPA (Anggota) dan tier yang sesuai, kemudian lakukan verifikasi data. Prosesnya cepat dan transparan.',
   },
   {
-    question: 'Apa itu 6 KPA (Anggota)?',
-    answer: '6 KPA (Anggota) adalah 6 Kelompok Pihak Anggota: Petani/Produsen, Pengusaha/Pengepul, Koperasi/BUMDes, Pekerja/Kader, Konsumen, dan Investor. Setiap KPA memiliki proporsi suara dalam RAT.',
+    question: 'Apa itu 5 KPA (Anggota)?',
+    answer: '5 KPA (Anggota) adalah 5 Kelompok Pihak Anggota dalam Pentagon Kedaulatan: Produsen & Pekerja, Konsumen Umum, Abdi Negara & Pejabat Publik, Entitas Bisnis & Pelaku Usaha, dan Pemodal & Investor. Setiap KPA mendapat proporsi suara 20% yang sama dalam RAT — demokrasi sempurna.',
   },
   {
     question: 'Bagaimana pembagian SHU?',
