@@ -29,6 +29,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -294,6 +295,13 @@ function HeroSection() {
       variants={staggerContainer}
       className="mb-12 text-center"
     >
+      <motion.div variants={fadeInUp}>
+        <div className="flex justify-center mb-4">
+          <div className="h-14 sm:h-16 md:h-20 w-auto">
+            <Image src="/logo-knmp.png" alt="Logo KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
+          </div>
+        </div>
+      </motion.div>
       <motion.div variants={fadeInUp}>
         <Badge className="bg-red-100 text-[#8B0000] border-red-200 mb-4">
           <Crown className="w-4 h-4 mr-2" />

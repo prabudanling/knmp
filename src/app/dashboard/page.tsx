@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   User,
   Wallet,
@@ -93,13 +94,18 @@ export default function DashboardPage() {
           className="mb-8"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                {DEMO_DATA.greeting}
-              </h1>
-              <p className="text-gray-600">
-                Dashboard Anggota Koperasi Nusantara Merah Putih
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-auto rounded-lg overflow-hidden bg-white shadow-sm">
+                <Image src="/logo-knmp.png" alt="KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  {DEMO_DATA.greeting}
+                </h1>
+                <p className="text-gray-600">
+                  Dashboard Anggota Koperasi Korporasi Multipihak Nusa Merah Putih
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-3">
               <Button variant="outline" size="icon" className="border-red-100">

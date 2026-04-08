@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import {
@@ -170,12 +171,16 @@ export default function AdminDashboardPage() {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-2">
-                  <Shield className="w-8 h-8 text-[#8B0000]" />
-                  Admin Dashboard
-                </h1>
-                <p className="text-gray-500 text-sm">Koperasi Nusantara Merah Putih</p>
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-auto rounded-lg overflow-hidden bg-white shadow-sm">
+                  <Image src="/logo-knmp.png" alt="KNMP" width={1408} height={768} className="h-full w-auto object-contain" />
+                </div>
+                <div>
+                  <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    Admin Dashboard
+                  </h1>
+                  <p className="text-gray-500 text-sm">Koperasi Korporasi Multipihak Nusa Merah Putih</p>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3">

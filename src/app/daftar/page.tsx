@@ -42,6 +42,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Types
 interface Tier {
@@ -382,8 +383,19 @@ export default function RegistrationPage() {
             <ArrowLeft className="w-4 h-4" />
             Kembali ke Beranda
           </Link>
+          <div className="flex items-center gap-4 mb-3">
+            <div className="h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white shadow-lg p-0.5">
+              <Image
+                src="/logo-knmp.png"
+                alt="KNMP Logo"
+                width={1408}
+                height={768}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+          </div>
           <h1 className="text-3xl font-bold mb-2">Pendaftaran Anggota KNMP</h1>
-          <p className="text-green-100">Bergabunglah dengan Koperasi Nusantara Merah Putih</p>
+          <p className="text-green-100">Bergabunglah dengan Koperasi Korporasi Multipihak Nusa Merah Putih</p>
         </div>
       </div>
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import {
   Menu, X, ChevronDown, Zap, ChevronRight,
@@ -173,8 +174,15 @@ export function Header() {
                 whileTap={{ scale: 0.95 }}
                 className="relative"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-[#008F3D] via-[#00A847] to-[#8B0000] flex items-center justify-center shadow-lg shadow-green-900/20">
-                  <span className="text-white font-bold text-lg md:text-xl tracking-tight">K</span>
+                <div className="h-10 md:h-12 w-auto rounded-xl overflow-hidden shadow-lg shadow-green-900/20">
+                  <Image
+                    src="/logo-knmp.png"
+                    alt="KNMP Logo"
+                    width={1408}
+                    height={768}
+                    className="h-full w-auto object-contain"
+                    priority
+                  />
                 </div>
                 <motion.div
                   className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-r from-[#008F3D] to-[#00A847]"
@@ -390,8 +398,14 @@ export function Header() {
                 </button>
 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg">
-                    <span className="text-[#8B0000] font-bold text-xl">K</span>
+                  <div className="h-12 w-auto rounded-xl overflow-hidden shadow-lg bg-white">
+                    <Image
+                      src="/logo-knmp.png"
+                      alt="KNMP Logo"
+                      width={1408}
+                      height={768}
+                      className="h-full w-auto object-contain"
+                    />
                   </div>
                   <div>
                     <h2 className="font-bold text-lg text-white">{SITE_CONFIG.name}</h2>

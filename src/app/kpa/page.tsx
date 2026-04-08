@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Sprout,
   Building2,
@@ -508,18 +509,24 @@ export default function KPAPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            {/* Pentagon Icon */}
+            {/* KNMP Logo */}
             <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", duration: 1 }}
-              className="mb-8 inline-block"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", duration: 0.8 }}
+              className="mb-6 inline-block"
             >
               <div className="relative">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-[#008F3D] to-[#006F30] flex items-center justify-center shadow-2xl shadow-[#008F3D]/30">
-                  <Vote className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                <div className="h-16 sm:h-20 md:h-24 w-auto mx-auto rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm p-1 border border-white/10">
+                  <Image
+                    src="/logo-knmp.png"
+                    alt="Logo Koperasi Korporasi Multipihak Nusa Merah Putih"
+                    width={1408}
+                    height={768}
+                    className="h-full w-auto object-contain"
+                  />
                 </div>
-                <div className="absolute -inset-2 rounded-2xl border-2 border-[#FFD700]/30 animate-pulse" />
+                <div className="absolute -inset-2 rounded-xl border-2 border-[#FFD700]/20 animate-pulse" />
               </div>
             </motion.div>
 

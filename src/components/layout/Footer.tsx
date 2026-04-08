@@ -2,6 +2,7 @@
 
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRef, useState, useEffect } from 'react'
 import { 
   MapPin, 
@@ -220,9 +221,15 @@ export function Footer() {
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#008F3D] to-[#006B2D] flex items-center justify-center shadow-xl shadow-[#008F3D]/20"
+                  className="h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white p-1"
                 >
-                  <span className="text-white font-bold text-2xl">K</span>
+                  <Image
+                    src="/logo-knmp.png"
+                    alt="KNMP Logo"
+                    width={1408}
+                    height={768}
+                    className="h-full w-auto object-contain"
+                  />
                 </motion.div>
                 <div>
                   <span className="font-bold text-2xl text-white group-hover:text-[#008F3D] transition-colors">

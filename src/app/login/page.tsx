@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { 
   Shield, 
@@ -83,8 +84,14 @@ export default function LoginPage() {
         >
           <Card className="bg-white shadow-xl border-0">
             <CardHeader className="text-center pb-2">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8B0000] to-[#DC143C] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="h-14 w-auto mx-auto mb-4 rounded-xl overflow-hidden bg-white shadow-lg">
+                <Image 
+                  src="/logo-knmp.png" 
+                  alt="KNMP Logo" 
+                  width={1408} 
+                  height={768} 
+                  className="h-full w-auto object-contain"
+                />
               </div>
               <CardTitle className="text-2xl font-bold text-gray-900">
                 Login Admin
@@ -207,7 +214,7 @@ export default function LoginPage() {
           transition={{ delay: 0.3 }}
           className="text-center text-sm text-gray-500 mt-6"
         >
-          © 2024 KMNMP - Koperasi Nusantara Merah Putih
+          © {new Date().getFullYear()} KNMP - Koperasi Korporasi Multipihak Nusa Merah Putih
         </motion.p>
       </div>
     </main>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -323,6 +324,25 @@ export function Hero() {
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-[#008F3D]" />
                   Platform Koperasi Digital #1 Indonesia
                 </Badge>
+              </motion.div>
+            </motion.div>
+
+            {/* KNMP Logo */}
+            <motion.div variants={fadeInUp} className="flex justify-center mb-4 sm:mb-6">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="relative"
+              >
+                <div className="h-16 sm:h-20 md:h-24 w-auto">
+                  <Image 
+                    src="/logo-knmp.png" 
+                    alt="Logo Koperasi Korporasi Multipihak Nusa Merah Putih" 
+                    width={1408} 
+                    height={768} 
+                    priority
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
               </motion.div>
             </motion.div>
 

@@ -168,3 +168,89 @@ Stage Summary:
 - KPA page rebuilt with: Hero, Overview+Donut Chart, 5 Detail Cards, Comparison Table+BarChart, Invisible Dues, Proof of Stake/Franchise, KPA-5 Governance, Voting Power, How to Join, CTA
 - All simpanan pokok & wajib data matches ART Super Final v7 official document
 - Pentagon Kedaulatan branding consistent across homepage, header, FAQ, and KPA page
+
+---
+Task ID: 3 (Logo Replacement)
+Agent: full-stack-developer
+Task: Replace placeholder "K" letter logos in Header.tsx with real KNMP logo image
+
+Work Log:
+- Added `import Image from 'next/image'` to Header.tsx (line 5)
+- Replaced desktop logo (lines 177-185): Removed green gradient box with white "K" letter, replaced with `<Image src="/logo-knmp.png">` inside `h-10 md:h-12 w-auto` container with `rounded-xl overflow-hidden` and `object-contain`
+- Kept desktop hover animation (`whileHover={{ scale: 1.05, rotate: 2 }}`) and green dot badge intact
+- Replaced mobile menu panel logo (lines 401-408): Removed white box with maroon "K" letter, replaced with `<Image src="/logo-knmp.png">` inside `h-12 w-auto` container with `rounded-xl overflow-hidden bg-white` and `object-contain`
+- Kept mobile panel SITE_CONFIG.name and subtitle text intact
+- Ran ESLint: zero errors
+- Dev server compiled successfully
+
+Stage Summary:
+- Both desktop and mobile placeholder logos replaced with real KNMP logo image
+- Used `next/image` `<Image>` component (NOT `<img>`) with proper width/height attributes
+- Horizontal logo properly constrained with `h-full w-auto object-contain` for responsive sizing
+- Clean professional look with rounded corners on both light and dark backgrounds
+
+---
+Task ID: 4
+Agent: full-stack-developer
+Task: Replace placeholder "K" letter logo in Footer.tsx Brand Section with real KNMP logo image
+
+Work Log:
+- Added `import Image from 'next/image'` to Footer.tsx (line 5)
+- Replaced Brand Section logo (lines 220-233): Removed green gradient box (`bg-gradient-to-br from-[#008F3D] to-[#006B2D]`) with white "K" letter, replaced with `<Image src="/logo-knmp.png">` inside `h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white p-1` container with `object-contain`
+- White background (`bg-white p-1`) ensures logo visibility on dark footer background (#111111)
+- Kept hover animation (`whileHover={{ scale: 1.05, rotate: 5 }}`) and `whileTap` animation intact
+- Kept SITE_CONFIG.name and fullName text beside the logo
+- Ran ESLint: zero errors
+- Dev server compiled successfully
+
+Stage Summary:
+- Footer Brand Section placeholder logo replaced with real KNMP logo image
+- Used `next/image` `<Image>` component (NOT `<img>`) with proper width={1408} height={768} attributes
+- Horizontal logo properly constrained with `h-full w-auto object-contain` for responsive sizing
+- Clean professional look with white bg padding for visibility on dark footer background
+
+---
+Task ID: 5-6
+Agent: full-stack-developer
+Task: Add KNMP logo to Hero section & Login page, fix copyright text
+
+Work Log:
+- Hero.tsx: Added `import Image from 'next/image'` (line 4)
+- Hero.tsx: Added KNMP logo block between Badge and h1 headline (after line 327), using `motion.div` with `fadeInUp` variant, responsive heights (h-16 sm:h-20 md:h-24), hover scale animation, `priority` loading
+- login/page.tsx: Added `import Image from 'next/image'` (line 6)
+- login/page.tsx: Replaced Shield icon placeholder (gradient red box with Shield icon) with real logo using `<Image src="/logo-knmp.png">` inside `h-14 w-auto` container with `rounded-xl overflow-hidden bg-white shadow-lg`
+- login/page.tsx: Fixed copyright text from `© 2024 KMNMP - Koperasi Nusantara Merah Putih` to `© {new Date().getFullYear()} KNMP - Koperasi Korporasi Multipihak Nusa Merah Putih`
+- All uses of `next/image` `<Image>` component (NOT `<img>`) with proper width={1408} height={768}
+- Ran ESLint: zero errors
+
+Stage Summary:
+- KNMP logo added to Hero section between Badge and headline with fade-in animation
+- KNMP logo replaced Shield icon placeholder on Login page
+- Copyright text corrected with dynamic year and official KNMP full name
+- Lint clean, all changes compile successfully
+
+---
+Task ID: 3-11
+Agent: Main Orchestrator + Subagents
+Task: Pasang logo KNMP di semua halaman dan atur tata letak
+
+Work Log:
+- Copied logo from /upload/ to /public/logo-knmp.png (1408x768)
+- Updated Header.tsx (desktop + mobile menu) - replaced placeholder "K" with real logo
+- Updated Footer.tsx - replaced placeholder "K" with real logo (white bg for dark footer)
+- Updated Hero.tsx - added logo between badge and headline on homepage
+- Updated login/page.tsx - replaced Shield icon with logo, fixed copyright year
+- Updated daftar/page.tsx - added logo to registration header, fixed brand name
+- Updated kpa/page.tsx - added logo to KPA hero section (glassmorphism container)
+- Updated admin/page.tsx - added logo next to "Admin Dashboard" title, fixed brand name
+- Updated dashboard/page.tsx - added logo next to welcome header, fixed brand name
+- Updated membership/page.tsx - added logo above tier selection title
+- All pages verified: 200 OK, zero lint errors
+
+Stage Summary:
+- Logo installed in 10 locations across 9 files
+- Used next/image with proper dimensions (1408x768, object-contain)
+- Responsive sizing: h-10 to h-24 depending on context
+- Consistent design: rounded corners, shadows, proper backgrounds for light/dark contexts
+- All "6 KPA" references already fixed to "5 KPA" in previous session
+- Zero lint errors, all pages compile and render successfully
