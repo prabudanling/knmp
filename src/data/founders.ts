@@ -137,18 +137,18 @@ export const DEWAN_PENDIRI_17: Founder[] = [
   {
     id: 'pendiri-16',
     no: 16,
-    name: 'Tegar Ramadhan, S.Kom.',
+    name: 'Prof. Dr. H. Anwar Sanusi, SH, S.Pel, MM',
     position: 'Pendiri ke-16',
-    role: 'Koordinator Bidang Teknologi & Inovasi',
+    role: 'Wakil Ketua Dewan Pembina, Representasi Pemerintah',
     status: 'active',
   },
   {
     id: 'pendiri-17',
     no: 17,
-    name: '',
+    name: 'dr. Hanson Barki',
     position: 'Pendiri ke-17',
-    role: '(Belum ditentukan)',
-    status: 'vacant',
+    role: 'Koordinator Bidang Adab & Budaya',
+    status: 'active',
   },
 ];
 
