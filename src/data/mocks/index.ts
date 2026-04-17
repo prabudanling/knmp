@@ -963,7 +963,7 @@ export const KORNAS_STRUCTURE = {
         { id: 'dp-14', position: 'Pendiri ke-14 - Koordinator Bidang Pengembangan SDM', name: 'Hj. Fani Anggraeni, S.E.', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-15', position: 'Pendiri ke-15 - Koordinator Bidang Infrastruktur Digital', name: 'Ir. Endro Wuryanto, M.M.', status: 'filled' as const, termEnd: '2029' },
         { id: 'dp-16', position: 'Pendiri ke-16 - Wakil Ketua Dewan Pembina', name: 'Prof. Dr. H. Anwar Sanusi, SH, S.Pel, MM', status: 'filled' as const, termEnd: '2029' },
-        { id: 'dp-17', position: 'Pendiri ke-17', name: 'Dalam Proses Pengesahan', status: 'pending' as const },
+        { id: 'dp-17', position: 'Pendiri ke-17', name: 'dr. Hanson Barki', status: 'filled' as const, termEnd: '2029' },
       ]
     },
     // Dewan Pembina
@@ -1026,7 +1026,7 @@ export const KORNAS_STRUCTURE = {
         { id: 'kb-4', position: 'Bidang Logistik & Distribusi', name: 'M. Ilham', status: 'filled' as const, termEnd: '2029' },
         { id: 'kb-5', position: 'Bidang Kesehatan & Farmasi', name: 'Dalam Proses Pengesahan', status: 'pending' as const },
         { id: 'kb-6', position: 'Bidang Keuangan & Perbankan', name: 'Fawwaz Arif Al Jabar, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
-        { id: 'kb-7', position: 'Bidang Investasi & ESG', name: 'Dalam Proses Pengesahan', status: 'pending' as const },
+        { id: 'kb-7', position: 'Bidang Adab & Budaya', name: 'dr. Hanson Barki', status: 'filled' as const, termEnd: '2029' },
         { id: 'kb-8', position: 'Bidang Bisnis Kemitraan & UMKM', name: 'Ongky Putra', status: 'filled' as const, termEnd: '2029' },
         { id: 'kb-9', position: 'Bidang Digital & Teknologi', name: 'M. Sidik', status: 'filled' as const, termEnd: '2029' },
         { id: 'kb-10', position: 'Bidang Holding Trading Ekosistem', name: 'Tn. H. Gugun Gunara, S.E., M.M.', status: 'filled' as const, termEnd: '2029' },
@@ -1211,6 +1211,6 @@ export const DEWAN_PENDIRI_LENGKAP = [
   { id: 'pendiri-13', name: 'Dr. N. Rusmiati, M.Si., M.H.', position: 'Pendiri ke-13 - Koordinator Bidang Pariwisata', role: 'Ketua Umum DPP ASITA, Koordinator Bidang Pariwisata', status: 'filled' as const },
   { id: 'pendiri-14', name: 'Hj. Fani Anggraeni, S.E.', position: 'Pendiri ke-14 - Koordinator Bidang Pengembangan SDM', role: 'Koordinator Bidang Pengembangan SDM', status: 'filled' as const },
   { id: 'pendiri-15', name: 'Ir. Endro Wuryanto, M.M.', position: 'Pendiri ke-15 - Koordinator Bidang Infrastruktur Digital', role: 'Koordinator Bidang Infrastruktur Digital', status: 'filled' as const },
-  { id: 'pendiri-16', name: 'Tegar Ramadhan, S.Kom.', position: 'Pendiri ke-16 - Koordinator Bidang Teknologi & Inovasi', role: 'Koordinator Bidang Teknologi & Inovasi', status: 'filled' as const },
-  { id: 'pendiri-17', name: '', position: 'Pendiri ke-17', role: '(Belum ditentukan)', status: 'vacant' as const },
+  { id: 'pendiri-16', name: 'Prof. Dr. H. Anwar Sanusi, SH, S.Pel, MM', position: 'Pendiri ke-16 - Koordinator Bidang Teknologi & Inovasi', role: 'Koordinator Bidang Teknologi & Inovasi', status: 'filled' as const },
+  { id: 'pendiri-17', name: 'dr. Hanson Barki', position: 'Pendiri ke-17', position: 'Koordinator Bidang Adab & Budaya', status: 'filled' as const },
 ];
