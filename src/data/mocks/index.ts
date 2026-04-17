@@ -472,7 +472,7 @@ export const DEWAN_PENDIRI = [
   { id: 'pendiri-14', no: 14, name: 'Hj. Fani Anggraeni, S.E.', position: 'Pendiri ke-14', role: 'Koordinator Bidang Pengembangan SDM', status: 'active' },
   { id: 'pendiri-15', no: 15, name: 'Ir. Endro Wuryanto, M.M.', position: 'Pendiri ke-15', role: 'Koordinator Bidang Infrastruktur Digital', status: 'active' },
   { id: 'pendiri-16', no: 16, name: 'Prof. Dr. H. Anwar Sanusi, SH, S.Pel, MM', position: 'Pendiri ke-16', role: 'Wakil Ketua Dewan Pembina, Representasi Pemerintah', status: 'active' },
-  { id: 'pendiri-17', no: 17, name: 'Dalam Proses Pengesahan', position: 'Pendiri ke-17', role: 'Menunggu Pengesahan RAT', status: 'pending' },
+  { id: 'pendiri-17', no: 17, name: 'dr. Hanson Barki', position: 'Pendiri ke-17', role: 'Koordinator Bidang Adab & Budaya', status: 'active' },
 ];
 
 // =====================
@@ -486,7 +486,7 @@ export const KOORDINATOR_BIDANG = [
   { no: 4, bidang: 'Logistik & Distribusi', ketua: 'M. Ilham', sekretaris: '(Kosong)', catatan: 'Jaringan Logistik 83.763 Desa' },
   { no: 5, bidang: 'Kesehatan & Farmasi', ketua: 'Dalam Proses Pengesahan', sekretaris: '(Kosong)', catatan: 'Integrasi Posyandu 300rb Unit' },
   { no: 6, bidang: 'Keuangan & Perbankan', ketua: 'Fawwaz Arif Al Jabar, S.E., M.M.', sekretaris: '(Kosong)', catatan: 'Pendiri ke-11 | CFO & Fintech Desa' },
-  { no: 7, bidang: 'Investasi & ESG', ketua: 'Dalam Proses Pengesahan', sekretaris: '(Kosong)', catatan: 'ESG, Green Bond, Impact Investing' },
+  { no: 7, bidang: 'Adab & Budaya', ketua: 'dr. Hanson Barki', sekretaris: '(Kosong)', catatan: 'Adab dan Budaya' },
   { no: 8, bidang: 'Bisnis Kemitraan & UMKM', ketua: 'Ongky Putra', sekretaris: '(Kosong)', catatan: 'Ekosistem Mitra & UMKM Desa' },
   { no: 9, bidang: 'Digital & Teknologi', ketua: 'M. Sidik', sekretaris: '(Kosong)', catatan: 'kopnusa.id | Blockchain | AI | IoT' },
   { no: 10, bidang: 'Holding Trading Ekosistem', ketua: 'Tn. H. Gugun Gunara, S.E., M.M.', sekretaris: 'Cecep Abdul Jabbar', catatan: 'Pendiri ke-7 | Grand Architect | Holding Strategis' },
