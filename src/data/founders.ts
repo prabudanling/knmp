@@ -235,7 +235,7 @@ export const KORDINATOR_BIDANG_17: Korbid[] = [
     ketua: 'dr. Hanson Barki',
     sekretaris: '(Kosong)',
     catatan: 'Adab, Budaya',
-    status: 'vacant',
+    status: 'active',
     color: '#8b5cf6',
   },
   {
