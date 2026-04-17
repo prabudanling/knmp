@@ -55,7 +55,7 @@ const DEWAN_PENDIRI = [
   { no: 14, name: 'Hj. Fani Anggraeni, S.E.', position: 'Pendiri ke-14', role: 'Koordinator Bidang Pengembangan SDM', kuadran: null },
   { no: 15, name: 'Ir. Endro Wuryanto, M.M.', position: 'Pendiri ke-15', role: 'Koordinator Bidang Infrastruktur Digital', kuadran: null },
   { no: 16, name: 'Prof. Dr. H. Anwar Sanusi, SH, S.Pel, MM', position: 'Pendiri ke-16', role: 'Wakil Ketua Dewan Pembina, Representasi Pemerintah', kuadran: null },
-  { no: 17, name: 'dr. Hansen Barki', position: 'Pendiri ke-17', role: 'Koordinator Bidang Adab & Budaya', kuadran: null },
+  { no: 17, name: 'dr. Hanson Barki', position: 'Pendiri ke-17', role: 'Koordinator Bidang Adab & Budaya', kuadran: null },
 ];
 
 // 17 Koordinator Bidang
@@ -66,7 +66,7 @@ const KORBID = [
   { no: 4, bidang: 'Logistik & Distribusi', ketua: 'M. Ilham', color: '#f59e0b' },
   { no: 5, bidang: 'Kesehatan & Farmasi', ketua: '(RAT Perdana)', color: '#ef4444', isVacant: true },
   { no: 6, bidang: 'Keuangan & Perbankan', ketua: 'Fawwaz Arif Al Jabar, S.E., M.M.', color: '#3b82f6' },
-  { no: 7, bidang: 'Adab & Budaya', ketua: 'dr. Hansen Barki', color: '#8b5cf6'  },
+  { no: 7, bidang: 'Adab & Budaya', ketua: 'dr. Hanson Barki', color: '#8b5cf6'  },
   { no: 8, bidang: 'Bisnis Kemitraan & UMKM', ketua: 'Ongky Putra', color: '#ec4899' },
   { no: 9, bidang: 'Digital & Teknologi', ketua: 'M. Sidik', color: '#06b6d4' },
   { no: 10, bidang: 'Holding Trading Ekosistem', ketua: 'Tn. H. Gugun Gunara, S.E., M.M.', color: '#8B0000' },
