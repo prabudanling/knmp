@@ -1,0 +1,130 @@
+Berikut susunan finalnya:
+
+---
+
+📋 *STRUKTUR KEPENGURUSAN KOPNUSA BERDIKARI*
+
+---
+
+🌟 *DEWAN PEMBINA*
+1. Dr. Ferry Juliantono, S.E., Ak., M.Si. — *Menteri Koperasi*
+2. Widiyanti Putri Wardhana, B.Sc. — *Menteri Pariwisata*
+3. Jenderal TNI (Purn.) Dr. H. Moeldoko, S.I.P.
+4. Dr. H. Sandiaga Salahuddin Uno, B.B.A., M.B.A.
+5. Drs. Teten Masduki
+6. Dr. A. Iskandar Zulkarnain
+
+---
+
+🛡️ *DEWAN PENGAWAS*
+1. Prof. Dr. Elan Masbulan — *Ketua*
+2. Dr. Habib — *Anggota*
+
+---
+
+🧠 *DEWAN PAKAR*
+1. Prof. Dr. Teddy Mantoro, M.Sc., Ph.D., SMIEEE
+
+---
+
+🤝 *DEWAN PENASEHAT*
+1. Prof. Dr. H. Anwar Sanusi, S.H., S.Pel., M.M. — *Ketua*
+2. Dr. Heri Solahudin — *Anggota*
+
+---
+
+📌 *PENGURUS HARIAN*
+
+*Presiden / Ketua Umum*
+Dr. N. Rusmiati, M.Si., M.H.
+
+*Wakil Ketua Umum*
+Prof. Wirono, S.E., M.Pd.
+
+*Sekretaris Jenderal / CEO JE-P3*
+Drs. H. Arif Rachman Hakim, M.M.
+
+*Wakil Sekretaris Jenderal / Grand Architect & COO*
+H. Gugun Gunara, S.E., 
+
+*Bendahara Umum*
+*belum terisi*
+
+---
+
+👥 *JAJARAN EKSEKUTIF & DEWAN PENDIRI*
+
+*Pendiri ke-1 — Sekretaris Jenderal / CEO JE-P3*
+Drs. H. Arif Rachman Hakim, M.M. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-2 — Presiden / Ketua Umum (Bakornas)*ketum ASITA*
+Dr. N. Rusmiati, M.Si., M.H. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-3 — Wakil Ketua Umum*
+Prof. Wirono, S.E., M.Pd. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-4 — Ketua Dewan Pengawas*
+Prof. Dr. Elan Masbulan | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-5 — Ketua Dewan Penasehat*
+Prof. Dr. H. Anwar Sanusi, S.H., S.Pel., M.M. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-6 — Ketua Dewan Pakar*
+Prof. Dr. Teddy Mantoro, M.Sc., Ph.D., SMIEEE | Status: Aktif
+
+*Pendiri ke-7 — Wakil Sekretaris Jenderal / Grand Architect & COO*
+Tn. H. Gugun Gunara, S.E., M.M. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-8 — Ketua Bidang Keamanan Siber*
+Komjen. Pol. (Purn.) Dharma Pongrekun | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-9 — Ketua Bidang Hukum dan Advokasi*
+Mayor Art. (Purn.) Cecep Sumarno, S.I.P., S.H. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-10 — Anggota Dewan Pengawas*
+Dr. Habib | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-11 — Anggota Dewan Penasehat*
+Dr. Heri Solahudin | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-12 — Koordinator Bidang Infrastruktur Digital*
+Ir. Endro Wuryanto, M.M. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-13 — Koordinator Bidang Event Organizer*
+Sae Tanangga Karim, S.E. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-14 — Koordinator Bidang Pengembangan SDM & Organisasi*
+Hj. Inna Hadianala, S.E. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-15 — Koordinator Wilayah Kalimantan*
+Andi Darmadji, S.E. | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-16 — (Posisi Belum Terisi)*
+— | Tahun: 2029 | Status: Aktif
+
+*Pendiri ke-17 — Koordinator Bidang Adab dan Budaya*
+dr. Hanson Barki | Status: Aktif
+
+---
+
+⚙️ *STRUKTUR OPERASIONAL - 17 KETUA BIDANG*
+
+1. *Ketua Bidang Organisasi & Keanggotaan:* Hj. Inna Hadianala, S.E.
+2. *Ketua Bidang Pangan & Ketahanan Pangan:* Dr. Habib
+3. *Ketua Bidang Industri & Manufaktur:* *(RAT Perdana)*
+4. *Ketua Bidang Logistik & Distribusi:* M. Ilham
+5. *Ketua Bidang Kesehatan & Farmasi:* *(RAT Perdana)*
+6. *Ketua Bidang Keuangan & Perbankan:* Fawwaz Arif Al Jabar, S.E., M.M.
+7. *Ketua Bidang Holding Trading Ekosistem:* H. Gugun Gunara, S.E.
+8. *Ketua Bidang Bisnis Kemitraan & UMKM:* Ongky Putra
+9. *Ketua Bidang Digital & Teknologi:* M. Sidik
+10. *Ketua Bidang Adab & Budaya:* dr. Hanson Barki
+11. *Ketua Bidang Hukum & Advokasi :* Mayor Art. (Purn.) Cecep Sumarno, S.I.P., S.H.
+12. *Ketua Bidang Haji dan Umroh :* H. Abu Bakar ( Pimpinan AL Mukhtara Groups ).
+13. *Ketua Bidang Pengembangan SDM & Diklat:* *(Dalam Proses Pengesahan)*
+14. *Ketua Bidang Ekspor Impor & Perdagangan Internasional:* *(Dalam Proses Pengesahan)*
+15. *Ketua Bidang Hubungan Masyarakat & Media:* *(Dalam Proses Pengesahan)*
+16. *Ketua Bidang Teknologi & Inovasi:* *(Dalam Proses Pengesahan)*
+17. *Ketua Bidang Kemitraan Internasional:* *(Dalam Proses Pengesahan)*
+
+---

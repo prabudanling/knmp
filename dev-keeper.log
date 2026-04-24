@@ -1,0 +1,10 @@
+$ bun --hot index.ts
+[dev-keeper] Starting Next.js dev server...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 742ms
+GET / 200 in 1879ms (compile: 1475ms, render: 403ms)
