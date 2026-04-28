@@ -73,3 +73,39 @@ Stage Summary:
   - KOPNUSA → KMN BERDIKARI (product/platform name)
 - SITE_CONFIG now includes: name, officialName, fullName, abbreviation
 - All 30+ files updated consistently
+
+---
+Task ID: 3
+Agent: Main Agent
+Task: Remove duplicate 9 Pilar Kampung section from Beranda and update Nusa Futuristik menu with 9 pillars
+
+Work Log:
+- Identified duplicate 9 Pilar Kampung section: one in VisiMisiSection (below Visi Multidimensi) and one in PilarSection
+- Removed the duplicate SECTION 4 (9 Pilar Kampung) from VisiMisiSection.tsx render
+- Removed the old pilarData array from VisiMisiSection (had different/incorrect pillar names like Kampung Pemerintahan, Kampung Logistik, Kampung Produktif)
+- Removed the LuxuryPilarCard component from VisiMisiSection (only used by the removed section)
+- Cleaned up unused imports (Wheat, Truck, Building2, Home, Package) from VisiMisiSection
+- Added all 9 pillars to the Nusa Futuristik dropdown menu in Header.tsx
+- Added Nusa Futuristik header with "Wilayah & 9 Pilar Kampung" subtitle in desktop dropdown
+- Added separator with "9 Pilar Kampung" label before pillar items in Nusa Futuristik dropdown
+- Updated desktop dropdown width to 320px for Nusa Futuristik (same as 9 Pilar)
+- Added max-h-[80vh] overflow-y-auto for scrollable dropdown menus
+- Added same 9 Pilar items and separator to mobile menu for Nusa Futuristik
+- Added Fragment import for React key support in mapped items
+- Lint passes with no errors
+- Dev server running with 200 responses
+
+Stage Summary:
+- Duplicate 9 Pilar section removed from VisiMisiSection (below Visi Multidimensi)
+- Only the PilarSection 9 Pilar section remains on the Beranda
+- Nusa Futuristik dropdown now shows all 9 pillars alongside geographic items
+- All pillar references are now consistent with the official 9 pillars:
+  1. Kampung Modal (Adhikara Artha)
+  2. Kampung Industri (Adhikara Krada)
+  3. Kampung Pangan (Adhikara Anna)
+  4. Kampung Sehat (Adhikara Roga)
+  5. Kampung Cerdas (Adhikara Vidya)
+  6. Kampung Niaga (Adhikara Yana)
+  7. Kampung Digital (Adhikara Jnana)
+  8. Kampung Hijau (Adhikara Prakriti)
+  9. Kampung Wisata (Adhikara Ramya)
