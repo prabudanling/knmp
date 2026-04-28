@@ -34,9 +34,9 @@ const menuStructure = [
     href: '/tentang',
     icon: Info,
     color: '#8B0000',
-    description: 'Profil KNMP',
+    description: 'Profil KMN BERDIKARI',
     children: [
-      { label: 'Tentang KNMP', href: '/tentang', icon: Building2, color: '#8B0000' },
+      { label: 'Tentang KMN BERDIKARI', href: '/tentang', icon: Building2, color: '#8B0000' },
       { label: '17 Dewan Pendiri', href: '/tentang/dewan-pendiri', icon: Crown, color: '#008F3D', badge: 'NEW' },
       { label: '17 Korbid Strategis', href: '/tentang/dewan-pendiri#korbid', icon: Briefcase, color: '#f59e0b' },
       { label: 'Visi & Misi', href: '/tentang#visi-misi', icon: Target, color: '#008F3D' },
@@ -178,10 +178,10 @@ export function Header() {
               >
                 <div className="h-10 md:h-12 w-auto rounded-xl overflow-hidden shadow-lg shadow-green-900/20">
                   <Image
-                    src="/logo-knmp-v2.png"
-                    alt="KNMP Logo"
-                    width={1408}
-                    height={768}
+                    src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
+                    alt="KMN BERDIKARI Logo"
+                    width={2016}
+                    height={2112}
                     className="h-full w-auto object-contain"
                     priority
                   />
@@ -248,7 +248,7 @@ export function Header() {
                             {item.label === '9 Pilar' && (
                               <div className="px-4 py-2.5 border-b border-gray-100 mb-1">
                                 <p className="text-[10px] font-bold text-[#f59e0b] uppercase tracking-widest">9 Pilar Kampung</p>
-                                <p className="text-[10px] text-gray-400 mt-0.5">9 Program Unggulan KNMP</p>
+                                <p className="text-[10px] text-gray-400 mt-0.5">9 Program Unggulan KMN BERDIKARI</p>
                               </div>
                             )}
                             {item.children.map((child, childIndex) => (
@@ -402,10 +402,10 @@ export function Header() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-12 w-auto rounded-xl overflow-hidden shadow-lg bg-white">
                     <Image
-                      src="/logo-knmp-v2.png"
-                      alt="KNMP Logo"
-                      width={1408}
-                      height={768}
+                      src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
+                      alt="KMN BERDIKARI Logo"
+                      width={2016}
+                      height={2112}
                       className="h-full w-auto object-contain"
                     />
                   </div>
@@ -575,7 +575,7 @@ export function Header() {
                       <Sparkles className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">Gabung KNMP</p>
+                      <p className="font-semibold text-gray-900 text-sm">Gabung KMN BERDIKARI</p>
                       <p className="text-xs text-gray-500">7 Tier Keanggotaan</p>
                     </div>
                   </div>
@@ -617,7 +617,7 @@ export function Header() {
                 className="p-4 pt-0 mt-2"
               >
                 <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-                  <span>&copy; 2026 KNMP</span>
+                  <span>&copy; 2026 KMN BERDIKARI</span>
                   <span className="flex items-center gap-1">
                     <Heart className="w-3 h-3 text-[#8B0000] fill-[#8B0000]" />
                     Indonesia

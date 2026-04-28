@@ -1,5 +1,5 @@
 /**
- * Authentication Helper for KMNMP Admin
+ * Authentication Helper for KMNBMPI Admin
  */
 
 import { NextRequest } from 'next/server';

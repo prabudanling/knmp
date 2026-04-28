@@ -731,7 +731,7 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* ── KKMNBMP Logo with Animated Gold Border Glow ── */}
+            {/* ── KMNBMPI Logo with Animated Gold Border Glow ── */}
             <motion.div variants={fadeInUp} className="flex justify-center mb-5 sm:mb-7">
               <motion.div whileHover={{ scale: 1.03 }} className="relative group">
                 {/* Animated gold glow ring around logo */}
@@ -761,10 +761,10 @@ export function Hero() {
                 />
                 <div className="relative h-16 sm:h-20 md:h-24 w-auto">
                   <Image
-                    src="/logo-knmp-v2.png"
-                    alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih"
-                    width={1408}
-                    height={768}
+                    src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
+                    alt="KMN BERDIKARI Logo"
+                    width={2016}
+                    height={2112}
                     priority
                     className="h-full w-auto object-contain"
                   />
@@ -781,7 +781,7 @@ export function Hero() {
                 KOPERASI KORPORASI MULTIPIHAK
               </span>
               <span className="block text-[#8B0000] mt-1">
-                NUSA BERDIKARI MERAH PUTIH
+                NUSA BERDIKARI MERAH PUTIH INDONESIA
               </span>
             </motion.h1>
 
@@ -854,11 +854,11 @@ export function Hero() {
                     className="text-sm sm:text-base md:text-lg font-medium text-gray-800 leading-relaxed text-center relative z-10"
                   >
                     <span className="text-[#D4AF37] font-bold text-base sm:text-lg md:text-xl">
-                      KKMNBMP
+                      KMNBMPI
                     </span>{' '}
                     adalah{' '}
                     <span className="text-[#8B0000] font-bold">
-                      Koperasi Korporasi Multipihak
+                      Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia
                     </span>{' '}
                     yang mengintegrasikan seluruh ekosistem melalui{' '}
                     <span className="text-[#008F3D] font-bold">
@@ -1101,7 +1101,7 @@ export function Hero() {
               >
                 Sistem Simpanan{' '}
                 <span className="bg-gradient-to-r from-[#008F3D] to-[#8B0000] bg-clip-text text-transparent">
-                  KKMNBMP
+                  KMNBMPI
                 </span>
               </motion.h3>
 

@@ -1,7 +1,7 @@
 'use client'
 
-// KNMP - Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih
-// Platform Ekosistem NB × KNMP
+// KMN BERDIKARI - Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia
+// Platform Ekosistem NB × KMN BERDIKARI
 
 import { Hero } from '@/components/sections/Hero'
 import { StatsSection } from '@/components/sections/StatsSection'

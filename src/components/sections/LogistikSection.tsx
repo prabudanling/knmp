@@ -48,7 +48,7 @@ const partners = [
 
 // Steps
 const steps = [
-  { step: 1, title: 'Daftar Jadi Agen', desc: 'Daftar online via aplikasi KNMP', icon: Users, color: '#8B0000' },
+  { step: 1, title: 'Daftar Jadi Agen', desc: 'Daftar online via aplikasi KMN BERDIKARI', icon: Users, color: '#8B0000' },
   { step: 2, title: 'Training Gratis', desc: 'Pelatihan 10 jam dengan sertifikat', icon: Zap, color: '#008F3D' },
   { step: 3, title: 'Terima Paket', desc: 'Warga kirim paket ke lokasi Anda', icon: Package, color: '#22c55e' },
   { step: 4, title: 'Dapat Komisi', desc: 'Komisi otomatis ke dompet digital', icon: Wallet, color: '#8b5cf6' },

@@ -1,5 +1,5 @@
 // ============================================
-// KOPNUSA/KNMP Type Definitions
+// KMN BERDIKARI Type Definitions
 // API-Ready Pattern for Laravel Integration
 // ============================================
 

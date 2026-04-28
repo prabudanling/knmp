@@ -80,7 +80,7 @@ export function CTASection() {
             variants={fadeInUp}
             className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto"
           >
-            Dari petani hingga investor, semua punya tempat di KNMP. 
+            Dari petani hingga investor, semua punya tempat di KMN BERDIKARI. 
             Bersama kita membangun masa depan ekonomi desa Indonesia.
           </motion.p>
 

@@ -1,5 +1,5 @@
 /**
- * Server-side utility functions for KMNMP
+ * Server-side utility functions for KMNBMPI
  */
 
 import { db } from './db';

@@ -675,7 +675,7 @@ export function VisiMisiSection() {
             variants={headerVariants}
             className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Menjadi Koperasi Korporasi Multipihak dari Desa untuk Dunia
+            Menjadi Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia dari Desa untuk Dunia
           </motion.p>
         </motion.div>
 
@@ -778,7 +778,7 @@ export function VisiMisiSection() {
 
                 {/* Main Quote */}
                 <blockquote className="text-lg md:text-xl lg:text-2xl font-bold text-[#1A1A1A] leading-relaxed mb-6">
-                  &ldquo;Menjadi <span className="text-[#008F3D]">Koperasi Korporasi Multipihak dari Desa untuk Dunia</span> — <span className="text-[#8B0000]">KKMNBMP</span> sebagai{' '}
+                  &ldquo;Menjadi <span className="text-[#008F3D]">Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia dari Desa untuk Dunia</span> — <span className="text-[#8B0000]">KMNBMPI</span> sebagai{' '}
                   <span className="text-[#8B0000]">Jantung Operasional</span> yang Mengintegrasikan{' '}
                   <span className="text-[#008F3D]">9 Pilar Program Kampung</span> ke dalam Satu Platform Digital Terunifikasi — Mengkonsolidasikan{' '}
                   <span className="text-[#8B0000]">83.763 Desa Indonesia</span> dari Silo Menuju{' '}
@@ -796,7 +796,7 @@ export function VisiMisiSection() {
                 </div>
 
                 <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                  KKMNBMP hadir sebagai platform ekonomi digital yang menghubungkan seluruh desa di Indonesia menuju Indonesia Emas 2045.
+                  KMNBMPI hadir sebagai platform ekonomi digital yang menghubungkan seluruh desa di Indonesia menuju Indonesia Emas 2045.
                 </p>
               </div>
             </div>
@@ -874,7 +874,7 @@ export function VisiMisiSection() {
               <span className="bg-gradient-to-r from-[#f59e0b] to-[#8B0000] bg-clip-text text-transparent">
                 Kampung
               </span>{' '}
-              KKMNBMP
+              KMNBMPI
             </h3>
             {/* Gold decorative line */}
             <div className="flex justify-center mt-4">

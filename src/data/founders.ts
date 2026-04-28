@@ -1,5 +1,5 @@
 // ============================================
-// 17 DEWAN PENDIRI KMNMP
+// 17 DEWAN PENDIRI KMNBMPI
 // Berdasarkan dokumen v17 terbaru
 // ============================================
 
@@ -341,10 +341,10 @@ export const KORDINATOR_BIDANG_17: Korbid[] = [
 ];
 
 // ============================================
-// STATISTIK KMNMP
+// STATISTIK KMNBMPI
 // ============================================
 
-export const KMNMP_STATS = {
+export const KMNBMPI_STATS = {
   totalDesa: 83763,
   totalProvinsi: 38,
   totalNegara: 195,

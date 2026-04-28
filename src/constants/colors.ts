@@ -1,5 +1,5 @@
 // ============================================
-// KOPNUSA Color System - PPP GREEN & MAROON
+// KMN BERDIKARI Color System - PPP GREEN & MAROON
 // WCAG AA/AAA Compliant - High Contrast
 // ============================================
 //

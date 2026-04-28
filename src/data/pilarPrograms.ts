@@ -479,7 +479,7 @@ export const PILAR_PROGRAMS: PilarPrograms[] = [
           { id: 'p7-9', number: 9, title: 'E-Governance Desa', description: 'E-Governance desa', interlinks: [1] },
           { id: 'p7-10', number: 10, title: 'Dashboard Kinerja Real-Time', description: 'Dashboard kinerja real-time', interlinks: [1] },
           { id: 'p7-11', number: 11, title: 'Marketplace Digital Desa', description: 'Marketplace digital desa', interlinks: [6, 9] },
-          { id: 'p7-12', number: 12, title: 'Super-App Ekosistem KKMNBMP', description: 'Super-App ekosistem KKMNBMP', interlinks: [1, 6, 9] },
+          { id: 'p7-12', number: 12, title: 'Super-App Ekosistem KMNBMPI', description: 'Super-App ekosistem KMNBMPI', interlinks: [1, 6, 9] },
         ],
       },
       {

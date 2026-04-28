@@ -1,12 +1,14 @@
 // ============================================
-// KOPNUSA Site Configuration
+// KMN BERDIKARI Site Configuration
 // ============================================
 
 export const SITE_CONFIG = {
-  name: 'KOPNUSA',
-  fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih',
+  name: 'KMN BERDIKARI',
+  officialName: 'Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia',
+  fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia',
+  abbreviation: 'KMNBMPI',
   tagline: 'Koperasi Korporasi Multipihak dari Desa untuk Dunia',
-  description: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih — mengintegrasikan 83.763 desa dan 8.506 kelurahan ke dalam satu ekosistem ekonomi berdaulat berdasarkan AD/ART KKMNBMP Super Final Versi 7.',
+  description: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI) — mengintegrasikan 83.763 desa dan 8.506 kelurahan ke dalam satu ekosistem ekonomi berdaulat berdasarkan AD/ART KMNBMPI Super Final Versi 7.',
   url: 'https://kopnusa.id',
   version: '2.0.0',
   
@@ -31,13 +33,13 @@ export const SITE_CONFIG = {
   
   // SEO
   seo: {
-    title: 'KOPNUSA - Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih | Dari Desa untuk Dunia',
-    description: 'Portal resmi Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KKMNBMP). Mengintegrasikan 83.763 desa, 5 Kelompok Pihak Anggota (KPA), 9 Pilar Kampung, marketplace zonasi, logistik digital, dan smart village dashboard.',
+    title: 'KMN BERDIKARI - Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia | Dari Desa untuk Dunia',
+    description: 'Portal resmi Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI). Mengintegrasikan 83.763 desa, 5 Kelompok Pihak Anggota (KPA), 9 Pilar Kampung, marketplace zonasi, logistik digital, dan smart village dashboard.',
     keywords: [
-      'koperasi', 'koperasi digital', 'KKMNBMP', 'KOPNUSA',
-      'koperasi korporasi multipihak nusa berdikari merah putih', 'kampung digital', 
+      'koperasi', 'koperasi digital', 'KMNBMPI', 'KMN BERDIKARI',
+      'koperasi korporasi multipihak nusa berdikari merah putih indonesia', 'kampung digital', 
       'smart village', 'marketplace desa', 'logistik desa',
-      'koperasi multipihak', 'BUMDes', 'KDMP', 'KDM', 'KOPNUSA'
+      'koperasi multipihak', 'BUMDes', 'KDMP', 'KDM', 'KMN BERDIKARI'
     ],
     ogImage: '/images/og-image.jpg',
   },
@@ -94,7 +96,7 @@ export const FOOTER_LINKS = {
     { href: '/membership', label: 'Keanggotaan' },
   ],
   company: [
-    { href: '/tentang', label: 'Tentang KKMNBMP' },
+    { href: '/tentang', label: 'Tentang KMNBMPI' },
     { href: '/struktur-organisasi', label: 'Struktur Organisasi' },
     { href: '/visi-misi', label: 'Visi & Misi' },
     { href: '/faq', label: 'FAQ' },
@@ -104,7 +106,7 @@ export const FOOTER_LINKS = {
   legal: [
     { href: '/anggaran-dasar', label: 'Anggaran Dasar (AD)' },
     { href: '/anggaran-rumah-tangga', label: 'Anggaran Rumah Tangga (ART)' },
-    { href: '/kode-etik', label: 'Kode Etik KKMNMP' },
+    { href: '/kode-etik', label: 'Kode Etik KMNBMPI' },
     { href: '/kebijakan-privasi', label: 'Kebijakan Privasi' },
     { href: '/syarat-ketentuan', label: 'Syarat & Ketentuan' },
     { href: '/disclaimer', label: 'Disclaimer' },

@@ -34,7 +34,7 @@ export function HowItWorks() {
     {
       number: '01',
       title: 'Daftar Online',
-      description: 'Daftar sebagai anggota melalui portal KNMP. Pilih KPA dan tier yang sesuai. Proses cepat dan transparan.',
+      description: 'Daftar sebagai anggota melalui portal KMN BERDIKARI. Pilih KPA dan tier yang sesuai. Proses cepat dan transparan.',
       icon: Users,
       color: '#8B0000',
       bgColor: 'from-red-50 to-red-100',
@@ -104,7 +104,7 @@ export function HowItWorks() {
             variants={fadeInUp}
             className="text-gray-500 text-lg max-w-2xl mx-auto"
           >
-            Lima langkah sederhana untuk menjadi bagian dari ekosistem KNMP
+            Lima langkah sederhana untuk menjadi bagian dari ekosistem KMN BERDIKARI
           </motion.p>
         </motion.div>
 

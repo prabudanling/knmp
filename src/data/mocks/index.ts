@@ -1,5 +1,5 @@
 // ============================================
-// KOPNUSA Mock Data
+// KMN BERDIKARI Mock Data
 // ============================================
 
 import type { 
@@ -110,7 +110,7 @@ export const TIER_DATA: TierInfo[] = [
     name: 'Koperasi/BUMDes',
     price: 2500000,
     description: 'Hak upload produk ke Marketplace Zonasi, akses unit usaha',
-    benefits: ['Semua T2', 'Hak Upload Produk Marketplace', 'Akses Modul Agregasi', 'HAK USAHA OPERASIONAL via KNMP', 'Undangan Koperasi Digital Nasional'],
+    benefits: ['Semua T2', 'Hak Upload Produk Marketplace', 'Akses Modul Agregasi', 'HAK USAHA OPERASIONAL via KMN BERDIKARI', 'Undangan Koperasi Digital Nasional'],
     hasOperationalRights: true,
   },
   {
@@ -506,7 +506,7 @@ export const KOORDINATOR_BIDANG = [
 export const KOORDINATOR_KAWASAN = [
   { no: 1, kawasan: 'JAWA (Bakorwil Jawa)', panglima: '(Kosong - Prioritas Utama)', cakupan: 'DKI Jakarta, Jawa Barat, Jawa Tengah, Jawa Timur, DI Yogyakarta, Banten (6 Provinsi)', catatan: 'Pusat Populasi & Ekonomi NKRI Prioritas Rekrutmen' },
   { no: 2, kawasan: 'SUMATERA (Bakorwil Sumatera)', panglima: 'Erick Hariadi (Jaringan KADIN)', cakupan: 'Aceh, Sumatera Utara, Sumatera Barat, Riau, Kepri, Jambi, Bengkulu, Sumatera Selatan, Babel, Lampung (10 Provinsi)', catatan: 'Komoditas: Sawit, Karet, Kopi, Lada, Batubara Gateway Ekspor ASEAN' },
-  { no: 3, kawasan: 'KALIMANTAN (Bakorwil Kalimantan)', panglima: 'Andi Darmadji, S.E. (Pendiri ke-9 KNMP)', cakupan: 'Kalimantan Barat, Kalimantan Tengah, Kalimantan Selatan, Kalimantan Timur, Kalimantan Utara (5 Provinsi)', catatan: 'IKN Nusantara - Episentrum Baru Komoditas: Sawit, Batubara, Rotan' },
+  { no: 3, kawasan: 'KALIMANTAN (Bakorwil Kalimantan)', panglima: 'Andi Darmadji, S.E. (Pendiri ke-9 KMN BERDIKARI)', cakupan: 'Kalimantan Barat, Kalimantan Tengah, Kalimantan Selatan, Kalimantan Timur, Kalimantan Utara (5 Provinsi)', catatan: 'IKN Nusantara - Episentrum Baru Komoditas: Sawit, Batubara, Rotan' },
   { no: 4, kawasan: 'SULAWESI & MALUKU (Bakorwil Sulawesi-Maluku)', panglima: 'Imam Fauzan (Koordinator Sulawesi)', cakupan: 'Sulawesi Utara, Sulawesi Tengah, Sulawesi Selatan, Sulawesi Tenggara, Gorontalo, Sulawesi Barat, Maluku, Maluku Utara (8 Provinsi)', catatan: 'Komoditas: Nikel, Kakao, Cengkeh, Rempah, Perikanan Laut Dalam Ekonomi Biru' },
   { no: 5, kawasan: 'PAPUA & WILAYAH TIMUR (Bakorwil Papua & NTT)', panglima: '(Kosong - Prioritas Strategis)', cakupan: 'Papua, Papua Barat, Papua Selatan, Papua Tengah, Papua Pegunungan, Papua Barat Daya, Nusa Tenggara Timur (7 Provinsi)', catatan: 'Kawasan Perbatasan & Sumber Daya Prioritas Program Keadilan Ekonomi' },
 ];
@@ -522,12 +522,12 @@ export const SAMPLE_PRODUCTS: Product[] = [
   { id: 'prod4', name: 'Madu Hutan Kalimantan 350ml', description: 'Madu hutan asli dari pedalaman Kalimantan', price: 125000, category: 'AGRI', sellerId: 's4', sellerName: 'Kelompok Pemanen Madu', village: 'Kutai', province: 'Kalimantan Timur', images: ['/images/products/madu-kalimantan.jpg'], certification: ['Halal', 'BPOM'], stock: 200, rating: 4.7, sold: 560 },
   { id: 'prod5', name: 'Keripik Singkong Pedas', description: 'Keripik singkong renyah dengan bumbu pedas khas', price: 25000, category: 'RETAIL_UMKM', sellerId: 's5', sellerName: 'KUBE Maju Bersama', village: 'Ciamis', province: 'Jawa Barat', images: ['/images/products/keripik-singkong.jpg'], certification: ['Halal', 'PIRT'], stock: 500, rating: 4.6, sold: 2100 },
   { id: 'prod6', name: 'Jasa Pembuatan Website UMKM', description: 'Pembuatan website profesional untuk UMKM dengan SEO', price: 2500000, category: 'DIGITAL', sellerId: 's6', sellerName: 'Digital Creative Hub', village: 'Bandung', province: 'Jawa Barat', images: ['/images/products/web-design.jpg'], certification: [], stock: 99, rating: 4.8, sold: 45 },
-  { id: 'prod7', name: 'Paket Umroh Hemat 9 Hari', description: 'Paket umroh all in 9 hari dengan hotel bintang 3', price: 28500000, category: 'SPIRITUAL', sellerId: 's7', sellerName: 'KNMP Travel', village: 'Jakarta', province: 'DKI Jakarta', images: ['/images/products/umroh.jpg'], certification: ['Halal'], stock: 50, rating: 4.9, sold: 120 },
+  { id: 'prod7', name: 'Paket Umroh Hemat 9 Hari', description: 'Paket umroh all in 9 hari dengan hotel bintang 3', price: 28500000, category: 'SPIRITUAL', sellerId: 's7', sellerName: 'KMN BERDIKARI Travel', village: 'Jakarta', province: 'DKI Jakarta', images: ['/images/products/umroh.jpg'], certification: ['Halal'], stock: 50, rating: 4.9, sold: 120 },
   { id: 'prod8', name: 'Jamu Kunir Asem Original', description: 'Jamu tradisional kunir asem tanpa pengawet', price: 15000, category: 'HEALTH', sellerId: 's8', sellerName: 'Jamu Ibu Kartini', village: 'Solo', province: 'Jawa Tengah', images: ['/images/products/jamu.jpg'], certification: ['Halal', 'BPOM'], stock: 300, rating: 4.7, sold: 3400 },
   { id: 'prod9', name: 'Cocoa Beans Fermented Grade A', description: 'Biji kakao fermentasi grade A untuk ekspor', price: 85000, category: 'EXPORT', sellerId: 's9', sellerName: 'Koperasi Kakao Sulawesi', village: 'Luwu', province: 'Sulawesi Selatan', images: ['/images/products/cocoa.jpg'], certification: ['Organik', 'Fair Trade', 'Ekspor Ready'], stock: 2000, rating: 4.9, sold: 850 },
   { id: 'prod10', name: 'Solar Panel Kit 1000Wp', description: 'Paket solar panel lengkap untuk rumah tangga', price: 12500000, category: 'ENERGY', sellerId: 's10', sellerName: 'Energi Terbarunan Nusantara', village: 'Surabaya', province: 'Jawa Timur', images: ['/images/products/solar.jpg'], certification: ['SNI'], stock: 25, rating: 4.8, sold: 78 },
   { id: 'prod11', name: 'Vanilla Planifolia Grade A', description: 'Vanilla bourbon premium untuk ekspor', price: 450000, category: 'EXPORT', sellerId: 's11', sellerName: 'Vanilla Papua Cooperative', village: 'Jayapura', province: 'Papua', images: ['/images/products/vanilla.jpg'], certification: ['Organik', 'Ekspor Ready'], stock: 100, rating: 5.0, sold: 200 },
-  { id: 'prod12', name: 'Layanan Cargo Maluku-Java', description: 'Layanan cargo kapal dari Maluku ke Jawa', price: 2500000, category: 'LOGISTICS', sellerId: 's12', sellerName: 'Logistik KNMP Ambon', village: 'Ambon', province: 'Maluku', images: ['/images/products/cargo.jpg'], certification: [], stock: 99, rating: 4.6, sold: 350 },
+  { id: 'prod12', name: 'Layanan Cargo Maluku-Java', description: 'Layanan cargo kapal dari Maluku ke Jawa', price: 2500000, category: 'LOGISTICS', sellerId: 's12', sellerName: 'Logistik KMN BERDIKARI Ambon', village: 'Ambon', province: 'Maluku', images: ['/images/products/cargo.jpg'], certification: [], stock: 99, rating: 4.6, sold: 350 },
 ];
 
 // =====================
@@ -545,7 +545,7 @@ export const SAMPLE_AGENTS: LogisticsAgent[] = [
 // =====================
 
 export const TIMELINE_ACTIVITIES: Activity[] = [
-  { id: 'act1', type: 'MEMBERSHIP', title: 'KNMP Didirikan', description: 'Akta notaris KNMP disahkan', timestamp: '2026-01-15T00:00:00Z' },
+  { id: 'act1', type: 'MEMBERSHIP', title: 'KMN BERDIKARI Didirikan', description: 'Akta notaris KMN BERDIKARI disahkan', timestamp: '2026-01-15T00:00:00Z' },
   { id: 'act2', type: 'TRANSACTION', title: 'Transaksi Pertama', description: 'Transaksi marketplace pertama berhasil', amount: 500000, timestamp: '2026-02-01T00:00:00Z' },
   { id: 'act3', type: 'TRAINING', title: 'Pelatihan Perdana', description: 'Batch pertama NB Academy diluncurkan', timestamp: '2026-02-15T00:00:00Z' },
   { id: 'act4', type: 'COMMISSION', title: 'Komisi Logistik Pertama', description: 'Agen logistik pertama menerima komisi', amount: 500000, timestamp: '2026-03-01T00:00:00Z' },
@@ -557,7 +557,7 @@ export const TIMELINE_ACTIVITIES: Activity[] = [
 // =====================
 
 export const ROADMAP_DATA = [
-  { year: '2026', title: 'Fondasi & Launch', description: 'Pendirian KNMP, platform MVP, 1.000 desa pilot', status: 'COMPLETED' as const },
+  { year: '2026', title: 'Fondasi & Launch', description: 'Pendirian KMN BERDIKARI, platform MVP, 1.000 desa pilot', status: 'COMPLETED' as const },
   { year: '2027', title: 'Scale-Up Nasional', description: '10.000 desa terintegrasi, 500.000 anggota', status: 'IN_PROGRESS' as const },
   { year: '2028', title: 'Ekspor Global', description: '25.000 desa, ekspor 10 negara, ICA membership', status: 'UPCOMING' as const },
   { year: '2030', title: 'Koperasi Digital Terbesar', description: '50.000 desa, 5 juta anggota, Rp1T revenue', status: 'UPCOMING' as const },
@@ -584,8 +584,8 @@ export const ORIGIN_TIMELINE = [
   },
   {
     year: '2026',
-    title: 'NB & KNMP',
-    description: 'Pembentukan dual entity: NB (NusaBerdikari) sebagai asosiasi strategis dan KNMP sebagai koperasi operasional',
+    title: 'NB & KMN BERDIKARI',
+    description: 'Pembentukan dual entity: NB (NusaBerdikari) sebagai asosiasi strategis dan KMN BERDIKARI sebagai koperasi operasional',
     icon: 'Building2',
   },
 ];
@@ -669,8 +669,8 @@ export const DUAL_ENTITY = {
     color: '#008F3D',
   },
   knmp: {
-    name: 'KNMP',
-    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih',
+    name: 'KMN BERDIKARI',
+    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia',
     type: 'Koperasi',
     role: 'Operational Heart',
     description: 'Pengelola operasional, aset anggota, dan distribusi manfaat ekonomi',
@@ -685,7 +685,7 @@ export const DUAL_ENTITY = {
   },
   saf: {
     name: 'Strategic Alliance Framework',
-    description: 'Kerangka kerja strategis yang mengatur hubungan sinergis antara NB (NusaBerdikari) dan KNMP',
+    description: 'Kerangka kerja strategis yang mengatur hubungan sinergis antara NB (NusaBerdikari) dan KMN BERDIKARI',
     principles: [
       'Pisah hukum, satu visi',
       'Masing-masing entitas mandiri secara legal',
@@ -696,7 +696,7 @@ export const DUAL_ENTITY = {
   },
   jsc: {
     name: 'Joint Strategic Committee',
-    description: 'Komite strategis gabungan yang memastikan alignment antara NB (NusaBerdikari) dan KNMP',
+    description: 'Komite strategis gabungan yang memastikan alignment antara NB (NusaBerdikari) dan KMN BERDIKARI',
     members: 12,
     meetingFrequency: 'Triwulan',
   },
@@ -708,7 +708,7 @@ export const DUAL_ENTITY = {
 
 export const VISION_2045 = {
   title: 'Visi Indonesia 2045',
-  subtitle: 'KNMP sebagai Penggerak Ekonomi Kerakyatan Indonesia Emas',
+  subtitle: 'KMN BERDIKARI sebagai Penggerak Ekonomi Kerakyatan Indonesia Emas',
   targets: [
     { label: 'Desa Terintegrasi', value: 83763, suffix: '', icon: 'MapPin' },
     { label: 'Anggota Aktif', value: 10, suffix: ' Juta', icon: 'Users' },
@@ -729,7 +729,7 @@ export const VISION_2045 = {
     members: 80000,
     revenue: '€20 Miliar',
     workers: 81000,
-    description: 'Koperasi terbesar di dunia yang menjadi inspirasi KNMP',
+    description: 'Koperasi terbesar di dunia yang menjadi inspirasi KMN BERDIKARI',
   },
 };
 
@@ -742,7 +742,7 @@ export const TEAM_STRUCTURE = {
     { id: 'p1', name: 'Dr. N. Rusmiati, M.Si., M.H.', position: 'Presiden / Ketua Umum', photo: '/images/people/ketua.svg', termStart: '2029', termEnd: '2032', bio: 'Ketua Umum DPP ASITA 2019–2029, CEO & Owner PT Patih Indo Group' },
     { id: 'p2', name: 'Prof. Wirono, S.E., M.Pd.', position: 'Wakil Ketua Umum', photo: '/images/people/waketum.svg', termStart: '2029', termEnd: '2032', bio: 'Mantan Marketing AJB Bumi Putera (1995–1999), Mantan Caleg DPRD DKI Jakarta' },
     { id: 'p3', name: 'Drs. H. Arif Rachman Hakim, M.M.', position: 'Sekretaris Jenderal / CEO NB', photo: '/images/people/sekjen.svg', termStart: '2029', termEnd: '2032', bio: 'Inisiator Architect Koperasi Nusa Berdikari Merah Putih, President Director Top Umroh' },
-    { id: 'p4', name: 'H. Gugun Gunara, S.E.', position: 'Wakil Sekretaris Jenderal / Grand Architect & COO', photo: '/images/people/wasekjen.svg', termStart: '2029', termEnd: '2032', bio: 'Senior Konsultan Bisnis 16+ tahun, Grand Architect & COO KOPNUSA' },
+    { id: 'p4', name: 'H. Gugun Gunara, S.E.', position: 'Wakil Sekretaris Jenderal / Grand Architect & COO', photo: '/images/people/wasekjen.svg', termStart: '2029', termEnd: '2032', bio: 'Senior Konsultan Bisnis 16+ tahun, Grand Architect & COO KMN BERDIKARI' },
   ],
   pengawas: [
     { id: 'pw1', name: 'Prof. Dr. Elan Masbulan', position: 'Ketua Dewan Pengawas', photo: '/images/people/pengawas1.svg', termStart: '2029', termEnd: '2032', bio: 'Akademisi/Peneliti bidang pertanian di lingkungan UGM' },
@@ -784,7 +784,7 @@ export const PARTNER_LOGOS = [
 // =====================
 
 export const KDMP_ALIGNMENT = {
-  description: 'KNMP selaras dengan program Koperasi Desa Merah Putih (KDMP) pemerintah untuk mempercepat integrasi desa digital di seluruh Indonesia',
+  description: 'KMN BERDIKARI selaras dengan program Koperasi Desa Merah Putih (KDMP) pemerintah untuk mempercepat integrasi desa digital di seluruh Indonesia',
   points: [
     'Sinergi dengan 83.763 desa dalam program KDMP',
     'Integrasi sistem dengan BUMDes dan koperasi desa',
@@ -795,7 +795,7 @@ export const KDMP_ALIGNMENT = {
 };
 
 // =====================
-// Struktur Pimpinan KNMP
+// Struktur Pimpinan KMN BERDIKARI
 // =====================
 
 export const PIMPINAN_LEVELS = [
@@ -804,7 +804,7 @@ export const PIMPINAN_LEVELS = [
     name: 'Koordinator Nasional',
     shortName: 'Kornas',
     title: 'Presiden',
-    description: 'Pimpinan tertinggi KNMP yang bertanggung jawab atas strategi nasional dan koordinasi seluruh wilayah Indonesia',
+    description: 'Pimpinan tertinggi KMN BERDIKARI yang bertanggung jawab atas strategi nasional dan koordinasi seluruh wilayah Indonesia',
     icon: 'Crown',
     color: '#8B0000',
     href: '/pimpinan/kornas',
@@ -812,7 +812,7 @@ export const PIMPINAN_LEVELS = [
     responsibilities: [
       'Menetapkan kebijakan strategis nasional',
       'Mengkoordinasikan seluruh Panglima Wilayah',
-      'Mewakili KNMP dalam forum nasional dan internasional',
+      'Mewakili KMN BERDIKARI dalam forum nasional dan internasional',
       'Mengesahkan keputusan Rapat Anggota Tahunan',
       'Memimpin Dewan Pimpinan Nasional',
     ],
@@ -827,7 +827,7 @@ export const PIMPINAN_LEVELS = [
     name: 'Koordinator Wilayah',
     shortName: 'Korwil',
     title: 'Panglima Wilayah',
-    description: 'Pimpinan tingkat provinsi yang mengkoordinasikan seluruh aktivitas KNMP di wilayahnya',
+    description: 'Pimpinan tingkat provinsi yang mengkoordinasikan seluruh aktivitas KMN BERDIKARI di wilayahnya',
     icon: 'Map',
     color: '#008F3D',
     href: '/pimpinan/korwil',
@@ -850,7 +850,7 @@ export const PIMPINAN_LEVELS = [
     name: 'Koordinator Daerah',
     shortName: 'Korda',
     title: 'Panglima Distrik',
-    description: 'Pimpinan tingkat kabupaten/kota yang mengelola operasional KNMP di daerahnya',
+    description: 'Pimpinan tingkat kabupaten/kota yang mengelola operasional KMN BERDIKARI di daerahnya',
     icon: 'Building',
     color: '#3b82f6',
     href: '/pimpinan/korda',
@@ -873,7 +873,7 @@ export const PIMPINAN_LEVELS = [
     name: 'Koordinator Kecamatan',
     shortName: 'Korcam',
     title: 'Panglima Sektor',
-    description: 'Pimpinan tingkat kecamatan yang mengkoordinasikan aktivitas KNMP di kecamatannya',
+    description: 'Pimpinan tingkat kecamatan yang mengkoordinasikan aktivitas KMN BERDIKARI di kecamatannya',
     icon: 'MapPin',
     color: '#f59e0b',
     href: '/pimpinan/korcam',
@@ -896,7 +896,7 @@ export const PIMPINAN_LEVELS = [
     name: 'Koordinator Desa/Kelurahan',
     shortName: 'Kordes',
     title: 'Komandan Lapangan',
-    description: 'Pimpinan tingkat desa/kelurahan yang mengelola operasional harian KNMP di desanya',
+    description: 'Pimpinan tingkat desa/kelurahan yang mengelola operasional harian KMN BERDIKARI di desanya',
     icon: 'Home',
     color: '#8b5cf6',
     href: '/pimpinan/kordes',
@@ -906,7 +906,7 @@ export const PIMPINAN_LEVELS = [
       'Mengkoordinasikan produksi dan distribusi komoditas',
       'Mengelola agen logistik desa',
       'Membina kelompok tani dan UMKM lokal',
-      'Menghubungkan desa dengan marketplace KNMP',
+      'Menghubungkan desa dengan marketplace KMN BERDIKARI',
     ],
     stats: [
       { label: 'Desa/Kel', value: 83763, suffix: '' },
@@ -945,7 +945,7 @@ export const KORNAS_STRUCTURE = {
   totalPositions: 1,
   filledPositions: 1,
   structure: [
-    // Dewan Pendiri (17 Anggota) - Urutan Sesuai KOPNUSA BERDIKARI 2029
+    // Dewan Pendiri (17 Anggota) - Urutan Sesuai KMN BERDIKARI 2029
     {
       category: 'Dewan Pendiri',
       positions: [
@@ -1185,7 +1185,7 @@ export const KORDES_STRUCTURE = {
     { position: 'Sekretaris Desa', total: 83763, filled: 0 },
     { position: 'Bendahara Desa', total: 83763, filled: 0 },
     { position: 'Koordinator RT/RW', total: 83763, filled: 0 },
-    { position: 'Agen Logistik KNMP', total: 83763, filled: 45230 },
+    { position: 'Agen Logistik KMN BERDIKARI', total: 83763, filled: 45230 },
     { position: 'Kader Pemberdayaan', total: 83763, filled: 0 },
   ]
 };
@@ -1200,7 +1200,7 @@ export const DEWAN_PENDIRI_LENGKAP = [
   { id: 'pendiri-4', name: 'Prof. Dr. Elan Masbulan', position: 'Pendiri ke-4 — Ketua Dewan Pengawas', role: 'Akademisi/Peneliti bidang pertanian di lingkungan UGM', status: 'filled' as const },
   { id: 'pendiri-5', name: 'Prof. Dr. H. Anwar Sanusi, S.H., S.Pel., M.M.', position: 'Pendiri ke-5 — Ketua Dewan Penasehat', role: 'Mantan Sekretaris Jenderal Kementerian Ketenagakerjaan RI, Guru Besar Universitas Brawijaya', status: 'filled' as const },
   { id: 'pendiri-6', name: 'Prof. Dr. Teddy Mantoro, M.Sc., Ph.D., SMIEEE', position: 'Pendiri ke-6 — Ketua Dewan Pakar', role: 'Director School of Computer Science, Nusa Putra University, Senior Member IEEE', status: 'filled' as const },
-  { id: 'pendiri-7', name: 'H. Gugun Gunara, S.E.', position: 'Pendiri ke-7 — Wakil Sekretaris Jenderal / Grand Architect & COO', role: 'Senior Konsultan Bisnis 16+ tahun, Grand Architect & COO KOPNUSA', status: 'filled' as const },
+  { id: 'pendiri-7', name: 'H. Gugun Gunara, S.E.', position: 'Pendiri ke-7 — Wakil Sekretaris Jenderal / Grand Architect & COO', role: 'Senior Konsultan Bisnis 16+ tahun, Grand Architect & COO KMN BERDIKARI', status: 'filled' as const },
   { id: 'pendiri-8', name: 'Komjen. Pol. (Purn.) Dharma Pongrekun', position: 'Pendiri ke-8 — Ketua Bidang Keamanan Siber', role: 'Mantan Wakil Kepala BSSN 2019–2021, Purnawirawan Polisi bintang 3', status: 'filled' as const },
   { id: 'pendiri-9', name: 'Mayor Art. (Purn.) Cecep Sumarno, S.I.P., S.H.', position: 'Pendiri ke-9 — Ketua Bidang Hukum dan Advokasi', role: 'Pengacara aktif, pengawasan pemilu (Bawaslu Lebak)', status: 'filled' as const },
   { id: 'pendiri-10', name: 'Dr. Habib', position: 'Pendiri ke-10 — Anggota Dewan Pengawas', role: 'Pakar di bidang ketahanan pangan, Ketua Umum Asosiasi Pertanian', status: 'filled' as const },

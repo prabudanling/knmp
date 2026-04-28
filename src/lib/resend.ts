@@ -1,5 +1,5 @@
 // ============================================
-// KMNMP - Email Service via Resend
+// KMNBMPI - Email Service via Resend
 // ============================================
 
 import { Resend } from 'resend';
@@ -30,7 +30,7 @@ export function generatePendaftaranDiterimaEmail(params: {
   }).format(harga);
 
   return {
-    subject: `Pendaftaran KMNMP Diterima - ${noRegistrasi}`,
+    subject: `Pendaftaran KMNBMPI Diterima - ${noRegistrasi}`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -44,7 +44,7 @@ export function generatePendaftaranDiterimaEmail(params: {
           </div>
           <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
             <p>Yth. <strong>${namaLengkap}</strong>,</p>
-            <p>Selamat! Pendaftaran Anda sebagai anggota <strong>Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</strong> telah diterima.</p>
+            <p>Selamat! Pendaftaran Anda sebagai anggota <strong>Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</strong> telah diterima.</p>
             
             <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #008F3D;">
               <h3 style="margin-top: 0; color: #8B0000;">Detail Pendaftaran</h3>
@@ -79,7 +79,7 @@ export function generatePendaftaranDiterimaEmail(params: {
             </p>
           </div>
           <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
-            <p>© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</p>
+            <p>© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</p>
             <p>Email: info@kopnusa.id | WA: +62 812-3456-7890</p>
           </div>
         </body>
@@ -88,7 +88,7 @@ export function generatePendaftaranDiterimaEmail(params: {
     text: `
 Yth. ${namaLengkap},
 
-Selamat! Pendaftaran Anda sebagai anggota Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP) telah diterima.
+Selamat! Pendaftaran Anda sebagai anggota Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI) telah diterima.
 
 Detail Pendaftaran:
 - No. Registrasi: ${noRegistrasi}
@@ -99,7 +99,7 @@ Silakan lakukan pembayaran untuk menyelesaikan proses pendaftaran Anda.
 
 Link Pembayaran: ${FRONTEND_URL}/pendaftaran/payment/${noRegistrasi}
 
-© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)
+© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)
     `.trim(),
   };
 }
@@ -122,7 +122,7 @@ export function generatePembayaranBerhasilEmail(params: {
   }).format(amount);
 
   return {
-    subject: `Pembayaran KMNMP Berhasil - ${noRegistrasi}`,
+    subject: `Pembayaran KMNBMPI Berhasil - ${noRegistrasi}`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -163,7 +163,7 @@ export function generatePembayaranBerhasilEmail(params: {
             <p>Tim admin kami sedang memproses keanggotaan Anda. NIAK (Nomor Induk Anggota Koperasi) akan dikirimkan melalui email setelah proses verifikasi selesai.</p>
           </div>
           <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
-            <p>© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</p>
+            <p>© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</p>
           </div>
         </body>
       </html>
@@ -181,7 +181,7 @@ Detail Pembayaran:
 
 Tim admin kami sedang memproses keanggotaan Anda. NIAK akan dikirimkan melalui email setelah proses verifikasi selesai.
 
-© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)
+© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)
     `.trim(),
   };
 }
@@ -198,7 +198,7 @@ export function generateApproveEmail(params: {
   const niakFormatted = `${niak.slice(0, 4)} ${niak.slice(4, 6)} ${niak.slice(6, 8)} ${niak.slice(8, 10)} ${niak.slice(10, 15)} ${niak[15]}`;
 
   return {
-    subject: `🎉 Selamat! Anda Resmi Anggota KMNMP - NIAK: ${niakFormatted}`,
+    subject: `🎉 Selamat! Anda Resmi Anggota KMNBMPI - NIAK: ${niakFormatted}`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -209,11 +209,11 @@ export function generateApproveEmail(params: {
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #8B0000 0%, #008F3D 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
             <h1 style="color: white; margin: 0;">🎊 Selamat!</h1>
-            <p style="color: white; margin: 10px 0 0 0;">Anda Resmi Menjadi Anggota KMNMP</p>
+            <p style="color: white; margin: 10px 0 0 0;">Anda Resmi Menjadi Anggota KMNBMPI</p>
           </div>
           <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
             <p>Yth. <strong>${namaLengkap}</strong>,</p>
-            <p>Selamat! Anda telah resmi menjadi anggota <strong>Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</strong>.</p>
+            <p>Selamat! Anda telah resmi menjadi anggota <strong>Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</strong>.</p>
             
             <div style="background: white; padding: 30px; border-radius: 8px; margin: 20px 0; text-align: center; border: 2px solid #008F3D;">
               <p style="margin: 0; color: #666; font-size: 12px;">Nomor Induk Anggota Koperasi</p>
@@ -224,7 +224,7 @@ export function generateApproveEmail(params: {
             <p><strong>NIAK</strong> adalah nomor identitas unik Anda sebagai anggota koperasi. Simpan nomor ini baik-baik untuk:</p>
             <ul>
               <li>Login ke dashboard anggota</li>
-              <li>Transaksi di marketplace KMNMP</li>
+              <li>Transaksi di marketplace KMNBMPI</li>
               <li>Mengikuti RAT (Rapat Anggota Tahunan)</li>
               <li>Mendapatkan layanan koperasi lainnya</li>
             </ul>
@@ -237,7 +237,7 @@ export function generateApproveEmail(params: {
             </div>
           </div>
           <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
-            <p>© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</p>
+            <p>© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</p>
           </div>
         </body>
       </html>
@@ -245,20 +245,20 @@ export function generateApproveEmail(params: {
     text: `
 Yth. ${namaLengkap},
 
-Selamat! Anda telah resmi menjadi anggota Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP).
+Selamat! Anda telah resmi menjadi anggota Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI).
 
 NOMOR INDUK ANGGOTA KOPERASI (NIAK): ${niakFormatted}
 Tier Keanggotaan: ${tierNama}
 
 NIAK adalah nomor identitas unik Anda sebagai anggota koperasi. Simpan nomor ini baik-baik untuk:
 - Login ke dashboard anggota
-- Transaksi di marketplace KMNMP
+- Transaksi di marketplace KMNBMPI
 - Mengikuti RAT (Rapat Anggota Tahunan)
 - Mendapatkan layanan koperasi lainnya
 
 Login ke Dashboard: ${FRONTEND_URL}/login
 
-© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)
+© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)
     `.trim(),
   };
 }
@@ -274,7 +274,7 @@ export function generateRejectEmail(params: {
   const { namaLengkap, noRegistrasi, alasan } = params;
 
   return {
-    subject: `Pendaftaran KMNMP Ditolak - ${noRegistrasi}`,
+    subject: `Pendaftaran KMNBMPI Ditolak - ${noRegistrasi}`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -288,7 +288,7 @@ export function generateRejectEmail(params: {
           </div>
           <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
             <p>Yth. <strong>${namaLengkap}</strong>,</p>
-            <p>Mohon maaf, pendaftaran Anda sebagai anggota Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP) tidak dapat disetujui.</p>
+            <p>Mohon maaf, pendaftaran Anda sebagai anggota Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI) tidak dapat disetujui.</p>
             
             <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #8B0000;">
               <h3 style="margin-top: 0; color: #8B0000;">Alasan Penolakan</h3>
@@ -307,7 +307,7 @@ export function generateRejectEmail(params: {
             </div>
           </div>
           <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
-            <p>© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)</p>
+            <p>© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)</p>
             <p>Email: info@kopnusa.id | WA: +62 812-3456-7890</p>
           </div>
         </body>
@@ -316,7 +316,7 @@ export function generateRejectEmail(params: {
     text: `
 Yth. ${namaLengkap},
 
-Mohon maaf, pendaftaran Anda sebagai anggota Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP) tidak dapat disetujui.
+Mohon maaf, pendaftaran Anda sebagai anggota Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI) tidak dapat disetujui.
 
 No. Registrasi: ${noRegistrasi}
 
@@ -327,7 +327,7 @@ Catatan: Anda dapat mendaftar kembali setelah memperbaiki data sesuai alasan pen
 
 Link Pendaftaran: ${FRONTEND_URL}/pendaftaran
 
-© 2026 Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih (KMNMP)
+© 2026 Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia (KMNBMPI)
     `.trim(),
   };
 }

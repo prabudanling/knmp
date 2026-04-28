@@ -1,5 +1,5 @@
 // ============================================
-// KMNMP - Midtrans Snap Integration
+// KMNBMPI - Midtrans Snap Integration
 // ============================================
 
 import snap from 'midtrans-client';
@@ -28,7 +28,7 @@ export const midtransConfig = {
 export function generateOrderId(): string {
   const timestamp = Date.now().toString(36).toUpperCase();
   const random = Math.random().toString(36).substring(2, 7).toUpperCase();
-  return `KMNMP-ORD-${timestamp}${random}`;
+  return `KMNBMPI-ORD-${timestamp}${random}`;
 }
 
 /**
@@ -68,13 +68,13 @@ export async function createSnapTransaction(params: SnapTransactionParams): Prom
       },
       item_details: [
         {
-          id: 'KEANGOTAAN-KMNMP',
+          id: 'KEANGOTAAN-KMNBMPI',
           price: amount,
           quantity: 1,
-          name: itemName || `Pendaftaran Anggota KMNMP - ${orderId}`,
-          brand: 'KMNMP',
+          name: itemName || `Pendaftaran Anggota KMNBMPI - ${orderId}`,
+          brand: 'KMNBMPI',
           category: 'Keanggotaan',
-          merchant_name: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih',
+          merchant_name: 'Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia',
         },
       ],
       callbacks: {

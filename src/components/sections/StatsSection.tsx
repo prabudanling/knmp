@@ -702,7 +702,7 @@ export function StatsSection() {
             variants={headerVariants}
             className="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed"
           >
-            Kinerja KKMNBMP dalam angka —{' '}
+            Kinerja KMNBMPI dalam angka —{' '}
             <span className="font-semibold text-[#8B0000]">
               Skala Nasional, Dampak Desa
             </span>
@@ -735,7 +735,7 @@ export function StatsSection() {
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 1.5 }}
             >
-              ✦ Spektrum Statistik KKMNBMP ✦
+              ✦ Spektrum Statistik KMNBMPI ✦
             </motion.p>
           </div>
 

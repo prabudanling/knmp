@@ -148,7 +148,7 @@ export function Footer() {
               </h3>
               <p className="text-gray-400 max-w-md">
                 Bergabung dengan 125.000+ anggota yang mendapatkan informasi terkini tentang program, 
-                peluang usaha, dan kegiatan KNMP.
+                peluang usaha, dan kegiatan KMN BERDIKARI.
               </p>
               
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
@@ -224,10 +224,10 @@ export function Footer() {
                   className="h-12 md:h-14 w-auto rounded-xl overflow-hidden bg-white p-1"
                 >
                   <Image
-                    src="/logo-knmp-v2.png"
-                    alt="KNMP Logo"
-                    width={1408}
-                    height={768}
+                    src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
+                    alt="KMN BERDIKARI Logo"
+                    width={2016}
+                    height={2112}
                     className="h-full w-auto object-contain"
                   />
                 </motion.div>

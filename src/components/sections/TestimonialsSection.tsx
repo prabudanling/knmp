@@ -27,19 +27,19 @@ export function TestimonialsSection() {
     {
       name: 'Budi Santoso',
       role: 'Petani Kopi, Aceh',
-      content: 'Sejak bergabung KNMP, hasil kopi saya bisa sampai ke pasar ekspor. Pendapatan naik 3x lipat dalam setahun!',
+      content: 'Sejak bergabung KMN BERDIKARI, hasil kopi saya bisa sampai ke pasar ekspor. Pendapatan naik 3x lipat dalam setahun!',
       rating: 5,
     },
     {
       name: 'Sri Wahyuni',
       role: 'BUMDes Ketua, Jawa Barat',
-      content: 'Integrasi dengan KNMP membuat BUMDes kami punya akses ke marketplace nasional. Transparansi SHU juga sangat membantu kepercayaan warga.',
+      content: 'Integrasi dengan KMN BERDIKARI membuat BUMDes kami punya akses ke marketplace nasional. Transparansi SHU juga sangat membantu kepercayaan warga.',
       rating: 5,
     },
     {
       name: 'Ahmad Rizki',
       role: 'Agen Logistik, Sumatera Utara',
-      content: 'Jadi agen logistik KNMP bikin punya penghasilan tambahan yang stabil. Training-nya juga gratis dan sangat bermanfaat.',
+      content: 'Jadi agen logistik KMN BERDIKARI bikin punya penghasilan tambahan yang stabil. Training-nya juga gratis dan sangat bermanfaat.',
       rating: 5,
     },
   ]

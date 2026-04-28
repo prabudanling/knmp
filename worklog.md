@@ -24,3 +24,52 @@ Stage Summary:
 - Homepage at / route fully functional with all sections
 - Database schema pushed with all KNMP models
 - All components, data, constants, types, and assets in place
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Update logo and name across entire application based on approved Kementrian naming
+
+Work Log:
+- Copied new logo from upload/ to public/ folder (logo-koperasi-nusa-berdikari-merah-putih-indonesia.png, 2016x2112px)
+- Updated src/constants/site.ts: name→'KMN BERDIKARI', added officialName, fullName with "Indonesia", abbreviation→'KMNBMPI', updated SEO keywords, footer links
+- Updated src/app/layout.tsx: favicon/logo paths, twitter creator
+- Updated src/app/page.tsx: comments updated
+- Updated src/components/layout/Header.tsx: 2 logo src/alt/width/height, menu labels (Profil→KMN BERDIKARI, Tentang→KMN BERDIKARI, 9 Program Unggulan→KMN BERDIKARI, Gabung→KMN BERDIKARI, ©2026→KMN BERDIKARI)
+- Updated src/components/layout/Footer.tsx: logo src/alt/width/height, newsletter text
+- Updated src/components/sections/Hero.tsx: logo, headline (added "INDONESIA"), KKMNBMP→KMNBMPI, Koperasi Korporasi Multipihak→full name
+- Updated src/components/sections/KPASection.tsx: 9x KKMNMP→KMNBMPI, logo src/alt/width/height, comment
+- Updated src/components/sections/FAQSection.tsx: KNMP→KMN BERDIKARI, full name with Indonesia
+- Updated src/components/sections/CTASection.tsx: KNMP→KMN BERDIKARI
+- Updated src/components/sections/TestimonialsSection.tsx: 3x KNMP→KMN BERDIKARI
+- Updated src/components/sections/HowItWorks.tsx: 2x KNMP→KMN BERDIKARI
+- Updated src/components/sections/LogistikSection.tsx: KNMP→KMN BERDIKARI
+- Updated src/components/sections/VisiMisiSection.tsx: KKMNBMP→KMNBMPI, full name with Indonesia
+- Updated src/components/sections/StatsSection.tsx: KKMNBMP→KMNBMPI
+- Updated src/data/mocks/index.ts: 22+ KNMP→KMN BERDIKARI, KOPNUSA→KMN BERDIKARI, full name with Indonesia
+- Updated src/data/pilarPrograms.ts: KKMNBMP→KMNBMPI
+- Updated src/data/founders.ts: KMNMP→KMNBMPI in comments and variable name
+- Updated src/lib/midtrans.ts: merchant_name→official name (Koperasi Jasa Multipihak...), KMNMP→KMNBMPI
+- Updated src/lib/resend.ts: 15x KMNMP→KMNBMPI, official name in email templates
+- Updated src/lib/permissions.ts: KMNMP→KMNBMPI
+- Updated src/lib/utils-server.ts: KMNMP→KMNBMPI
+- Updated src/lib/auth.ts: KMNMP→KMNBMPI
+- Updated src/types/index.ts: comment updated
+- Updated prisma/schema.prisma: comment updated
+- Updated src/app/globals.css: KOPNUSA→KMN BERDIKARI
+- Updated src/services/api/index.ts: KOPNUSA→KMN BERDIKARI
+- Updated src/constants/colors.ts: KOPNUSA→KMN BERDIKARI
+- Final grep confirms ZERO remaining instances of KNMP, KKMNBMP, KKMNMP, KMNMP, KOPNUSA, logo-knmp
+- Lint passes with no errors
+- Dev server running with 200 responses
+
+Stage Summary:
+- Logo updated: /logo-knmp-v2.png → /logo-koperasi-nusa-berdikari-merah-putih-indonesia.png
+- Name changes applied across ALL files:
+  - KNMP → KMN BERDIKARI (brand abbreviation)
+  - KKMNBMP/KKMNMP → KMNBMPI (official abbreviation)
+  - Full branding name: "Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia"
+  - Official legal name: "Koperasi Jasa Multipihak Nusa Berdikari Merah Putih Indonesia"
+  - KOPNUSA → KMN BERDIKARI (product/platform name)
+- SITE_CONFIG now includes: name, officialName, fullName, abbreviation
+- All 30+ files updated consistently

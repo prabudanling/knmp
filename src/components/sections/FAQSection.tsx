@@ -22,12 +22,12 @@ const staggerContainer = {
 
 const faqs = [
   {
-    question: 'Apa itu KNMP?',
-    answer: 'KNMP (Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global melalui ekosistem teknologi.',
+    question: 'Apa itu KMN BERDIKARI?',
+    answer: 'KMN BERDIKARI (Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia) adalah koperasi multipihak digital yang mengintegrasikan 83.763 desa Indonesia dengan pasar global melalui ekosistem teknologi.',
   },
   {
     question: 'Bagaimana cara menjadi anggota?',
-    answer: 'Daftar online melalui portal KNMP, pilih KPA (Anggota) dan tier yang sesuai, kemudian lakukan verifikasi data. Prosesnya cepat dan transparan.',
+    answer: 'Daftar online melalui portal KMN BERDIKARI, pilih KPA (Anggota) dan tier yang sesuai, kemudian lakukan verifikasi data. Prosesnya cepat dan transparan.',
   },
   {
     question: 'Apa itu 5 KPA (Anggota)?',
