@@ -41,8 +41,6 @@ const visiDimensions = [
   { icon: Sparkles, title: "Peradaban", desc: "100-Year Covenant on blockchain — never convert to private company", color: "#dc2626", secondaryColor: "#F87171" },
 ]
 
-
-
 // Roadmap data — 2026-2045
 const roadmapData = [
   { year: "2026", title: "Launch & 5.000 Desa Pilot", target: "5.000 desa pilot", progress: 6, color: "#f59e0b", secondaryColor: "#FBBF24" },
@@ -450,7 +448,7 @@ export function VisiMisiSection() {
             variants={headerVariants}
             className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Menjadi Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia dari Desa untuk Dunia
+            Menjadi Koperasi Korporasi Multipihak dari Desa untuk Dunia
           </motion.p>
         </motion.div>
 
@@ -553,7 +551,7 @@ export function VisiMisiSection() {
 
                 {/* Main Quote */}
                 <blockquote className="text-lg md:text-xl lg:text-2xl font-bold text-[#1A1A1A] leading-relaxed mb-6">
-                  &ldquo;Menjadi <span className="text-[#008F3D]">Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia dari Desa untuk Dunia</span> — <span className="text-[#8B0000]">KMN BERDIKARI</span> sebagai{' '}
+                  &ldquo;Menjadi <span className="text-[#008F3D]">Koperasi Korporasi Multipihak dari Desa untuk Dunia</span> — <span className="text-[#8B0000]">KMN BERDIKARI</span> sebagai{' '}
                   <span className="text-[#8B0000]">Jantung Operasional</span> yang Mengintegrasikan{' '}
                   <span className="text-[#008F3D]">9 Pilar Program Kampung</span> ke dalam Satu Platform Digital Terunifikasi — Mengkonsolidasikan{' '}
                   <span className="text-[#8B0000]">83.763 Desa Indonesia</span> dari Silo Menuju{' '}

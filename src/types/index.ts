@@ -1,5 +1,5 @@
 // ============================================
-// KMN BERDIKARI Type Definitions
+// KMN BERDIKARI/KMN BERDIKARI Type Definitions
 // API-Ready Pattern for Laravel Integration
 // ============================================
 

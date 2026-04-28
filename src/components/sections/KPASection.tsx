@@ -469,9 +469,9 @@ export function KPASection() {
                 <div className="h-12 sm:h-16 md:h-20 w-auto mx-auto rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm p-1 border border-white/10">
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
-                    alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia"
-                    width={2016}
-                    height={2112}
+                    alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih"
+                    width={1408}
+                    height={768}
                     className="h-full w-auto object-contain"
                   />
                 </div>

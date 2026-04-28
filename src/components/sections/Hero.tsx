@@ -762,9 +762,9 @@ export function Hero() {
                 <div className="relative h-16 sm:h-20 md:h-24 w-auto">
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
-                    alt="KMN BERDIKARI Logo"
-                    width={2016}
-                    height={2112}
+                    alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih"
+                    width={1408}
+                    height={768}
                     priority
                     className="h-full w-auto object-contain"
                   />
@@ -781,7 +781,7 @@ export function Hero() {
                 KOPERASI KORPORASI MULTIPIHAK
               </span>
               <span className="block text-[#8B0000] mt-1">
-                NUSA BERDIKARI MERAH PUTIH INDONESIA
+                NUSA BERDIKARI MERAH PUTIH
               </span>
             </motion.h1>
 
@@ -858,7 +858,7 @@ export function Hero() {
                     </span>{' '}
                     adalah{' '}
                     <span className="text-[#8B0000] font-bold">
-                      Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia
+                      Koperasi Korporasi Multipihak
                     </span>{' '}
                     yang mengintegrasikan seluruh ekosistem melalui{' '}
                     <span className="text-[#008F3D] font-bold">

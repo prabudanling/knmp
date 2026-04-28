@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
@@ -54,15 +54,6 @@ const menuStructure = [
       { label: 'Kota Futuristik', href: '/nusa-futuristik/kota', icon: Building2, color: '#8B0000', badge: '514' },
       { label: 'Kecamatan Futuristik', href: '/nusa-futuristik/kecamatan', icon: MapPin, color: '#f59e0b', badge: '7.2K' },
       { label: 'Desa/Kel Futuristik', href: '/nusa-futuristik/desa', icon: Home, color: '#16a34a', badge: '83K' },
-      { label: 'Kampung Modal', href: '/pilar/kampung-modal', icon: Scale, color: '#f59e0b', number: 1, badge: 'Adhikara Artha' },
-      { label: 'Kampung Industri', href: '/pilar/kampung-industri', icon: Warehouse, color: '#8B0000', number: 2, badge: 'Adhikara Krada' },
-      { label: 'Kampung Pangan', href: '/pilar/kampung-pangan', icon: Wheat, color: '#16a34a', number: 3, badge: 'Adhikara Anna' },
-      { label: 'Kampung Sehat', href: '/pilar/kampung-sehat', icon: Heart, color: '#dc2626', number: 4, badge: 'Adhikara Roga' },
-      { label: 'Kampung Cerdas', href: '/pilar/kampung-cerdas', icon: GraduationCap, color: '#7c3aed', number: 5, badge: 'Adhikara Vidya' },
-      { label: 'Kampung Niaga', href: '/pilar/kampung-niaga', icon: Truck, color: '#0d9488', number: 6, badge: 'Adhikara Yana' },
-      { label: 'Kampung Digital', href: '/pilar/kampung-digital', icon: Laptop, color: '#3b82f6', number: 7, badge: 'Adhikara Jnana' },
-      { label: 'Kampung Hijau', href: '/pilar/kampung-hijau', icon: Flower2, color: '#059669', number: 8, badge: 'Adhikara Prakriti' },
-      { label: 'Kampung Wisata', href: '/pilar/kampung-wisata', icon: Home, color: '#92400e', number: 9, badge: 'Adhikara Ramya' },
     ]
   },
   {
@@ -189,8 +180,8 @@ export function Header() {
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                     alt="KMN BERDIKARI Logo"
-                    width={2016}
-                    height={2112}
+                    width={1408}
+                    height={768}
                     className="h-full w-auto object-contain"
                     priority
                   />
@@ -249,10 +240,10 @@ export function Header() {
                           transition={{ duration: 0.15 }}
                           className={cn(
                             "absolute top-full left-0 pt-2",
-                            (item.label === '9 Pilar' || item.label === 'Nusa Futuristik') ? "min-w-[320px]" : "min-w-[220px]"
+                            item.label === '9 Pilar' ? "min-w-[320px]" : "min-w-[220px]"
                           )}
                         >
-                          <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-xl shadow-xl shadow-gray-900/10 p-2 overflow-hidden max-h-[80vh] overflow-y-auto">
+                          <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-xl shadow-xl shadow-gray-900/10 p-2 overflow-hidden">
                             {/* 9 Pilar Header */}
                             {item.label === '9 Pilar' && (
                               <div className="px-4 py-2.5 border-b border-gray-100 mb-1">
@@ -260,22 +251,9 @@ export function Header() {
                                 <p className="text-[10px] text-gray-400 mt-0.5">9 Program Unggulan KMN BERDIKARI</p>
                               </div>
                             )}
-                            {/* Nusa Futuristik Header */}
-                            {item.label === 'Nusa Futuristik' && (
-                              <div className="px-4 py-2.5 border-b border-gray-100 mb-1">
-                                <p className="text-[10px] font-bold text-[#8B0000] uppercase tracking-widest">Nusa Futuristik — Indonesia 2045</p>
-                                <p className="text-[10px] text-gray-400 mt-0.5">Wilayah & 9 Pilar Kampung</p>
-                              </div>
-                            )}
                             {item.children.map((child, childIndex) => (
-                              <Fragment key={child.href + '-' + childIndex}>
-                              {/* Separator before 9 Pilar items in Nusa Futuristik */}
-                              {item.label === 'Nusa Futuristik' && child.number === 1 && (
-                                <div className="px-4 py-2 border-t border-gray-100 mt-1">
-                                  <p className="text-[10px] font-bold text-[#f59e0b] uppercase tracking-widest">9 Pilar Kampung</p>
-                                </div>
-                              )}
                               <motion.div
+                                key={child.href}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: childIndex * 0.04 }}
@@ -309,7 +287,6 @@ export function Header() {
                                   <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                                 </Link>
                               </motion.div>
-                              </Fragment>
                             ))}
                           </div>
                         </motion.div>
@@ -427,8 +404,8 @@ export function Header() {
                     <Image
                       src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                       alt="KMN BERDIKARI Logo"
-                      width={2016}
-                      height={2112}
+                      width={1408}
+                      height={768}
                       className="h-full w-auto object-contain"
                     />
                   </div>
@@ -519,22 +496,10 @@ export function Header() {
                                   <p className="text-[10px] font-bold text-[#f59e0b] uppercase tracking-widest px-4">9 Pilar Kampung</p>
                                 </div>
                               )}
-                              {/* Nusa Futuristik header in mobile */}
-                              {item.label === 'Nusa Futuristik' && (
-                                <div className="pl-4 pr-2 pt-2 pb-1">
-                                  <p className="text-[10px] font-bold text-[#8B0000] uppercase tracking-widest px-4">Nusa Futuristik</p>
-                                </div>
-                              )}
                               <div className="pl-4 pr-2 py-2 space-y-1">
                                 {item.children.map((child, ci) => (
-                                  <Fragment key={child.href + '-mobile-' + ci}>
-                                  {/* Separator before 9 Pilar items in Nusa Futuristik mobile */}
-                                  {item.label === 'Nusa Futuristik' && child.number === 1 && (
-                                    <div className="pl-0 pr-2 py-1 ml-4 border-t border-gray-100 mt-1 pt-2">
-                                      <p className="text-[10px] font-bold text-[#f59e0b] uppercase tracking-widest px-4">9 Pilar Kampung</p>
-                                    </div>
-                                  )}
                                   <motion.div
+                                    key={child.href}
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: ci * 0.03 }}
@@ -568,7 +533,6 @@ export function Header() {
                                       <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     </Link>
                                   </motion.div>
-                                  </Fragment>
                                 ))}
                               </div>
                             </motion.div>

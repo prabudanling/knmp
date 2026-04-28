@@ -226,8 +226,8 @@ export function Footer() {
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                     alt="KMN BERDIKARI Logo"
-                    width={2016}
-                    height={2112}
+                    width={1408}
+                    height={768}
                     className="h-full w-auto object-contain"
                   />
                 </motion.div>

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   icons: {
     icon: [
-      { url: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png', type: 'image/png', sizes: '2016x2112' },
+      { url: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png', type: 'image/png', sizes: '733x768' },
     ],
     apple: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.seo.title,
     description: SITE_CONFIG.seo.description,
     images: [SITE_CONFIG.seo.ogImage],
-    creator: '@kmn_berdikari',
+    creator: '@kopnusa_id',
   },
   robots: {
     index: true,

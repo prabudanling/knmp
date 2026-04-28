@@ -670,7 +670,7 @@ export const DUAL_ENTITY = {
   },
   knmp: {
     name: 'KMN BERDIKARI',
-    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia',
+    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih',
     type: 'Koperasi',
     role: 'Operational Heart',
     description: 'Pengelola operasional, aset anggota, dan distribusi manfaat ekonomi',
@@ -945,7 +945,7 @@ export const KORNAS_STRUCTURE = {
   totalPositions: 1,
   filledPositions: 1,
   structure: [
-    // Dewan Pendiri (17 Anggota) - Urutan Sesuai KMN BERDIKARI 2029
+    // Dewan Pendiri (17 Anggota) - Urutan Sesuai KMN BERDIKARI BERDIKARI 2029
     {
       category: 'Dewan Pendiri',
       positions: [

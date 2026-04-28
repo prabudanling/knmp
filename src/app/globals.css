@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================
-   KMN BERDIKARI COLOR SYSTEM - COMPREHENSIVE
+   KOPNUSA COLOR SYSTEM - COMPREHENSIVE
    Based on User's Detailed Specification
    
    BRAND COLORS:
@@ -90,6 +90,10 @@
 :root {
   --radius: 0.625rem;
   
+  /* ==========================================
+     LIGHT MODE - Clean & Professional
+     ========================================== */
+  
   /* Base Colors */
   --background: #FFFFFF;
   --foreground: #1A1A1A;
@@ -97,6 +101,10 @@
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
+  
+  /* ==========================================
+     BRAND COLORS - Main Foundation
+     ========================================== */
   
   /* Primary - Hijau PPP (#008F3D) */
   --green: #008F3D;
@@ -158,25 +166,41 @@
   --chart-4: #DC2626;
   --chart-5: #10B981;
   
-  /* Tier Colors */
+  /* ==========================================
+     TIER COLORS - 7 Level Membership
+     ========================================== */
+  
+  /* Tier 1 - Warga Digital */
   --tier-1: #6B7280;
   --tier-1-soft: rgba(107, 114, 128, 0.10);
   --tier-1-border: rgba(107, 114, 128, 0.20);
+  
+  /* Tier 2 - Anggota Dasar */
   --tier-2: #10B981;
   --tier-2-soft: rgba(16, 185, 129, 0.10);
   --tier-2-border: rgba(16, 185, 129, 0.20);
+  
+  /* Tier 3 - Mitra Desa (KORDES) */
   --tier-3: #0EA5E9;
   --tier-3-soft: rgba(14, 165, 233, 0.10);
   --tier-3-border: rgba(14, 165, 233, 0.20);
+  
+  /* Tier 4 - Mitra Kecamatan (KORCAM) */
   --tier-4: #7C3AED;
   --tier-4-soft: rgba(124, 58, 237, 0.10);
   --tier-4-border: rgba(124, 58, 237, 0.20);
+  
+  /* Tier 5 - Mitra Kabupaten (KORDA) */
   --tier-5: #DB2777;
   --tier-5-soft: rgba(219, 39, 119, 0.10);
   --tier-5-border: rgba(219, 39, 119, 0.20);
+  
+  /* Tier 6 - Mitra Provinsi (KORWIL) - Gold/Bronze */
   --tier-6: #B7791F;
   --tier-6-soft: rgba(183, 121, 31, 0.12);
   --tier-6-border: rgba(183, 121, 31, 0.25);
+  
+  /* Tier 7 - Mitra Nasional (KORNAS) */
   --tier-7: #C81E1E;
   --tier-7-soft: rgba(200, 30, 30, 0.10);
   --tier-7-border: rgba(200, 30, 30, 0.20);
@@ -191,35 +215,58 @@
   --sidebar-border: #E5E7EB;
   --sidebar-ring: #008F3D;
   
-  /* Shadows */
+  /* Shadows & Radius */
   --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 
 .dark {
+  /* ==========================================
+     DARK MODE - Professional Dark Theme
+     ========================================== */
+  
   --background: #0F1419;
   --foreground: #F5F5F5;
   --card: #1A1F2C;
   --card-foreground: #F5F5F5;
   --popover: #1A1F2C;
   --popover-foreground: #F5F5F5;
+  
+  /* Primary - Hijau PPP (Brighter for dark mode) */
   --primary: #00A847;
   --primary-foreground: #FFFFFF;
+  
+  /* Secondary - Merah Tua */
   --secondary: #A50000;
   --secondary-foreground: #FFFFFF;
+  
+  /* Muted */
   --muted: #1F2937;
   --muted-foreground: #9CA3AF;
+  
+  /* Accent */
   --accent: rgba(0, 168, 71, 0.15);
   --accent-foreground: #00A847;
+  
+  /* Destructive */
   --destructive: #EF4444;
+  
+  /* Border & Input */
   --border: #374151;
   --input: #1F2937;
   --ring: #00A847;
+  
+  /* Chart Colors */
   --chart-1: #00A847;
   --chart-2: #A50000;
   --chart-3: #10B981;
   --chart-4: #EF4444;
   --chart-5: #34D399;
+  
+  /* Sidebar */
   --sidebar: #1A1F2C;
   --sidebar-foreground: #F5F5F5;
   --sidebar-primary: #00A847;
@@ -241,6 +288,7 @@
     line-height: 1.6;
   }
   
+  /* Ensure proper text colors */
   p, li, td, th, label, input, textarea, select {
     color: var(--text-primary);
   }
@@ -259,8 +307,11 @@
   }
 }
 
-/* Tier Utilities */
+/* ==========================================
+   TIER-SPECIFIC UTILITIES
+   ========================================== */
 @layer utilities {
+  /* Tier Chips */
   .tier-chip {
     display: inline-flex;
     align-items: center;
@@ -272,7 +323,11 @@
     border: 1px solid transparent;
   }
   
-  .tier-accent-top { position: relative; }
+  /* Tier Top Accent */
+  .tier-accent-top {
+    position: relative;
+  }
+  
   .tier-accent-top::before {
     content: "";
     position: absolute;
@@ -281,6 +336,7 @@
     border-radius: 16px 16px 0 0;
   }
   
+  /* Tier Cards */
   .tier-card {
     background: var(--white);
     color: var(--text-primary);
@@ -291,37 +347,52 @@
     position: relative;
   }
   
+  /* Tier 1 Styling */
   .tier-1 { color: var(--tier-1); }
   .tier-1-bg { background: var(--tier-1-soft); }
   .tier-1-border { border-color: var(--tier-1-border); }
   .tier-card.tier-1::before { background: var(--tier-1); }
+  
+  /* Tier 2 Styling */
   .tier-2 { color: var(--tier-2); }
   .tier-2-bg { background: var(--tier-2-soft); }
   .tier-2-border { border-color: var(--tier-2-border); }
   .tier-card.tier-2::before { background: var(--tier-2); }
+  
+  /* Tier 3 Styling */
   .tier-3 { color: var(--tier-3); }
   .tier-3-bg { background: var(--tier-3-soft); }
   .tier-3-border { border-color: var(--tier-3-border); }
   .tier-card.tier-3::before { background: var(--tier-3); }
+  
+  /* Tier 4 Styling */
   .tier-4 { color: var(--tier-4); }
   .tier-4-bg { background: var(--tier-4-soft); }
   .tier-4-border { border-color: var(--tier-4-border); }
   .tier-card.tier-4::before { background: var(--tier-4); }
+  
+  /* Tier 5 Styling */
   .tier-5 { color: var(--tier-5); }
   .tier-5-bg { background: var(--tier-5-soft); }
   .tier-5-border { border-color: var(--tier-5-border); }
   .tier-card.tier-5::before { background: var(--tier-5); }
+  
+  /* Tier 6 Styling (Gold/Bronze) */
   .tier-6 { color: var(--tier-6); }
   .tier-6-bg { background: var(--tier-6-soft); }
   .tier-6-border { border-color: var(--tier-6-border); }
   .tier-card.tier-6::before { background: var(--tier-6); }
+  
+  /* Tier 7 Styling (Red - Highest) */
   .tier-7 { color: var(--tier-7); }
   .tier-7-bg { background: var(--tier-7-soft); }
   .tier-7-border { border-color: var(--tier-7-border); }
   .tier-card.tier-7::before { background: var(--tier-7); }
 }
 
-/* Button System */
+/* ==========================================
+   BUTTON SYSTEM
+   ========================================== */
 @layer utilities {
   .btn {
     display: inline-flex;
@@ -338,17 +409,56 @@
     cursor: pointer;
     transition: 0.2s ease;
   }
-  .btn-primary { background: var(--green); color: var(--white); }
-  .btn-primary:hover, .btn-primary:focus-visible { background: var(--primary-hover); color: var(--white); }
-  .btn-secondary { background: var(--maroon); color: var(--white); }
-  .btn-secondary:hover, .btn-secondary:focus-visible { background: var(--secondary-hover); color: var(--white); }
-  .btn-ghost { background: transparent; color: var(--green); border-color: var(--green); }
-  .btn-ghost:hover, .btn-ghost:focus-visible { background: rgba(0, 143, 61, 0.08); color: var(--green-dark); }
-  .btn-light { background: var(--white); color: var(--green); border-color: rgba(255, 255, 255, 0.15); }
-  .btn-light:hover, .btn-light:focus-visible { background: #F7FFF9; }
+  
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background: var(--primary-hover);
+    color: var(--white);
+  }
+  
+  .btn-secondary {
+    background: var(--maroon);
+    color: var(--white);
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--secondary-hover);
+    color: var(--white);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    color: var(--green);
+    border-color: var(--green);
+  }
+  
+  .btn-ghost:hover,
+  .btn-ghost:focus-visible {
+    background: rgba(0, 143, 61, 0.08);
+    color: var(--green-dark);
+  }
+  
+  .btn-light {
+    background: var(--white);
+    color: var(--green);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .btn-light:hover,
+  .btn-light:focus-visible {
+    background: #F7FFF9;
+  }
 }
 
-/* Card UI */
+/* ==========================================
+   CARD UI GLOBAL
+   ========================================== */
 @layer utilities {
   .card {
     background: var(--white);
@@ -357,37 +467,119 @@
     box-shadow: var(--shadow-sm);
     color: var(--text-primary);
   }
-  .card:hover { box-shadow: var(--shadow-md); }
-  .card-title { color: var(--text-primary); font-weight: 700; }
-  .card-subtitle, .card-meta, .card-text { color: var(--text-secondary); }
+  
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-title {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  
+  .card-subtitle,
+  .card-meta,
+  .card-text {
+    color: var(--text-secondary);
+  }
 }
 
-/* Navbar, Hero, Footer */
+/* ==========================================
+   NAVBAR, HERO, FOOTER
+   ========================================== */
 @layer utilities {
-  .navbar { background: var(--white); border-bottom: 1px solid var(--border-soft); }
-  .navbar a { color: var(--text-primary); font-weight: 600; }
-  .navbar a:hover, .navbar a.active { color: var(--green); }
-  .hero { background: var(--bg-main); }
-  .hero--soft { background: var(--bg-soft); }
-  .hero-stat-value { color: var(--green); font-weight: 800; }
-  .hero-stat-label { color: var(--text-secondary); }
-  .footer { background: var(--bg-dark); color: var(--text-on-dark); }
-  .footer h2, .footer h3, .footer h4, .footer p, .footer li, .footer a { color: var(--text-on-dark); }
-  .footer a:hover { color: #D8FFE7; }
-  .footer .divider { border-color: rgba(255, 255, 255, 0.12); }
+  .navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  
+  .navbar a {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--green);
+  }
+  
+  .hero {
+    background: var(--bg-main);
+  }
+  
+  .hero--soft {
+    background: var(--bg-soft);
+  }
+  
+  .hero-stat-value {
+    color: var(--green);
+    font-weight: 800;
+  }
+  
+  .hero-stat-label {
+    color: var(--text-secondary);
+  }
+  
+  .footer {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+  }
+  
+  .footer h2,
+  .footer h3,
+  .footer h4,
+  .footer p,
+  .footer li,
+  .footer a {
+    color: var(--text-on-dark);
+  }
+  
+  .footer a:hover {
+    color: #D8FFE7;
+  }
+  
+  .footer .divider {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
 }
 
-/* Badges */
+/* ==========================================
+   BADGES
+   ========================================== */
 @layer utilities {
-  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
-  .badge-brand { background: rgba(0, 143, 61, 0.10); color: var(--green); }
-  .badge-danger { background: rgba(139, 0, 0, 0.10); color: var(--maroon); }
-  .badge-success { background: rgba(22, 163, 74, 0.10); color: var(--success); }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .badge-brand {
+    background: rgba(0, 143, 61, 0.10);
+    color: var(--green);
+  }
+  
+  .badge-danger {
+    background: rgba(139, 0, 0, 0.10);
+    color: var(--maroon);
+  }
+  
+  .badge-success {
+    background: rgba(22, 163, 74, 0.10);
+    color: var(--success);
+  }
 }
 
-/* Forms */
+/* ==========================================
+   FORMS
+   ========================================== */
 @layer utilities {
-  .input, .select, .textarea {
+  .input,
+  .select,
+  .textarea {
     width: 100%;
     background: var(--white);
     color: var(--text-primary);
@@ -396,139 +588,387 @@
     padding: 12px 14px;
     outline: none;
   }
-  .input::placeholder, .textarea::placeholder { color: #8A8A8A; }
-  .input:focus, .select:focus, .textarea:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(0, 143, 61, 0.10); }
+  
+  .input::placeholder,
+  .textarea::placeholder {
+    color: #8A8A8A;
+  }
+  
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(0, 143, 61, 0.10);
+  }
 }
 
-/* Custom Scrollbar */
+/* ==========================================
+   CUSTOM SCROLLBAR
+   ========================================== */
 @layer utilities {
-  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--green) transparent; }
-  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
-  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
-  .scrollbar-thin::-webkit-scrollbar-thumb { background-color: var(--green); border-radius: 3px; }
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background-color: var(--green-dark); }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--green) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green-dark);
+  }
 }
 
-/* Text Gradients */
+/* ==========================================
+   TEXT GRADIENTS
+   ========================================== */
 @layer utilities {
   .text-gradient-green {
     background: linear-gradient(135deg, #008F3D 0%, #00A847 50%, #006F30 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+  
   .text-gradient-maroon {
     background: linear-gradient(135deg, #8B0000 0%, #A50000 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+  
   .text-gradient-primary {
     background: linear-gradient(135deg, #008F3D 0%, #00A847 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
-/* Glass Effects */
+/* ==========================================
+   GLASS EFFECTS
+   ========================================== */
 @layer utilities {
-  .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0, 143, 61, 0.1); }
-  .glass-white { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0, 143, 61, 0.1); }
-  .glass-green { background: rgba(0, 143, 61, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0, 143, 61, 0.2); }
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.1);
+  }
+  
+  .glass-white {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.1);
+  }
+  
+  .glass-green {
+    background: rgba(0, 143, 61, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 143, 61, 0.2);
+  }
 }
 
-/* Glow Effects */
+/* ==========================================
+   GLOW EFFECTS
+   ========================================== */
 @layer utilities {
-  .glow-green { box-shadow: 0 0 20px rgba(0, 143, 61, 0.3), 0 0 40px rgba(0, 143, 61, 0.1); }
-  .glow-maroon { box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(139, 0, 0, 0.1); }
-  .glow-soft { box-shadow: 0 0 30px rgba(0, 143, 61, 0.1), 0 0 60px rgba(139, 0, 0, 0.05); }
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 143, 61, 0.3), 0 0 40px rgba(0, 143, 61, 0.1);
+  }
+  
+  .glow-maroon {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(139, 0, 0, 0.1);
+  }
+  
+  .glow-soft {
+    box-shadow: 0 0 30px rgba(0, 143, 61, 0.1), 0 0 60px rgba(139, 0, 0, 0.05);
+  }
 }
 
-/* Background Patterns */
+/* ==========================================
+   BACKGROUND PATTERNS
+   ========================================== */
 @layer utilities {
   .bg-grid-pattern {
-    background-image: linear-gradient(rgba(0, 143, 61, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 143, 61, 0.03) 1px, transparent 1px);
+    background-image: 
+      linear-gradient(rgba(0, 143, 61, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 143, 61, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
   }
+  
   .bg-dots-pattern {
     background-image: radial-gradient(rgba(0, 143, 61, 0.08) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }
 
-/* Animations */
+/* ==========================================
+   ANIMATION UTILITIES
+   ========================================== */
 @layer utilities {
-  .animate-float { animation: float 6s ease-in-out infinite; }
-  .animate-pulse-slow { animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-  .animate-gradient { background-size: 200% 200%; animation: gradient 8s ease infinite; }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Hero Gradients */
+/* ==========================================
+   HERO GRADIENT BACKGROUNDS
+   ========================================== */
 @layer utilities {
-  .hero-gradient { background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 40%, #F5F5F5 70%, #FFFFFF 100%); }
-  .hero-gradient-light { background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 50%, #F0FDF4 100%); }
-  .hero-gradient-maroon { background: linear-gradient(135deg, #FFFFFF 0%, #FFEBEE 50%, #FFF5F5 100%); }
-  .hero-gradient-brand { background: linear-gradient(135deg, #E8F5E9 0%, #FFFFFF 50%, #FFEBEE 100%); }
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #E8F5E9 40%, 
+      #F5F5F5 70%,
+      #FFFFFF 100%
+    );
+  }
+  
+  .hero-gradient-light {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #E8F5E9 50%,
+      #F0FDF4 100%
+    );
+  }
+  
+  .hero-gradient-maroon {
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      #FFEBEE 50%,
+      #FFF5F5 100%
+    );
+  }
+  
+  .hero-gradient-brand {
+    background: linear-gradient(135deg, 
+      #E8F5E9 0%, 
+      #FFFFFF 50%, 
+      #FFEBEE 100%
+    );
+  }
 }
 
-/* Card Effects */
+/* ==========================================
+   CARD EFFECTS
+   ========================================== */
 @layer utilities {
-  .card-hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .card-hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 143, 61, 0.1); }
-  .card-green { border-left: 4px solid #008F3D; }
-  .card-maroon { border-left: 4px solid #8B0000; }
+  .card-hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 143, 61, 0.1);
+  }
+  
+  .card-green {
+    border-left: 4px solid #008F3D;
+  }
+  
+  .card-maroon {
+    border-left: 4px solid #8B0000;
+  }
 }
 
-/* Section Backgrounds */
+/* ==========================================
+   SECTION BACKGROUNDS
+   ========================================== */
 @layer utilities {
-  .section-white { background: #FFFFFF; }
-  .section-green-light { background: linear-gradient(to bottom, #E8F5E9, #FFFFFF); }
-  .section-maroon-light { background: linear-gradient(to bottom, #FFEBEE, #FFFFFF); }
-  .section-gray { background: linear-gradient(to bottom, #F5F5F5, #FFFFFF); }
-  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+  .section-white {
+    background: #FFFFFF;
+  }
+  
+  .section-green-light {
+    background: linear-gradient(to bottom, #E8F5E9, #FFFFFF);
+  }
+  
+  .section-maroon-light {
+    background: linear-gradient(to bottom, #FFEBEE, #FFFFFF);
+  }
+  
+  .section-gray {
+    background: linear-gradient(to bottom, #F5F5F5, #FFFFFF);
+  }
 }
 
-/* Responsive Typography */
+/* ==========================================
+   SECTION DIVIDER
+   ========================================== */
 @layer utilities {
-  .text-responsive-hero { font-size: clamp(28px, 8vw, 80px); }
-  .text-responsive-title { font-size: clamp(24px, 5vw, 48px); }
-  .text-responsive-subtitle { font-size: clamp(16px, 3vw, 24px); }
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
 }
 
-/* Accessibility */
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================== */
 @layer utilities {
-  .text-high-contrast { color: #1A1A1A; }
-  .text-on-green { color: #FFFFFF; }
-  .text-on-maroon { color: #FFFFFF; }
-  .text-on-light-green { color: #00752F; }
-  .text-on-light-maroon { color: #6B0000; }
+  .text-responsive-hero {
+    font-size: clamp(28px, 8vw, 80px);
+  }
+  
+  .text-responsive-title {
+    font-size: clamp(24px, 5vw, 48px);
+  }
+  
+  .text-responsive-subtitle {
+    font-size: clamp(16px, 3vw, 24px);
+  }
 }
 
-/* Responsive Mobile */
+/* ==========================================
+   ACCESSIBILITY - HIGH CONTRAST
+   ========================================== */
+@layer utilities {
+  .text-high-contrast {
+    color: #1A1A1A;
+  }
+  
+  .text-on-green {
+    color: #FFFFFF;
+  }
+  
+  .text-on-maroon {
+    color: #FFFFFF;
+  }
+  
+  .text-on-light-green {
+    color: #00752F;
+  }
+  
+  .text-on-light-maroon {
+    color: #6B0000;
+  }
+}
+
+/* ==========================================
+   FOCUS STATES
+   ========================================== */
+@layer utilities {
+  .focus-green:focus {
+    outline: none;
+    ring: 2px solid #008F3D;
+    ring-offset: 2px;
+  }
+  
+  .focus-maroon:focus {
+    outline: none;
+    ring: 2px solid #8B0000;
+    ring-offset: 2px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+   ========================================== */
 @media (max-width: 768px) {
-  body { font-size: 15px; }
-  .btn { min-height: 44px; width: 100%; }
+  body {
+    font-size: 15px;
+  }
+  
+  .btn {
+    min-height: 44px;
+    width: 100%;
+  }
 }
 
-/* Utility Overrides */
-.bg-white { background-color: #FFFFFF !important; }
-.text-primary-green { color: #008F3D; }
-.text-primary-maroon { color: #8B0000; }
-.bg-primary-green { background-color: #008F3D; }
-.bg-primary-maroon { background-color: #8B0000; }
-.bg-light-green { background-color: #E8F5E9; }
-.bg-light-maroon { background-color: #FFEBEE; }
-.border-primary-green { border-color: #008F3D; }
-.border-primary-maroon { border-color: #8B0000; }
+/* ==========================================
+   UTILITY OVERRIDES
+   ========================================== */
 
+.bg-white {
+  background-color: #FFFFFF !important;
+}
+
+.text-primary-green {
+  color: #008F3D;
+}
+
+.text-primary-maroon {
+  color: #8B0000;
+}
+
+.bg-primary-green {
+  background-color: #008F3D;
+}
+
+.bg-primary-maroon {
+  background-color: #8B0000;
+}
+
+.bg-light-green {
+  background-color: #E8F5E9;
+}
+
+.bg-light-maroon {
+  background-color: #FFEBEE;
+}
+
+.border-primary-green {
+  border-color: #008F3D;
+}
+
+.border-primary-maroon {
+  border-color: #8B0000;
+}
+
+/* Discount Badge Animation */
 @keyframes pulse-discount {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
-.discount-badge { animation: pulse-discount 2s ease-in-out infinite; }
+
+.discount-badge {
+  animation: pulse-discount 2s ease-in-out infinite;
+}
