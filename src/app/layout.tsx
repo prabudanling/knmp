@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   icons: {
     icon: [
-      { url: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png', type: 'image/png', sizes: '733x768' },
+      { url: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png', type: 'image/png', sizes: '800x838' },
     ],
     apple: '/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png',
   },

@@ -521,8 +521,8 @@ export default function KPAPage() {
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                     alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih"
-                    width={1408}
-                    height={768}
+                    width={800}
+                    height={838}
                     className="h-full w-auto object-contain"
                   />
                 </div>
@@ -1991,7 +1991,7 @@ export default function KPAPage() {
                     📞 021-1234-5678
                   </Button>
                   <Button className="bg-[#008F3D] hover:bg-[#006F30] text-white">
-                    ✉️ membership@knmp.co.id
+                    ✉️ membership@kopnusa.id
                   </Button>
                 </div>
               </div>

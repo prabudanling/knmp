@@ -388,8 +388,8 @@ export default function RegistrationPage() {
               <Image
                 src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                 alt="KMN BERDIKARI Logo"
-                width={1408}
-                height={768}
+                width={800}
+                height={838}
                 className="h-full w-auto object-contain"
               />
             </div>
@@ -1408,7 +1408,7 @@ function RegistrationSuccess({
 
       <div className="mt-8 text-center text-sm text-gray-500">
         <p>Ada pertanyaan? Hubungi kami:</p>
-        <p className="font-medium text-gray-700 mt-1">WhatsApp: 0812-3456-7890 | Email: info@knmp.or.id</p>
+        <p className="font-medium text-gray-700 mt-1">WhatsApp: 0812-3456-7890 | Email: info@kopnusa.id</p>
       </div>
     </div>
   );

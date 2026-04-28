@@ -298,7 +298,7 @@ function HeroSection() {
       <motion.div variants={fadeInUp}>
         <div className="flex justify-center mb-4">
           <div className="h-14 sm:h-16 md:h-20 w-auto">
-            <Image src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png" alt="Logo KMN BERDIKARI" width={1408} height={768} className="h-full w-auto object-contain" />
+            <Image src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png" alt="Logo KMN BERDIKARI" width={800} height={838} className="h-full w-auto object-contain" />
           </div>
         </div>
       </motion.div>

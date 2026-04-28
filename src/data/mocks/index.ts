@@ -670,7 +670,7 @@ export const DUAL_ENTITY = {
   },
   knmp: {
     name: 'KMN BERDIKARI',
-    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih',
+    fullName: 'Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia',
     type: 'Koperasi',
     role: 'Operational Heart',
     description: 'Pengelola operasional, aset anggota, dan distribusi manfaat ekonomi',

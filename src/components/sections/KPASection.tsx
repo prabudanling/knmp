@@ -470,8 +470,8 @@ export function KPASection() {
                   <Image
                     src="/logo-koperasi-nusa-berdikari-merah-putih-indonesia.png"
                     alt="Logo Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih"
-                    width={1408}
-                    height={768}
+                    width={800}
+                    height={838}
                     className="h-full w-auto object-contain"
                   />
                 </div>

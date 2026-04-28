@@ -47,7 +47,7 @@ const faqData = [
       },
       {
         question: 'Bagaimana cara menjadi anggota?',
-        answer: 'Pendaftaran anggota dapat dilakukan melalui portal resmi KMN BERDIKARI (knmp.id). Calon anggota harus memenuhi persyaratan: WNI minimal 17 tahun, memiliki usaha yang relevan dengan salah satu KPA, menyetujui AD/ART, dan membayar simpanan pokok.',
+        answer: 'Pendaftaran anggota dapat dilakukan melalui portal resmi KMN BERDIKARI (kopnusa.id). Calon anggota harus memenuhi persyaratan: WNI minimal 17 tahun, memiliki usaha yang relevan dengan salah satu KPA, menyetujui AD/ART, dan membayar simpanan pokok.',
       },
       {
         question: 'Berapa biaya menjadi anggota?',
