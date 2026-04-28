@@ -77,6 +77,12 @@ const levelCards = [
 
 const pillars = [
   {
+    icon: Laptop,
+    label: 'Kampung Pemerintahan Digital',
+    desc: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana',
+    color: '#3b82f6',
+  },
+  {
     icon: Scale,
     label: 'Kampung Modal',
     desc: 'DIPUNTARA Holding, Kampung Modal, Pusat Diklat, Ekosistem Industri — Adhikara Artha',
@@ -111,12 +117,6 @@ const pillars = [
     label: 'Kampung Niaga',
     desc: 'Darat, Kereta Api, Udara, Laut, Sungai — Terintegrasi Digital — Adhikara Yana',
     color: '#0d9488',
-  },
-  {
-    icon: Laptop,
-    label: 'Kampung Digital',
-    desc: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana',
-    color: '#3b82f6',
   },
   {
     icon: Flower2,

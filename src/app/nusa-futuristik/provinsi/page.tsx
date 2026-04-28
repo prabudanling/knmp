@@ -26,6 +26,13 @@ const staggerContainer = {
 
 const subPages = [
   {
+    label: 'Kampung Pemerintahan Digital',
+    href: '/nusa-futuristik/provinsi/proyek-strategis',
+    icon: Laptop,
+    description: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana.',
+    color: '#3b82f6',
+  },
+  {
     label: 'Kampung Modal',
     href: '/nusa-futuristik/provinsi/kampung-modal',
     icon: Scale,
@@ -66,13 +73,6 @@ const subPages = [
     icon: Truck,
     description: 'Darat, Kereta Api, Udara, Laut, Sungai — Terintegrasi Sistem Digital — Adhikara Yana.',
     color: '#0d9488',
-  },
-  {
-    label: 'Kampung Digital',
-    href: '/nusa-futuristik/provinsi/proyek-strategis',
-    icon: Laptop,
-    description: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana.',
-    color: '#3b82f6',
   },
   {
     label: 'Kampung Hijau',
@@ -285,7 +285,7 @@ export default function ProvinsiPage() {
                 seluruh provinsi di Indonesia menjadi wilayah yang maju dan berdaya saing global.
                 Melalui <strong className="text-[#1A1A1A]">9 Kampung Utama</strong> — Kampung Modal, Kampung Industri,
                 Kampung Pangan, Kampung Sehat, Kampung Cerdas, Kampung Niaga,
-                Kampung Digital, Kampung Hijau, dan Kampung Wisata — setiap provinsi akan memiliki fondasi ekonomi yang kuat dan berkelanjutan.
+                Kampung Pemerintahan Digital, Kampung Hijau, dan Kampung Wisata — setiap provinsi akan memiliki fondasi ekonomi yang kuat dan berkelanjutan.
               </p>
               <p>
                 Dengan target <strong className="text-[#1A1A1A]">38 provinsi</strong>, program ini dirancang untuk menciptakan konektivitas

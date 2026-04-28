@@ -7,13 +7,13 @@ import { PILAR_PROGRAMS } from '@/data/pilarPrograms'
 
 // ─── Slug to Pilar Number Mapping ──────────────────────────────────────────────
 const SLUG_MAP: Record<string, number> = {
-  'kampung-modal': 1,
-  'kampung-industri': 2,
-  'kampung-pangan': 3,
-  'kampung-sehat': 4,
-  'kampung-cerdas': 5,
-  'kampung-niaga': 6,
-  'kampung-digital': 7,
+  'kampung-digital': 1,
+  'kampung-modal': 2,
+  'kampung-industri': 3,
+  'kampung-pangan': 4,
+  'kampung-sehat': 5,
+  'kampung-cerdas': 6,
+  'kampung-niaga': 7,
   'kampung-hijau': 8,
   'kampung-wisata': 9,
 }

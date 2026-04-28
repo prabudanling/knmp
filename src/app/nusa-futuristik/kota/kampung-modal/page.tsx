@@ -21,15 +21,15 @@ const staggerContainer = {
 }
 
 const siblingPages = [
+  { label: 'Kampung Pemerintahan Digital', href: '/nusa-futuristik/kota/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Industri', href: '/nusa-futuristik/kota/kawasan-industri-terpadu', icon: Warehouse, color: '#8B0000' },
   { label: 'Kampung Pangan', href: '/nusa-futuristik/kota/kawasan-pangan-terpadu', icon: Wheat, color: '#16a34a' },
   { label: 'Kampung Sehat', href: '/nusa-futuristik/kota/wisata-terpadu', icon: Heart, color: '#dc2626' },
   { label: 'Kampung Cerdas', href: '/nusa-futuristik/kota/proyek-strategis', icon: GraduationCap, color: '#7c3aed' },
   { label: 'Kampung Niaga', href: '/nusa-futuristik/kota/transportasi-digital', icon: Truck, color: '#0d9488' },
-  { label: 'Kampung Digital', href: '/nusa-futuristik/kota/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Hijau', href: '/nusa-futuristik/kota/proyek-strategis', icon: Flower2, color: '#059669' },
   { label: 'Kampung Wisata', href: '/nusa-futuristik/kota/rumah-produktif', icon: Home, color: '#92400e' },
-]
+  ]
 
 const kampungModalFeatures = [
   {

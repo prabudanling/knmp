@@ -37,7 +37,7 @@ export const SITE_CONFIG = {
     description: 'Portal resmi Koperasi Korporasi Multipihak Nusa Berdikari Merah Putih Indonesia (KMN BERDIKARI). Mengintegrasikan 83.763 desa, 5 Kelompok Pihak Anggota (KPA), 9 Pilar Kampung, marketplace zonasi, logistik digital, dan smart village dashboard.',
     keywords: [
       'koperasi', 'koperasi digital', 'KMN BERDIKARI',
-      'koperasi korporasi multipihak nusa berdikari merah putih indonesia', 'kampung digital', 
+      'koperasi korporasi multipihak nusa berdikari merah putih indonesia', 'kampung pemerintahan digital', 
       'smart village', 'marketplace desa', 'logistik desa',
       'koperasi multipihak', 'BUMDes', 'KDMP', 'KDM', 'KMN BERDIKARI'
     ],

@@ -11,15 +11,15 @@ const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, t
 const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } }
 
 const siblingPages = [
+  { label: 'Kampung Pemerintahan Digital', href: '/nusa-futuristik/kecamatan/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Modal', href: '/nusa-futuristik/kecamatan/kampung-modal', icon: Scale, color: '#f59e0b' },
   { label: 'Kampung Industri', href: '/nusa-futuristik/kecamatan/kawasan-industri-terpadu', icon: Warehouse, color: '#8B0000' },
   { label: 'Kampung Pangan', href: '/nusa-futuristik/kecamatan/kawasan-pangan-terpadu', icon: Wheat, color: '#16a34a' },
   { label: 'Kampung Sehat', href: '/nusa-futuristik/kecamatan/wisata-terpadu', icon: Heart, color: '#dc2626' },
   { label: 'Kampung Cerdas', href: '/nusa-futuristik/kecamatan/proyek-strategis', icon: GraduationCap, color: '#7c3aed' },
-  { label: 'Kampung Digital', href: '/nusa-futuristik/kecamatan/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Hijau', href: '/nusa-futuristik/kecamatan/proyek-strategis', icon: Flower2, color: '#059669' },
   { label: 'Kampung Wisata', href: '/nusa-futuristik/kecamatan/rumah-produktif', icon: Home, color: '#92400e' },
-]
+  ]
 
 const systems = [
   { title: 'Logistik Kecamatan Digital', description: 'Sistem logistik kecamatan terintegrasi untuk distribusi barang dari dan ke desa-desa.', icon: Truck, features: ['Smart Route', 'Delivery Track', 'Hub System'] },

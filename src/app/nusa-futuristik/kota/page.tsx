@@ -26,6 +26,13 @@ const staggerContainer = {
 
 const subPages = [
   {
+    label: 'Kampung Pemerintahan Digital',
+    href: '/nusa-futuristik/kota/proyek-strategis',
+    icon: Laptop,
+    description: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana.',
+    color: '#3b82f6',
+  },
+  {
     label: 'Kampung Modal',
     href: '/nusa-futuristik/kota/kampung-modal',
     icon: Scale,
@@ -66,13 +73,6 @@ const subPages = [
     icon: Truck,
     description: 'Darat, Kereta Api, Udara, Laut, Sungai — Terintegrasi Sistem Digital — Adhikara Yana.',
     color: '#0d9488',
-  },
-  {
-    label: 'Kampung Digital',
-    href: '/nusa-futuristik/kota/proyek-strategis',
-    icon: Laptop,
-    description: 'Infrastruktur TI, Smart Village OS, Data Center, Konektivitas Nasional — Adhikara Jnana.',
-    color: '#3b82f6',
   },
   {
     label: 'Kampung Hijau',

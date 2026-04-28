@@ -61,13 +61,13 @@ interface PilarCardData {
 }
 
 const PILAR_CARDS: PilarCardData[] = [
-  { number: 1, title: 'Kampung Modal', description: 'Urat nadi finansial ekosistem: pembayaran, investasi, asuransi & kedaulatan modal desa', icon: Scale, color: '#f59e0b', secondaryColor: '#FBBF24', href: '/pilar/kampung-modal', adhikara: 'Adhikara Artha', programCount: 20 },
-  { number: 2, title: 'Kampung Industri', description: 'Hilirisasi agro, kriya, manufaktur & teknologi masa depan berbasis desa', icon: Warehouse, color: '#8B0000', secondaryColor: '#DC143C', href: '/pilar/kampung-industri', adhikara: 'Adhikara Krada', programCount: 20 },
-  { number: 3, title: 'Kampung Pangan', description: 'Kedaulatan pangan: pertanian, perkebunan, peternakan, perikanan hingga ekspor', icon: Wheat, color: '#16a34a', secondaryColor: '#4ADE80', href: '/pilar/kampung-pangan', adhikara: 'Adhikara Anna', programCount: 25 },
-  { number: 4, title: 'Kampung Sehat', description: 'Infrastruktur klinis, nutrisi, jaring pengaman sosial & kesehatan rohani', icon: Heart, color: '#dc2626', secondaryColor: '#F87171', href: '/pilar/kampung-sehat', adhikara: 'Adhikara Roga', programCount: 25 },
-  { number: 5, title: 'Kampung Cerdas', description: 'Solusi putus sekolah, literasi, vokasi, pendidikan tinggi & pembelajaran sepanjang hayat', icon: GraduationCap, color: '#7c3aed', secondaryColor: '#A78BFA', href: '/pilar/kampung-cerdas', adhikara: 'Adhikara Vidya', programCount: 25 },
-  { number: 6, title: 'Kampung Niaga', description: 'Gerbang ekspor-impor, logistik, cold chain, konektivitas & energi terbarukan', icon: Truck, color: '#0d9488', secondaryColor: '#2DD4BF', href: '/pilar/kampung-niaga', adhikara: 'Adhikara Yana', programCount: 26 },
-  { number: 7, title: 'Kampung Digital', description: 'Smart Village OS, infrastruktur digital, platform, kedaulatan data & inovasi R&D', icon: Laptop, color: '#3b82f6', secondaryColor: '#60A5FA', href: '/pilar/kampung-digital', adhikara: 'Adhikara Jnana', programCount: 20 },
+  { number: 1, title: 'Kampung Pemerintahan Digital', description: 'Smart Village OS, infrastruktur digital, platform, kedaulatan data & inovasi R&D', icon: Laptop, color: '#3b82f6', secondaryColor: '#60A5FA', href: '/pilar/kampung-digital', adhikara: 'Adhikara Jnana', programCount: 20 },
+  { number: 2, title: 'Kampung Modal', description: 'Urat nadi finansial ekosistem: pembayaran, investasi, asuransi & kedaulatan modal desa', icon: Scale, color: '#f59e0b', secondaryColor: '#FBBF24', href: '/pilar/kampung-modal', adhikara: 'Adhikara Artha', programCount: 20 },
+  { number: 3, title: 'Kampung Industri', description: 'Hilirisasi agro, kriya, manufaktur & teknologi masa depan berbasis desa', icon: Warehouse, color: '#8B0000', secondaryColor: '#DC143C', href: '/pilar/kampung-industri', adhikara: 'Adhikara Krada', programCount: 20 },
+  { number: 4, title: 'Kampung Pangan', description: 'Kedaulatan pangan: pertanian, perkebunan, peternakan, perikanan hingga ekspor', icon: Wheat, color: '#16a34a', secondaryColor: '#4ADE80', href: '/pilar/kampung-pangan', adhikara: 'Adhikara Anna', programCount: 25 },
+  { number: 5, title: 'Kampung Sehat', description: 'Infrastruktur klinis, nutrisi, jaring pengaman sosial & kesehatan rohani', icon: Heart, color: '#dc2626', secondaryColor: '#F87171', href: '/pilar/kampung-sehat', adhikara: 'Adhikara Roga', programCount: 25 },
+  { number: 6, title: 'Kampung Cerdas', description: 'Solusi putus sekolah, literasi, vokasi, pendidikan tinggi & pembelajaran sepanjang hayat', icon: GraduationCap, color: '#7c3aed', secondaryColor: '#A78BFA', href: '/pilar/kampung-cerdas', adhikara: 'Adhikara Vidya', programCount: 25 },
+  { number: 7, title: 'Kampung Niaga', description: 'Gerbang ekspor-impor, logistik, cold chain, konektivitas & energi terbarukan', icon: Truck, color: '#0d9488', secondaryColor: '#2DD4BF', href: '/pilar/kampung-niaga', adhikara: 'Adhikara Yana', programCount: 26 },
   { number: 8, title: 'Kampung Hijau', description: 'Energi terbarukan, pengelolaan limbah, konservasi & pertanian lingkungan hijau', icon: Flower2, color: '#059669', secondaryColor: '#34D399', href: '/pilar/kampung-hijau', adhikara: 'Adhikara Prakriti', programCount: 20 },
   { number: 9, title: 'Kampung Wisata', description: 'Wisata alam, budaya & spiritual, hospitality, ekonomi kreatif & pemasaran wisata', icon: Home, color: '#92400e', secondaryColor: '#D97706', href: '/pilar/kampung-wisata', adhikara: 'Adhikara Ramya', programCount: 30 },
 ]
@@ -81,7 +81,7 @@ const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
   size: i % 4 === 0 ? 4 : i % 3 === 0 ? 3 : 2,
   delay: i * 0.2,
   duration: 6 + (i % 5) * 2,
-  color: ['#f59e0b', '#8B0000', '#16a34a', '#dc2626', '#7c3aed', '#0d9488', '#3b82f6', '#059669', '#92400e'][i % 9],
+  color: ['#3b82f6', '#f59e0b', '#8B0000', '#16a34a', '#dc2626', '#7c3aed', '#0d9488', '#059669', '#92400e'][i % 9],
 }))
 
 // ─── Animation Variants ─────────────────────────────────────────────────────────

@@ -28,13 +28,13 @@ const ICON_MAP: Record<string, LucideIcon> = {
 // ─── Slug Map ───────────────────────────────────────────────────────────────────
 
 const PILAR_SLUGS: Record<number, string> = {
-  1: 'kampung-modal',
-  2: 'kampung-industri',
-  3: 'kampung-pangan',
-  4: 'kampung-sehat',
-  5: 'kampung-cerdas',
-  6: 'kampung-niaga',
-  7: 'kampung-digital',
+  1: 'kampung-digital',
+  2: 'kampung-modal',
+  3: 'kampung-industri',
+  4: 'kampung-pangan',
+  5: 'kampung-sehat',
+  6: 'kampung-cerdas',
+  7: 'kampung-niaga',
   8: 'kampung-hijau',
   9: 'kampung-wisata',
 }
@@ -43,32 +43,32 @@ const PILAR_SLUGS: Record<number, string> = {
 
 const PHILOSOPHY: Record<number, { title: string; subtitle: string }> = {
   1: {
+    title: 'Smart Village OS',
+    subtitle: 'Kampung Pemerintahan Digital (Adikara Jnana) infrastruktur digital, platform, kedaulatan data, dan inovasi R&D yang menjadi otak operasional seluruh ekosistem. Tanpa fondasi digital, semua pilar lain berjalan dengan tangan terikat. Kampung Pemerintahan Digital membebaskan desa dari ketergantungan teknologi eksternal.',
+  },
+  2: {
     title: 'Dari Subsisten ke Sovereign Wealth',
     subtitle: 'Kampung Modal (Adikara Artha) adalah urat nadi finansial Nusa Futuristik. Tanpa kapital yang mengalir, tidak ada bangunan yang berdiri, tidak ada panen yang dipanen, tidak ada anak yang bersekolah. Program-program ini dirancang sebagai sistem yang saling mengunci — setiap program mendukung dan diperkuat oleh program lainnya. Ini bukan koperasi biasa. Ini adalah sistem keuangan peradaban.',
   },
-  2: {
+  3: {
     title: 'Dari Bahan Mentah ke Produk Bernilai Tinggi',
     subtitle: 'Kampung Industri (Adikara Krada) mengubah bahan mentah menjadi produk bernilai tinggi, dari garasi rumah menjadi mini factory standar ekspor. Setiap desa memiliki potensi manufaktur yang selama ini terpendam. Kampung Industri membangkitkan potensi itu dengan teknologi, sertifikasi, dan akses pasar global.',
   },
-  3: {
+  4: {
     title: 'Kedaulatan Pangan dari Hulu ke Hilir',
     subtitle: 'Kampung Pangan (Adikara Anna) menjamin setiap desa mampu memproduksi, mengolah, dan mendistribusikan pangannya sendiri. Dari hulu ke hilir, dari benih unggul hingga cold chain logistics — kedaulatan pangan bukan mimpi, tapi sistem yang dirancang dan dioperasikan oleh desa sendiri.',
   },
-  4: {
+  5: {
     title: 'Jantung Kesehatan Desa',
     subtitle: 'Kampung Sehat (Adikara Roga) dari klinik mini hingga jaring pengaman sosial, menjamin setiap warga desa hidup sehat lahir dan batin. Kesehatan bukan sekadar absennya penyakit — kesehatan adalah keutuhan fisik, mental, rohani, dan sosial. Kampung Sehat membangun sistem kesehatan holistik.',
   },
-  5: {
+  6: {
     title: 'Pabrik Pendidikan Desa',
     subtitle: 'Kampung Cerdas (Adikara Vidya) dari solusi putus sekolah hingga universitas terbuka, menjamin setiap anak desa memiliki akses ilmu setara kota. Pendidikan bukan privilege — pendidikan adalah hak setiap anak desa. Kampung Cerdas menghapus batasan geografis dalam akses ilmu.',
   },
-  6: {
+  7: {
     title: 'Jalur Distribusi Nusantara',
     subtitle: 'Kampung Niaga (Adikara Yana) gerbang ekspor-impor, logistik, cold chain, konektivitas, dan energi yang menghubungkan desa ke 195 negara. Tanpa jalur distribusi, produk terbaik desa hanya akan menjadi cerita. Kampung Niaga memastikan setiap produk desa sampai ke pasar dunia.',
-  },
-  7: {
-    title: 'Smart Village OS',
-    subtitle: 'Kampung Digital (Adikara Jnana) infrastruktur digital, platform, kedaulatan data, dan inovasi R&D yang menjadi otak operasional seluruh ekosistem. Tanpa fondasi digital, semua pilar lain berjalan dengan tangan terikat. Kampung Digital membebaskan desa dari ketergantungan teknologi eksternal.',
   },
   8: {
     title: 'Paru-Paru Hijau Desa',

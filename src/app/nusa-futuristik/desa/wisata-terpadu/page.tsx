@@ -11,15 +11,15 @@ const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, t
 const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } }
 
 const siblingPages = [
+  { label: 'Kampung Pemerintahan Digital', href: '/nusa-futuristik/desa/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Modal', href: '/nusa-futuristik/desa/kampung-modal', icon: Scale, color: '#f59e0b' },
   { label: 'Kampung Industri', href: '/nusa-futuristik/desa/kawasan-industri-terpadu', icon: Warehouse, color: '#8B0000' },
   { label: 'Kampung Pangan', href: '/nusa-futuristik/desa/kawasan-pangan-terpadu', icon: Wheat, color: '#16a34a' },
   { label: 'Kampung Cerdas', href: '/nusa-futuristik/desa/proyek-strategis', icon: GraduationCap, color: '#7c3aed' },
   { label: 'Kampung Niaga', href: '/nusa-futuristik/desa/transportasi-digital', icon: Truck, color: '#0d9488' },
-  { label: 'Kampung Digital', href: '/nusa-futuristik/desa/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Hijau', href: '/nusa-futuristik/desa/proyek-strategis', icon: Flower2, color: '#059669' },
   { label: 'Kampung Wisata', href: '/nusa-futuristik/desa/rumah-produktif', icon: Home, color: '#92400e' },
-]
+  ]
 
 const destinations = [
   { title: 'Desa Wisata Unggulan', description: 'Program desa wisata nasional dengan standar kualitas dan digital marketing terintegrasi.', icon: Star, features: ['National Standard', 'Digital Market', 'Quality Cert'] },

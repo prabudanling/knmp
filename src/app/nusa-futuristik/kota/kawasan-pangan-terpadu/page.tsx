@@ -11,15 +11,15 @@ const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, t
 const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } }
 
 const siblingPages = [
+  { label: 'Kampung Pemerintahan Digital', href: '/nusa-futuristik/kota/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Modal', href: '/nusa-futuristik/kota/kampung-modal', icon: Scale, color: '#f59e0b' },
   { label: 'Kampung Industri', href: '/nusa-futuristik/kota/kawasan-industri-terpadu', icon: Warehouse, color: '#8B0000' },
   { label: 'Kampung Sehat', href: '/nusa-futuristik/kota/wisata-terpadu', icon: Heart, color: '#dc2626' },
   { label: 'Kampung Cerdas', href: '/nusa-futuristik/kota/proyek-strategis', icon: GraduationCap, color: '#7c3aed' },
   { label: 'Kampung Niaga', href: '/nusa-futuristik/kota/transportasi-digital', icon: Truck, color: '#0d9488' },
-  { label: 'Kampung Digital', href: '/nusa-futuristik/kota/proyek-strategis', icon: Laptop, color: '#3b82f6' },
   { label: 'Kampung Hijau', href: '/nusa-futuristik/kota/proyek-strategis', icon: Flower2, color: '#059669' },
   { label: 'Kampung Wisata', href: '/nusa-futuristik/kota/rumah-produktif', icon: Home, color: '#92400e' },
-]
+  ]
 
 const zones = [
   { title: 'Urban Farming Center', description: 'Pusat pertanian perkotaan dengan vertical farming, hydroponics, dan aeroponics untuk suplai pangan lokal.', icon: Sprout, features: ['Vertical Farm', 'Hydroponics', 'Local Supply'] },
