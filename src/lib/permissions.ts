@@ -1,5 +1,5 @@
 /**
- * Role-Based Access Control (RBAC) for KMNBMPI
+ * Role-Based Access Control (RBAC) for KMN BERDIKARI
  * 
  * Roles hierarchy:
  * SUPER_ADMIN > ADMIN > KORNAS > KORWIL > KORDA > KORCAM > KORDES > KORBID > MEMBER > GUEST

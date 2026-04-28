@@ -96,7 +96,7 @@ const kpaData: KPAData[] = [
       "Kader digital",
     ],
     manfaat: [
-      "Akses pasar langsung via Marketplace KMNBMPI",
+      "Akses pasar langsung via Marketplace KMN BERDIKARI",
       "Modal usaha via Kampung Modal",
       "Teknologi pertanian & logistik",
       "Pelatihan gratis via NB Academy",
@@ -114,7 +114,7 @@ const kpaData: KPAData[] = [
     metodePotongDetail:
       "Dipotong otomatis dari penjualan panen atau komisi logistik melalui platform kopnusa.id & NB Pay",
     benefits: [
-      { icon: Zap, title: "Akses Pasar", desc: "Langsung ke Marketplace KMNBMPI tanpa perantara" },
+      { icon: Zap, title: "Akses Pasar", desc: "Langsung ke Marketplace KMN BERDIKARI tanpa perantara" },
       { icon: CircleDollarSign, title: "Modal Usaha", desc: "Pembiayaan via Kampung Modal dengan suku bunga rendah" },
       { icon: Star, title: "Pelatihan", desc: "NB Academy gratis untuk peningkatan kapasitas" },
       { icon: Wallet, title: "NB Pay", desc: "Saldo awal dompet digital dari simpanan pokok" },
@@ -131,7 +131,7 @@ const kpaData: KPAData[] = [
     textColor: "text-blue-500",
     proporsi: 20,
     deskripsi:
-      "Warga masyarakat umum yang menggunakan layanan ekosistem KMNBMPI — dari pembeli harian hingga wisatawan.",
+      "Warga masyarakat umum yang menggunakan layanan ekosistem KMN BERDIKARI — dari pembeli harian hingga wisatawan.",
     anggotaList: [
       "Warga masyarakat umum pengguna NB Pay",
       "Pembeli retail marketplace",
@@ -145,12 +145,12 @@ const kpaData: KPAData[] = [
       "Priority access event & promosi",
     ],
     icon: ShoppingBag,
-    requirements: ["KTP valid", "Minat produk lokal & ekosistem KMNBMPI"],
+    requirements: ["KTP valid", "Minat produk lokal & ekosistem KMN BERDIKARI"],
     simpananPokok: "Rp 100.000",
     simpananPokokDetail: "Simpanan pokok standar anggota Koperasi",
     simpananWajib: "Rp 50.000/bulan",
     simpananWajibDetail:
-      "Dipotong otomatis dari sisa kembalian belanja, akumulasi cashback di Marketplace KMNBMPI, atau pemotongan otomatis dari saldo NB Pay",
+      "Dipotong otomatis dari sisa kembalian belanja, akumulasi cashback di Marketplace KMN BERDIKARI, atau pemotongan otomatis dari saldo NB Pay",
     metodePotong: "Cashback & Kembalian Belanja",
     metodePotongDetail:
       "Dipotong dari sisa kembalian belanja, akumulasi cashback Marketplace, atau saldo NB Pay secara otomatis",
@@ -172,7 +172,7 @@ const kpaData: KPAData[] = [
     textColor: "text-violet-500",
     proporsi: 20,
     deskripsi:
-      "Aparatur negara dan pejabat publik yang menjadi jangkar stabilitas institusional ekosistem KMNBMPI.",
+      "Aparatur negara dan pejabat publik yang menjadi jangkar stabilitas institusional ekosistem KMN BERDIKARI.",
     anggotaList: [
       "PNS",
       "ASN",
@@ -244,10 +244,10 @@ const kpaData: KPAData[] = [
     simpananPokokDetail: "Disetor atas nama entitas kelembagaan/perusahaan",
     simpananWajib: "Rp 1.000.000/bulan",
     simpananWajibDetail:
-      "Biaya langganan operasional & akses VIP Dashboard B2B Ekosistem KMNBMPI",
+      "Biaya langganan operasional & akses VIP Dashboard B2B Ekosistem KMN BERDIKARI",
     metodePotong: "Langganan Operasional",
     metodePotongDetail:
-      "Dipotong sebagai biaya langganan bulanan untuk akses VIP Dashboard B2B Ekosistem KMNBMPI",
+      "Dipotong sebagai biaya langganan bulanan untuk akses VIP Dashboard B2B Ekosistem KMN BERDIKARI",
     benefits: [
       { icon: Handshake, title: "B2B Network", desc: "Jaringan bisnis terintegrasi nasional" },
       { icon: TrendingUp, title: "Financing", desc: "Pembiayaan usaha dengan suku bunga kompetitif" },
@@ -1071,7 +1071,7 @@ export function KPASection() {
                 Doktrin <span className="text-gradient-gold">Invisible Dues</span>
               </h3>
               <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
-                Pungutan Tak Terlihat — KMNBMPI mengharamkan metode penagihan manual (door-to-door).
+                Pungutan Tak Terlihat — KMN BERDIKARI mengharamkan metode penagihan manual (door-to-door).
                 Semua iuran dieksekusi via auto-deduct di platform kopnusa.id & dompet digital NB Pay.
               </p>
             </motion.div>
@@ -1091,7 +1091,7 @@ export function KPASection() {
                       </div>
                     </div>
                     <p className="text-white/80 text-sm leading-relaxed">
-                      KMNBMPI mengharamkan metode penagihan manual secara door-to-door, telepon intimidasi,
+                      KMN BERDIKARI mengharamkan metode penagihan manual secara door-to-door, telepon intimidasi,
                       atau debt-collector. Sistem iuran berjalan sepenuhnya secara otomatis melalui platform digital.
                     </p>
                   </div>

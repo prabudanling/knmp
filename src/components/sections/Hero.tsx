@@ -731,7 +731,7 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* ── KMNBMPI Logo with Animated Gold Border Glow ── */}
+            {/* ── KMN BERDIKARI Logo with Animated Gold Border Glow ── */}
             <motion.div variants={fadeInUp} className="flex justify-center mb-5 sm:mb-7">
               <motion.div whileHover={{ scale: 1.03 }} className="relative group">
                 {/* Animated gold glow ring around logo */}
@@ -854,7 +854,7 @@ export function Hero() {
                     className="text-sm sm:text-base md:text-lg font-medium text-gray-800 leading-relaxed text-center relative z-10"
                   >
                     <span className="text-[#D4AF37] font-bold text-base sm:text-lg md:text-xl">
-                      KMNBMPI
+                      KMN BERDIKARI
                     </span>{' '}
                     adalah{' '}
                     <span className="text-[#8B0000] font-bold">
@@ -1101,7 +1101,7 @@ export function Hero() {
               >
                 Sistem Simpanan{' '}
                 <span className="bg-gradient-to-r from-[#008F3D] to-[#8B0000] bg-clip-text text-transparent">
-                  KMNBMPI
+                  KMN BERDIKARI
                 </span>
               </motion.h3>
 

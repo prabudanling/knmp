@@ -1,5 +1,5 @@
 /**
- * Authentication Helper for KMNBMPI Admin
+ * Authentication Helper for KMN BERDIKARI Admin
  */
 
 import { NextRequest } from 'next/server';

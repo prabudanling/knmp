@@ -1,5 +1,5 @@
 // ============================================
-// 17 DEWAN PENDIRI KMNBMPI
+// 17 DEWAN PENDIRI KMN BERDIKARI
 // Berdasarkan dokumen v17 terbaru
 // ============================================
 
@@ -341,10 +341,10 @@ export const KORDINATOR_BIDANG_17: Korbid[] = [
 ];
 
 // ============================================
-// STATISTIK KMNBMPI
+// STATISTIK KMN BERDIKARI
 // ============================================
 
-export const KMNBMPI_STATS = {
+export const KMN_BERDIKARI_STATS = {
   totalDesa: 83763,
   totalProvinsi: 38,
   totalNegara: 195,
