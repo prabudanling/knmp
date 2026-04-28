@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#008F3D"/>
+  <circle cx="100" cy="100" r="85" fill="#008F3D" stroke="#8B0000" stroke-width="3"/>
+  
+  <!-- Inner Design - Merah Putih -->
+  <circle cx="100" cy="100" r="70" fill="#FFFFFF" opacity="0.15"/>
+  
+  <!-- KNMP Text -->
+  <text x="100" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="36" fill="#FFFFFF">KNMP</text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#FFFFFF" opacity="0.9">KOPERASI NUSANTARA</text>
+  <text x="100" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#FFFFFF" opacity="0.9">MERAH PUTIH</text>
+  
+  <!-- Star accent -->
+  <polygon points="100,40 103,48 112,48 105,53 108,62 100,57 92,62 95,53 88,48 97,48" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Bottom accent line -->
+  <line x1="60" y1="148" x2="140" y2="148" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Breathing animation -->
+  <style>
+    .pulse { animation: pulse 3s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.25; } }
+  </style>
+  <circle cx="100" cy="100" r="70" fill="#FFFFFF" class="pulse"/>
+</svg>
